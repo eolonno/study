@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+</head>
+<body>
+	<script>
+		function toRad(deg){
+			return (Math.PI / 180) * deg;
+		}
+		let canvas = document.createElement("canvas");
+		var ctx = canvas.getContext("2d");
+
+		canvas.width = 700;
+		canvas.height = 400;
+
+		ctx.shadowBlur = 10;
+		ctx.shadowOffsetX = 15;
+		ctx.shadowOffsetY = 5;
+		ctx.shadowColor = "rgba(0,0,0,0.5)";
+		ctx.font = "24px serif";
+		ctx.fillStyle = "#ED6D6D";
+		ctx.textAlign = 'center';
+		ctx.fillText("Lorem ipsum dolor.", 350, 30);
+		ctx.shadowColor =  "rgba(0,0,0,0)";
+		
+		ctx.arc(200, 240, 150, 0, 2 * Math.PI);
+		ctx.strokeStyle = "#BF98EA"
+		ctx.lineWidth = 6;
+		ctx.stroke();
+
+		function RandomColor() {
+			  min = Math.ceil(0);
+			  max = Math.floor(255);
+			  return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+		ctx.textAlign = 'start';
+		var text = 100;
+		var counter = 0;
+		var $ = {
+			0 : 'Lorem',
+			1 : 'Ipsum',
+			2 : 'Dolor',
+			3 : 'Sit',
+			4 : 'Amet'
+		}
+		function sector(start, end){
+			ctx.fillStyle = "rgb(" + RandomColor() + "," + RandomColor() + "," + RandomColor() + ")";
+			ctx.font = "24px";
+			ctx.fillText($[counter], 500, text = text + 40);
+			ctx.fillRect(470, text, 10, -10);
+			ctx.beginPath();
+			ctx.arc(200, 240, 150, toRad(start), toRad(end), false);
+			ctx.lineTo(200, 240,);
+			ctx.fill();
+			counter++;
+		}
+
+		sector(0, 60);
+		sector(60, 120);
+		sector(120, 200);
+		sector(200, 330);
+		sector(330, 360);
+
+		document.body.appendChild(canvas);
+	</script>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

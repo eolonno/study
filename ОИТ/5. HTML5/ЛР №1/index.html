@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+	<style>
+		*{margin-bottom:10px;}
+	</style>
+</head>
+<body>
+	<p>Я, <mark>ФИО</mark>, изучаю HTML5</p>
+	<audio src="audio.mp3" controls="controls"></audio><br>
+	<video src="video.mp4" width="300" controls="controls"></video><br>
+	<button onclick="getCoordinates()">Узнать свои координаты</button>
+	<script>
+	function getCoordinates() {
+		navigator.geolocation.getCurrentPosition(showCoordinates, err);
+	}
+	function showCoordinates(position) {
+		document.body.innerHTML += "<br>Широта: " + position.coords.latitude + "<br>" + "Долгота: " + position.coords.longitude;
+	}
+	function err(){alert("Error")}
+</script>
+</body>
+</html>

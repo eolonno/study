@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XML</title>
+</head>
+<body>
+	<svg width="800" height="700" xmlns="http://www.w3.org/2000/svg">
+		<defs>
+	    <path id="textpath" fill="none" stroke="#000000"
+	      d="M0.057,0.024c0,0,10.99,51.603,102.248,51.603c91.259,0,136.172,53.992,136.172,53.992"/>
+	    <linearGradient id="textgradient" x1="0%" x2="0%" y1="0%" y2="100%">
+		    <stop stop-color = "#ddd" offset = "0%"/>
+		    <stop stop-color = "#F364E9" offset = "100%"/>
+	    </linearGradient>
+	  	</defs>
+	  
+	  	<use xlink:href="#textpath"/>
+	  	<text x="10" y="100" font-size="24">
+		  	<textPath xlink:href="#textpath">
+		    	Lorem ipsum dolor sit.
+		  	</textPath>
+	  	</text>
+
+		<text y="150" style="fill: #c96; font-size:32px; font-family: Futura Condensed ExtraBold, Arial Black, sans-serif;
+		  stroke: yellow; stroke-width: 2px;">Lorem ipsum dolor sit.</text>
+		<text y="200" font-size="42" font-weight="bold" fill="url(#textgradient)" stroke="none">Lorem ipsum dolor sit.</text>
+		<text y="250" style="letter-spacing: 10px; fill: orange" textLength="300" text-anchor="start">Lorem ipsum dolor sit.</text>
+
+		<text style="font-size: 40px" y="300">Lorem ipsum dolor sit.
+			<animate repeatCount="indefinite" attributeName="fill" from="yellow" to="blue" dur="4s"/>
+			<animate repeatCount="indefinite" begin="4s" attributeName="fill" from="blue" to="yellow" dur="4s"/>
+			<animate repeatCount="indefinite" begin="4s" attributeName="stroke" from="yellow" to="blue" dur="4s"/>
+			<animate repeatCount="indefinite" begin="4s" attributeName="fill" from="blue" to="yellow" dur="4s"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="2" dur="4s"/>
+			<animateTransform attributeName="transform" attributeType="XML" type="scale" from="2" to="1" dur="4s" begin="4s"/>
+		</text>
+	</svg>
+</body>
+</html>

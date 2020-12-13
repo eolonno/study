@@ -1,0 +1,25 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT in (info)+>
+<!ATTLIST in
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT info (university,points,plan,city)>
+<!ATTLIST info
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT university (#PCDATA)>
+<!ATTLIST university
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT points (#PCDATA)>
+<!ATTLIST points
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT plan (#PCDATA)>
+<!ATTLIST plan
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT city (#PCDATA)>
+<!ATTLIST city
+  xmlns CDATA #FIXED ''>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Повторение</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- 
+		Ссылки расположены в строку при помощи flexbox. Разделители сделаны при помощи свойства border.
+
+		Плюсы данного метода: 
+		1) проще адаптировать 
+		2) более гибкая верстка
+		3) можно налаживать пункты меню друг на друга
+
+		Минусы данного метода:
+		1) ссылки не являются блоками, поэтому нельзя писать текст в две строки (разделители будут появлятся на высоту только одного символа)
+
+		 -->
+	<div class="first_method">
+		<a href="#">Lorem ipsum dolor.</a>
+		<a href="#">Velit veritatis, dolorem.</a>
+		<a href="#">Fuga, eaque est.</a>
+		<a href="#">Quo minus, laborum?</a>
+		<a href="#">Iusto, ad, nam.</a>
+	</div>
+
+	<!-- 
+		Ссылки расположены в строку при помощи таблицы. Разделители также реализованы при помощи свойства border.
+
+		Минусы данного метода:
+		1) верстка на таблицах устарела
+		2) сложно реализовать адаптивную верстку
+
+		Плюсы данного метода:
+		1) возможна запись в две строки
+
+	 -->
+
+	<div class="second_method">
+		<table>
+			<tr>
+				<td><a href="#">Lorem ipsum dolor.</a></td>
+				<td><a href="#">Velit veritatis, dolorem.</a></td>
+				<td><a href="#">Fuga, eaque est.</a></td>
+				<td><a href="#">Quo minus, laborum?</a></td>
+				<td><a href="#">Iusto, ad, nam.</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

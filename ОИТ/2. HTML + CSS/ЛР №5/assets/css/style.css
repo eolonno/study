@@ -1,0 +1,266 @@
+/*Для тегов*/
+body{
+    background: #e6b89b;
+    background-size: 100%;
+    text-overflow: ellipsis;
+}
+
+h1, h2, h3, span
+{
+    font-family: First Font, sans-serif;
+    color: deeppink;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: crimson;
+    transition: all .3s ease;
+}
+a:visited{
+    color: aqua;
+}
+
+
+/*Для текста*/
+#span1{
+    color: darkorange;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#span2{
+    color: darkkhaki;
+    font-style: oblique;
+    font-weight: 900;
+    background: orange;
+}
+
+#span3{
+    color: #99c61e;
+    font-style: italic;
+    font-weight: lighter;
+}
+#span4{
+    color: #d9d905;
+    font-style: oblique;
+    background: green;
+}
+
+/*Для списков*/
+.bulletlist{
+    list-style: none;
+}
+.bulletlist:before {
+    content: "";
+    background: url(../images/marker.png) no-repeat;
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin-top: 3px;;
+    margin-right: 4px;
+}
+
+/*Для таблиц*/
+table{
+    border-collapse: collapse;
+    font-family: Bahnschrift;
+    width: 70%;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    color: hsl(0, 21%, 21%);
+    font-size: 14pt;
+    margin: 1px;
+}
+table td{
+    padding: 5px;
+    border: 1px rgba(138, 80, 80, 1) solid;
+}
+table td img{
+    margin-top: 5px;
+}
+
+
+/*Для абзацев*/
+.p1{
+    color:antiquewhite;
+    font-family: Calibri;
+    font-style: normal;
+    font-size: 18pt;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: right;
+    
+    box-shadow: 4px 2px 10px green;
+    border-radius: 10px;
+}
+.p2{
+    color:#020293;
+    font-family: Agency FB;
+    font-size: 2em;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    text-align: left;
+    
+    text-shadow: 3px 2px 10px #ffae00, -5px 2px 10px #fafafa;
+}
+.p3{
+    color:rgb(220, 20, 60);
+    font-family: Bell MT;
+    font-size: 3ex;
+    word-spacing: 7px;
+    letter-spacing: 5px;
+    text-align: justify;
+}
+p:first-child {
+    color: hsla(90, 36%, 46%, 1);
+}
+P:first-letter {
+    font-size: 200%;
+    border: 1px white solid;
+   }
+p:first-line {
+    text-decoration: underline;
+}
+
+/*Для блоков*/
+
+.firstdiv {
+    border: 30px solid #40c4c8;
+    margin: 10px 50px;
+    border-image: url(../images/css_border-image-1.png) 30 round round;
+    padding: 10px 15px 30px 20px;
+    color: coral;
+    
+    transform: translate(-40px, 15px);
+}
+
+.seconddiv {
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: dotted 4px green;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: violet;
+    
+    transform: scale(0.6, 0.8);
+}
+
+.thirddiv {
+    margin-left: 10px;
+    margin-right: 10px;
+    border: double 15px aqua;
+    padding: 10px;
+    color: firebrick;
+    
+    transform: skew(3deg, 4deg);
+}
+
+/*ФИО*/
+.FIO:before {
+    content: "Студент I курса ";
+}
+.FIO:after{
+    content: ", проживающий по адресу..."
+}
+
+
+/*Подключение шрифтов*/
+@font-face{
+    font-family: First Font;
+    src: url('Solway-Regular.ttf');
+}
+
+
+/*Анимированные круги*/
+.circle1{
+    position: relative;
+    top: 40px;
+    height: 100px;
+    width: 100px;
+    background: radial-gradient(#e66465, #9198e5);  
+    border-radius: 50%;
+    transition: all 2s ease;
+}
+
+.circle1:hover{
+    height: 200px;
+    width: 200px;
+}
+
+.circle2{
+    position: relative;
+    top: 45px;
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(#e66465, #9198e5);  
+    border-radius: 50%;
+    transition: all 1s steps(4, end);
+    
+}
+
+.circle2:hover{
+    height: 200px;
+    width: 200px;
+    transform: rotate(50%);
+}
+
+.circle3{
+    position: relative;
+    top: 50px;
+    height: 100px;
+    width: 100px;
+    background: radial-gradient(#e66465, #9198e5);  
+    border-radius: 50%;
+    transition: all 3s ease;
+}
+
+.circle3:hover{
+    height: 200px;
+    width: 200px;
+    transform: translate(0, 10vh);
+}
+
+.circle4{
+    position: relative;
+    top: 45px;
+    height: 100px;
+    width: 100px;
+    background: radial-gradient(ellipse farthest-corner at 30px 20px, #e66465, #9198e5);
+    border-radius: 50%;
+    transition: all 1s steps(4, end);
+    
+}
+
+.circle5{
+    position: relative;
+    top: 45px;
+    height: 100px;
+    width: 100px;
+    background: radial-gradient(circle closest-side at 30px 20px, #e66465, #9198e5);
+    border-radius: 50%;
+    transition: all 1s steps(4, end);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,162 @@
+/*Для тегов*/
+body{
+    background: #e6b89b;
+}
+
+h1, h2, h3, span
+{
+    font-family: Times New Roman, sans-serif;
+    color: deeppink;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color: crimson;
+    transition: all .3s ease;
+}
+a:visited{
+    color: aqua;
+}
+
+
+/*Для текста*/
+#span1{
+    color: darkorange;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#span2{
+    color: darkkhaki;
+    font-style: oblique;
+    font-weight: 900;
+    background: orange;
+}
+
+#span3{
+    color: #99c61e;
+    font-style: italic;
+    font-weight: lighter;
+}
+#span4{
+    color: #d9d905;
+    font-style: oblique;
+    background: green;
+}
+
+/*Для списков*/
+.bulletlist{
+    list-style: none;
+}
+.bulletlist:before {
+    content: "";
+    background: url(../images/marker.png) no-repeat;
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin-top: 3px;;
+    margin-right: 4px;
+}
+
+/*Для таблиц*/
+table{
+    border-collapse: collapse;
+    font-family: Bahnschrift;
+    width: 70%;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    color: #727272;
+    font-size: 14pt;
+    margin: 1px;
+}
+table td{
+    padding: 5px;
+    border: 1px #fafafa solid;
+}
+table td img{
+    margin-top: 5px;
+}
+
+
+/*Для абзацев*/
+.p1{
+    color:antiquewhite;
+    font-family: Calibri;
+    font-style: normal;
+    font-size: 18pt;
+    word-spacing: 3px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+.p2{
+    color:#020293;
+    font-family: Agency FB;
+    font-size: 2em;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    text-align: left;
+}
+.p3{
+    color:rgb(220, 20, 60);
+    font-family: Bell MT;
+    font-size: 3ex;
+    word-spacing: 7px;
+    letter-spacing: 5px;
+    text-align: justify;
+}
+p:first-child {
+    color: antiquewhite;
+}
+P:first-letter {
+    font-size: 200%;
+    border: 1px white solid;
+   }
+p:first-line {
+    text-decoration: underline;
+}
+
+
+/*ФИО*/
+.FIO:before {
+    content: "Студент I курса ";
+}
+.FIO:after{
+    content: ", проживающий по адресу..."
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+body{
+ background-image: url("../img/ep_naturalwhite.png");
+}
+header{
+ margin-top: 200px;
+ font-family: Cuprum, Arial, Helvetica, sans-serif;
+}
+.dws-menu *{
+ margin: 0;
+ padding: 0;
+}
+.dws-menu ul,
+.dws-menu ol{
+ list-style: none;
+}
+/*This makes horizont menu*/
+.dws-menu > ul{
+ display: flex;
+ justify-content: center;
+}
+/*This makes position right*/
+.dws-menu > ul a{
+ position: relative;
+    
+margin-right: 10px;
+}
+.dws-menu > ul li{
+ position: relative;
+    
+ 
+}
+/*.dws-menu > ul li:first-child{
+ border-left: 1px solid #b2b3b5;
+}
+.dws-menu > ul li:last-child{
+ border-right: 1px solid #babbbd;
+}*/
+.dws-menu > ul li > a i.fa{
+ position: absolute;
+ top: 15px;
+ left: 12px;
+ font-size: 18px;
+}
+.dws-menu > ul li a{
+ display: block;
+background: #2bbbad;
+ padding: 15px 30px 15px 40px;
+ font-size: 14px;
+ color: #454547;
+ text-decoration: none;
+ text-transform:uppercase;
+    border-radius: 25px 25px 0px 0px;
+ transition: all 0.5s ease;
+}
+.dws-menu li a:hover{
+ background: #1e887e;
+
+ color: #ffffff;
+ box-shadow: 1px 5px 10px -5px black;
+ transition: all 0.3s ease;
+}
+
+/*sub menu*/
+.photo {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: absolute; /* Относительное позиционирование */
+   }
+   .photo:hover::after {
+      
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0%; top: 91%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: #2bbbad; /* Полупрозрачный цвет фона */
+      
+    font-family: Cuprum, sans-serif; /* Гарнитура шрифта */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 5px 30px 5px 28px; /* Поля */
+   
+       border-radius: 0px 0px 80px 80px;
+       
+   }
+/*--------------------------------------------------------------------*/
+/*sub menu*/
+.photo2 {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: absolute; /* Относительное позиционирование */
+   }
+   .photo2:hover::after {
+      
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0%; top: 91%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: #2bbbad; /* Полупрозрачный цвет фона */
+      
+    font-family: Cuprum, sans-serif; /* Гарнитура шрифта */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 5px 30px 5px 29px; /* Поля */
+   
+       border-radius: 0px 0px 80px 80px;
+       
+   }
+/*--------------------------------------------------------------------*/
+/*sub menu*/
+.photo3 {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: absolute; /* Относительное позиционирование */
+   }
+   .photo3:hover::after {
+      
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0%; top: 91%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: #2bbbad; /* Полупрозрачный цвет фона */
+      
+    font-family: Cuprum, sans-serif; /* Гарнитура шрифта */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 5px 45px 5px 45px; /* Поля */
+   
+       border-radius: 0px 0px 80px 80px;
+       
+   }
+/*--------------------------------------------------------------------*/
+/*sub menu*/
+.photo4 {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: absolute; /* Относительное позиционирование */
+   }
+   .photo4:hover::after {
+      
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 0%; top: 91%; /* Положение подсказки */
+    z-index: 1; /* Отображаем подсказку поверх других элементов */
+    background: #2bbbad; /* Полупрозрачный цвет фона */
+      
+    font-family: Cuprum, sans-serif; /* Гарнитура шрифта */
+    font-size: 14px; /* Размер текста подсказки */
+    padding: 5px 39px 5px 39px; /* Поля */
+   
+       border-radius: 0px 0px 80px 80px;
+       
+   }
+/*--------------------------------------------------------------------*/
+.dws-menu li ul{
+ position: absolute;
+    top: 150%;
+ min-width: 150px;
+ display: none;
+}
+.dws-menu li > ul a{
+   
+    margin-left: -20%;
+ border: 1px solid #c7c8ca;
+ border-radius: 50px 50px 50px 50px;
+}
+.dws-menu li > ul li a{
+ padding: 10px;
+ text-transform: none;
+ background: #30d5c5;
+}
+.dws-menu li > ul li ul{
+ position: absolute;
+ right: -150px;
+ top: 0;
+}
+.dws-menu li:hover > ul{
+ display: block;
+}

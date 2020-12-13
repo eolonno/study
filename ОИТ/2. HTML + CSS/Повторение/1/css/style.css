@@ -1,0 +1,52 @@
+div {
+	margin-bottom: 10px;
+}
+/*Первый метод*/
+.first_method {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 816px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.first_method a {
+	text-decoration: none;
+	padding-right: 10px;
+	margin-right: 2px;
+	padding-left: 10px;
+	margin-left: 2px;
+	color: black;
+	border-right: solid white 2px;
+	border-left: solid white 2px;
+}
+
+.first_method a:hover {
+	border-right: solid red 2px;
+	border-left: solid red 2px;
+	color: red;
+}
+
+/*Второй метод*/
+.second_method table {
+	border: none;
+}
+.second_method table tr td{
+	padding-right: 17px;
+	padding-left: 17px;
+	border-right: solid white 2px;
+	border-left: solid white 2px;
+}
+.second_method table tr td a{
+	text-decoration: none;
+	color: black;
+}
+.second_method table tr td:hover{
+	border-right: solid red 2px;
+	border-left: solid red 2px;
+}
+
+.second_method table tr td:hover a{
+	color: red;
+}

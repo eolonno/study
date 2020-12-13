@@ -1,0 +1,101 @@
+.inner {
+	height: 70%;
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+
+}
+
+/*Первая объект (квадрат)*/
+.object1 {
+	height: 100px;
+	width: 100px;
+	background: red;
+	position: relative;
+}
+
+.inner:hover .object1 {
+	animation: obj1anim 3s infinite;
+}
+
+@keyframes obj1anim{	
+	20% {
+		transform: translate(0, 200px);
+		background: green;
+	}
+	70% {
+		transform: translate(200px, 200px);
+		background: yellow;
+
+	}
+	100% {
+		background: red;
+	}
+}
+
+/*Второй объект (круг)*/
+.object2 {
+	height: 100px;
+	width: 100px;
+	background: #FFCC6E;
+	border-radius: 50%;
+	transition: background 2s ease-in-out;
+}
+
+.object2:hover{
+	background: #57D6FA;
+}
+
+/*Третий объект (четверть круга)*/
+/*.object3_1{
+	height: 100px;
+	width: 100px;
+	background: #E2A9A9;
+	border-top-right-radius: 100%;
+}
+*/
+.object3_1 {
+	background: #E2A9A9;
+	height: 100px;
+	width: 100px;
+	border-top-right-radius: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.inner:hover .object3_1 {
+	animation: obj31anim 5s infinite;
+}
+
+.object3_2 {
+	background: #E2A9A9;
+	height: 100px;
+	width: 100px;
+	border-top-right-radius: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.inner:hover .object3_2{
+	animation: obj32anim 5s infinite;
+}
+
+
+@keyframes obj31anim {
+	25% {
+		transform: rotate(90deg);
+	}
+	75% {
+		transform: rotate(90deg);
+	}
+}
+
+@keyframes obj32anim{
+	25% {
+		transform: rotate(-90deg);
+	}
+	75% {
+		transform: rotate(-90deg);
+	}
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XML</title>
+</head>
+<body>
+	<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+		
+		<circle r="65" cx="70" cy="70" fill-opacity="0.6">
+			<animate repeatCount="indefinite" attributeName="fill" from="yellow" to="blue" dur="4s"/>
+			<animate repeatCount="indefinite" attributeName="stroke" from="blue" to="yellow" dur="4s"/>
+			<animateTransform repeatCount="indefinite" attributeName="transform" attributeType="XML" type="scale" from="1" to="2" dur="4s"/>
+			<animateTransform repeatCount="indefinite" attributeName="transform" attributeType="XML" type="translateX" from="1" to="600" dur="4s" additive="sum"/>
+		</circle>
+	</svg>
+</body>
+</html>

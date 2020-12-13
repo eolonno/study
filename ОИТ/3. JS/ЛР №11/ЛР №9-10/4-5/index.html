@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<form action="" onsubmit="draw()">
+		<input type="radio" name="graph" value="Math.pow(x / 40, 2)">y = x^2
+		<input type="radio" name="graph" value="Math.pow(x / 40, 3)">y = x^3
+		<input type="radio" name="graph" value="Math.sin(x / 40)">y = sin(x)
+		<input type="radio" name="graph" value="Math.cos(x / 40)">y = cos(x)
+		<select name="" id="select">
+			<option value="black">Черный</option>
+			<option value="green">Зеленый</option>
+			<option value="red">Красный</option>
+			<option value="blue">Синий</option>
+		</select>
+		<button type="submit">Начертить</button>
+	</form>
+	<script src="js/jQuery.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

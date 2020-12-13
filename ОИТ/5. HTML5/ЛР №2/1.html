@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+</head>
+<body>
+	<button onclick="Draw()">DRAW!</button>
+	<script>
+		function Draw(){
+		let canvas = document.createElement("canvas");
+		let ctx = canvas.getContext("2d");
+
+		canvas.width = 700;
+		canvas.height = 400;
+
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = "black";
+		
+		ctx.moveTo(100, canvas.height - 60);
+		ctx.lineTo(canvas.width - 50, canvas.height - 60)
+
+		ctx.moveTo(100, canvas.height - 60);
+		ctx.lineTo(100, 40);
+
+		ctx.stroke();
+
+		ctx.font = "24px serif";
+		ctx.fillText('1', 70, 300);
+		ctx.fillText('2', 70, 200);
+		ctx.fillText('3', 70, 100);
+		ctx.fillText('Lorem', 150, 370);
+		ctx.fillText('Ipsum', 350, 370);
+		ctx.fillText('Dolor', 550, 370);
+
+		for (var i=0;i<10;i++){
+		    for (var j=0;j<4;j++){
+		      ctx.fillStyle = 'rgb(' + Math.floor(255-25.5*i) + ',' + Math.floor(255-25.5*j) + ',150)';
+		      ctx.fillRect(130 + j * 25, canvas.height - 86 - i * 25, 25, 25);
+		    }
+		}
+
+		for (var i=0;i<6;i++){
+	      	for (var j=0;j<4;j++){
+	        	ctx.strokeStyle = 'rgb(100,' + Math.floor(255 - 42.5 * i) + ',' + 
+		                         Math.floor(255- 42.5 * j) + ')';
+		        ctx.beginPath();
+		        ctx.arc(330 + 12.5 + j * 25,  canvas.height - 184 - 12.5 + i * 25, 10, 0, Math.PI*2, true);
+		        ctx.stroke();
+	      		}
+    	}
+
+		let img = new Image();
+		img.src = 'bg.jpg';
+		img.onload = function() {
+		  let pattern = ctx.createPattern(img, 'repeat');
+		  ctx.fillStyle = pattern;
+		  ctx.fillRect(530, canvas.height - 61, 100, -230);
+		}
+		document.body.append(canvas);
+		document.all(5).remove();
+	}
+	</script>
+</body>
+</html>

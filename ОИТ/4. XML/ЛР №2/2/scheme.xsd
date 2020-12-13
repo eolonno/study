@@ -1,0 +1,18 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="scheme.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="in">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="info" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="university"/>
+              <xs:element type="xs:short" name="points"/>
+              <xs:element type="xs:string" name="plan"/>
+              <xs:element type="xs:string" name="city"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

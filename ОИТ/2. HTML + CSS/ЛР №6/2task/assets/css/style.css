@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+
+/*Первая анимация*/
+.first_animation{
+    background: #5f494b;
+}
+div h3{
+    display: block;
+    position: absolute;
+    margin-top: 30px;
+}
+.vehicle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    animation: vehicle 1s infinite linear;
+}
+
+@keyframes vehicle{
+    0%{transform: translate(100vw,0)}
+    100%{transform: translate(-200vw,0)}
+}
+
+/*Вторая анимация*/
+.second_animation{
+    background: #5e6096;
+}
+
+
+.ball_wrapper{
+    height: 300px;
+    width: 300px;
+    margin-top: 100px;
+    
+    z-index: 5;
+    
+}
+
+.ball{
+    position: relative;
+    
+    display: block;
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    background: radial-gradient(#ffffff, #4d4d4e);
+    animation: ball 1s infinite linear;
+}
+
+@keyframes ball{
+    0% {
+        top: 0;
+     }
+    40%{
+        top: 120px;
+    }
+    
+    50% {
+         top: 140px;
+         height: 140px;
+     }
+    
+    55% {
+         top: 160px;
+         height: 120px;
+     }
+    
+    65% {
+         top: 120px;
+         height: 140px;
+     }
+    
+    95%{
+        top: 0;
+    }
+    
+     100% {
+         top: 0;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

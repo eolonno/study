@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XML</title>
+</head>
+<body>
+	<input type="file" onchange="readFile(this)">
+
+	<script>
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min)) + min;
+	}
+
+	function readFile(object) {
+	  var file = object.files[0];
+	  var reader = new FileReader();
+	  reader.onload = function() {
+		  let xmlText = reader.result;
+
+		  let xmlDoc = new window.DOMParser().parseFromString(xmlText, "text/xml");
+		  let info = xmlDoc.getElementsByTagName('info');
+
+		  let out = '<?xml version="1.0" encoding="UTF-8"?>' + info[getRandomInt(0, info.length)].innerHTML;
+		  document.write(out);
+	  }
+	  reader.readAsText(file);
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+#nav{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 200px;
+
+}
+
+.menu-item{
+	border: 2px soild #66CDAA;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+
+}
+.menu-item .submenu{
+	height: 25px;
+	width: 120;
+	left: -5px;
+	background: #A3CCA3;
+	position: absolute;
+	cursor: pointer;
+	display: none;
+	animation: anim .3s;
+
+}
+
+@keyframes anim{
+	from{transform: translate(0, 10px);}
+	to{transform: translate(0, 0px);}
+}

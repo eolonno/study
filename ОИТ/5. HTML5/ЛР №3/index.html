@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5</title>
+	<style>
+		*{margin-bottom:10px;}
+	</style>
+</head>
+<body>
+	<header>
+		<p>Я, <mark>ФИО</mark>, изучаю HTML5</p>
+	</header>
+	<audio src="audio.mp3" controls="controls"></audio><br>
+	<video src="video.mp4" width="300" controls="controls"></video><br>
+	<button onclick="getCoordinates()">Узнать свои координаты</button>
+
+	<nav>
+		<figure>
+	<img src='scale_600.webp' width='300' height='230' />
+	<figcaption>Моя замечательная фотография</figcaption>
+	</figure>
+	</nav>
+
+	<form action="" onsubmit="formHandler(this)">
+		<input placeholder="Иван" type="text">
+		<input placeholder="Иванов" type="text">
+		<input name="tel" placeholder="+375-33-47-38-297" type="tel">
+		<input name="email" placeholder="ivan@example.com" type="email">
+		<input placeholder="http:/google.com" type="url">
+		<button type="submit">Отправить</button>
+	</form>
+
+	<footer>
+		Аникеенко Егор Вячеславович, 1 курс, 2 группа <br><span id="info"></span>
+	</footer>
+
+	<script>
+		function formHandler(form){
+			event.preventDefault();
+			document.getElementById("info").innerHTML = form.tel.value + '<br>' + form.email.value;
+		}
+
+		function getCoordinates() {
+			navigator.geolocation.getCurrentPosition(showCoordinates, err);
+		}
+		function showCoordinates(position) {
+			document.body.innerHTML += "<br>Широта: " + position.coords.latitude + "<br>" + "Долгота: " + position.coords.longitude;
+		}
+		function err(){alert("Error")}
+</script>
+</body>
+</html>

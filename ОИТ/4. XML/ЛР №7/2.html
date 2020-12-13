@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XML</title>
+</head>
+<body>
+	<svg width="580" height="400" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<path id="computer" d="M17.125,1.375H2.875c-0.828,0-1.5,0.672-1.5,1.5v11.25c0,0.828,0.672,1.5,1.5,1.5H7.75v2.25H6.625c-0.207,0-0.375,0.168-0.375,0.375s0.168,0.375,0.375,0.375h6.75c0.207,0,0.375-0.168,0.375-0.375s-0.168-0.375-0.375-0.375H12.25v-2.25h4.875c0.828,0,1.5-0.672,1.5-1.5V2.875C18.625,2.047,17.953,1.375,17.125,1.375z M11.5,17.875h-3v-2.25h3V17.875zM17.875,14.125c0,0.414-0.336,0.75-0.75,0.75H2.875c-0.414,0-0.75-0.336-0.75-0.75v-1.5h15.75V14.125z M17.875,11.875H2.125v-9c0-0.414,0.336-0.75,0.75-0.75h14.25c0.414,0,0.75,0.336,0.75,0.75V11.875z M10,14.125c0.207,0,0.375-0.168,0.375-0.375S10.207,13.375,10,13.375s-0.375,0.168-0.375,0.375S9.793,14.125,10,14.125z"></path>
+
+	</defs>
+	<use xlink:href="#computer" id="comp" fill="green" x="10"/>	
+	<animateTransform xlink:href="#comp" attributeName="transform" attributeType="XML" type="scale" from="1" to="2" dur="4s"/>
+	<animateTransform begin="4s" xlink:href="#comp" attributeName="transform" attributeType="XML" type="scale" from="2" to="1" dur="4s" additive="sum"/>
+	</svg>
+</body>
+</html>
