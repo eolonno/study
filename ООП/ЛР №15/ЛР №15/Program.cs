@@ -11,7 +11,7 @@ namespace ЛР__15
             //Threads.ProcessInfo();
             //Threads.WorkWithDomain();
             //Threads.ThreadingCounter();
-            //Threads.ThreadingSplitCounter(false);
+            Threads.ThreadingSplitCounter(false);
             //Threads.TimerProgram();
             //Warehouse.WarehouseUnloading();
             //YouTubeWithoutPremiumIn2021.Work();

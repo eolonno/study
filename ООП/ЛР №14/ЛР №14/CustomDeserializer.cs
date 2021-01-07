@@ -18,9 +18,7 @@ namespace ЛР__14
                 byte[] array = new byte[fs.Length];
                 fs.Read(array, 0, array.Length);
                 string circle = Encoding.Default.GetString(array);
-                List<Circle> Circles = new List<Circle>();
-                Circles = JsonSerializer.Deserialize<List<Circle>>(circle);
-                return Circles;
+                return JsonSerializer.Deserialize<List<Circle>>(circle);
             }
         }
         public static List<Circle> XMLDeserializer()

@@ -17,8 +17,8 @@ namespace ЛР__14
             cicrles.Add(new Circle(33, "Orange"));
             cicrles.Add(new Circle(52, "White"));
             CustomSerializer.XMLSerializer(cicrles);
-            //CustomSerializer.BinSerializer(cicrles);
-            //CustomSerializer.JSONSerializer(cicrles);
+            CustomSerializer.BinSerializer(cicrles);
+            CustomSerializer.JSONSerializer(cicrles);
 
             //List<Circle> Returned = CustomDeserializer.BinDeserializer();
             //List<Circle> Returned = CustomDeserializer.JSONDeserializer();
