@@ -1,0 +1,1810 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<link rel="File-List" href="leftF15.files/filelist.xml">
+
+<title></title>
+<style>
+<!--
+span.a1
+	{font-weight:bold}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 15<br>АЛГОРИТМЫ АРХИВАЦИИ ИНФОРМАЦИИ</b></p>
+<hr size=5>
+<p ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> —<span style="color: black"> 
+изучить основные методы и алгоритмы архивации информации;</span><span style="font-style: normal; font-variant: normal; font-weight: normal; color: black">&nbsp;
+</span><span style="color: black">запрограммировать алгоритм архивации по методу 
+Хаффмана.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p style="text-align: justify; text-indent: 35px; line-height: normal; margin-bottom: .0001pt" class="MsoNormal">
+<span style="font-family: Times New Roman; color: black"><b>
+Сжатие данных&nbsp; (архивация, компрессия)</b>&nbsp;— 
+процедура перекодирования
+<span style="color: black; font-family: Times New Roman; text-decoration: none">
+данных</span>, производимая с целью уменьшения их объёма. </span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">Характерной особенностью 
+большинства типов данных является их избыточность. Примером избыточности 
+является повторение в
+<a title="Текст" style="color: #00DC00; text-decoration: none; text-underline: none; text-line-through: none" href="http://ru.wikipedia.org/wiki/Текст">
+<span style="color:black">тексте</span></a> фрагментов 
+(например, слов естественного или машинного языка). Степень избыточности данных 
+зависит от типа данных. Например, для видеоданных степень избыточности в 
+несколько раз больше чем для графических данных, а степень избыточности 
+последних, в свою очередь, больше чем степень избыточности текстовых данных. 
+Другим фактором, влияющим на степень избыточности является принятая система 
+кодирования. Примером систем кодирования могут быть обычные языки общения, 
+которые являются ни чем другим, как системами кодирования понятий и идей для 
+высказывания мыслей. </span></p>
+<p class="MsoNormal" style="text-indent:35px; text-align:justify; line-height:normal; margin-top:0; margin-bottom:.0001pt">
+<span style="color:black"><span style="font-family: Times New Roman">Основной</span><font face="Times New Roman"> особенностью методов сжатия является то, что количество 
+данных после преобразования, т.&nbsp;е. после сжатия, как правило, меньше чем до 
+преобразования.</font></span></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">Методы компрессии информации преследуют <i>три основные</i> <i>цели</i>:</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black;letter-spacing:-.1pt">1)&nbsp;сокращение физического объема хранимой на 
+носителях информации;</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">2)&nbsp;снижение стоимости передачи фиксированного объема информации 
+(стоимости трафика);</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">3)&nbsp;повышение уровня конфиденциальности информации.</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black;letter-spacing:.2pt">В настоящее время существуют различные <i>
+классификации методов сжатия данных</i>.</span></font></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0"><i>
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+В зависимости от того, в каком объекте размещены данные, подлежащие сжатию 
+различают:</span></i></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">1) Сжатие (архивация) 
+файлов: используется для уменьшения размеров файлов при подготовке их к передаче 
+каналами связи или к транспортированию на внешних носителях маленькой емкости;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black;letter-spacing:-.2pt">2) 
+Сжатие (архивация) папок: используется как средство уменьшения объема папок 
+перед долгим хранением, например, при резервном копировании;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black;letter-spacing:-.2pt">3) 
+Сжатие (уплотнение) дисков: используется для повышения эффективности 
+использования дискового пространства путем сжатия данных при записи их на 
+носителе информации (как правило, средствами операционной системы).</span></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman"><i>
+<span style="color:black">С точки зрения технологии&nbsp; реализации 
+методов сжатия, их условно можно разделить на три основных класса:</span></i></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman"><span class="a1">
+<span style="color: black; font-weight: normal">1) 
+символ-ориентированные (или словарные) методы</span></span><span style="color:black"> 
+основаны на поиске и анализе повторяющихся символов (комбинаций) и их замене на 
+другие комбинации меньшей длины;</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman"><span class="a1">
+<span style="color: black; font-weight: normal">2) 
+вероятностные методы</span></span><span style="color:black"> 
+базируются на анализе вероятностных (частотных) характеристик используемого 
+алфавита;</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0">
+<font face="Times New Roman"><span class="a1">
+<span style="color: black; font-weight: normal">3) 
+комбинированные методы</span></span><span style="color:black"> 
+объединяют первые и вторые, что может давать новые качественные свойства.</span></font></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0"><i>
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Существует три теоретических способа уменьшения избыточности данных.</span></i><span style="font-family:&quot;Times New Roman&quot;;color:black"> 
+Первый способ состоит в изменении содержимого данных, второй - в изменении 
+структуры данных, а третий - в одновременном изменении как структуры, так и 
+содержимого данных.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">Если при сжатии данных 
+происходит изменение их содержимого, то метод сжатия называется <b>необратимым</b> 
+(<span class="a1"><span style="font-weight: normal">сжатие с частичной потерей 
+информации</span></span>), то есть при восстановлении (разархивировании) данных 
+из архива не происходит полное восстановление информации. Понятно, что эти 
+методы можно применять только для таких типов данных, для которых потеря части 
+содержимого не приводит к существенному искажению информации. К таким типам 
+данных относятся видео- и аудиоданные, а также графические данные. Примерами 
+форматов сжатия с потерями информации могут быть:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• JPEG - для графических 
+данных;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• MPG - для для 
+видеоданных;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• MP3 - для аудиоданных.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">Если при сжатии данных 
+происходит только изменение структуры данных, то метод сжатия называется <b>
+обратимым</b> (<span class="a1"><span style="font-weight: normal">сжатие без 
+потерь информации</span></span>). В этом случае, из архива можно восстановить 
+информацию полностью. Обратимые методы сжатия можно применять к любым типам 
+данных, но они дают меньшую степень сжатия по сравнению с необратимыми методами 
+сжатия. Примеры форматов сжатия без потери информации:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• GIF, TIFF - для 
+графических данных;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• AVI - для видеоданных;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">• ZIP, ARJ, RAR, CAB, LH - 
+для произвольных типов данных.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35px;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">Существует много разных 
+практических методов сжатия без потери информации, которые, как правило, имеют 
+разную эффективность для разных типов данных и разных объемов. </span></p>
+<p style="margin:0 0cm;text-align:justify; text-indent:35px; margin-bottom:0">
+<font face="Times New Roman">
+<i><span style="color:black">Основными техническими 
+характеристиками процессов сжатия и результатов их работы являются: </span></i>
+</font>
+</p>
+<p style="margin:0 0cm;text-align:justify; text-indent:35px; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">-<b> степень сжатия</b> (compress rating) 
+или отношение (ratio) объемов исходного и результирующего потоков; </span>
+</font></p>
+<p style="margin:0 0cm;text-align:justify; text-indent:35px; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">- <b>скорость сжатия</b> — время, 
+затрачиваемое на сжатие некоторого объема информации входного потока, до 
+получения из него эквивалентного выходного потока; </span></font></p>
+<p style="margin:0 0cm;text-align:justify; text-indent:35px; margin-bottom:0">
+<font face="Times New Roman">
+<span style="color:black">- <b>качество сжатия</b> - величина, 
+показывающая на сколько сильно упакован выходной поток, при помощи применения к 
+нему повторного сжатия по этому же или иному алгоритму.</span></font></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0" align="justify">
+<font face="Times New Roman"><i>
+<span style="color:black">Основной численной характеристикой 
+методов сжатия является коэффициент сжатия R.</span></i><span style="color:black"> Указанный параметр рассчитывают двумя способами:</span></font></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<img border="0" src="../ris/image206.gif" width="131" height="57"><!--[if gte mso 9]><![endif]--></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<span style="font-size:14.0pt;color:black">
+<img border="0" src="../ris/image207.gif" width="393" height="57"><!--[if gte mso 9]><![endif]-->,</span></p>
+<p class="a" style="text-indent:0cm; margin-bottom:0" align="justify">
+<span style="color:black;
+letter-spacing:-.2pt">где 
+<img border="0" src="../ris/image208.gif" width="95" height="38"><span style="font-size:14.0pt;color:black;
+letter-spacing:-.2pt"><!--[if gte mso 9]><![endif]--></span>&nbsp;&#8722;&nbsp;объем 
+информации после сжатия; 
+<img border="0" src="../ris/image209.gif" width="83" height="36"><!--[if gte mso 9]><![endif]-->&nbsp;–&nbsp;объем 
+информации до сжатия. Коэффициент </span>
+<span lang="EN-US" style="color: black; letter-spacing: -.2pt">
+R<sub>I</sub></span><span style="color:black;
+letter-spacing:-.2pt"> показывает, какая доля исходной информации еще может быть 
+сжата, </span>
+<span lang="EN-US" style="color: black; letter-spacing: -.2pt">
+R<sub>II</sub>&nbsp;</span><span style="color:black;letter-spacing:-.2pt">— 
+какая доля исходной информации сжат.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:-1px">
+<span style="color:black">Важными понятиями при изучении процессов связанных с архивацией 
+данных являются понятия архиватор и разархивация (распаковка).</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:-1px;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0"><b>
+<span style="color: black">
+Архиватор </span></b>
+<span style="color: black">— 
+специальная компьютерная программа, позволяющая архивировать файлы сжатием 
+хранимой в них информации.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:-1px;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0"><b>
+<span style="color: black">
+Разархивация (распаковка)</span></b><span style="color: black"> 
+— восстановление файла из архива с помощью, как правило, той же программы, 
+которой он был заархивирован. </span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:-1px;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">&nbsp;</p>
+<p class="a0CxSpFirst" align="center" style="text-align: center; line-height: normal; margin-left: 35.45pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><i>
+<span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+Символ ориентированные методы сжатия</span></i></b></p>
+<p class="a0CxSpFirst" align="center" style="text-align: center; line-height: normal; margin-left: 35.45pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="a0CxSpLast" style="text-align: center; text-indent: -18.0pt; line-height: normal; margin-left: 53.45pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Метод 
+интервалов</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Одним из наиболее простых в анализируемой группе методов является 
+метод интервалов. Суть метода заключается в поиске комбинаций одинаковых 
+символов и замене их на специальную комбинацию abc, где а&nbsp;–&nbsp;специальный символ, 
+b&nbsp;–&nbsp;один из символов анализируемой повторяющейся последовательности (интервала) 
+и с&nbsp;–&nbsp;количество повторений. Как правило, принимается, что длина минимального 
+интервала составляет два символа. При реализации метода сжатия важным является 
+выбор специального символа (а). Его подбирают так, чтобы вероятность его 
+появления в тексте стремилась к минимуму.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify"><b><i>
+<span style="color:black">Пример.</span></i></b><span style="color:black"> 
+Пусть исходное сообщение имеет вид </span>
+<span lang="EN-US" style="color: black">Xk</span><sub><span style="color:black">&nbsp;</span></sub><span style="color:black">=&nbsp;mkkkcb0000fkff. Можно выделить три интервала 
+(подчеркнуты): </span>
+<span lang="EN-US" style="color: black">Xk</span><sub><span style="color:black">&nbsp;</span></sub><span style="color:black"> =&nbsp;m<u>kkk</u>cb<u>0000</u>fk<u>ff.</u> 
+Возьмем в качестве специального символ «*». После преобразования (сжатия) 
+получим такую последовательность: X</span><span lang="EN-US" style="color: black">n</span><sub><span style="color:black">&nbsp;</span></sub><span style="color:black">=&nbsp;m<u>*k3</u>cb<u>*04</u>fk<u>*f2</u>.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Как видно из примера, метод является эффективным при количестве 
+повторений не ниже трех.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Более простой реализацией метода интервалов является алгоритм RLE 
+(групповое кодирование). От предыдущего алгоритма он отличается тем, что длина 
+минимального интервала составляет один символ. Каждый интервал заменяется 
+комбинацией </span><span lang="EN-US" style="color: black">bc</span><span style="color:black">, 
+где b&nbsp;–&nbsp;один из символов анализируемой повторяющейся последовательности 
+(интервала) и с&nbsp;–&nbsp;количество повторений.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0" align="justify"><b><i>
+<span style="color:black">Пример</span></i></b><span style="color:black">. 
+Пусть задана такая последовательность данных </span>
+<span lang="EN-US" style="color: black">Xk</span><sub><span style="color:black">&nbsp;</span></sub><span style="color:black"> 
+=1 1 1 1 2 2 3 4 4 4. После преобразования имеем X</span><span lang="EN-US" style="color: black">n</span><sub><span style="color:black">&nbsp;</span></sub><span style="color:black">=&nbsp;1 4 2 2 
+3 1 4 3.</span></p>
+<p class="a0" style="text-align: center; text-indent: -17.85pt; line-height: normal; margin-left: 53.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Метод 
+Берроуза-Уиллера</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Суть метода состоит в том, что исходная информационная 
+последовательность Xk&nbsp; разбивается на блоки произвольной, но одинаковой длины k. 
+Преобразованию подвергается каждый блок в отдельности. На каждом этапе создается 
+квадратная матрица W1 размерности k&nbsp;&times;&nbsp;k. Каждая последующая строка этой матрицы, 
+начиная со второй, является циклическим сдвигом на один символ влево предыдущей 
+строки. На основе первой матрицы создается вторая матрица (W2) такой же 
+размерности, содержащая строки первой матрицы, отсортированные в 
+лексикографическом порядке.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Результатом преобразования является последний столбец h<sub>k</sub>&nbsp; 
+матрицы W2 и число N, соответствующее номеру строки матрицы W2, в которой 
+записана исходная последовательность Xk&nbsp;.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Обратное преобразование основано на свойстве рекуррентности 
+преобразования матриц W1 и W2. Задача состоит в воссоздании матрицы W2. Эта 
+процедура начинается с заполнения последнего столбца будущей матрицы. Дальнейшие 
+действия иллюстрируются на основе используемого примера.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black"><b>Пример</b>. Пусть X<sub>k</sub> = «столб». Как видим, k&nbsp;=&nbsp;5. Строим, 
+как показано ниже, соответствующие матрицы:</span></p>
+<p class="a" style="text-indent:35.45pt" align="center">
+<span style="font-size:14.0pt;
+color:black"><img border="0" src="../ris/image210.gif" width="452" height="153"><!--[if gte mso 9]><![endif]-->.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Окончательно имеем h<sub>5</sub>&nbsp;=&nbsp;«лотбс», N&nbsp;=&nbsp;4.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Информация после преобразования (условной компрессии) имеет больший 
+объем, чем до преобразования (при неизменной длине сообщения дополнительно 
+требуется передавать или хранить число N). </span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">В силу этой особенности метод эффективен при сжатии информации, 
+состоящей из ограниченного набора символов (например, тексты программ), при 
+котором последний столбец имеет в своем составе практически одинаковые символы, 
+которые могут быть заменены на иные, используя, например, предыдущий метод. С 
+другой стороны, анализируемый метод также обеспечивает хороший уровень 
+преобразования двоичных данных. На практике этот метод применяется совместно с 
+другими.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Обратная процедура. Имеем Y<sub>k&nbsp;</sub>=&nbsp;«лотбс», N&nbsp;=&nbsp;4. Строим 
+матрицу W:</span></p>
+<p class="a" style="text-indent:35.45pt" align="center">
+<img border="0" src="../ris/image211.gif" width="553" height="297"><!--[if gte mso 9]><![endif]--></p>
+<p class="a" style="text-indent:35.45pt" align="justify">
+<span style="color:black">На каждой итерации происходит дополнение матрицы исходной 
+последовательностью и лексикографическая сортировка строк. В результате получаем 
+исходное слово X<sub>k&nbsp;</sub>=&nbsp;«столб», которое размещается в четвертой строке 
+восстановленной матрицы.</span></p>
+<p class="a0" style="text-align: center; text-indent: -17.85pt; line-height: normal; margin-left: 53.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Словарные 
+методы сжатия</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">В известном смысле таблицу кодов ASCII (American Standard Code for 
+Information Interchange, американский кодовый стандарт для обмена информацией), 
+в которой один символ исходного алфавита всегда представляется одним байтом 
+двоичных символов, можно рассматривать как один из методов сжатия. Здесь таблица 
+может выступать как своеобразный словарь. Словарь этот является полным и 
+исчерпывающим. Однако на практике в словарь помещаются наиболее часто 
+встречающиеся слова и словосочетания.</span></p>
+<p class="a" style="text-indent:29.75pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">В общем случае словарь может содержать произвольное число 
+комбинаций произвольной длины. Основным вопросом при этом является размер 
+словаря. </span></p>
+<p class="a" style="text-indent:29.75pt; margin-top:0; margin-bottom:0" align="justify"><i>
+<span style="color:black">Выделяют три вида словарей</span></i><span style="color:black">.
+<b>Статический (неизменный) словарь</b> строится предварительно для 
+разнообразных типов документов и практически не изменяется. <b>Полуадаптивный</b> 
+алгоритм предполагает создание словаря под конкретный тип документов. <b>
+Адаптивный</b> алгоритм&nbsp;&nbsp;строит словарь под каждый документ.</span></p>
+<p class="a" style="text-indent:35px; margin-top:0" align="justify">
+<span style="color:black">Важнейшей особенностью адаптивного (и в определенной 
+степени&nbsp;–&nbsp;полуадаптивного) словаря является необходимость его передачи вместе со 
+сжатой информацией.</span></p>
+<p class="a0" style="text-align: center; text-indent: -17.85pt; line-height: normal; margin-left: 53.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Метод 
+Лемпеля-Зива</span></i></p>
+<p class="a" style="text-indent:35px; margin-bottom:0" align="justify">
+<span style="color:black">Важнейшей особенностью метода Лемпеля&nbsp;–&nbsp;Зива является то, что не 
+требуется передавать словарь, создаваемый под каждый документ. Этот словарь 
+формально становится частью сжатой информации.</span></p>
+<p class="a" style="text-indent:35px; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Преобразование информации заключается в «прохождении» текста через 
+два окна и параллельном анализе символов с текущим словарем. Общая схема 
+реализации алгоритма показана на рис.&nbsp;15. 1.</span></p>
+<p class="a" style="text-indent:35px; margin-top:0" align="justify">
+<span style="color:black">Как правило, n (общая длина двух окон, называемых буферами) 
+составляет и тысячи символов. Окно 02&nbsp;–&nbsp;буфер данных, в него «въезжают» данные 
+(исходный текст), которые нужно сжимать, кодировать. Далее эти данные «въезжают» 
+в окно 01&nbsp;–&nbsp;словарь, который изначально содержит </span>
+<span lang="EN-US" style="color: black">NULL</span><span style="color:black">-строку.</span></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<img border="0" src="../ris/image212.jpg" width="481" height="166"></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<span style="color:black"><font size="2"><b>Рис.&nbsp;15. 1.</b> Общий принцип преобразования данных по методу 
+Лемпеля –&nbsp;Зива</font></span></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Принцип состоит в том, чтобы выявить в тексте повторяющиеся 
+комбинации. Анализируемые данные находятся в буфере кодирования, а обнаруженные 
+ранее повторения&nbsp;–&nbsp;в словаре. Найденный повторяющийся ряд символов в буфере 
+данных заменяется в основном парой (p, q) символов. Кроме этого, к данной паре 
+добавляется еще один символ (с<sub>i</sub>), который является частью потока Xk и 
+следует за найденным повторением в буфере данных. Буфер работает по принципу 
+регистра сдвига.</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt; margin-top:0" align="justify"><b><i>
+<span style="color:black">Пример.</span></i></b><span style="color:black"> 
+Используем для передачи данных алфавит, состоящий из четырех знаков: А{0, 1, 2, 
+3}. Необходимо сжать последовательность:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black">X<sub>k
+</sub>=&nbsp;200030201302013031303130313333333.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Полагаем, что <img border="0" src="../ris/image213.gif" width="155" height="23"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>&nbsp;символам.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Для обозначения p и q используем четверичную систему счисления, где
+<img border="0" src="../ris/image214.gif" width="373" height="25"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>&nbsp;и 
+т. д.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+На первом шаге производится анализ в соответствии с рис.&nbsp;15. 2.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<img border="0" src="../ris/image215.jpg" width="505" height="129"></p>
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;"><b><font size="2">Рис.&nbsp;15. 2.</font></b><font size="2"> Схематичное 
+представление анализа на первом шаге преобразования</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;
+color:black">Анализируем первый символ в буфере кодирования на предмет 
+соответствия (наличия) такого же символа или нескольких символов в словаре. Как 
+видно из рис. 15. 2, таких символов нет, следовательно, принимается
+<img border="0" src="../ris/image216.gif" width="79" height="24"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Длина повторения 
+<img border="0" src="../ris/image217.gif" width="76" height="24"><!--[if gte mso 9]><![endif]-->. 
+Таким образом, имеем следующую триаду:
+<img border="0" src="../ris/image218.gif" width="159" height="25"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Символ с<sub>i</sub> (2) сдвигается в левое окно (на q&nbsp;+&nbsp;1 символов).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+На втором шаге исходное состояние показано на рис.&nbsp;15. 3.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<img border="0" src="../ris/image219.jpg" width="525" height="138"></p>
+<p align="center">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 3.</font></b><font size="2"> Схематичное представление анализа на втором шаге преобразования</font></span><font size="2">&nbsp;</font></p>
+
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Находим повторение (000), длина этого повторения составляет три символа:
+<img border="0" src="../ris/image220.gif" width="41" height="24"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Поскольку в словаре нулевые символы записываются с 1-й по 14-ю позицию, то 
+индексом р (началом повторения) может быть выбрано любое число от 1 до 12. 
+Положим, выбрано 6:
+<img border="0" src="../ris/image221.gif" width="45" height="24"><!--[if gte mso 9]><![endif]--></span><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">.</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Итак, получим следующую триаду:
+<img border="0" src="../ris/image222.gif" width="244" height="25"><span style="font-size:14.0pt;color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Содержимое буфера данных сдвигается на 4 позиции (на q&nbsp;+&nbsp;1 
+символ).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+На третьем шаге cитуация поясняется рис.&nbsp;15. 4.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<img border="0" src="../ris/image223.jpg" width="503" height="127"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 4.</font></b><font size="2"> Схематичное представление анализа на третьем шаге преобразования</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+В этой ситуации наиболее длинный повтор&nbsp;–&nbsp;<img border="0" src="../ris/image224.gif" width="32" height="20"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Следовательно, <img border="0" src="../ris/image225.gif" width="99" height="24"><!--[if gte mso 9]><![endif]-->.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Передвигаем анализируемую последовательность на
+<img border="0" src="../ris/image226.gif" width="67" height="24"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>&nbsp;позиции 
+влево. Выходная триада будет следующей:
+<img border="0" src="../ris/image227.gif" width="243" height="25"><!--[if gte mso 9]><![endif]-->.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+На четвертом шаге анализируется состояние в соответствии с рис. 15.5.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+В этой ситуации наиболее длинный повтор выглядит так: 3020130,
+<img border="0" src="../ris/image228.gif" width="96" height="24"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>. 
+Осуществляем сдвиг на 
+<img border="0" src="../ris/image229.gif" width="65" height="24"><!--[if gte mso 9]><![endif]-->&nbsp;символов.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Очередная триада: 
+<img border="0" src="../ris/image230.gif" width="252" height="25"><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black"><!--[if gte mso 9]><![endif]--></span>.</span></p>
+<p class="MsoNormal" style="text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt" align="center">
+<img border="0" src="../ris/image231.jpg" width="471" height="124"></p>
+<p class="MsoNormal" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 5.</font></b><font size="2"> Схематичное представление анализа на четвертом шаге преобразования</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+Подобным образом будет проанализирована вся входная последовательность. 
+Полученные триады 00002 12033 22031 23133 30301 в принятой форме записи будут 
+рассматриваться как входное сообщение на входе декомпрессора (обратного 
+преобразования).</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt; margin-top:0" align="justify">
+<span style="color:black">В исходном состоянии при обратном 
+преобразовании в окно словаря записывают 15 нулей (рис.&nbsp;15.<span lang="en">&nbsp;</span>6).</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<img border="0" src="../ris/image232.jpg" width="263" height="113"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 6. </font></b><font size="2">Схематичное представление исходного состояния окон при обратном 
+преобразовании данных по методу Лемпеля – Зива</font></span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt" align="justify">
+<span style="color:black">Дальше анализируем очередные 5 
+символов (12033), из чего следует, что <span style="font-size:14.0pt;color:black"><!--[if gte mso 9]>
+<img border="0" src="../ris/image220.gif" width="41" height="24"><![endif]--></span>&nbsp;и
+<!--[if gte mso 9]>
+<img border="0" src="../ris/image221.gif" width="45" height="24"><![endif]-->. 
+Поскольку в словаре содержатся только одни нули, то делается вывод: повтором 
+является комбинация из трех нулей (000). В словарь записывается 000, а в буфер 
+кодирования&nbsp;–&nbsp;3 (рис.&nbsp;15. 7). Подобным образом будет проанализирована вся входная 
+последовательность. Результатом преобразования (декомпрессии) является 
+сдвигаемое содержимое словаря.</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<img border="0" src="../ris/image234.jpg" width="310" height="134"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 7. </font></b><font size="2">Схематичное представление состояния окон после первого шага обратного 
+преобразования</font></span></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="a0" align="center" style="text-align: center; line-height: normal; margin-left: 35.45pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><i>
+<span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+Статистические методы сжатия</span></i></b></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Статистические методы используют вероятностные характеристики 
+символов применяемого алфавита для построения стратегии сжатия. Среди этих 
+методов наиболее известны метод Шеннона–Фано (Shannon–Fano) и метод Хаффмана 
+(Huffman).</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify"><i>
+<span style="color:black">Основная идея методов</span></i><span style="color:black"> 
+состоит в замене символов исходного алфавита бинарными кодами 
+(последовательностями) различной длины: символам с наибольшими вероятностями 
+появления должны соответствовать коды наименьшей длины и наоборот.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify"><i>
+<span style="color:black">Процесс генерации бинарных кодов 
+должен отвечать двум основным требованиям, налагаемым на вид конечных кодовых 
+комбинаций:</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">1) все комбинации должны быть различны (уникальны);</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">2) любая комбинация меньшей длины не может быть началом любой 
+комбинации большей длины (свойство префикса).</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0" align="justify">
+<span style="color:black">Прямое преобразование (сжатие) состоит в замене каждого исходного 
+символа соответствующим бинарным кодом, обратное преобразование&nbsp;–&nbsp;в обратной 
+замене.</span></p>
+<p class="a0" style="text-align: center; text-indent: -17.85pt; line-height: normal; margin-left: 53.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Метод 
+Шеннона-Фано</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Отсортированные вероятности появления всех символов алфавита в 
+тексте делят на две части в такой пропорции, чтобы сумма вероятностей в каждой 
+из частей была максимально близка к 0,5. Символам верхней части приписывается 
+старший символ бинарного кода – 1, нижней части&nbsp;–&nbsp;0. Далее каждая из двух частей 
+в свою очередь делится также на две части в такой пропорции, чтобы сумма 
+вероятностей появления&nbsp;&nbsp; символов алфавита, составляющих каждую из частей, 
+характеризовалась наименьшей разностью. Символам верхней из полученных частей 
+приписывается второй символ кода&nbsp;–&nbsp;1, нижней&nbsp;–&nbsp;также второй символ, но 0.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Процесс деления и генерации очередных символов бинарного кода 
+продолжается до тех пор, пока после всех операций разделения массива полученная 
+часть (подмассив) не будет состоять только из одного символа исходного алфавита.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0" align="justify"><b><i>
+<span style="color:black">Пример.</span></i></b><span style="color:black"> 
+Имеем исходный алфавит А{а<sub>i</sub>}, [i&nbsp;=&nbsp;1…10], т.&nbsp;е. мощность алфавита 
+равна 10: N(A)&nbsp;=&nbsp;10. Полагаем, что вероятности появления в документе каждого из 
+символов алфавита соответствуют следующим значениям (помним, что сумма всех 
+вероятностей равна&nbsp;1):</span></p>
+<p class="a" style="text-indent:35.45pt">
+<img border="0" src="../ris/image235.gif" width="227" height="140"><!--[if gte mso 9]><![endif]--></p>
+<p class="a" style="text-indent:35.45pt" align="justify">
+<span style="color:black">Отсортируем эти вероятности в порядке убывания и разделим весь 
+массив на две части с учетом вышеотмеченного правила. Положим, что верхнюю часть 
+образуют символы (или соответствующие им вероятности) а<sub>4</sub>, а<sub>5</sub>,<sub>
+</sub>а<sub>9</sub>, нижнюю&nbsp;–&nbsp;а<sub>6</sub>,<sub> </sub>а<sub>2</sub>,<sub>
+</sub>а<sub>8</sub>,<sub> </sub>а<sub>1</sub>, а<sub>7</sub>,<sub> </sub>а<sub>10</sub>,<sub>
+</sub>а<sub>3</sub>. Верхним символам приписываем старший бит&nbsp;–&nbsp;1, <sub>&nbsp;</sub>нижним&nbsp;–&nbsp;0. 
+В свою очередь, верхний подмассив делим на два очередных: один состоит из 
+единственного элемента&nbsp;–&nbsp;а<sub>4</sub>,<sub> </sub>другой&nbsp;–&nbsp;из двух остальных. 
+Каждому из трех этих символов приписываем по одному соответствующему символу 
+бинарного кода. В результате всех делений и приписывания коду очередного 
+двоичного символа получим следующие кодовые комбинации:</span></p>
+<p class="a" style="text-indent:35.45pt">
+<img border="0" src="../ris/image236.gif" width="336" height="140"><!--[if gte mso 9]><![endif]--></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Как видим, коды соответствуют двум основным требованиям.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Блоки прямого и обратного преобразований осуществляют операции, 
+используя полученную таблицу.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Пусть исходное (подлежащее сжатию) сообщение имеет вид:
+<img border="0" src="../ris/image237.gif" width="176" height="32"><span style="font-size:14.0pt;
+color:black"><!--[if gte mso 9]><![endif]--></span>. 
+После выполнения операции сжатия имеем
+<img border="0" src="../ris/image238.gif" width="508" height="28"><!--[if gte mso 9]><![endif]--></span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Для выполнения обратного преобразования необходимо знать таблицу 
+кодировки, а также значения
+<img border="0" src="../ris/image239.gif" width="29" height="25"><span style="font-size:14.0pt;
+color:black"><!--[if gte mso 9]><![endif]--></span>,
+<img border="0" src="../ris/image240.gif" width="31" height="25"><!--[if gte mso 9]><![endif]-->&nbsp;(минимальную 
+и максимальную длину кода в битах соответственно). Для данного примера
+<img border="0" src="../ris/image241.gif" width="123" height="25"><span style="font-size:14.0pt;
+color:black"><!--[if gte mso 9]><![endif]--></span>.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Операция осуществляется по шагам: анализируются первые
+<img border="0" src="../ris/image239.gif" width="29" height="25"><span style="font-size:14.0pt;
+color:black"><!--[if gte mso 9]><![endif]--></span>&nbsp;символов 
+(10) путем их сравнения с таблицей кодировки. Если найдено совпадение, то на 
+выходе будет первый символ (в примере такого совпадения нет) 
+декомпрессированного сообщения и далее будут проанализированы очередные <!--[if gte mso 9]>
+<img border="0" src="../ris/image239.gif" width="29" height="25"><![endif]-->бит. 
+Если же соответствие не наблюдается, то анализируется последовательность длиной 
+на единицу больше (в примере&nbsp;–&nbsp;101) и т. д.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black;letter-spacing:-.25pt">Метод характеризуется неоднозначностью, т. е. 
+возможностью реализации различных вариантов деления отсортированного исходного 
+множества. Очевидно, что каждый из вариантов приводит к различным кодовым 
+комбинациям.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0" align="justify">
+<span style="color:black">Характеристикой эффективности алгоритма является так называемый 
+интегральный коэффициент компрессии:</span></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<img border="0" src="../ris/image242.gif" width="109" height="52"><!--[if gte mso 9]><![endif]--></p>
+<p class="a" style="margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">где l<sub>i</sub>&nbsp;–&nbsp;количество символов кода, соответствующее 
+символу.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0" align="justify">
+<span style="color:black">Наилучшим считается тот алгоритм, у которого меньший интегральный 
+коэффициент.</span></p>
+<p class="a0" style="text-align: center; text-indent: -17.85pt; line-height: normal; margin-left: 53.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i><span style="font-size: 14.0pt; font-family: Times New Roman; color: black">
+2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span>Метод 
+Хаффмана</span></i></p>
+<p class="a" style="text-indent:35.45pt; margin-bottom:0" align="justify">
+<span style="color:black">Основная отличительная особенность метода в сравнении с методом 
+Шеннона-Фано заключается в формировании бинарного кода. В методе Хаффмана для 
+этого нужно построить бинарное дерево объединением попарно отсортированных 
+символов алфавита, начиная с двух нижних. Причем группировать следует символы с 
+примерно одинаковыми вероятностями . Объединенные символы (пара) создают новый 
+виртуальный символ с вероятностью, равной сумме вероятностей объединенных 
+символов.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Объединение символов, таким образом, создает ветви и узлы дерева. 
+Каждая из ветвей должна быть обозначена бинарным символом (в паре одному 
+соответствует 1, другому&nbsp;–&nbsp;0). Последние из объединенных символов образуют 
+корень дерева.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Примечание: в ходе выполнения лабораторной работы необходимо будет 
+выполнять сортировку вероятностей каждый раз после получения нового виртуального 
+символа. </span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Бинарным кодом, который соответствует определенному символу 
+исходного алфавита, будет комбинация, полученная после прохождения по ветвям 
+дерева от его корня до соответствующего символа исходного алфавита.</span></p>
+<p class="a" style="text-indent:35.45pt; margin-top:0; margin-bottom:0" align="justify">
+<span style="color:black">Сжатие и декомпрессия сообщений осуществляются по тем же принципам, 
+что и для метода Шеннона-Фано.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="color:black">Рассмотрим это на примере.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-family:&quot;Times New Roman&quot;;color:black"><b>Пример</b>. Исходными являются 
+данные из предыдущего примера :</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<img border="0" src="../ris/image243.gif" width="239" height="140"><!--[if gte mso 9]><![endif]--></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+После сортировки попарно объединяем символы, начиная с двух нижних: а<sub>3</sub> 
+и а<sub>10</sub>. Верхней ветви (а<sub>10</sub>) приписываем младший символ 
+кода&nbsp;–&nbsp;1, нижней (а<sub>3</sub>)&nbsp;–&nbsp;0. Полученный в результате объединения узел 
+далее рассматривается как виртуальный символ с вероятностью появления, равной 
+0,08 (0,03&nbsp;+&nbsp;0,05).</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-family: Times New Roman; color: black">
+Построим таблицу и произведем ряд последовательных преобразований исходной 
+таблицы, складывая строки с наименьшей частотой и проводя их сортировку по 
+убыванию:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:35.45pt;line-height:normal" align="center">
+<img border="0" src="../ris/image244.jpg" width="511" height="435"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1067" type="#_x0000_t75" style='position:absolute;
+ margin-left:201.75pt;margin-top:2in;width:12pt;height:8.25pt;z-index:3'>
+ <v:imagedata src="" o:title="" croptop="22361f" cropbottom="40895f"
+  cropleft="18354f" cropright="44836f"/>
+</v:shape><![endif]--></p>
+</p>
+
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt; margin-top:0; margin-bottom:0">
+<span style="color:black">Общий вид дерева представлен на 
+рис.&nbsp;15. 8.</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 35.45pt; margin-top:0">
+<span style="font-size:14.0pt;color:black">&nbsp;</span></p>
+<p class="a" align="center" style="text-align:center;text-indent:35.45pt">
+<img border="0" src="../ris/image245.jpg" width="500" height="387"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<b><font size="2">Рис.&nbsp;15. 8.</font></b><font size="2"> Вариант бинарного дерева для рассматриваемого примера</font></span></p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">Запишем соответствующие 
+символам коды посредством обхода ветвей дерева от корня к этому символу: </span>
+</p>
+<p class="MsoNormal" style="margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+&nbsp;</p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table1">
+	<tr style="height: 133.2pt">
+		<td width="285" valign="top" style="width:213.65pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:133.2pt">
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>1</sub> 
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;11111;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>2 </sub>
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;001;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>3</sub> 
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;11100;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>4</sub> 
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;01;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>5 <img border="0" src="../ris/image246.gif" width="20" height="15"></sub><!--[if gte mso 9]><![endif]-->&nbsp;110;</span></td>
+		<td width="285" valign="top" style="width:213.7pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:133.2pt">
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>6 </sub>
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;100;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>7</sub> 
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;11110;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>8 </sub>
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;000;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>9 </sub>
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;101;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;color:black">
+		a<sub>10 </sub>
+		<img border="0" src="../ris/image246.gif" width="20" height="15"><!--[if gte mso 9]><![endif]-->&nbsp;11101.</span></td>
+	</tr>
+</table>
+&nbsp;<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="line-height: 115%; color: black">Нетрудно 
+понять, что и данный метод характеризуется многовариантностью кодовых 
+комбинаций. Критерием эффективности того или иного варианта является 
+интегральный коэффициент компрессии. В обоих рассмотренных методах наилучшему 
+варианту построения кодовой таблицы соответствует наименьший коэффициент.</span></p>
+<p> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="justify" style="margin-bottom: 0"><b>Задание 1. </b>
+<span style="color: black">
+Закодируйте по алгоритму Хаффмана строку с вашим именем, отчеством, 
+фамилией, датой и местом рождения (например, «Иванова Наталья Николаевна, 1 
+января 1990 года, город Минск»). Данная строка может вводится через консоль либо 
+считываться из файла.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-family: Times New Roman; color: black">Сбор 
+статистики может выглядеть следующим образом:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+&nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//----------------------------------------------------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//------------сбор статистики-------------------------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//----------------------------------------------------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">char</span> fromfile;<span style="color:green">//считываемый 
+из текстового файла символ</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+schiotchik=0,kod;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ifstream in (<span style="color:maroon">&quot;test.txt&quot;</span>);</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(!in){cout&lt;&lt;<span style="color:maroon">&quot;</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: maroon">Файл</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: maroon"> 
+test.txt </span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: maroon">не 
+открыт</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: maroon">\n&quot;</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">;<span style="color:blue">return</span> 
+1;}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span> cout&lt;&lt;<span style="color:maroon">&quot;</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: maroon">Файл</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: maroon"> 
+test.txt </span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: maroon">открыт</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: maroon">\n&quot;</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//создание и обнуление массива для сбора статистики</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+ascii [256];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;256;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">
+ascii[i]=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span>(in)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<span style="color:green">//считаем 
+число символов в текстовом файле</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+in.get(fromfile);</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;fromfile;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kod=(<span style="color:blue">int</span>)fromfile;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; schiotchik++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(kod&gt;0)ascii[kod]++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">else</span> ascii[kod*(-1)+128]++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cout&lt;&lt;endl;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//считаем число неповторяющихся символов</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> sum=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;256;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(ascii[i]!=0)sum++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;<span style="color:maroon">&quot;Всего 
+символов в файле: &quot;</span>&lt;&lt;schiotchik&lt;&lt;endl;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;<span style="color:maroon">&quot;Не 
+повторяющихся символов: &quot;</span>&lt;&lt;sum&lt;&lt;endl&lt;&lt;endl;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+/*создание массива из 4 столбцов, в которых хранятся </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">0 - 
+неповторяющиеся символы;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">1 - 
+частота их встречаемости;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">2 - 
+вероятность появления соответствующего символа;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">3 - 
+длина кода по Хафману */</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+double</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+**ver=<span style="color:blue">new</span> <span style="color:blue">double</span> 
+*[sum];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;sum;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">
+ver[i]=<span style="color:blue">new</span> <span style="color:blue">double</span>[4];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//выборка из массива ascii неповторяющихся символов и заполнение ими массива
+</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+j=0,i=0;j&lt;256;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(ascii[j]!=0)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(j&lt;128)ver[i][0]=j;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">else</span> ver[i][0]=(j-128)*(-1);</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][1]=ascii[j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][2]=(<span style="color:blue">double</span>)ascii[j]/(<span style="color:blue">double</span>)schiotchik;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">double</span> *t2;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;sum;i++)<span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">выполняем 
+сортировку</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=i+1;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(ver[i][2]&lt;ver[j][2])</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t2=ver[j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[j]=ver[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">ver[i]=t2;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-family: Times New Roman; color: black">Алгоритм Хафмана может быть реализован следующим образом:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-family: Times New Roman; color: black">
+Содержимое файла <b>.</b></span><b><span lang="EN-US" style="font-family: Times New Roman; color: black">cpp</span></b></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+&nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//-------------------------------------------------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//------получение кодов по алгоритму Хаффмана------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//-------------------------------------------------------</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//присваиваем все элементам структуры значения '-1'</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+(<span style="color:blue">int</span> i=0;i&lt;256;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.buf[i]=-1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span> (<span style="color:blue">int</span> 
+j=0;j&lt;256; j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i][j]=-1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hafman(ver,sum);</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//вычисление объема полученного бинарного кода в битах</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+size;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;sum;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=0;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(sort1.mas_bin[i][j]==-1)<span style="color:blue">break</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; size++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][3]=size;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+z=0;z&lt;sum;z++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> i=0;<span style="color:green">//чтение кода 
+в обратном порядке (от корня к вершине)</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+j=(<span style="color:blue">int</span>)ver[z][3]-1;j&gt;=0;j--,i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.buf[i]=sort1.mas_bin[z][j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+j=0;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[z][j]=sort1.buf[j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=(<span style="color:blue">int</span>)ver[z][3]-1;j&gt;=0;j--)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.buf[j]=-1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+i=0;i&lt;sum;i++)<span style="color:green">//выполняем сортировку в порядке 
+увеличения длины кода</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=i+1;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(ver[i][3]&gt;ver[j][3])</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; promejut=ver[j][3];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[j][3]=ver[i][3];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">ver[i][3]=promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+sort1.mas_bin[255]=sort1.mas_bin[j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[j]=sort1.mas_bin[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i]=sort1.mas_bin[255];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;endl;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">sort_kodov(ver,sum);<span style="color:green">//для 
+соответствия кодов своим вероятностям</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+i=0;i&lt;sum;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;i&lt;&lt;<span style="color:maroon">&quot;\t&quot;</span>&lt;&lt;(<span style="color:blue">char</span>)ver[i][0]&lt;&lt;<span style="color:maroon">&quot; 
+&quot;</span>&lt;&lt;ver[i][1]&lt;&lt;<span style="color:maroon">&quot; \t&quot;</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+j=0;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span>(sort1.mas_bin[i][j]==-1)<span style="color:blue">break</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;sort1.mas_bin[i][j];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cout&lt;&lt;endl;</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-family: Times New Roman; color: black">
+Содержимое .</span><b><span lang="EN-US" style="font-family: Times New Roman; color: black">h-</span><span style="font-family: Times New Roman; color: black">файла</span></b><span style="font-family: Times New Roman; color: black">:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+&nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: blue">struct</span><span style="font-size: 10.0pt; font-family: Courier New"> 
+sort</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> kol_stolb[256];<span style="color:green">//хранит 
+количество столбцов</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> ** mas_bin;<span style="color:green">//хранит 
+бинарные коды</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> buf[256];<span style="color:green">//используется 
+для сортировки</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort()</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mas_bin=<span style="color:blue">new</span> <span style="color:blue">
+int</span> *[256];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span>(<span style="color:blue">int</span> 
+i=0;i&lt;256;i++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mas_bin[i]=<span style="color:blue">new</span>
+<span style="color:blue">int</span> [256];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+~sort()</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}sort1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+double</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+**peretaskivanie(<span style="color:blue">double</span> **ver,<span style="color:blue">int</span> 
+kol, <span style="color:blue">int</span> kol1,<span style="color:blue">int</span> 
+znach1,<span style="color:blue">int</span> perem,<span style="color:blue">int</span> 
+sum)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> peremen, kol_st;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> position=kol+kol1+1;<span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">сколько 
+нулей надо перетянуть</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> i;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">double</span> promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span>(position&gt;0)<span style="color:green">//</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: green">пока 
+не переместили все нули</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i=sum-position-1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; peremen=perem;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: blue">while</span><span style="font-size: 10.0pt; font-family: Courier New">(peremen)<span style="color:green">//пока 
+ен подняли текущий ноль на нужное число позиций</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; promejut=ver[i][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][2]=ver[i+1][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i+1][2]=promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[255]=sort1.mas_bin[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i]=sort1.mas_bin[i+1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i+1]=sort1.mas_bin[255];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kol_st=sort1.kol_stolb[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i]=sort1.kol_stolb[i+1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i+1]=kol_st;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; peremen--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span> (i==0)<span style="color:blue">break</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">else</span> i--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">return</span> ver;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+double</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+**sortirovka(<span style="color:
+blue">double</span> **ver,<span style="color:blue">int</span> znach1,<span style="color:blue">int</span> 
+sum,<span style="color:blue">int</span> kol,<span style="color:blue">int</span> 
+kol1)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> i=znach1-1,j=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">double</span> promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span style="font-size: 10.0pt; font-family: Courier New"> kol_st;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//пока текущая суммарная вер-ть больше... </span>
+</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+while</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(ver[i][2]&lt;ver[i+1][2])</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//...перемещаем ее вверх</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+promejut=ver[i+1][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+ver[i+1][2]=ver[i][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][2]=promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">//меняем 
+местами соответствующие указатели</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sort1.mas_bin[255]=sort1.mas_bin[i+1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+sort1.mas_bin[i+1]=sort1.mas_bin[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i]=sort1.mas_bin[255];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">//меняем 
+местами соответствующие значения в массиве kol_stolb</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+kol_st=sort1.kol_stolb[i+1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i+1]=sort1.kol_stolb[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i]=kol_st;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">
+j++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//если дошли до верха</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span> (i==0)<span style="color:blue">break</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span> i--;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//учитываем, то что за вер-ью могли стоять &quot;ее&quot; нули, 
+которые в таком случае будут смещены вниз новой вер-ью</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//поэтому возвращаем их на место</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(i!=0)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i+=2;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">while</span>(ver[i][2]==0 &amp;&amp; i&lt;sum-kol-1)<span style="color:green">//i&lt;sum-kol-1
+</span></span>
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">чтобы не 
+захватить</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: green"> 
+&quot;</span><span style="font-size: 10.0pt; font-family: Courier New; color: green">чужие</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: green">&quot;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: green">
+нули</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; promejut=ver[i-1][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i-1][2]=ver[i][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[i][2]=promejut;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[255]=sort1.mas_bin[i-1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i-1]=sort1.mas_bin[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[i]=sort1.mas_bin[255];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kol_st=sort1.kol_stolb[i-1];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i-1]=sort1.kol_stolb[i];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.kol_stolb[i]=kol_st;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size: 10.0pt; font-family: Courier New">j--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span> (i&gt;sum)<span style="color:blue">break</span>;<span style="color:green">//если 
+спустились в самый низ</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span> i++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> perem=j;<span style="color:green">//на 
+сколько позиций вверх поднялась вероятность</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(perem==0)<span style="color:blue">return</span> 
+ver;<span style="color:green">//если вер-ть осталась на месте</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+peretaskivanie(ver,kol,kol1,znach1,perem,sum);<span style="color:green">//иначе 
+вслед за ней перетаскиваем все ее нули</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+return</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+ver;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+flag=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+void</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+Hafman(<span style="color:blue">double</span> **ver,<span style="color:blue">int</span> 
+sum)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(flag==1) <span style="color:blue">return</span>;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> kol=0,i,znach;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New">i=sum-1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span>(ver[i][2]==0)<span style="color:green">//число 
+нулей от конца до первого ненулевого элемента</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kol++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+znach=i;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span style="font-size: 10.0pt; font-family: Courier New"> 
+kol1=0,znach1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span>(ver[i][2]==0)<span style="color:green">//число 
+нулей от первого до второго ненулевого элемента</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kol1++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i--;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; znach1=i;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//ненулевой вероятности которая стоит выше и &quot;её&quot; нулям присваивввввается 1</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+j=znach1;j&lt;znach;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[j][sort1.kol_stolb[j]]=1;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">
+sort1.kol_stolb[j]++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:green">//ненулевой вероятности которая стоит ниже и &quot;её&quot; 
+нулям присваивввввается 0</span></span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+for</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(<span style="color:blue">int</span> 
+j=znach;j&lt;sum;j++)</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sort1.mas_bin[j][sort1.kol_stolb[j]]=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10.0pt; font-family: Courier New">
+sort1.kol_stolb[j]++;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">
+//суммируем эти две вер-ти и записываем на место той, которая стоит выше</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+ver[znach1][2]=ver[znach1][2]+ver[znach][2];</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">// на 
+место нижней вер-ти записывается 0</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ver[znach][2]=0;</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">//если 
+суммарная вер-ть=1 выходим</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+if</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">(ver[znach1][2]==1){flag=1;<span style="color:blue">return</span>;}</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New; color: green">//иначе 
+ищем новую позиию суммарной вероятности</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+sortirovka(ver,znach1,sum,kol,kol1);</span></p>
+<p class="MsoNormal" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt; margin-top:0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New">Hafman(ver, 
+sum);</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-family: Times New Roman; color: black">&nbsp;При 
+кодировании не округляйте частоты менее, чем четыре знака после запятой&nbsp;— 
+сокращение точности понижает эффективность кодирования.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin-right: 0cm; margin-top: 14px; margin-bottom: 14px">
+<b>Задание 2. </b><span style="color: black">Подсчитайте коэффициент сжатия.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:14px;text-align:
+justify;line-height:normal; margin-right:0cm; margin-top:14px">
+<b>Задание 3. </b>Наберите эту же строку в редакторе «Блокнот», если изначально она 
+вводилась через консоль, и сохраните текст в
+txt-формате 
+(количество байт в файле должно в точности соответствовать числу знаков – букв, 
+цифр и служебных символов – в строке.)</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:0;text-align:
+justify;line-height:normal; margin-right:0cm; margin-top:14px">
+<b>Задание 4. </b>Примените к файлу любой архиватор и сравните его степень 
+сжатия с алгоритмом Хаффмана.</p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal; margin-top:0">
+<span style="font-family: Times New Roman; color: black">
+Результат выполнения программы может выглядеть следующим образом:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:35.45pt;line-height:normal" align="center">
+<img border="0" src="../ris/image247.png" width="436" height="525"></p>
+<p align="center">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<font size="2"><b>Рис.&nbsp;15. 8. </b>Результат выполнения программы</font></span></p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">1. </span>
+<span style="font-family: Times New Roman; color: black">Дайте определение термина «компрессия данных».</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">2. </span>
+<span style="font-family: Times New Roman; color: black">Охарактеризуйте основные цели компрессии.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">3. </span>
+<span style="font-family: Times New Roman; color: black">Какова основная особенность методов сжатия?</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">4. </span>
+<span style="font-family: Times New Roman; color: black">Каково назначение коэффициентов сжатия? Как с помощью интегрального 
+коэффициента оценить эффективность алгоритма?</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">5. </span>
+<span style="font-family: Times New Roman; color: black">Какие методы сжатия называются обратимыми (необратимыми)? Для каких типов 
+данных они применяются?</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">6. </span>
+<span style="font-family: Times New Roman; color: black">Поясните сущность метода интервалов.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black"><b>7.</b> Поясните особенности словарных методов сжатия.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; letter-spacing: -.15pt">
+<b>8.</b> Приведите классификацию словарей и примеры их использования.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman; color: black; font-weight:700">9. </span>
+<span style="font-family: Times New Roman; color: black">Поясните сущность сжатия данных по методу Хаффмана.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman"><b>10.</b> </span>
+<span style="font-family: Times New Roman; color: black">В 
+чем состоит основное различие в алгоритмах на основе методов Шеннона-Фано и 
+Хаффмана?</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 29.75pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+</body>
+</html>

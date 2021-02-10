@@ -1,0 +1,919 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 13<br>НАЗНАЧЕНИЕ И КОНФИГУРАЦИЯ BIOS</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-size:12.0pt">изучить основные настройки конфигурации BIOS. 
+Изучить основные разделы BIOS. Определить основы оптимизации BIOS. Настроить 
+BIOS для оптимальной работы с ПК.</span></p>
+<p align="justify"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Приборы и материалы: </b> персональный компьютер 
+типа IBM PC/AT на основе центрального процессора Intel Pentium. </p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="a" style="text-align: center; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family: Times New Roman"><font size="4">1.</font></span></b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">
+</font>
+</span>
+<b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">Версии
+</font>
+</span>
+<span lang="EN-US" style="font-family: Times New Roman"><font size="4">BIOS</font></span></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px">Хотя задачи, 
+выполняемые BIOS, одинаковы вне зависимости от конкретной реализации BIOS, 
+различия все же имеются. Самое заметное для пользователя — интерфейс 
+подпрограммы BIOS Setup. Так что есть смысл остановиться на производителях и 
+версиях BIOS, отличиях в их интерфейсе, способе управления.</p>
+<p class="a" style="text-align:center;line-height:normal; margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt"><b>
+<font size="4"><span style="font-family: Times New Roman">1.1. 
+Производители BIOS</span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">В настоящее 
+время среди разработчиков BIOS для персональных компьютеров наиболее известны 
+три фирмы.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Во-первых,
+это American Megatrends, Inc. Во времена 386-х 
+процессоров BIOS разработки этой фирмы (AMI BIOS) стояли практически на всех 
+компьютерах. Затем постепенно их вытеснили BIOS производства Award Software, Inc. 
+(об этой компании чуть позже). Но в последнее время ситуация изменилась и AMI 
+BIOS снова завоевал заслуженную популярность у производителей. Его используют 
+такие известные производители материнских плат, как ASUS, Gigabyte, MSI, ESC и 
+другие.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Второй по 
+алфавиту идет фирма Intel. Некоторое время назад на своих материнских платах она 
+использовала модифицированный BIOS производства American Megatrends, Inc. — он 
+так и назывался Intel/AMI BIOS. Сейчас, после существенной переработки, 
+упоминание о American Megatrends, Inc. исчезло и на современных материнских 
+платах используется уже собственный Intel BIOS.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Здесь надо 
+заметить, что в отличие от других компаний-разработчиков BIOS, Intel использует 
+свои наработки только на собственных материнских платах.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">И, наконец, 
+третий весьма влиятельной фирмой этого рынка — Phoenix Technologies. До 
+поглощения Award Software, Inc. (во времена процессоров Pentium — Pentium II) 
+Phoenix BIOS не был особо популярен у производителей материнских плат, а вот 
+Award BIOS самостоятельной тогда Award Software, Inc. использовался на 
+подавляющем большинстве компьютеров. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Так что 
+приобретение Award Software, Inc. позволило Phoenix Technologies существенно 
+расширить занимаемую долю рынка, и сейчас BIOS Phoenix Technologies (торговые 
+марки — Award BIOS, Phoenix Award BIOS, Phoenix Award Workstation BIOS) 
+используются практически всеми производителями материнских плат. Он даже более 
+популярен (особенно у производителей материнских плат второго эшелона), чем AMI 
+BIOS.</p>
+<p class="a" style="text-align: center; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">1.2.
+Актуальные версии BIOS</span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Во времена 
+первых и вторых Pentium на компьютерах чаще всего использовалась BIOS фирмы 
+Award Software, Inc. версии 4.51PG (Award BIOS 4.51PG). В качестве альтернативы, 
+могла быть установлена AMI BIOS версий 1.21 или 1.24 от American Megatrends, Inc.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Речь здесь 
+идет не о версиях (ревизиях) прошивок BIOS для каждой конкретной материнской 
+платы (компьютера), а о «глобальных» версиях BIOS от разработчиков. Упрощенно 
+можно сказать, что речь идет о версиях интерфейса программы BIOS Setup.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">К появлению 
+Pentium III как раз произошла покупка Award Software, Inc. фирмой Phoenix 
+Technologies. В результате слияния появились сразу несколько разновидностей 6-й 
+версии Award BIOS. Так, в версии 6.0 (без дополнительных буквенных индексов) 
+используется способ навигации, унаследованный от BIOS фирмы Phoenix, а в 6.0PG — 
+способ, во многом аналогичный использовавшемуся в версии 4.51PG. Вы можете 
+встретить на материнской плате и Award BIOS 6.0PG, и Phoenix Award BIOS 6.0PG, и 
+Phoenix Award Workstation BIOS 6.0PG, но, по сути, это одно и то же — Phoenix 
+Award BIOS 6.0PG (это название мы и будем использовать в дальнейшем, как самое 
+распространенное). И интерфейс, и набор опций практически идентичны, а 
+определенные различия обусловлены скорее фирменными отличиями производителей 
+материнских плат, да особенностями используемых чипсетов и поддерживаемых 
+процессоров. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Несколько 
+позже (в момент появления Pentium 4 Socket 423) определенной модернизации 
+подвергся и AMI BIOS от American Megatrends, Inc. — появилась версия 1.45, 
+практически полностью копирующая предыдущую. Введенные в ней изменения, в 
+основном, косметические и касаются интерфейса. Затем (ориентировочно в момент 
+анонса Pentium 4 Socket 478), произошла еще одна небольшая модернизация до 
+версии 1.50. Ее главное достоинство — гораздо большее количество доступных для 
+изменения опций. А вот дальнейшие обновления продукции American Megatrends, Inc. 
+носят более существенный характер.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">В первую 
+очередь в версии AMI BIOS 2.01 был кардинальным образом переработан интерфейс — 
+он стал гораздо удобнее. В чем-то он напоминает таковой у Phoenix Award BIOS 
+6.0PG. Дальнейшее развитие эта идея получила в AMI BIOS 3.31A. Ну а для 
+современных компьютеров American Megatrends, Inc. предлагает AMI BIOS 2.5x и AMI 
+BIOS 2.6x (2.51, 2.53, 2.55, 2.58, 2.61, 2.62, 2.63 и т.п.). </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Если 
+сравнивать современные версии Phoenix Award BIOS и AMI BIOS, то последние, не 
+уступая Phoenix Award BIOS по количеству и богатству настроек, несколько удобнее 
+в плане интерфейса. К тому же, начиная с AMI BIOS 1.45, American Megatrends, 
+Inc. предлагает такую &nbsp;возможность, как выбор 
+устройства, с которого будет осуществлена загрузка, без захода в BIOS Setup. Вам 
+достаточно нажать определенную клавишу (&lt;F11&gt; или &lt;F8&gt;, в зависимости от 
+производителя материнской платы или компьютера) на клавиатуре в момент 
+прохождения процедуры POST, чтобы на экране появилось дополнительное меню, 
+позволяющее выбрать нужное устройство.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Впрочем, эта 
+возможность присутствует у некоторых модификаций Phoenix Award BIOS и Intel BIOS 
+(только нажимать надо &lt;F10&gt; или &lt;F12&gt;).</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Здесь надо 
+сделать одно важное замечание, касающееся такого производителя, как ASUS. Эта 
+компания уже достаточно давно модернизирует код BIOS, внося в него множество 
+изменений. В результате интерфейс утилиты BIOS Setup на материнских платах ASUS 
+зачастую существенно отличается от интерфейса аутентичных вариантов BIOS. Так, 
+внешний вид утилиты BIOS Setup AMI BIOS версий 2.5x/2.6x, используемых сейчас на 
+большинстве продукции ASUS, имеет мало общего с интерфейсом аналогичной версии 
+AMI BIOS, применяемой, скажем, Gigabyte или MSI. Скорее, он характерен для 
+Phoenix Award BIOS 6.0. Впрочем, программный код Phoenix-Award тоже подвергся 
+существенной модернизации. В первоначальном варианте — Award BIOS 6.0 — изменено 
+расположение опций и добавлены новые настройки. Дальнейшее развитие ветви на 
+материнских платах ASUS (теперь она так и называется — Phoenix Award BIOS 6.0) 
+еще больше сблизило интерфейс утилит BIOS Setup двух разработчиков BIOS. Исходя 
+из этого, есть смысл рассматривать модернизированные ASUS версии AMI BIOS 
+2.5x/2.6x, Award BIOS 6.0 и Phoenix Award BIOS 6.0 как вполне самостоятельные 
+продукты.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">И, наконец, 
+продукция фирмы Intel, используемая ей на материнских платах собственного 
+производства. Как уже говорилось, некоторое время назад это был основательно 
+модернизированный AMI BIOS, получивший в результате имя Intel/AMI BIOS 6.0. 
+Современные платы уже базируются на собственной разработке — Intel BIOS 6.0PG, 
+отличающейся интерфейсом и, самое главное, наконец-то позволяющей осуществлять 
+полноценное управление частотами шин и таймингами (задержками) памяти.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Как правило, 
+с выходом новых версий BIOS производители материнских плат перестают 
+использовать старые версии. Но бывают и исключения. Так вполне реально 
+встретить, например, AMI BIOS 1.21 на материнской плате для Pentium 4.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Несколько 
+замечании:</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Прежде чем 
+переходить к описанию конкретных версий BIOS надо сделать несколько важных 
+замечаний. Первое касается интерфейса BIOS Setup. По возможности, приводятся 
+референсные варианты этого интерфейса без модификаций, осуществляемых 
+производителями материнских плат. Это позволяет не сосредотачиваться на 
+технологиях, продвигаемых теми или иными брендами для повышения 
+привлекательности своей продукции в глазах покупателя. Как правило, эти 
+технологии ориентированы на энтузиастов и оверклокеров и являются в большинстве 
+случаев обычными маркетинговыми инициативами. Так, к примеру, ASUS на некоторых 
+своих материнских платах объединяет все опции, относящиеся к разгону, в 
+отдельный пункт главного меню Extreme Tweaker, Gigabyte переименовала 
+стандартный пункт Frequency/Voltage Control в MB Intelligent Tweaker (M.I.T.), 
+MSI — в Cell Menu и т.д. Да, при этом для пользователя остаются доступными 
+опции, позволяющие тонко настроить порядок функционирования чипсета, он может 
+указать все тайминги (задержки) при работе с памятью, выставить повышенные 
+напряжения для ядра процессора, модулей памяти и графической карты, но хорошо ли 
+это или плохо — спорный вопрос. Ведь основу стабильности работы материнской 
+платы (в том числе и на повышенных относительно штатных частотах) в первую 
+очередь составляют грамотный дизайн самой материнской платы и ее безупречная 
+разводка. А если этого нет, то не спасут никакие&nbsp; меню в BIOS.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Второе 
+замечание также касается интерфейса, но оно уже несколько другого рода. 
+Производители материнских плат иногда расширяют стандартные настройки, 
+предлагаемые в тех или иных пунктах меню, добавляя туда новые, позволяющие более 
+тонко настроить те или иные параметры. Могут изменяться и названия опций. Также, 
+бывает, часть опций переносится из одного пункта меню в другой, сходный по 
+смыслу.</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">И, наконец, 
+еще одно замечание по поводу интерфейса утилиты BIOS Setup. Прекрасно понимая, 
+что неправильная установка значения некоторых опций способна привести к 
+нестабильной работе компьютера и, даже, вызвать его временную 
+неработоспособность, производители материнских плат по возможности страхуются от 
+ошибок пользователей. Так &nbsp;Intel &nbsp;до недавнего времени вообще убирала из BIOS 
+Setup все потенциально опасные настройки (в современных версиях BIOS от Intel 
+они уже доступны, только предварительно вам потребуется подтвердить, что вы 
+прекрасно понимаете, что делаете) &nbsp;а, скажем, Gigabyte на некоторых моделях 
+материнских плат дает полный доступ ко всем настройкам только после нажатия 
+определенной комбинации клавиш (&lt;Ctrl&gt;+&lt;F1&gt;) при нахождении в главном меню BIOS 
+Setup. Плюс, подавляющее большинство производителей автоматически сбрасывают 
+значения опций к безопасным, если предыдущая попытка загрузки (иногда две 
+подряд) закончилась неудачей.</p>
+<p class="a" style="text-align: center; line-height:normal; margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">&nbsp;2.Конфигурационные настройки BIOS</span></font></b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.1. Выход 
+в BIOS </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Во время 
+загрузки, когда BIOS проверяет аппаратные компоненты системы, считает доступную 
+память и находит жёсткие диски и другие приводы или устройства, с помощью 
+специальной клавиши можно выйти в программу настройки BIOS Setup. Часто 
+достаточно нажать клавишу [Del], но используются и другие варианты, например 
+[F2]. Во время загрузки: в большинстве BIOS на нём выводится строчка вроде &quot;F10 
+= Setup&quot; ближе к нижней части монитора. Если ничего не получается, откройте 
+руководство к материнской плате, где должна быть указана комбинация. Нажмите 
+указанную клавишу (или комбинацию) и удерживайте секунду или две во время 
+загрузки ПК. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Если она 
+сработает, то BIOS посчитает объём доступной памяти, после чего появится главное 
+меню BIOS. Если же не получилось, то перезагрузите компьютер и попытайтесь 
+использовать другую комбинацию клавиш. Например, многие ноутбуки выходят в BIOS 
+по нажатию клавиши [F1] или [Esc]. Иногда срабатывают клавиши [F2], [F10] или 
+комбинация вроде [Alt F1].</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.2.
+Изменяем настройки BIOS</span></font></b></p>
+<p class="MsoNormal" style="text-indent:42.55pt" align="center">
+<img border="0" src="../ris/image197.png" width="585" height="311"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Настройка
+<span lang="EN-US">BIOS</span>: с помощью курсора выберите нужную строку и 
+нажмите &quot;<span lang="EN-US">Enter</span>&quot;.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Чтобы 
+выбрать какое-либо меню в <span lang="EN-US">BIOS</span>, используйте курсор и с 
+помощью стрелок подведите его к нужному пункту. Нажав клавишу &quot;<span lang="EN-US">Enter</span>&quot;, 
+вы перейдёте к разделу или получите окно выбора настройки (как на иллюстрации 
+ниже). Чтобы изменять указанную настройку, следует нажимать клавиши &quot;плюс&quot; [+] 
+или &quot;минус&quot; [-], либо другую комбинацию вроде [<span lang="EN-US">Page Up</span>] 
+и [<span lang="EN-US">Page down</span>]. Из главного меню настройки
+<span lang="EN-US">BIOS</span> вы будете попадать на различные разделы 
+настройки, которые могут разделяться и на собственные подразделы.</p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image198.png" width="585" height="365"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Открываем 
+подраздел. Значения многих опций можно менять с помощью клавиш &quot;плюс&quot; [+] и 
+&quot;минус&quot; [-], в то время как другие можно выставлять с помощью выпадающего меню.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">&nbsp;Разделы 
+главного меню настройки BIOS. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+1. В разделе 
+&quot;Main&quot; или &quot;Standard CMOS Setup&quot; можно задать дату и время, а также параметры 
+жёстких дисков. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+2. В разделе 
+&quot;BIOS
+Features Setup&quot; 
+приведены различные общие настройки. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+3. Раздел &quot;Integrated
+Peripherals&quot; 
+отвечает за интерфейсы и дополнительные системные функции. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+4. Раздел &quot;Power
+Management Setup&quot; 
+позволяет настроить все опции энергопотребления и питания. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+5. В разделе 
+&quot;PnP/PCI
+Configurations&quot; 
+можно привязывать прерывания (IRQ) 
+к картам расширения вашего ПК. Если подобные функции отсутствуют в разделе, их 
+можно обнаружить в подразделе &quot;Advanced&quot;.
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+6. Раздел &quot;Hardware
+Monitor&quot; 
+позволяет узнать значения системных датчиков: температуру процессора или 
+скорость вращения вентиляторов (об/мин). Обычно показываются скорости вращения 
+вентиляторов процессора и корпуса, но также здесь могут присутствовать параметры 
+вентилятора блока питания или других. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; ">
+7. Пункт &quot;Load Setup
+Defaults&quot; 
+восстанавливает настройки BIOS 
+по умолчанию и устраняет все изменения, которые вы могли внести. Данный пункт 
+будет полезен, если ваши действия привели к каким-либо проблемам в системе.<b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.3.
+Выходим из настройки BIOS Setup </span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px">Для 
+завершения настройки <span lang="EN-US">BIOS</span> нажмите клавишу [<span lang="EN-US">F</span>10], 
+либо выберите пункт основного меню &quot;<span lang="EN-US">Save</span> &amp;
+<span lang="EN-US">Exit Setup</span>&quot;. Иногда сначала требуется выбрать пункт &quot;<span lang="EN-US">Exit</span>&quot;, 
+после чего указать вариант &quot;<span lang="EN-US">Exit</span> &amp; <span lang="EN-US">
+Save Changes</span>&quot;. Затем обычно предлагается выбор сохранения внесённых 
+изменений: &quot;Да&quot; [<span lang="EN-US">Y</span>] или &quot;Нет&quot; [<span lang="EN-US">N</span>]. 
+Выберите требуемый вариант, после чего компьютер будет перезапущен.<b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.4. Ключевые настройки 
+BIOS </span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Ниже 
+покажем, как изменить в BIOS последовательность выбора 
+загрузочных дисков для компьютера, включать ПК нажатием клавиши или &quot;кликом&quot; 
+мыши, активировать поддержку USB 2.0, а также решить 
+проблемы с вентиляторами или изменением аппаратной конфигурации. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0"><b>
+Устанавливаем в <span lang="EN-US">BIOS</span> приоритет загрузочных устройств</b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image199.png" width="585" height="365"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>В
+<span lang="EN-US">BIOS</span> лучше не ставить дисковод первым загрузочным 
+устройством. Вместо дисковода укажите жёсткий диск.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Большинство 
+ПК по умолчанию в качестве приоритетного загрузочного устройства выставляют 
+дисковод. Эта опция на пару секунд замедляет загрузку ПК, поскольку он будет 
+проверять наличие в дисководе загрузочной дискеты. Не нужно этого делать и 
+потому, что существует опасность заразиться загрузочным вирусом с заражённой 
+дискеты. Лучше выставить в качестве первого загрузочного устройства жёсткий 
+диск. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">В
+BIOS Setup существует возможность указать устройства, 
+с которых возможна загрузка, а также порядок их проверки. Рассмотрим, как убрать 
+дисковод из первого загрузочного устройства. Для этого выберите &quot;Advanced 
+BIOS Features, Boot Sequence&quot;, затем выберите 
+пункт &quot;1st Boot Device&quot; и измените его значение с &quot;Floppy&quot; 
+на &quot;Hard Disk&quot;, как показано на иллюстрации выше. В 
+принципе, жёсткий диск может назваться и &quot;HDD-0&quot;. В 
+результате компьютер будет загружаться сразу с жёсткого диска, минуя дискету. 
+Конечно, при необходимости порядок загрузки можно всегда восстановить, 
+вернувшись в BIOS Setup. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Но сейчас, 
+даже если компьютер и не будет пытаться загружаться с дискеты, он всё равно 
+будет проверять дисковод при загрузке, теряя время. Чтобы избежать проверки 
+дисковода, выставьте опцию &quot;Boot Up Floppy Seek&quot; в 
+значение &quot;Disabled&quot;.</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.5.
+Ускоряем загрузку ПК при помощи BIOS </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px">Для 
+ускорения загрузки важно, чтобы ПК не проверял лишние устройства, а грузился 
+сразу же с жёсткого диска. Кроме того, лучше отключить поиск новых жёстких 
+дисков и других устройств. Если вы не часто меняете набор жёстких дисков в 
+системе, то выставьте нулевое время поиска. Для этого в меню &quot;<span lang="EN-US">Main</span>&quot; 
+поставьте значение &quot;<span lang="EN-US">Timeout</span>&quot; на &quot;0&quot;.</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.6.
+Включить в BIOS поддержку USB 
+2.0 </span></font> </b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image200.png" width="585" height="229"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>
+USB: если вы установили Windows XP 
+вместе с Service Pack 2, то следует включить опцию &quot;USB 
+2.0 Controller&quot;.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">На многих 
+материнских платах опция &quot;USB Controllers&quot; по 
+умолчанию выставлена в режим USB 1.1. Связано это с 
+тем, что Windows XP без пакетов исправлений
+Service Pack (и специальных патчей) не поддерживает USB 2.0. Именно поэтому поддержку 
+USB 2.0 обычно приходится включать вручную. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Для 
+включения USB 2.0 в BIOS Setup 
+выставьте опцию в значение &quot;Enabled&quot; (как показано на 
+иллюстрации выше) или в &quot;V1.1+V2.0&quot;. 
+Но помните, что для использования интерфейса USB 2.0 
+требуется установить, как минимум, Service Pack 1 для
+Windows XP.<b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.7. Решить 
+проблемы с USB-устройствами при помощи
+BIOS </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Некоторые 
+флэш-брелки, MP3-плееры и USB-накопители 
+питаются от порта USB. Если питания недостаточно, то 
+устройство работать не будет. Именно поэтому следует убедиться, что порт
+USB обеспечивает достаточно питания для подобных 
+устройств. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Проверьте, 
+есть ли в вашей BIOS опция под названием &quot;USB 
+2.0 HS Reference Voltage&quot;. Если есть, то выставьте 
+значение с &quot;Low&quot; или &quot;Medium&quot; 
+на &quot;High&quot; или &quot;Maximum&quot;. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.8.
+Изменить в BIOS реакцию ПК на выключение 
+электричества.</span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px">В разделе &quot;Power 
+Management&quot; BIOS Setup можно указать, как 
+компьютер будет реагировать на выключение электричества. Опции &quot;AC 
+Power Loss Restart&quot; или &quot;Restore on AC Power Loss&quot; 
+в BIOS отвечают за поведение компьютера после 
+аварийного выключения электричества и последующего восстановления питания. 
+Выставьте эту опцию в значение &quot;On&quot; или &quot;Enabled&quot;, 
+если хотите, чтобы компьютер автоматически загрузился. Либо &quot;Off&quot; 
+или &quot;Disabled&quot; в противном случае. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.9.
+Проверить температуру и состояния ПК через BIOS </span></font> </b>
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">
+BIOS предоставляет информацию о рабочих параметрах 
+вашего ПК. Вы можете отследить в реальном времени состояние жизненно важных 
+системных компонентов, включая CPU, вентиляторы, блок 
+питания и жёсткие диски. Например, можно включить в BIOS 
+подачу тревоги, если процессор превысит определённую температуру, или даже 
+реализовать аварийное выключение. В результате ваша система не перегреется. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+Различные 
+пункты в разделе &quot;Health&quot; или &quot;H/W 
+Control&quot; позволяют отслеживать изменение напряжений, а также датчиков 
+температур. В большинстве BIOS выводятся значения для 
+температуры процессора и корпуса, а в некоторых версиях и другие температуры, 
+скажем, жёсткого диска или чипсета материнской платы. Кроме того, в BIOS можно узнать скорость вращения вентиляторов (в 
+об/мин). </p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<span lang="EN-US">&nbsp;</span><b><font size="4"><span style="font-family: Times New Roman">2.10.&nbsp;При 
+помощи BIOS устранить проблемы с кулерами </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Если ваш ПК 
+не загружается, то это может быть вызвано слишком низкой скоростью вращения 
+кулера или вообще его остановкой. Особенно часто такая ситуация встречается с high-end кулерами, чья 
+скорость вращения зависит от температуры. Они могут вращаться очень медленно 
+(или вообще останавливаться) при низкой температуре, в результате чего BIOS может посчитать, что вентилятор вышел из строя. В 
+таких случаях помогает правильная настройка BIOS. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Выставьте в
+BIOS значение опции &quot;CPU Fan 
+Failure Warning&quot; в &quot;Disabled&quot;. Когда вы 
+выключите эту опцию, компьютер будет загружаться, даже если вентилятор вращается 
+с низкой скоростью. Конечно, есть ещё одна проблема: вы можете не войти в
+BIOS вообще, поскольку компьютер может отказаться 
+загружаться по упомянутой выше причине (во многих BIOS 
+эта опция выставлена по умолчанию в значение &quot;Enabled&quot;). 
+В таком случае придётся на время подключить к материнской плате любой кулер, 
+который всегда вращается на максимальной скорости. А после отключения настройки 
+можно подключать уже high-end 
+модель. <span lang="EN-US">&nbsp;</span></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.11.
+Обеспечение устойчивой работы системы </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Современные 
+жёсткие диски могут определять симптомы или проблемы, которые предшествуют 
+выходу накопителя из строя, предупреждая об этом BIOS. 
+Такая функция называется &quot;Self Monitoring And Reporting 
+Technology&quot; (SMART). Включение функции &quot;HDD 
+SMART Capability&quot; позволяет BIOS отсылать 
+предупреждения программам вроде Norton System Works 
+или широко известной бесплатной утилите SpeedFan. В 
+результате пользователь получает информацию о состоянии накопителей. Такая 
+возможность позволяет принять необходимые меры, как только начнут появляться 
+первые симптомы сбоя. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0"><b>
+Подключаем старые принтеры и сканеры (<span lang="EN-US">LPT</span>)</b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image201.png" width="585" height="290"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">
+<b>Параллельный порт: самым быстрым режимом является &quot;ECP 
++ EPP&quot;.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Параллельный 
+порт компьютера (LPT) обычно работает только в одном 
+направлении. Эта настройка подходит практически для всех устройств, хотя 
+скорость передачи ограничивается 100 кбит/с. Можно перевести 
+LPT-порт в более современный режим, который даёт скорость до 1 Мбит/с.
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">
+Для этого нужно включить режим &quot;ECP&quot; (Extended Capability 
+Port) или &quot;EPP&quot; (Enhanced Parallel Port). Можно включить оба режима 
+сразу, выставив опцию &quot;ECP/EPP&quot; 
+или &quot;ECP + EPP&quot;. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+<b>Предупреждение</b>: если к одному порту у вас подключено несколько устройств, то 
+со скоростными режимами могут возникнуть проблемы. В таких ситуациях можно 
+рекомендовать докупить карту расширения PCI, которая 
+позволит добавить второй порт LPT. Либо купить 
+переходник USB-LPT. Или, 
+конечно, перейти на более современный сканер или принтер. </p>
+<p class="a" style="text-align:center;line-height:normal; margin-left:0cm; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt"><b>
+<font size="4"><span style="font-family: Times New Roman">Тонкая настройка BIOS
+</span></font></b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.12. Включить 
+в BIOS вывод результатов теста POST 
+во время загрузки </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Во время 
+загрузки ПК многие компьютеры выводят разноцветные логотипы производителей 
+вместо строчек POST (Power-on 
+Self-Test). Но, кажется, намного полезнее будет 
+видеть, какой элемент компьютера тестируется, и с какими результатами. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+В разделе &quot;Advanced BIOS Features&quot; найдите пункт &quot;Full Screen 
+LOGO Display&quot; и выставите его в &quot;Disabled&quot;. После этого вы сможете 
+наблюдать результаты всех тестов ПК во время загрузки. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.13. Настроить
+BIOS чтобы ПК загружался ещё быстрее </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">При помощи
+BIOS можно ещё более сократить время загрузки ПК, 
+уменьшив время первого тестирования. Конечно, рекомендовано осуществлять это 
+только если все компоненты ПК работают стабильно. Скажем, можно включить в
+BIOS однократную проверку доступной памяти вместо 
+трёхкратной. Для этого перейдите в раздел &quot;Advanced&quot; 
+или &quot;Advanced BIOS Features&quot;, найдите опцию
+&quot;Quick Power On Self Test&quot; или &quot;Quick Boot&quot; и выставьте её в 
+значение &quot;Enabled&quot;. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+<b>Предупреждение</b>: если появятся какие-либо проблемы с &quot;железом&quot;, 
+&nbsp;рекомендовано вернуться в BIOS и выключить быстрый 
+тест, выставив значение &quot;Disabled&quot;. При этом
+BIOS с большей вероятностью найдёт ошибку. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.14. Включить 
+в BIOS другую видеокарту </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Если в вашем 
+компьютере есть несколько интерфейсов, в которые может быть установлена 
+графическая карта (встроенная графика, AGP,
+PCI Express, PCI), то
+BIOS при загрузке будет пытаться определить, в каком 
+из них находится рабочая карта. Но это необязательно, ведь вся необходимая 
+информация вам известна. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Выберите в
+BIOS Setup опцию под названием &quot;Init 
+Display First&quot;, которая также может назваться &quot;Primary 
+VGA BIOS&quot; или &quot;VGA Boot From&quot; в зависимости от 
+версии BIOS. Укажите значение &quot;AGP&quot;, 
+если вы используете графическую карту AGP. В новых 
+системах с PCI Express эта опция обычно называется &quot;PEG 
+Port/Graphic Adapter Priority&quot;. В таком случае 
+выставьте её в значение &quot;PEG&quot;, если используете карту
+PCI Express. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.15.
+Отключить лишние функции видеокарт в BIOS</span></font></b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image202.png" width="293" height="167"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>
+BIOS Cacheable: эта опция улучшит производительность 
+только в MS-DOS.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Опции &quot;Video 
+RAM Cacheable&quot; и &quot;Video BIOS Cacheable&quot; 
+улучшают производительность графики на старых машинах под DOS. 
+Но для Windows они бесполезны. Включать их незачем.
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Выставьте в
+BIOS обе опции &quot;Video RAM Cacheable&quot; 
+и &quot;Video BIOS Cacheable&quot; в значение &quot;Disabled&quot;. 
+Заодно отключите опцию &quot;VGA Palette Snoop&quot;, если она 
+есть. Наконец, можно отключить и опцию &quot;System BIOS Cacheable&quot;: 
+она больше не увеличивает производительность, а в некоторых случаях может даже 
+негативно сказаться на стабильности системы. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.16. Настроить 
+память для видеокарты в BIOS </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px">Опция &quot;<span lang="EN-US">Graphics 
+Aperture Size</span>&quot; (которая также может называться &quot;<span lang="EN-US">AGP 
+Aperture Size</span>&quot;) изначально предназначалась для того, чтобы графические 
+карты <span lang="EN-US">AGP</span> более эффективно использовали оперативную 
+память ПК во время вывода текстур. Данная функция уже устарела, поскольку многие 
+графические карты оснащены встроенной памятью 128, 256 или даже 512 Мбайт. Кроме 
+того, встроенная на карту видеопамять работает быстрее оперативной ПК. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.17. Настроить в BIOS тактовую частоту 
+AGP </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Данная 
+настройка позволяет избежать проблем с графической картой AGP 
+при разгоне Front Side Bus (FSB).
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">На 
+материнских платах, оснащённых функцией разгона, можно найти пункт меню &quot;AGPCLK/CPUCLK&quot; 
+(он также может называться &quot;AGP Clock&quot;). Если он есть, 
+то выставьте значение &quot;Fix&quot;. Оно предотвращает влияние 
+разгона FSB на частоты AGP. 
+Значение &quot;1/1&quot; заставляет AGP работать на той же 
+частоте, что и FSB. Значение &quot;2/3&quot; выставляет
+AGP в 2/3 от частоты FSB, 
+так что, скажем, 100 МГц FSB переходит в 66 МГц для 
+графической карты AGP.</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.18. Увеличить 
+в BIOS тактовую частоту AGP</span></font></b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image202.png" width="293" height="167"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Повышение 
+частоты AGP увеличивает производительность, но при 
+этом могут появиться и проблемы.</b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt"><b>&nbsp;<font size="4"><span style="font-family: Times New Roman">2.19. Увеличить 
+в BIOS напряжение на AGP </span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Более 
+высокие тактовые частоты требуют и большей энергии. Опция &quot;AGP 
+Voltage&quot; позволяет увеличить напряжение AGP, 
+чаще всего с шагом 0,1 В. Напряжение можно повысить, если увеличение частоты
+AGP приводит к нестабильности, а потребность в росте 
+производительности стоит остро. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+<b>Предупреждение</b>: в некоторых ситуациях чрезмерное повышение напряжения может 
+сжечь графическую карту. Если повышение напряжения не приводит к требуемому 
+эффекту, верните значение к меньшему уровню и снизьте частоту 
+AGP, чтобы гарантировать стабильную работу системы. &nbsp;</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.20. Включить 
+и выключить в BIOS кэш процессора</span></font></b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image203.png" width="293" height="167"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Включение 
+кэша процессора любого уровня (1, 2 или 3) обеспечивает прирост 
+производительности.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Центральный 
+процессор работает существенно быстрее других компонентов материнской платы, и 
+ему часто приходится ждать поступления данных. Ускорить обмен данными позволяет 
+кэш процессора, представляющий собой скоростную память, находящуюся между
+CPU и оперативной памятью компьютера. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Кэш первого 
+уровня (L1) очень маленький, но зато он находится на 
+ядре процессора, близко к вычислительным блокам, обеспечивая очень быстрое 
+хранилище для временных данных. Кэш второго уровня (L2) 
+существенно больше по размеру и может хранить некоторые элементы программы 
+целиком или кусочки данных. Когда процессор запрашивает данные, то он сначала 
+проверяет их наличие в кэше. Если требуемые данные в нём есть, то 
+производительность компьютера существенно повышается, ведь память не может 
+реагировать с такой же скоростью, как кэш. У некоторых процессоров, как правило 
+профессионального уровня, присутствует и кэш L3. Как 
+вы понимаете, кэш следует всегда включать. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.21. Включить 
+в BIOS APIC </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Чипсет 
+материнской платы чаще всего состоит из двух чипов, которые называются северным 
+и южным мостами. Они отвечают за пересылку данных между процессором, оперативной 
+памятью, картами расширения и периферийными устройствами. Включение в BIOS режима APIC (advanced 
+programmable interrupt controller) позволяет улучшить работу с 
+устройствами. Число прерываний возрастает с 16 до 24, да и управление ими с 
+помощью APIC куда проще и удобнее. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Всё, что 
+нужно, - перейти в меню &quot;Advanced BIOS Features&quot; и выставить 
+опцию &quot;APIC Mode&quot; в значение &quot;Enabled&quot;.
+</p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.22. Включить 
+в BIOS пакетный режим (Burst Mode)
+</span></font>
+</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Пакетный 
+режим передачи (Burst Mode) позволяет ускорить многое: 
+работу с жёсткими дисками, картами PCI и оперативной 
+памятью. Пакетный режим позволяет передавать несколько кусочков данных за одну 
+передачу вместо обработки всех кусочков по отдельности. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Если во 
+время настройки BIOS находится опция &quot;Burst 
+Mode&quot;, необходимо перевести ее в режим &quot;Enabled&quot;.
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+Предупреждение: многие PCI-карты могут неправильно 
+работать, если опция &quot;PCI Dynamic Bursting&quot; выставлена 
+в &quot;Enabled&quot;. <b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.23. Включаем 
+управление шиной (Bus Mastering)</span></font></b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image204.png" width="585" height="332"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Включаем 
+управление шиной (Bus Mastering): эта опция ускоряет 
+работу с жёстким диском.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Эта 
+настройка BIOS разрешает Windows 
+использовать более скоростной режим прямого доступа к памяти 
+DMA (Direct Memory Access) при чтении или 
+записи на жёсткий диск. Режим DMA обеспечивает прямой 
+доступ контроллера жёсткого диска к памяти, минуя CPU. 
+В результате ускоряется доступ к винчестеру и экономятся ресурсы центрального 
+процессора. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Если в меню 
+&quot;Integrated Peripherals&quot; присутствует опция &quot;PCI 
+IDE BusMaster&quot;, выставьте её значение в &quot;Enabled&quot;, 
+как показано на иллюстрации выше. Когда вы это сделаете, перейдите в
+Windows в &quot;Пуск, Настройка, Панель управления, 
+Система&quot; (&quot;Start, Control Panel,
+System&quot;) и нажмите кнопку &quot;Диспетчер устройств/Device 
+Manager&quot; на закладке &quot;Оборудование/Hardware&quot;. 
+Там найдите пункт &quot;IDE ATA/ATAPI 
+контроллеры/IDE ATA/ATAPI 
+Controller&quot; (он зависит от чипсета, так что в вашем случае может немного 
+отличаться). Найдите запись &quot;Первичный канал IDE/Primary 
+IDE Channel&quot; и перейдите на закладку &quot;Дополнительные параметры/Advanced 
+Settings&quot;. Там найдите пункт &quot;Текущий режим передачи/Current 
+Transfer Mode&quot;. Его значение должно быть установлено в &quot;Режим ультра
+DMA/Ultra DMA Mode&quot;. У 
+жёстких дисков обычно ставится режим 5, а у приводов CD/DVD 
+- режим 2. <b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.24. Изменить 
+в BIOS тайминги памяти</span></font></b></p>
+<p class="MsoNormal" style="text-align:center;text-indent:42.55pt">
+<img border="0" src="../ris/image205.png" width="293" height="167"></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0"><b>Уменьшаем 
+задержки памяти. Данная операция имеет смысл только для высококачественных 
+модулей памяти. Но если сработает, то вы получите прирост производительности.</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Каждый 
+модуль памяти SDRAM и DDR/DDR-2 
+несёт специальный чип Serial Presence Detect (SPD), 
+в котором хранятся значения задержек (таймингов) памяти по умолчанию. 
+Производители памяти обычно указывают значения SPD для 
+гарантированно стабильной и надёжной работы. Поэтому часто имеет смысл чуть 
+ускорить задержки, поскольку данный шаг позволяет выжать ещё несколько процентов 
+производительности. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">
+Соответствующие опции могут называться наподобие &quot;System 
+Performance&quot;, &quot;Memory Timings&quot; или &quot;Configure DRAM Timing&quot;. Как правило, 
+значение по умолчанию для данных опций &quot;By SPD&quot;. Оно 
+заставляет компьютер считывать рекомендованные значения с чипа
+SPD модуля памяти и автоматически их использовать. 
+Кроме того, значение &quot;Enabled&quot; тоже вряд ли вызовет 
+проблемы с ПК. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Если же вы 
+хотите попытаться настроить системы для лучшей производительности, то выставите 
+значение опции в &quot;Disabled&quot; или &quot;User 
+Defined&quot; (если таковые есть, см. иллюстрацию выше). Затем выставьте 
+параметры вручную, как указано в следующих пунктах. <b>&nbsp;</b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.25. Выключить 
+в BIOS сетевой порт </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Некоторые 
+материнские платы оснащены двумя сетевыми интерфейсами, но, как правило, 
+большинству пользователей нужен только один. Не работающие интерфейсы лучше 
+отключать. В ряде случаев это повышает производительность и стабильность 
+системы. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+В меню &quot;Integrated Peripherals&quot; выставьте значение пункта 
+&quot;Onboard Intel LAN&quot; в &quot;Disabled&quot;. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.26. Выключить 
+в BIOS лишние порты </span></font> </b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Сегодня 
+только старым КПК и модемам нужны последовательные порты COM1 
+и COM2. Отключение портов экономит два прерывания
+IRQ, снижая число прерываний, которое должен проверять 
+процессор. Да и параллельный интерфейс LPT сегодня 
+вряд ли кому-нибудь нужен. Тем более что современные принтеры и сканеры 
+подключаются к порту USB. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">Из меню &quot;<span lang="EN-US">Integrated 
+Peripherals</span>&quot; отключите интерфейсы <span lang="EN-US">COM</span>1 и
+<span lang="EN-US">COM</span>2 (опция &quot;<span lang="EN-US">IO Devices</span>,
+<span lang="EN-US">Com</span>-Port&quot;, но может 
+называться и &quot;Serial Port 1/2&quot;). Выключите порт
+LPT, выставив значение пункта &quot;Parallel 
+Port&quot; в &quot;Disabled&quot;. </p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.27. Выключить в BIOS FireWire (IEEE1394)
+</span></font>
+</b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Интерфейс
+FireWire нужен только в тех случаях, если нужно 
+скачать видео с видеокамеры или подключить периферию FireWire. 
+Во всех остальных ситуациях интерфейс лучше выключить. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">В меню &quot;Integrated 
+Peripherals&quot; выставьте значение пункта &quot;Onboard 
+1394 device&quot; в &quot;Disabled&quot;.
+<b><span style="font-size:14.0pt">&nbsp;</span></b></p>
+<p class="a" style="text-align: center; margin-left: 0cm; line-height:normal; margin-right:0cm; margin-top:0cm; margin-bottom:.0001pt">
+<b><font size="4"><span style="font-family: Times New Roman">2.28. Обновление BIOS
+</span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Время от 
+времени производители материнских плат выпускают новые версии 
+BIOS. Обновления BIOS, как правило, содержат 
+различные оптимизации, а также новые функции. BIOS 
+записывается в специальный чип флэш-памяти. Во время прошивки новой версии она 
+записывается на место старой. Для обновления BIOS 
+требуются специальные утилиты, которые производители материнских плат вкладывают 
+в комплект поставки. Кроме того, некоторые версии BIOS 
+поддерживают прошивку самостоятельно, с помощью комбинации клавиш. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Что касается 
+обновления BIOS, то здесь, как правило, есть две 
+альтернативы. Можно воспользоваться утилитой под Windows, 
+которую обычно можно найти на CD от материнской платы 
+или скачать с web-сайта производителя. Также можно 
+установить утилиту, которая будет периодически проверять наличие новой версии
+BIOS и, если нужно, скачивать её. Данный метод прост, 
+но утилита проверки занимает место в памяти и потребляет некоторые ресурсы. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Обновление
+BIOS под Windows - лёгкий и 
+простой способ, если только ваша система работает стабильно. Для большей 
+надёжности можно рекомендовать обновление через DOS.
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Для этого 
+нужно скачать утилиту прошивки с web-сайта 
+производителя. Затем создать загрузочную дискету DOS и 
+записать утилиту вместе с новой версией BIOS на неё. 
+Потом следует загрузиться с дискеты и через командную строку запустить утилиту 
+(если вы скачали утилиту и BIOS в архиве
+ZIP, то на дискету их следует копировать в 
+распакованном виде). Подобный подход многие считают более надёжным, поскольку в
+DOS нет никаких посторонних драйверов. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0">
+<b>Предупреждение</b>: если вы будете обновлять <span lang="EN-US">BIOS</span> 
+ноутбука, то не следует этого делать во время питания от аккумулятора. Прошивать 
+ноутбук следует при питании от сети.</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt; text-align:center; line-height:normal" class="a">
+<b><font size="4"><span style="font-family: Times New Roman">3. Оптимальная 
+настройка BIOS</span></font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-bottom:0">Хорошо 
+известно, что производительность материнской платы сильно зависит от временных 
+установок для работы с памятью, выполняемых в BIOS Setup. Название пунктов 
+Setup, в которых устанавливаются эти временные параметры может меняться в 
+зависимости от чипсета и BIOS на материнской плате. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Различные 
+BIOSы предлагают пользователю различный набор возможностей для настройки 
+системы: в одних (таких как Award или AMI) этих возможностей более чем 
+достаточно, в то время как другие (например Phoenix) таких возможностей не 
+предоставляет вовсе. Для достижения максимальной производительности нужно 
+стремиться к уменьшению всех временных задержек. Однако установка чрезмерно 
+маленьких значений, не поддерживаемых вашей системой, может приводить к 
+нестабильной работе, зависаниям и невозможности загрузить компьютер. Однако не 
+следует отчаиваться. Достаточно загрузить установки Setup defaults после 
+повторного входа в Setup, и можете быть уверены, что Ваша система вернется в 
+исходное состояние. Изменение установок Setup не может повредить Вашу систему. 
+Но установки по умолчанию не будут обеспечивать максимальной производительности.
+</p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">В данном 
+документе не рассматриваются основные вопросы взаимодействия с Setup BIOS, 
+информацию о которых можно получить из документации к материнской плате. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Настройка 
+Advanced Chipset Setup. Все что касается временных задержек и описано ниже, 
+можно найти в разделе Advanced Chipset Setup в Setup Вашего BIOSа. Ниже описаны 
+опции этого раздела, которые влияют на производительность компьютера. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Auto 
+Configuration. Если Вы хотите выполнять какие-либо изменения в настройках, то 
+эту опцию следует выключить. Ее включение приводит к установке всех временных 
+задержек по умолчанию, которые, как Вы уже знаете, не обеспечивают максимального 
+быстродействия. DRAM Read Timing Имейте в виду, то что алгоритмы работы 
+современного Pipeline Burst Cache устроены таким образом, что гораздо выгоднее 
+выполнять обмены с памятью не словами или байтами, а группами из четырех или 
+восьми последовательно расположенных двойных слов. В терминах временных диаграмм 
+задержка при обмене с памятью несколькими двойными словами выглядит как x-y-y-y 
+для обычного обращения и x-y-y-y-z-y-y-y для обращения с обратной записью. Здесь 
+первая цифра означает количество тактов процессора, необходимых для чтения 
+первого двойного слова, а остальные цифры - количество тактов процессора, 
+необходимых для чтения последующих двойных слов. Например, для Pipeline Burst 
+Cache RAM это выглядит как 3-1-1-1 или 3-1-1-1-1-1-1-1. Для обычной основной 
+памяти эти цифры не являются жестко определенными и могут варьироваться в 
+зависимости от ее типа и скорости, а также продвинутости пользователя. Поэтому 
+Вы можете пользуясь BIOS Setup изменять параметры x, y и иногда z для увеличения 
+производительности подсистемы памяти. Отсюда напрашивается вывод о том, что для 
+того, чтобы процессор мог быстрее оперировать с памятью, Вы должны уменьшать 
+вышеуказанные значения. Допустимые значения для циклов обращения к памяти - x222 
+или x333 для EDO RAM, x333 или x444 для FPM RAM и x111 или x222 для SDRAM. 
+Именно эти значения Вы и можете изменить в Вашем Setup. Вы уже наверное 
+догадались, что SDRAM - самый быстрый тип памяти. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">DRAM Write 
+Timing Эта опция, отвечающая за время записи в память, выставляется аналогично 
+предыдущей. Единственное отличие, которое следует иметь в виду, это то, что 
+значения задержек для EDO и FPM устанавливаются одинаковыми, так как скорость 
+обращения к этим типам памяти отличается только при чтении (EDO быстрее). Также, 
+как и в предыдущем случае, устанавливайте наименьшие возможные значения. Но при 
+этом система должна работать. RAS to CAS Delay. Однако, аналогично, старайтесь 
+уменьшить это значение, но имейте в виду, что не все типы памяти будут с ними 
+работать. Поэтому не забудьте проверить работоспособность системы и в этом 
+случае. DRAM Leadoff Timing Короче говоря, этот тот &quot;x&quot;, о котором говорилось 
+страницу назад (временная диаграмма чтения/записи). Но при установке этого 
+значения имеет место различие между существующими чипсетами. Например, максимум, 
+что может Triton FX при чтении, это 7-y-y-y, а Triton TX или HX позволяет 
+установить 5-y-y-y. Поэтому последние чипсеты будут работать быстрее. При записи 
+же FX позволяет установить 5-y-y-y, а HX и TX могут работать при 4-y-y-y, однако 
+Intel рекомендует эти установки только при внешней частоте 50 или 60 МГц. Как Вы 
+уже догадались, лучше поставить меньшее возможное значение и проверить 
+работоспособность. Но система будет работоспособна при значении 5, только если 
+используется память со временем доступа 50нс (или быстрее) для EDO или 10ns для 
+SDRAM. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Turbo Read 
+Leadoff. Изменение этого значения позволяет уменьшить &quot;x&quot; еще больше. Но память, 
+которая поддерживала бы эту опцию, встречается достаточно редко. Вы конечно 
+можете попробовать разрешить эту установку, но имейте в виду, что система вряд 
+ли будет работать устойчиво, если вообще будет работать. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">Turbo Read 
+Pipelining. Похоже, что изменение этой опции приводит к изменению &quot;z&quot; в 
+описанной выше временной диаграмме. Если хотите, чтобы компьютер работал быстро, 
+попробуйте включить и эту опцию, хотя нельзя быть уверенным, что система будет 
+работать вообще. </p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Speculative Lead 
+Off. При включении этой опции, контроллер DRAM может начинать выполнять чтение 
+до того, как полностью будет декодирован адрес, по которому находятся требуемые 
+данные. Это может еще ускорить работу с памятью. Что бы это ни было, 
+производительность системы при включении этой опции возрастает.</span></p><p> &nbsp;<hr size=5>
+<p align="center" style="margin-bottom: 0"><b>Практическая часть</b></p>
+<p align="center" style="margin-top: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>1. </b>Поделать все пункты настройки BIOS, 
+приведённые в разделе 2.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size:12.0pt; font-family:Times New Roman"><b>2.</b> Предоставить отчёт о лабораторной работе.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>3.</b> Сделать вывод о работе BIOS 
+данного ПК: Что можно оптимизировать в данном BIOS. 
+Записать.</span></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35px; margin-top:0; margin-bottom:0">
+<span style="font-size:12.0pt; font-family:Times New Roman"><b>4. </b>Отчет по проделанной работе:</span></p>
+<p style="margin-bottom:0;text-indent:35px; text-align:justify; margin-top:0" class="MsoNormal">
+<span style="font-size:12.0pt; font-family:Times New Roman">В него должны входить название работы, цель 
+работы, вся теория в сокращённом виде.</span></p>
+<p>&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>1.</b>
+Назначение BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>2. </b>Производители BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>3.</b>
+Версии BIOS и их отличия.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>4. </b>Раздел Standard CMOS Setup BIOS. Основные настройки раздела.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>5. </b>Раздел BIOS Features Setup.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>6.</b>
+Раздел Chipset Features Setup BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>7. </b>Раздел Power Management Setup BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>8. </b>Раздел PNP/PCI Configuration Setup BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>9. </b>Раздел Integrated Peripherals BIOS.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>10. </b>Пароль 
+супервизора/пользователя BIOS. Изменение, удаление, вход под паролем.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top:0; margin-bottom:0">
+&nbsp;</p>
+</body>
+</html>

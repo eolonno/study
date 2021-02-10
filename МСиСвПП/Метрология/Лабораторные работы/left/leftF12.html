@@ -1,0 +1,1486 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title></title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+span.apple-converted-space
+	{font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 12<br>ПРОЕКТИРОВАНИЕ ЛОКАЛЬНОЙ 
+ВЫЧИСЛИТЕЛЬНОЙ СЕТИ</b></p>
+<hr size=5>
+<p align="center"><b>Теоретическая часть</b></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><b><span style="color:#333333">Вычислительная сеть 
+(ВС)</span></b><span style="color:#333333"> состоит из вычислительных машин и 
+сети передачи данных (сети связи). ВС классифицируются по геометрическим 
+масштабам на глобальные (англ. Global Area Network, GAN),<b> широкомасштабные
+</b>(англ. Wide Area Network, WAN),<b> региональные<i> </i></b>(англ. 
+Metropolitan Area Network, MAN) и <b><i>л</i>окальные вычислительные</b> сети 
+(англ. Local Area Network, LAN).</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Под <b>локальной 
+вычислительной сетью (ЛВС)</b> обычно понимают <b>ВС,</b> соединяющие 
+вычислительные машины в одной комнате, здании или в нескольких близко 
+расположенных зданиях. Сети связи ЛВС имеют в настоящее время следующие типичные 
+характеристики: высокую скорость передачи данных (0.1 - 100 Мбит/с), небольшую 
+протяженность (0.1-50 км), малую вероятность ошибки передачи данных (+1Е-8 - 
++1Е-11).</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">ЛВС - это система, 
+составленная из отдельных модулей, которые можно добавлять и выстраивать в 
+нужной конфигурации. <u>Основными составными частями сети</u> являются:</span></font></p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	абонентские станции; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	серверы сети; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	сетевые адаптеры; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	линии связи; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	терминаторы; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	ретрансляторы; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	сетевое программное обеспечение. </li>
+</ul>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Кроме основных 
+компонент сеть может включать в состав блоки бесперебойного питания, резервные 
+приборы, современные динамически распределяемые объекты и различные типы 
+серверов (такие как файл-серверы, принт-серверы или архивные серверы).</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Создавая ЛВС, 
+разработчик стоит перед проблемой: при известных данных о назначении, перечне 
+функций ЛВС и основных требованиях к комплексу технических и программных средств 
+ЛВС построить сеть, то есть решить следующие <u>задачи</u>:</span></font></p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	определить архитектуру ЛВС: выбрать типы компонент ЛВС; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	рассчитать количество компонент ЛВС; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	произвести оценку показателей эффективности ЛВС; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	определить стоимость ЛВС. </li>
+</ul>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">При этом должны 
+учитываться правила соединения компонентов ЛВС, основанные на стандартизации 
+сетей, и их ограничения, специфицированные изготовителями компонент ЛВС.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Конфигурация ЛВС для 
+АСУ существенным образом зависит от особенностей конкретной прикладной области. 
+Эти особенности сводятся к типам передаваемой информации (данные, речь, 
+графика), пространственному расположению абонентских систем, интенсивностям 
+потоков информации, допустимым задержкам информации при передаче между 
+источниками и получателями, объемам обработки данных в источниках и 
+потребителях, характеристикам абонентских станций, внешним климатическим, 
+электромагнитным факторам, эргономическим требованиям, требованиям к надежности, 
+стоимости ЛВС и т.д.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Исходные данные для 
+проектирования ЛВС могут быть получены в ходе предпроектного анализа прикладной 
+области, для которой должна быть создана АСУ. Эти данные уточняются затем в 
+результате принятия решений на этапах проектирования ЛВС и построения все более 
+точных моделей АСУ, что позволяет в «Техническом задании на ЛВС» сформулировать 
+требования к ней. Лучшая ЛВС - это та, которая удовлетворяет всем требованиям 
+пользователей, сформулированным в техническом задании на разработку ЛВС, при 
+минимальном объеме капитальных и эксплуатационных затрат. Данная лабораторная 
+работа посвящена практическому изучению методов проектирования конфигурации ЛВС.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Проектирование 
+конфигурации ЛВС относится к этапу проектирования технического обеспечения 
+автоматизированных систем и осуществляется на этом этапе после распределения 
+функции автоматизированной системы по абонентским станциям ЛВС, выбора типов 
+абонентских станций, определения физического расположения абонентских станций.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Задание на 
+проектирование включает требования к ЛВС, указания о доступных компонентах 
+аппаратных и программных средств, знания о методах синтеза и анализа ЛВС, 
+предпочтения и критерии сравнения вариантов конфигурации ЛВС.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Рассмотрим варианты 
+топологии и состав компонент локальной вычислительной сети.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Топология ЛВС</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333"><font face="Times New Roman">Топология сети 
+определяется способом соединения ее узлов каналами связи. На практике 
+используются <u>4 базовые топологии</u>:</font></span></p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+	<li class="MsoNormal" style="color: #333333">
+	<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+	<font face="Times New Roman">звездообразная (рис. 12. 1 ,а , 12. 1 ,б);
+	</font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+	<font face="Times New Roman">кольцевая (рис. 12. 2); </font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+	<font face="Times New Roman">шинная (рис. 12. 3); </font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+	<font face="Times New Roman">древовидная или иерархическая (рис. 4). </font>
+	</li>
+</ul>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333"><font face="Times New Roman">Топология сети влияет 
+на надежность, гибкость, пропускную способность, стоимость сети и время ответа [ 
+1, табл. 12. 1 ].</font></span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333"><font face="Times New Roman">Выбранная топология 
+сети должна соответствовать географическому расположению сети ЛВС, требованиям, 
+установленным для характеристик сети, перечисленным в табл. 1. Топология влияет 
+на длину линий связи.</font></span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333"><font face="Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u>Топология звезда</u> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<u>Топология 
+распределенная звезда</u> </font></span></p>
+<p class="MsoNormal" align="center"><span style="color: #333333">
+<img border="0" src="../ris/image190.gif" width="344" height="273">&nbsp;&nbsp;&nbsp; </span>
+<img border="0" src="../ris/image191.png" width="264" height="224"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="color: #333333; font-weight: 700"><font size="2">Рис.12. 1. </font>
+</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="right" style="text-indent: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: 10px">
+<b><span style="color:#333333">Сравнительные данные по характеристикам ЛВС&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Таблица 12. 1.</span></b></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" style="width: 628px" id="table1" height="394">
+		<tr style="height: 18.0pt">
+			<td rowspan="2" valign="top" style="width: 18%; height: 18.0pt; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color: #333333; font-weight: 700">Р5.</span></p>
+			<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+			<span style="color: #333333; font-weight: 700">Характеристика</span></td>
+			<td colspan="3" valign="top" style="width: 79%; height: 18.0pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+			<b>Качественная оценка характеристик</b></td>
+		</tr>
+		<tr style="height: 41.25pt">
+			<td valign="top" style="width: 30%; height: 41.25pt; padding: 1.5pt">
+			<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+			<b>Шинной и древовидной сети</b></td>
+			<td valign="top" style="width: 26%; height: 41.25pt; padding: 1.5pt">
+			<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+			<b>Кольцевой сети</b></td>
+			<td valign="top" style="width: 21%; height: 41.25pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+			<b>Звездообразной сети</b></td>
+		</tr>
+		<tr style="height: 74.25pt">
+			<td valign="top" style="width: 18%; height: 74px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">I. Время ответа</p>
+			<p style="margin:0cm;margin-bottom:.0001pt">Юта.</td>
+			<td valign="top" style="width: 30%; height: 74px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">В маркерной шине&nbsp;
+			<b>t</b> <b><sub><span style="color: #333333"><font size="2">отв.</font></span></sub></b> 
+			предсказуемо и зависит от числа узлов сети.
+			<span style="color:#333333">В случайной шине <br>
+			</span><span style="color: #333333"><font size="2">t </font><b><sub>
+			<font size="2">отв.</font></sub></b></span><span style="color:#333333"> 
+			зависит от нагрузки</span></td>
+			<td valign="top" style="width: 26%; height: 74px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>t<sub><font size="2"><span style="color: #333333">отв</span></font><font size="2"><span style="color: #333333">.</span></font></sub></b>
+			<span style="color:#333333">Есть функция от числа узлов сети</span></td>
+			<td valign="top" style="width: 21%; height: 74px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>T<sub><font size="2"><span style="color: #333333">oтв</span></font><font size="2"><span style="color: #333333">.</span></font></sub></b>
+			<span style="color:#333333">зависит от нагрузки и временных 
+			характеристик центрального узла</span></td>
+		</tr>
+		<tr style="height: 91.5pt">
+			<td valign="top" style="width: 18%; height: 117px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">2. Пропускная способность С</span></p>
+			<p style="margin:0cm;margin-bottom:.0001pt">&nbsp;</td>
+			<td valign="top" style="width: 30%; height: 117px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">В маркерной шине зависит от количества 
+			узлов. В случайной шине С увеличивается при спорадических малых 
+			нагрузках и падает при обмене длинными сообщениями в стационарном 
+			режиме</span></td>
+			<td valign="top" style="width: 26%; height: 117px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">С падает при добавлении новых узлов</span>
+			</td>
+			<td valign="top" style="width: 21%; height: 117px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">С зависит от производительности 
+			центрального узла и пропускной способности абонентских каналов</span></td>
+		</tr>
+		<tr style="height: 113.25pt">
+			<td valign="top" style="width: 18%; height: 116px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">З. Надежность</span></p>
+			<p style="margin:0cm;margin-bottom:.0001pt">&nbsp;</td>
+			<td valign="top" style="width: 30%; height: 116px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">Отказы АС не влияют на работоспособность 
+			остальной части сети. Разрыв кабеля выводит из строя шинную ЛВС.</span></p>
+			<p style="margin:0cm;margin-bottom:.0001pt">&nbsp;</td>
+			<td valign="top" style="width: 26%; height: 116px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">Отказ одной АС не приводит к отказу всей 
+			сети. Однако использование обходных схем позволяет защитить сеть от 
+			отказов АС</span></td>
+			<td valign="top" style="width: 21%; height: 116px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color:#333333">Отказы АС не влияют на работоспособность 
+			остальной части сети. Надежность ЛВС определяется надежностью 
+			центрального узла</span></td>
+		</tr>
+	</table>
+</div>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="text-align: left; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="color:#333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u>Топология кольцо</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<u>Топология линейная шина</u></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="color: #333333">
+<img border="0" src="../ris/image192.jpg" width="256" height="146">&nbsp;&nbsp;&nbsp; </span>
+<img border="0" src="../ris/image193.jpg" width="288" height="86"></p>
+<p align="center" style="text-align: left; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="color: #333333; font-weight: 700"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Рис. 12. 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Рис. 12. 3</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="color: #333333; text-decoration: underline">Иерархическая сеть с 
+концентраторами</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image194.gif" width="198" height="207"><span style="color:#333333">&nbsp;
+</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="color:#333333"><font size="2">АК - активный концентратор ПК - 
+пассивный концентратор</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="color: #333333; font-weight: 700"><font size="2">Рис. 12. 4.</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Выбор типов 
+линий связи</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">В качестве линий связи 
+могут выступать кабели со скрученными парами проводов <i>(витые пары), 
+коаксиальные кабели, волоконно-оптические кабели, радио, инфракрасные</i> ИК-, 
+СВЧ - каналы.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><b><span style="color:#333333">В набор параметров 
+линий связи ЛВС</span></b><span style="color:#333333"> входят: полоса 
+пропускания и скорость передачи данных, способность к двухточечной, 
+многоточечной и/или широковещательной передаче (то есть допустимые применения), 
+максимальная протяженность и число подключаемых абонентских систем, 
+топологическая гибкость и трудоемкость прокладки, устойчивость к помехам и 
+стоимость.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">При выборе типов кабеля 
+учитывают следующие показатели:</span></font></p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	<font size="3">стоимость монтажа и обслуживания; </font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	<font size="3">скорость передачи информации; </font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	<font size="3">ограничения на величину расстояния передачи информации (без 
+	дополнительных усилителей-повторителей <i>(repeater);</i> </font></li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	<font size="3">безопасность передачи данных. </font></li>
+</ul>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Главная проблема 
+заключается в одновременном обеспечении показателей, например, наивысшая 
+скорость передачи данных ограничена максимально возможным расстоянием передачи 
+данных, при котором еще обеспечивается требуемый уровень защиты данных. Легкая 
+наращиваемость и простота расширения кабельной системы влияют на ее стоимость.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Условия физического 
+расположения помогают определить наилучшим образом тип кабеля и его топологию. 
+Каждый тип кабеля имеет собственные ограничения по максимальной длине:<b> <i>
+витая пара</i></b> обеспечивает работу на коротких отрезках,<b> <i>одноканальный 
+коаксиальный кабель -</i></b> на больших расстояниях,<b> <i>многоканальный 
+коаксиальный а волоконно-оптический кабель -</i></b> на очень больших 
+расстояниях.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Скорость передачи 
+данных тоже ограничена возможностями кабеля: самая большая - у<b> <i>
+волоконно-оптического,</i></b> затем идут<b> <i>одноканальный коаксиальный, 
+многоканальный кабели</i> и <i>витая пара.</i></b> Под требуемые характеристики 
+можно подобрать имеющиеся в наличии кабели.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">В табл. 12. 2 
+приводятся характеристики линий связи ЛВС <b>Ethernet.</b></span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p align="center" style="text-align: right; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: 10px">
+<b><span style="color:#333333">Характеристики линий связи Ethernet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Таблица 12. 2</span></b></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" width="570" style="width: 427.5pt" id="table2" height="261">
+		<tr style="height: 12.0pt">
+			<td width="20%" rowspan="2" valign="top" style="width: 20.86%; height: 12.0pt; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt" align="center">
+			<p style="margin:0cm;margin-bottom:.0001pt">
+			<span style="color: #333333; font-weight: 700">Параметр</span></td>
+			<td width="78%" colspan="3" valign="top" style="width: 78.64%; height: 12.0pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt" align="center">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>Тип линии связи</b></td>
+		</tr>
+		<tr style="height: 30.75pt">
+			<td width="20%" valign="top" style="width:20.94%;padding:1.5pt 1.5pt 1.5pt 1.5pt;
+  height:30.75pt" align="center">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>Тонкопроводная 
+			(моноканал)</b></td>
+			<td width="26%" valign="top" style="width:26.48%;padding:1.5pt 1.5pt 1.5pt 1.5pt;
+  height:30.75pt" align="center">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>Толстопроводная 
+			(моноканал)</b></td>
+			<td width="30%" valign="top" style="width: 30.88%; height: 30.75pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt" align="center">
+			<p style="margin:0cm;margin-bottom:.0001pt"><b>Широкополосная (поликанал)</b></td>
+		</tr>
+		<tr style="height: 30.75pt">
+			<td width="20%" valign="top" style="width: 20.86%; height: 30.75pt; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Максимальная длина (без 
+			повторителей), м</td>
+			<td width="20%" valign="top" style="width:20.94%;padding:1.5pt 1.5pt 1.5pt 1.5pt;
+  height:30.75pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">185</td>
+			<td width="26%" valign="top" style="width:26.48%;padding:1.5pt 1.5pt 1.5pt 1.5pt;
+  height:30.75pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">500</td>
+			<td width="30%" valign="top" style="width: 30.88%; height: 30.75pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">1900</td>
+		</tr>
+		<tr style="height: 61.5pt">
+			<td width="20%" valign="top" style="width: 20.86%; height: 67px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Тип кабеля</td>
+			<td width="20%" valign="top" style="width: 20.94%; height: 67px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">RG58</td>
+			<td width="26%" valign="top" style="width: 26.48%; height: 67px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Коаксиальный кабель в 
+			тефлоновой или полихлорвиниловой оболочке</td>
+			<td width="30%" valign="top" style="width: 30.88%; height: 67px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Телевизионный 
+			коаксиальный кабель</td>
+		</tr>
+		<tr style="height: 33.75pt">
+			<td width="20%" valign="top" style="width: 20.86%; height: 37px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Максимальное число АС</td>
+			<td width="20%" valign="top" style="width: 20.94%; height: 37px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">30</td>
+			<td width="26%" valign="top" style="width: 26.48%; height: 37px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">200</td>
+			<td width="30%" valign="top" style="width: 30.88%; height: 37px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">1023</td>
+		</tr>
+		<tr style="height: 42.75pt">
+			<td width="20%" valign="top" style="width: 20.86%; height: 37px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">Скорость передачи, 
+			Мбит/с</td>
+			<td width="20%" valign="top" style="width: 20.94%; height: 37px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">10</td>
+			<td width="26%" valign="top" style="width: 26.48%; height: 37px; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">10</td>
+			<td width="30%" valign="top" style="width: 30.88%; height: 37px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+			<p style="margin:0cm;margin-bottom:.0001pt">10</td>
+		</tr>
+	</table>
+</div>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Fast Ethernet</span></p>
+<p align="center" style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">Fast Ethernet 802.3u не является самостоятельным 
+стандартом, а представляет собой дополнение к существующему стандарту 802.3 в 
+виде глав. Новая технология Fast Ethernet сохранила весь MAC уровень 
+классического Ethernet, но пропускная способность была повышена до 100 Мбит/с. 
+Следовательно, поскольку пропускная способность увеличилась в 10 раз, то битовый 
+интервал уменьшился в 10 раз, и стал теперь равен 0,01 мкс. Поэтому в технологии 
+Fast Ethernet время передачи кадра минимальной длины в битовых интервалах 
+осталось тем же, но равным 5,75 мкс. Ограничение на общую длину сети Fast 
+Ethernet уменьшилось до 200 метров. Все отличия технологии Fast Ethernet от 
+Ethernet сосредоточены на физическом уровне. Уровни MAC и LLC в Fast Ethernet 
+остались абсолютно теми же.</font><span style="font-family: Times New Roman">
+</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">Официальный стандарт 802.3u установил три различных 
+спецификации для физического уровня Fast Ethernet: </font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman"><b>1.</b> 100Base-TX - для двухпарного кабеля на 
+неэкранированной витой паре UTP категории 5 или экранированной витой паре STP 
+Type 1; </font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman"><b>2.</b> 100Base-T4 - для четырехпарного кабеля на 
+неэкранированной витой паре UTP категории 3, 4 или 5; </font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman"><b>3.</b> 100Base-FX- для многомодового 
+оптоволоконного кабеля, используются два волокна.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">В Ethernet вводится 2 класса концентраторов: 1-го 
+класса и 2-го класса. Концентраторы 1-го класса поддерживают все типы 
+кодирования физического уровня (TX, FX, T4), т.е. порты могут быть разные. 
+Концентраторы 2-го класса поддерживают только один тип кодирования физического 
+уровня: либо TX/FX, либо T4. </font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">Предельные расстояния от хаба до узла:</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Times New Roman">TX – 100 м, FX – многомодовые: 412 м (полудуплекс), 
+2км (полный). Одномодовые: 412 м (полудуплекс), до 100 км (полный), T4 – 100 м.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font face="Times New Roman">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Times New Roman">Концентратор 1-го класса в сети может быть 
+только один, концентраторов 2-го класса – два, но м/д ними 5 м.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Витая пара (UTP)</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Наиболее дешевым кабельным соединением является 
+двухжильное соединение витым проводом, часто называемое <b><i>витой парой&quot;</i></b> 
+(twisted pair). Она позволяет передавать информацию со скоростью до 10-100 
+Мбит/с, легко наращивается, однако является помехонезащищенной. Длина кабеля не 
+может превышать 1000 м при скорости передачи 1 Мбит/с. Преимуществами являются 
+низкая цена и беспроблемная установка. Для повышения помехозащищенности 
+информации часто используют экранированную витую пару. Это увеличивает стоимость 
+витой пары и приближает ее цену к цене коаксиального кабеля.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<u>Пять категорий UTP.</u></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i>1)</i>. Традиционный телефонный кабель,по нему можно передавать речь, но не 
+данные. </p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i>2). С</i>пособен передавать данные со скоростью до 4 Мбит/с. 4 витые пары.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i>3). </i>Кабель, способный передавать данные со скоростью до 10 Мбит/с. 4 
+витых пар с девятью витками на метр.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i>4). </i>Кабель, способный передавать данные со скоростью до 16 Мбит/с. 4 
+витых пар.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i>5). </i>Кабель, способный передавать данные со скоростью до 100 Мбит/с. 
+Состоит из четырех витых пар медного провода.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="color: #333333; font-weight: 700; font-size: 14.0pt">Коаксиальный 
+кабель</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Коаксиальный кабель</span></i></b><span style="color:#333333"> 
+имеет среднюю цену, помехозащищен и применяется для связи на большие расстояния 
+(несколько километров). Скорость передачи информации от 1 до 10 Мбит/с, а в 
+некоторых случаях может достигать 50 Мбит/с.<b> <i>Коаксиальный кабель</i></b> 
+используется для основной и широкополосной передачи информации.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Широкополосный 
+коаксиальный кабель</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Широкополосный коаксиальный кабель</span></i></b><span style="color:#333333"> 
+невосприимчив к помехам, легко наращивается, но цена его высокая. Скорость 
+передачи информации равна 500 Мбит/с. При передаче информации в базисной полосе 
+частот на расстояние более 1,5 км требуется усилитель, или так называемый 
+повторитель (repeater). Поэтому суммарное расстояние при передаче информации 
+увеличивается до 10 км. Для вычислительных сетей с топологией шина или дерево 
+коаксиальный кабель должен иметь на конце согласующий резистор (terminator).</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">
+Ethernet-кабель</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><span style="color:#333333">Ethernet-кабель</span></b><span style="color:#333333"> 
+также является коаксиальным кабелем с волновым сопротивлением 50 Ом. Его 
+называют еще<b> <i>толстый</i> Ethernet </b>(thick) или <b><i>желтый кабель</i></b> 
+(yellow cable). Он использует 15-контактное стандартное включение. Вследствие 
+помехозащищенности является дорогой альтернативой обычным коаксиальным кабелям. 
+Максимально доступное расстояние без повторителя не превышает 500 м, а общее 
+расстояние сети <b>Ethernet -</b>около 3000 м. Ethernet-кабель, благодаря своей 
+магистральной топологии, использует в конце лишь один нагрузочный резистор.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">
+Cheapernet-кабель</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Более дешевым, чем Ethernet-кабель, является 
+соединение <b>Cheapernet-кабель</b> или, как его часто называют,<b> <i>тонкий</i></b> 
+(thin)<b> Ethernet.</b> Это также 50-омный коаксиальный кабель со скоростью 
+передачи информации в 10 миллионов бит/с.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">При соединении сегментов<b> Cheapernet-кабеля</b> 
+также требуются повторители. Вычислительные сети с<b> Cheapernet-кабелем</b> 
+имеют небольшую стоимость и минимальные затраты при наращивании. Соединение 
+сетевых плат производится с помощью широко используемых малогабаритных 
+байонетных разъемов(СР-50). Дополнительного экранирования не требуется. Кабель 
+присоединяется к ПК с помощью тройниковых соединителей (Tconnectors). Расстояние 
+между двумя рабочими станциями без повторителей можетсоставлять максимум 300 м, 
+а общее расстояние для сети на<b> Cheapemet-кабеле -</b> около 1000 м. 
+Приемопередатчик<b> Cheapernet </b>расположен на сетевой плате и используется 
+как для гальванической развязки между адаптерами, так и для усиления внешнего 
+сигнала.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Оптоволоконные 
+линии</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Наиболее дорогими 
+являются<b> <i>оптопроводники,</i></b> называемые также <b><i>стекловолоконным 
+кабелем.</i></b> Скорость распространения информации по ним достигает нескольких 
+гигабит в секунду. Внешнее воздействие помех практически отсутствует. 
+Применяются там, где возникают электромагнитные поля помех или требуется 
+передача информации на очень</span> большие расстояния без использования 
+повторителей. Они обладают противоподслушивающими свойствами, так как техника 
+ответвлений в оптоволоконных кабелях очень сложна. Оптопроводники объединяются в 
+ЛВС с помощью звездообразного соединения.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><i>2 вида оптоволокна</i>:</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">1)<b> одномодовый кабель</b> – используется 
+центральный проводник малого диаметра, соизмеримого с длиной волны света 
+(5-10мкм). При этом все лучи света распространяются вдоль оптической оси 
+световода, не отражаясь от внешнего проводника. В качестве источника света 
+используют лазер. Длина кабеля – 100км и более. </font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">2)<b> многомодовый кабель</b> – используют более 
+широкие внутренние сердечники (40-100мкм). Во внутреннем проводнике одновременно 
+существует несколько световых лучей, отражающихся от внешнего проводника под 
+разными углами. Угол отражения наз. модой луча. В качестве источника излучения 
+применяются светодиоды. Длина кабеля – до 2км.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="color: #333333; font-weight: 700; font-size: 14.0pt">Беспроводные 
+компьютерные сети</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><b>Беспроводные компьютерные сети</b>&nbsp;— это 
+технология, позволяющая создавать вычислительные&nbsp;</font><a title="Сеть" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Сеть"><span style="color: windowtext">сети</span></a><font face="Times New Roman">, 
+полностью соответствующие стандартам для обычных проводных сетей (например,&nbsp;</font><a title="Ethernet" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Ethernet"><span style="color: windowtext">Ethernet</span></a><font face="Times New Roman">), 
+без использования кабельной проводки. В качестве носителя информации в таких 
+сетях выступают радиоволны СВЧ-диапазона.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color: black">Существует два основных 
+направления применения беспроводных компьютерных сетей:</span></font></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-left: 18.0pt; margin-top: 0; margin-bottom: 0" align="justify">
+1) <font face="Times New Roman"><span style="color: black">Работа в замкнутом 
+объеме (офис, выставочный зал и&nbsp;т.&nbsp;п.);</span></font></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-left: 18.0pt; margin-top: 0; margin-bottom: 0" align="justify">
+2) <span style="color: black"><font face="Times New Roman">Соединение удаленных</font><span class="apple-converted-space">&nbsp;</span></span>локальных 
+сетей<span class="apple-converted-space"><span style="color: black">&nbsp;</span></span><font face="Times New Roman"><span style="color: black">(или 
+удаленных сегментов локальной сети).</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">Для организации беспроводной сети в замкнутом 
+пространстве применяются передатчики со всенаправленными антеннами. Стандарт
+</font>
+<a title="IEEE 802.11" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/IEEE_802.11">
+<span style="color: windowtext">IEEE 802.11</span></a><font face="Times New Roman">&nbsp;определяет 
+два режима работы сети&nbsp;—&nbsp;</font><a title="Ad-hoc" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Ad-hoc"><span style="color: windowtext">Ad-hoc</span></a><font face="Times New Roman">&nbsp;и&nbsp;</font><a title="Клиент-сервер" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Клиент-сервер"><span style="color: windowtext">клиент-сервер</span></a><font face="Times New Roman">. 
+Режим Ad-hoc (иначе называемый называемый «</font><a title="Точка-точка" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Точка-точка"><span style="color: windowtext">точка-точка</span></a><font face="Times New Roman">»)&nbsp;— 
+это простая сеть, в которой связь между станциями (клиентами) устанавливается 
+напрямую, без использования специальной </font>
+<a title="Беспроводная точка доступа" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Беспроводная_точка_доступа">
+<span style="color: windowtext">точки доступа</span></a><font face="Times New Roman">. 
+В режиме клиент-сервер беспроводная сеть состоит, как минимум, из одной точки 
+доступа, подключенной к проводной сети, и некоторого набора беспроводных 
+клиентских станций. Поскольку в большинстве сетей необходимо обеспечить доступ к 
+файловым серверам, принтерам и другим устройствам, подключенным к проводной 
+локальной сети, чаще всего используется режим клиент-сервер. Без подключения 
+дополнительной антенны устойчивая связь для оборудования IEEE 802.11b 
+достигается в среднем на следующих расстояниях: открытое пространство&nbsp;— 500&nbsp;м, 
+комната, разделенная перегородками из неметаллического материала&nbsp;— 100&nbsp;м, офис 
+из нескольких комнат&nbsp;— 30&nbsp;м. Следует иметь в виду, что через стены с большим 
+содержанием металлической арматуры (в железобетонных зданиях таковыми являются 
+несущие стены) радиоволны диапазона 2,4 ГГц иногда могут вообще не проходить, 
+поэтому в комнатах, разделенных подобной стеной, придется ставить свои точки 
+доступа.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">Для соединения удаленных локальных сетей (или 
+удаленных сегментов локальной сети) используется оборудование с направленными</font><a title="Антенна" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Антенна"><span style="color: windowtext">антеннами</span></a><font face="Times New Roman">, 
+что позволяет увеличить дальность связи до 20&nbsp;км (а при использовании 
+специальных усилителей и большой высоте размещения антенн&nbsp;— до 50 км). Причем в 
+качестве подобного оборудования могут выступать и устройства&nbsp;</font><a title="Wi-Fi" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Wi-Fi"><span style="color: windowtext">Wi-Fi</span></a><font face="Times New Roman">, 
+нужно лишь добавить к ним специальные антенны (конечно, если это допускается 
+конструкцией). Комплексы для объединения локальных сетей по топологии делятся на 
+«точку-точку» и «</font><a title="Звезда (топология компьютерной сети)" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Звезда_(топология_компьютерной_сети)"><span style="color: windowtext">звезду</span></a><font face="Times New Roman">». 
+При топологии «точка-точка» (режим Ad-hoc в IEEE 802.11) организуется радиомост 
+между двумя удаленными сегментами сети. При топологии «звезда» одна из станций 
+является центральной и взаимодействует с другими удаленными станциями. При этом 
+центральная станция имеет всенаправленную антенну, а другие удаленные станции&nbsp;— 
+однонаправленные антенны. Применение всенаправленной антенны в центральной 
+станции ограничивает дальность связи дистанцией примерно 7&nbsp;км. Поэтому, если 
+требуется соединить между собой сегменты локальной сети, удаленные друг от друга 
+на расстояние более 7&nbsp;км, приходится соединять их по принципу «точка-точка». При 
+этом организуется беспроводная сеть с кольцевой или иной, более сложной 
+топологией.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">Мощность, излучаемая передатчиком точки доступа или 
+же клиентской станции, работающей по стандарту IEEE 802.11, не превышает 0,1 Вт. 
+Для сравнения&nbsp;— мощность, излучаемая&nbsp;</font><a title="Мобильный телефон" style="font-family: Times New Roman; color: white; text-decoration: none; text-underline: none" href="http://ru.wikipedia.org/wiki/Мобильный_телефон"><span style="color: windowtext">мобильным 
+телефоном</span></a><font face="Times New Roman">, на порядок больше. Поскольку, 
+в отличие от мобильного телефона, элементы сети расположены далеко от головы, в 
+целом можно считать, что беспроводные компьютерные сети более безопасны с точки 
+зрения здоровья, чем мобильные телефоны.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman">Если беспроводная сеть используется для объединения 
+сегментов локальной сети, удаленных на большие расстояния, антенны, как правило, 
+размещаются за пределами помещения и на большой высоте.</font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="font-family: Times New Roman; color: black">&nbsp;</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="color: #333333; font-weight: 700; font-size: 14.0pt">Выбор 
+абонентских станций </span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Абонентские станции -</span></i></b><span style="color:#333333"> 
+персональные компьютеры, приспособленные для работы в сети при помощи установки 
+сетевой платы, например, платы<b> Enhemet,</b> либо мощные и эффективные 
+компьютеры, разработанные специально для работы в сети и имеющие сетевое 
+аппаратное и программное обеспечение (рабочие станции).</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Выбор персонального компьютера для абонентской 
+станции определяется перечнем функций по обработке данных, необходимых 
+конкретному пользователю (например, для автоматизированного рабочего места 
+технолога, конструктора, бухгалтера, системотехника и т.д.). Однако из анализа 
+современного рынка средств вычислительной техники можно определить следующие 
+желательные компоненты ПК для АС: 32-разрядный высокоскоростной процессор с 
+сопроцессором, монитор высокого разрешения, манипулятор &quot;мышь&quot;, многозадачную 
+операционную систему, ОЗУ достаточного объема, жесткий диск с быстрым доступом и 
+большим объемом памяти, при необходимости средства аудиоввода и аудиовывода, 
+развитую графику с высоким разрешением, встроенные сетевые средства.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">При выборе конечной конфигурации&nbsp; ПК&nbsp; и&nbsp; его&nbsp; 
+дальнейшей&nbsp; эксплуатации следует помнить, что на устойчивость работы системы 
+влияют такие&nbsp; параметры, как хорошее охлаждение устройств и блоков ПК, 
+своевременное и регулярное их техническое обслуживание (удаление пыли, смазка&nbsp; 
+вентиляторов&nbsp; охлаждения и т.д.) и многое другое. </span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Поскольку АРМ будет&nbsp; работать&nbsp; продолжительное время 
+без перерыва&nbsp; необходимо предусмотреть систему автономного питания ПК - блок 
+бесперебойного питания&nbsp; UPS&nbsp; (universal&nbsp; power supply). Он предотвратит потерю&nbsp; 
+данных&nbsp; при&nbsp; внезапных&nbsp; скачках&nbsp; напряжения сети питания, обеспечит возможность 
+сохранить&nbsp; промежуточные&nbsp; результаты&nbsp; на диск и корректно выключить компьютер в 
+случае внезапного отключения сети переменного тока.&nbsp; Тем самым мы защитим 
+чувствительные блоки АРМ от перегрузок по питанию и обеспечим более длительный 
+срок его эксплуатации.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Выбор серверов</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Файл-сервер -</span></i></b><span style="color:#333333"> 
+это компьютер, который предоставляет пользователям сети файлы, то есть позволяет 
+пользователям совместно использовать программы и данные. Часто, хотя и не 
+всегда,<b> <i>файл-сервер</i></b> имеет для хранения данных память значительно 
+большей емкости, чем у других компьютеров. Он может также иметь значительно 
+большее ОЗУ и несколько печатающих устройств, модемов и накопителей на магнитной 
+ленте. Почти во всех случаях имеется программное обеспечение, которое отличает 
+файл-сервер от компьютера обычной рабочей станции ЛВС. Например, обычный 
+персональный компьютер может быть файл-сервером ЛВС, если в нем работает 
+программное обеспечение, которое позволяет, другим пользователям сети обращаться 
+к нему и использовать его ресурсы. Чаще же в качестве<b> <i>файл-серверов</i></b> 
+используются более мощные машины, поскольку они лучше приспособлены для 
+одновременного обслуживания многих пользователей.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Программное обеспечение</span><b> <i>файл-сервера</i></b> 
+(ФС) - часть сетевой операционной системы, которое предоставляет ресурсы другим 
+пользователям вычислительной сети.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+Критическим моментом в работе ФС является его способность быстро находить данные 
+и без задержки выдавать их обратно на запрашивающую рабочую станцию. На 
+производительность ФС оказывают влияние многие факторы. Сюда входят: скорость 
+работы сетевой интерфейсной платы, тип и длина кабеля, эффективность сетевого 
+программного обеспечения, тип выполняемой прикладной программы, число 
+пользователей в сети и объем свободной оперативной памяти. Пожалуй, важнейшим 
+фактором, влияющим на<b> <i>производительность файл-сервера,</i></b> является 
+скорость работы жесткого диска. На уменьшение времени ответа влияет наличие в ФС 
+дисковой кэш-памяти, то есть области оперативной памяти для запоминания данных, 
+считанных с диска в последний раз. Кэш-память позволяет исключить ряд 
+дополнительных обращений к диску.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+Отказоустойчивость ФС обеспечивается: проверкой правильности записей на диске ФС, 
+хранением таблицы расположения файлов на другом жестком диске, дублированием 
+контроллера и диска, зеркальным копированием диска (<span lang="EN-US">RAID</span>-массивы). 
+Зеркальное копирование диска - это система, которая использует два идентичных 
+жестких диска: исходный диск и его зеркальную копию. При записи данных на диск 
+происходит запись и на диск с зеркальной копией. При отказе исходного диска 
+зеркальная копия выполняет его роль без потери данных или простоя системы.</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+Первоначально выбор ФС основывается на текущих пользователях и прикладных 
+программах, однако по мере того, как ЛВС будет получать признание, к ней будут 
+добавлены новые абонентские станции и прикладные программы. В конечном счете ФС 
+будет не в состоянии справляться с нагрузкой, и эксплуатационные характеристики 
+начнут снижаться. Поэтому одной из важнейших задач стратегического планирования 
+развития ЛВС является правильный выбор<b> <i>файл-сервера </i></b>одного или 
+нескольких<b><i>.</i></b></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Выбор сетевых 
+адаптеров</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Центральный процессор соединяется с периферийным 
+оборудованием специальным устройством. Для подключения одного ПК к другому 
+требуется устройство сопряжения, которое называют сетевым адаптером или сетевым 
+интерфейсом, модулем, картой. Оно вставляется в соответствующее гнездо 
+материнской платы (motherboard). Каждая сетевая плата должна быть подключена с 
+индивидуальным адресом, который известен файловому серверу и рабочим станциям.
+</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Файловый сервер должен быть снабжен 
+быстродействующей сетевой 100/1000 </span>
+<span lang="EN-US" style="color: #333333">Mb</span><span style="color:#333333">/</span><span lang="EN-US" style="color: #333333">s</span><span style="color:#333333"> 
+платой.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Рабочие станции в ЛВС. взаимодействуют для 
+совместной обработки имеющихся данных, например, для запуска пользовательского 
+программного обеспечения с файлового сервера. Это означает, что при центральном 
+расположении накопителя информации может возникнуть узкое место. При возрастании 
+количества рабочих станций увеличивается вероятность того, что к серверу 
+&quot;хлынет&quot; большой поток запросов. Поэтому серверу необходима сетевая плата 
+повышенной производительности, т.е. ее производительность должна быть больше 
+производительности сетевых адаптеров для локальных рабочих мест.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">При подключении к вычислительной сети большого 
+количества рабочих мест, требующих обращения к файловому серверу, существует 
+опасность &quot;коллапса&quot; данных, возникающего, как и в системе связи, из-за высокого 
+потока заявок.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Сетевые адаптеры 
+определяют большую часть характеристик аппаратных средств ЛВС. Сюда входят: тип 
+кабеля, топология, система обращения к кабелю, скорость передачи данных. В 
+настоящее время большую часть рынка сетевых адаптеров занимают адаптеры </span>
+<b><span lang="EN-US" style="color: #333333">Fast</span></b><span lang="EN-US" style="color:#333333">
+</span><b><span style="color:#333333">Ethernet, </span></b>
+<span style="color:#333333">использующие протокол IEEE 802.3.</span></font></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<img border="0" src="../ris/image195.gif" width="250" height="188"></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="color: #333333; font-weight: 700"><font size="2">Рис. 12. 5.</font></span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<font face="Times New Roman"><span style="color:#333333">Плата адаптера сети 
+имеет четыре основные характеристики, обычно используемые для предсказания ее 
+эффективности:</span></font></p>
+<ul style="margin-top: 0cm; margin-bottom: 0cm" type="disc">
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	скорость передачи информации; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	метод доступа; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	встроенный процессор; </li>
+	<li class="MsoNormal" style="color: #333333">
+	<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+	разрядность передаваемой кодовой комбинации (8-, 16-, 32-разрядные и т.д. 
+	сетевые адаптеры). </li>
+</ul>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Выбор 
+ретрансляторов</span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">В архитектуре открытой вычислительной интерсети в 
+терминах эталонной модели ВОС/МОС определены 4 типа ретрансляторов, сопрягающих 
+отдельные сети на различных уровнях: <b><i>повторители, коммутаторы, мосты</i> и
+<i>шлюзы.</i></b></span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Усилитель,</span></i></b><span style="color:#333333"> 
+или так называемый<b> <i>повторитель</i></b> (repeater), требуется при передаче 
+информации в базисной полосе частот на расстояние, более чем допустимое для 
+данного типа кабеля (максимальная длина линий связи различного типа, на которой 
+не требуется повторитель, приведена в табл. 2).</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Для подключения большого числа рабочих станций в ЛВС 
+с древовидной структурой применяют сетевые<b> <i>усилителя</i></b> и/или<b> <i>
+коммутаторы. Коммутатор (</i></b></span><b><i><span lang="EN-US" style="color: #333333">switch</span><span style="color:#333333">),</span></i></b><span style="color:#333333"> 
+обладающий одновременно и функциями<b> <i>усилителя, </i></b>называют<b> <i>
+активным концентратором.</i></b></span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><i><span style="color:#333333">Мост</span></i></b><i><span style="color:#333333"> 
+-</span></i><span style="color:#333333">это аппаратно-программный блок, который 
+обеспечивает &quot;прозрачное&quot; соединение нескольких локальных сетей либо нескольких 
+сегментов одной и той же сети, имеющих различные протоколы. Внутренние мосты 
+соединяют большинство ЛВС с помощью сетевых плат в файловом сервере. Эти 
+интерфейсные платы со специальным программным обеспечением называют<b> <i>
+внутренним мостом.</i></b> При внешнем мосте используется рабочая станция в роли 
+сервисного компьютера с двумя сетевыми адаптерами от двух различных, однако 
+однородных вычислительных сетей. Соединение с другими ЛВС осуществляется для 
+всех подключенных рабочих станций через этот сервисный компьютер<b> - <i>мост.
+</i></b>Пользователь видит только логическую связь.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">В том случае, когда соединяемые сети отличаются по 
+всем уровням управления, используется оконечная система типа<b> <i>шлюз,</i></b> 
+в которой согласование осуществляется на уровне прикладных процессов. С помощью
+<b><i>межсетевого шлюза</i></b> соединяются между собой системы, использующие 
+различные операционные среды и протоколы высоких уровней. В отличие от мостов,<b>
+<i>межсетевые шлюзы </i></b>являются таким аппаратно-программным решением, при 
+котором различные операционные системы, протоколы передачи данных, 
+несогласованные скорости передачи информации, управление мониторами и 
+используемые коды (например, код EBCDIC для больших ЭВМ, код ASCII для ПК) 
+согласуются друг с другом для передачи информации.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Межсетевое взаимодействие может быть организовано 
+как посредством мостового соединения, то есть между сетями с одинаковой 
+структурой протокола, так и посредством<b> <i>шлюзов</i></b> для вычислительных 
+сетей, имеющих несовместимые структуры протоколов обмена информацией.</span></p>
+<p style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Этапы 
+конфигурирования ЛВС<span style="color: #333333; font-size: 14.0pt; font-weight: 700">
+</span></span></p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333"><b>Конфигурирование ЛВС</b> - это многокритериальная 
+оптимизационная задача, так как на выбор конфигурации ЛВС влияет большое число 
+факторов. В качестве целевой функции при решении этой задачи можно взять 
+минимизацию величины стоимости ее аппаратного и программного обеспечения при 
+условиях удовлетворения всех требований пользователя к передаче информации в 
+полном объеме, времени ответа, пропускной способности и надежности сети.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Проектирование конфигурации ЛВС требует решения ряда 
+задач, включающих выбор комплекса программно-аппаратных средств локальной 
+вычислительной сети, выбор типов сетей связи в данном комплексе, трассировку 
+кабельной сети ЛВС в зданиях и помещениях. В процессе построения ЛВС необходимо 
+учитывать ряд требований прикладного характера, например, физическое 
+расположение пользователей, количество и типы оконечных систем, требования к 
+передаче данных (типы данных, среднюю нагрузку), требования пользователей к 
+программным и аппаратным ресурсам. Расстояние между оконечными системами, 
+наличие несовместимых оконечных систем и требование к контролю доступа 
+пользователей к отдельным участкам ЛВС могут привести к необходимости 
+предусматривать в составе сети различные<b> <i>шлюзы</i> и <i>мосты.</i></b> В 
+любой ЛВС существенным фактором является максимально достижимая пропускная 
+способность сети связи. Она характеризует предел допустимых функциональных 
+возможностей сети. Поэтому перед выбором ЛВС необходимо оценить, какая 
+пропускная способность требуется пользователям данной прикладной области.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Вот некоторые отличительные <u>характеристики и 
+факторы</u>, влияющие на выбор комплекса программно-аппаратных средств локальных 
+вычислительных сетей и проектирование соответствующей конфигурации:</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">1) характеристики среды передачи информации или 
+кабельной системы, такие как: помехозащищенность, защита от климатических 
+воздействий, протяженность без промежуточного усиления сигнала, стоимость 
+приобретения и установки;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">2) максимальная протяженность сети;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">3) предполагаемое количество оконечных систем;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">4) основная сфера применения (на производственном 
+предприятии, в учреждении или в учебной сфере);</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">5) функциональное назначение, то есть классы 
+решаемых задач (научная деятельность, образование, резервирование мест, 
+удаленный ввод/вывод, &quot;распределенная обработка данных, управление и учет, 
+финансовые операции);</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">6) тип передаваемой информации (данные, изображения, 
+речь);</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">7) оценка пропускной способности сети;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">8) сетевое программное обеспечение;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">9) интерсетевое обеспечение (необходима ли связь с 
+другими сетями ЭВМ); </span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">10) показатель надежности сети в целом и отдельных 
+ее частей;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Проектирование конфигурации ЛВС проходит через три 
+основных этапа:</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">1) определение требований к ЛВС;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">2) синтез альтернативных конфигураций ЛВС;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">3) выбор наиболее предпочтительной конфигурации из 
+имеющихся вариантов.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Проектирование ЛВС необходимо производить с учетом 
+стратегического планирования развития АСУ, принимая во внимание возможность 
+увеличения количества, АС в ЛВС, подключения новых участков ЛВС в других 
+подразделениях предприятия (учреждения).</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 12.0pt; color: #333333">Исходные данные для 
+проектирования ЛВС представляют собой формальное описание конкретной прикладной 
+области (например, цеха механообработки, администрации производственного 
+объединения, бухгалтерии, отдела кадров и т.д.). Основой является план зданий и 
+помещений с отмеченными на нем местоположениями существующих ЭВМ.</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0"> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color: #333333; font-weight: 700; text-decoration: underline">
+Исходные данные к заданию:</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="color:#333333">Пользователи:</span></b><span style="color:#333333"> 
+студенты, преподаватели, инженеры, программисты, лаборанты, техники кафедры 
+автоматизированных систем управления БГТУ.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Рекомендуемое число клиентских станций: 30-60 с 
+расположением в 4-5 комнатах.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify"><u><b>
+<span style="color:#333333">Функции:</span></b><span style="color: #333333; font-weight: 700">
+</span></u></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">1) реализация учебного процесса на лабораторных, 
+практических занятиях, выполнение курсового и дипломного проектирования;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">2) организация учебного процесса, подготовка к 
+проведению <b>занятий,</b> разработка методического обеспечения;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">3) разработка программного обеспечения для работы в 
+сети;</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">4) профилактика и ремонт оборудования.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="color: #333333; text-decoration: underline">Расчет стоимость 
+оборудования ЛВС:</span></b></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color: #333333">предлагается провести по прайс-листу сетевого 
+оборудования одной из компаний г.Минска на дату проектирования ЛВС. В список 
+включить только аппаратные средства (в т.ч. системы резервного копирование, 
+бесперебойного питания, зеркалирования …), программное обеспечение не учитывать 
+при расчете стоимости.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color: #333333">Включить затраты по проектированию и монтажу ЛВС.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="color: #333333; text-decoration: underline">Требования к 
+проектируемой сети</span></b></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">Проектируемая ЛВС должна удовлетворять целому ряду 
+требовании. Наиболее значительные из них связаны с передачей данных и состоят в 
+следующем:</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">ЛВС должна выполнять разнообразные функции по 
+передаче данных, включая пересылку файлов, поддержку терминалов (в том числе 
+графических), электронную почту, обмен с внешними запоминающими устройствами, 
+обработку сообщений доступ к файлам и базам данных.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">ЛВС должна допускать подключение большого набора 
+стандартных и специальных устройств, в том числе: ЭВМ, терминалов, устройств 
+внешней памяти, принтеров, графопостроителей, факсимильных устройств, 
+контрольного и управляющего оборудования, аппаратуры подключения к другим ЛВС и 
+сетям (в том числе и к телефонным) и т.д.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color:#333333">ЛВС должна доставлять данные адресату с высокой 
+степенью надежности (коэффициент готовности сети должен быть не менее 0.96), 
+должна соответствовать существующим стандартам, обеспечивать &quot;прозрачный&quot; режим 
+передачи данных, допускать простое подключение новых устройств и отключение 
+старых без нарушения работы сети длительностью не более 1 с ; достоверность 
+передачи данных должна быть не больше +1Е-8.</span></p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin: 0 0cm" align="justify">
+<span style="color: #333333; text-decoration: underline"><b>Перечень задач по 
+проектированию ЛВС</b></span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">1. Выбрать топологию ЛВС ( и обосновать выбор).</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">2. Нарисовать функциональную схему ЛВС и составить 
+перечень аппаратных средств.</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">3. Выбрать оптимальную конфигурацию ЛВС.</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">4. Произвести ориентировочную трассировку кабельной 
+сети и выполнить расчет длины кабельного соединения для выбранной топологии с 
+учетом переходов между этажами. Поскольку существуют ограничения на максимальную 
+длину одного сегмента локальной сети для определенного типа кабеля и заданного 
+количества рабочих станции, требуется установить необходимость использования 
+повторителей.</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="font-size: 14.0pt; color: #333333; font-weight: 700">Содержание 
+отчета</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="color:#333333">1. Перечень этапов проектирования конфигурации ЛВС с 
+указанием принятых проектных решений. </span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<i><span style="color:#333333">Выбор топологии:</span></i></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="color:#333333">Выбрана топология звезда.</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" align="left" style="margin-left: 6.75pt; margin-right: 6.75pt" id="table3" height="157">
+	<tr style="height: 18.0pt">
+		<td width="38%" rowspan="2" valign="top" style="width: 38.5%; height: 49px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color: #333333; font-weight: 700">&nbsp;</span></p>
+		<p align="center" style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color: #333333; font-weight: 700">Характеристика</span></td>
+		<td width="61%" valign="top" style="width: 61.06%; height: 18.0pt; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p align="center" style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<b>Качественная оценка характеристик</b></td>
+	</tr>
+	<tr style="height: 41.25pt">
+		<td width="61%" valign="top" style="width: 61.06%; height: 24px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p align="center" style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<b>Звездообразной сети</b></td>
+	</tr>
+	<tr style="height: 34.45pt">
+		<td width="38%" valign="top" style="width: 38.5%; height: 25px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		I. Время ответа<span lang="EN-US">&nbsp;&nbsp; </span>Юта.</td>
+		<td width="61%" valign="top" style="width: 61.06%; height: 25px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<b>T<sub><font size="2"><span style="color: #333333">oтв</span></font><font size="2"><span style="color: #333333">.</span></font></sub></b>
+		<span style="color:#333333">зависит от нагрузки и временных 
+		характеристик центрального узла</span></td>
+	</tr>
+	<tr style="height: 30.6pt">
+		<td width="38%" valign="top" style="width: 38.5%; height: 38px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color:#333333">2. Пропускная способность С</span></p>
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		&nbsp;</td>
+		<td width="61%" valign="top" style="width: 61.06%; height: 38px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color:#333333">С зависит от производительности центрального 
+		узла и пропускной способности абонентских каналов</span></td>
+	</tr>
+	<tr style="height: 46.6pt">
+		<td width="38%" valign="top" style="width: 38.5%; height: 38px; border-left: medium none; border-right: 1.0pt inset; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color:#333333">З. Надежность</span></p>
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		&nbsp;</td>
+		<td width="61%" valign="top" style="width: 61.06%; height: 38px; border-left: 1.0pt inset; border-right: medium none; border-top: 1.0pt inset; border-bottom: 1.0pt inset; padding: 1.5pt">
+		<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="color:#333333">Отказы АС не влияют на работоспособность 
+		остальной части сети. Надежность ЛВС определяется надежностью 
+		центрального узла</span></td>
+	</tr>
+</table>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+margin-bottom:.0001pt">&nbsp;</p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i><span style="color:#333333">Выбор кабеля:</span></i></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Будет использоваться </span>
+<span lang="EN-US" style="color: #333333">UTP</span><span lang="EN-US" style="color:#333333">
+</span><span lang="EN-US" style="color: #333333">cat</span><span style="color:#333333">.5</span><span lang="EN-US" style="color: #333333">e</span><span style="color:#333333">. 
+(недорогой, обеспечивает высокую скорость передачи инфорации).</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<i><span style="color:#333333">Выбор оборудоания:</span></i></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Сетевой адаптер </span>
+<span lang="EN-US" style="color: #333333">Realtek</span><span lang="EN-US" style="color:#333333">
+</span><span lang="EN-US" style="color: #333333">Nic</span><span style="color:#333333">-</span><span lang="EN-US" style="color: #333333">R</span><span style="color:#333333">1 
+10/100</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span style="color:#333333">Сетевой адаптер </span>
+<span lang="EN-US" style="color: #333333">Realtek</span><span lang="EN-US" style="color:#333333">
+</span><span lang="EN-US" style="color: #333333">Nic</span><span style="color:#333333">-</span><span lang="EN-US" style="color: #333333">G</span><span style="color:#333333">2 
+10/100/1000</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span lang="EN-US" style="color: #333333">Switch D-Link DGS-1005D 5 ports 
+10/100/1000</span></p>
+<p style="text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<span lang="EN-US" style="color: #333333">Switch D-Link DES-1016D 16 ports 
+10/100</span></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+margin-bottom:.0001pt">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" class="MsoNormal" align="justify">
+<span style="color:#333333">2. Функциональная схема ЛВС.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" class="MsoNormal" align="justify">&nbsp;</p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+margin-bottom:.0001pt" align="center">
+<img border="0" src="../ris/image196.png" width="601" height="512"></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="center">
+<span style="color: #333333; font-weight: 700"><font size="2">Рис. 12. 6.</font></span></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+margin-bottom:.0001pt">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" class="MsoNormal" align="justify">
+<span style="color:#333333">3. Результаты расчетов стоимости ЛВС (свести в 
+таблицу с указанием наименования, количества единиц, цены и стоимости).</span></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+margin-bottom:.0001pt">&nbsp;</p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none" id="table4" width="591">
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FBE481" align="center">
+		<p class="MsoNormal" align="center" style="text-align:center"><b>
+		<span style="color:black">Расценки на 
+		оборудование/материалы/работы</span></b></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FBE481" align="center">
+		<p class="MsoNormal" align="center" style="text-align:center"><b>
+		<span style="color:black">Цена</span></b></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FBE481" align="center">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">Кол-во</span></b></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FBE481" align="center">
+		<p class="MsoNormal" align="center" style="text-align:center"><b>
+		<span style="color:black">Стоимость</span></b></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Сетевой адаптер
+		<span lang="EN-US">Realtek Nic-R1 10/100 Mbit/s</span></span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">20 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">60</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">1 200 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Сетевой адаптер
+		<span lang="EN-US">Realtek Nic-G2 10/100/1000 Mbit/s</span></span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">40 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">1</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">40 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal">
+		<span lang="EN-US" style="color: #333333">Switch 
+		D-Link DGS-1005D 5 ports 10/100/1000 Mbit/s</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">100 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">1</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">100 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal">
+		<span lang="EN-US" style="color: #333333">Switch 
+		D-Link DES-1016D 16 ports 10/100 Mbit/s</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">125 400р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">4</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">501 600р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Кабель UTP cat. 5e, 305 м. (медь)</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">242 250р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">2</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">484 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Разъём RJ-45 100 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">42 750р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">2</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">85 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Розетка RJ-45 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">6 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">70</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">420 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">
+		Стоимость материалов и сетевого оборудования</span></b></td>
+		<td nowrap valign="bottom" style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">&nbsp;</span></b></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">&nbsp;</span></b></td>
+		<td nowrap valign="bottom" style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">2 831 600р.</span></b></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Установка подрозетника на стену из кирпича или бетона, за 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">5 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">70</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">350 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Установка розетки RJ-45 Cat 5, Сat 5e, Cat 6 . , в подрозетник, за 1 
+		порт</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">10 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">70</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">700 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">Обжим 
+		коннектора (RJ-11, RJ-45), за 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">2 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">200</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">400 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Укладка кабеля UTP, STP (4-х парного) в кабель-канал, за 1 м.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">750р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">460</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">345 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Установка кабель-канала на стены из кирпича или бетона: короб менее 
+		60мм, за 1м.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">4 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">460</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">1 840 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Установка аксессуаров для кабель-каналов (углы, стыки , переходы): короб 
+		менее 60мм, за 1шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">750р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">50</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">37 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Сверление сквозного отверстия более 500мм d=12мм, за 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">37 500р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">5</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">187 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Сборка и установка шкафа телекоммуникационного настенного, за 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">75 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">5</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">375 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Установка оборудования в шкаф (патч-панель, органайзер, активное 
+		оборудование, UPS и т.д.), за 1 шт.</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">12 500р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">5</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">62 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Тестирование и маркировка 1 порта линк-тестером, за порт</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">2 500р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">65</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">162 500р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:black">
+		Прочие дополнительные работы (услуга программиста) за 1 н/ч</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">50 000р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">16</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">800 000р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">
+		Стоимость работ по монтажу ЛВС</span></b></td>
+		<td nowrap valign="bottom" style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">&nbsp;</span></b></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">&nbsp;</span></b></td>
+		<td nowrap valign="bottom" style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">5 260 000р.</span></b></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal"><span style="color:#333333">
+		Компьютер Athlon-5200X2/320Гб/2048Мб DDR/VC 6100 256 Мб/350W/DVD-RW/клав.мышь/19&quot; 
+		ЖКИ</span></td>
+		<td nowrap style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">1 211 250р.</span></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">61</span></td>
+		<td nowrap style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="right" style="text-align:right">
+		<span style="color:black">73 886 250р.</span></td>
+	</tr>
+	<tr style="height: 20.1pt">
+		<td nowrap style="width: 362px; height: 20.1pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">
+		ИТОГО</span></b></td>
+		<td nowrap valign="bottom" style="width: 58px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal"><b><span style="color:black">&nbsp;</span></b></td>
+		<td nowrap style="width: 39px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">&nbsp;</span></b></td>
+		<td nowrap valign="bottom" style="width: 71px; height: 20.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm; background: #FFEBAB">
+		<p class="MsoNormal" align="right" style="text-align:right"><b>
+		<span style="color:black">81 977 850р.</span></b></td>
+	</tr>
+</table>
+</div>
+<p class="MsoNormal">&nbsp;</p>
+</body>
+</html>

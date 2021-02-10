@@ -1,0 +1,693 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+<style>
+<!--
+h6
+	{margin-bottom:.0001pt;
+	text-align:justify;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:black; margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 19<br>ПРОТОКОЛЫ ПЕРЕДАЧИ ДАННЫХ В 
+ЛОКАЛЬНЫХ И ГЛОБАЛЬНЫХ СЕТЯХ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">изучить протоколы работы в локальных 
+и глобальных сетях.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoBodyTextIndent" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+В различных сетях существуют различные процедуры обмена данными между рабочими 
+станциями. Эти процедуры называют протоколами передачи данных. В данной 
+лабораторной работе будут рассмотрены некоторые протоколы передачи данных в 
+локальных и глобальных сетях.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">&nbsp;Протокол передачи данных требует следующей 
+информации:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Синхронизация</b>. Под синхронизацией понимают 
+механизм распознавания начала блока данных и его конца.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Инициализация</b>. Под инициализацией понимают 
+установление соединения между взаимодействующими партнерами.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Блокирование</b>. Под блокированием понимают 
+разбиение передаваемой информации на блоки данных строго определенной 
+максимальной длины (включая знаки начала блока и его конца).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Адресация</b>. Адресация обеспечивает 
+идентификацию различного используемого оборудования данных, которое обменивается 
+друг с другом информацией во время взаимодействия.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Обнаружение ошибок</b>. Под обнаружением ошибок 
+понимают установку битов четности и, следовательно, вычисление контрольных 
+битов.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Нумерация блоков</b>. Текущая нумерация блоков 
+позволяет установить ошибочно передаваемую или потерявшуюся информацию.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">•<b> Управление потоком данных</b>. Управление потоком 
+данных служит для распределения и синхронизации информационных потоков. Так, 
+например, если не хватает места в буфере устройства данных или данные не 
+достаточно быстро обрабатываются в периферийных устройствах (например, 
+принтерах), сообщения и / или запросы накапливаются.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Методы восстановления.</b> После прерывания 
+процесса передачи данных используют методы восстановления, чтобы вернуться к 
+определенному положению для повторной передачи информации.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">• <b>Разрешение доступа</b>. Распределение, контроль и 
+управление ограничениями доступа к данным вменяются в обязанность пункта 
+разрешения доступа (например, &quot;только передача&quot; или &quot;только прием&quot;).</span></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">&nbsp;Рассмотрим 
+некоторые протоколы передачи данных.<span style="color:black">&nbsp;</span></p>
+<h6 style="text-align: center"><font size="4">Протокол NETBEUI</font></h6>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">Протокол NETBEUI - это расширенный интерфейс 
+пользователя NETBIOS (NETBIOS Extended User Interface), разработанный фирмой IBM.&nbsp; 
+Его реализация в Microsoft Windows for Workgroups подходит только для небольших 
+сетей, содержащих не более 100-200 рабочих станций. Причина этого заключается в 
+том, что протокол NETBEUI способен работать только в одном сегменте сети (т. е. 
+пакеты данных не могут проходить через мосты). Для того чтобы объединить 
+пользователей Microsoft Windows for Workgroups, расположенных в разных, 
+разделенных мостами, сегментах сети возможно использование протокола TCP/IP. &nbsp;</span></p>
+<p class="MsoBodyTextIndent3" style="text-indent:0cm" align="center"><b>
+<font size="4">NWLink </font></b></p>
+<p class="MsoBodyTextIndent3" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<span style="font-size:12.0pt">Протокол NWLink представляет собой реализацию 
+Microsoft стека протоколов IPX/SPX компании Novell. Клиенты и серверы Microsoft 
+могут постепенно добавляться к существующим сетям, что облегчает переход с одной 
+платформы на другую, устраняя необходимость резкой смены сетевого стандарта.</span></p>
+<p class="MsoBodyTextIndent3" style="text-indent: 35px; margin-top: 0" align="justify">
+<span style="font-size:12.0pt">Этот протокол можно рассматривать как сетевой 
+протокол среднего класса. Он реализует относительно разумный компромисс между 
+простым немаршрутизируемым транспортным протоколом NetBEUI и сложным 
+маршрутизируемым протоколом TCP/IP.</span>&nbsp;</p>
+<p class="MsoBodyTextIndent3" style="text-indent: 0cm" align="center"><b>
+<font size="4">Протокол TCP/IP </font></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">Протокол TCP/IP на самом деле подразумевает два 
+протокола: протокол TCP и протокол IP. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b><span style="color:black">Протокол IP </span></b><span style="color:black">(Internet 
+Protocol) был создан в конце 70-х годов и предназначен для объединения сетей, 
+прежде всего удаленных. Его основная задача - адресация и передача пакетов 
+данных. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b><span style="color:black">Протокол TCP</span></b><span style="color:black"> (Transmission 
+Control Protocol) создан как надстройка над IP. В настоящее время этот протокол 
+считается наиболее функционально полным и поддерживается практически любой 
+современной операционной системой, в частности Microsoft Windows NT. Реализация 
+протокола TCP/IP для операционной системы Microsoft Windows for Workgroups 
+называется Windows Sockets. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Windows Sockets - это спецификация, обеспечивающая 
+стандартный программный интерфейс для операционных систем Windows и UNIX. С ее 
+помощью можно создавать гетерогенные сети на основе операционной системы Windows.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">На уровне физического взаимодействия локальных сетей 
+используются различные протоколы уровня
+звена передачи данных. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Существует множество различных типов локальных сетей: 
+Ethernet, FastEthernet, TokenRing и другие. Все они отличаются в основном только 
+протоколами доступа к физической среды (физический уровень ЭМВОС - Эталонная 
+модель взаимодействия открытых систем). В то же время протоколы звена передачи 
+данных (канальный уровень ЭМВОС) достаточно одинаковы. По крайней мере все они 
+содержат поля МАС-адресов.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">В данном обзоре остановимся подробнее пока только на 
+следующих протоколах канального уровня.</span><b><span style="color:black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: center"><b>
+<span style="color:black"><font size="4">Ethernet</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">Ethernet был разработан Исследовательским центром в 
+Пало Альто (PARC) корпорации Xerox в 1970-м году. Ethernet стал основой для 
+спецификации IEEE 802.3, которая появилась 1980-м году. После недолгих споров 
+компании Digital Equipment Corporation, Intel Corporation и Xerox Corporation 
+совместно разработали и приняли спецификацию (Version 2.0), которая была 
+частично совместима с 802.3. На сегодняшний день Ethernet и IEEE 802.3 являются 
+наиболее распространенными протоколами локальных вычислительных сетей (ЛВС). 
+Сегодня термин Ethernet чаще всего используется для описания всех ЛВС работающих 
+по принципу множественный доступ с обнаружением несущей (carrier sense multiple 
+access/collision detection (CSMA/CD)), которые соотвествуют Ethernet, включая 
+IEEE 802.3.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Когда Ethernet был разработан, он должен был заполнить 
+нишу между глобальными сетями, низкоскоростными сетями и специализированными 
+сетями компьтерных центров, которые работали на высокой скрости, но очень 
+органиченном расстоянии. Ethernet хорошо подходит для приложений где локальные 
+коммуникации должны выдерживать высокие нагрузки при высоких скоростях в пиках.
+</span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="color: black; font-weight: 700; text-decoration: underline">Формат 
+протокола</span></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">При передаче через физическую среду передачи данных 
+(кабель), упаковывается между стартовой преамбулой и хвостовиком кадра. Состав 
+полей кадра пакета приведен в таблице. Первый байт каждого поля старший.</span></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" id="table1" width="490">
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color: black; font-weight: 700">Размер поля в байтах</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color: black; font-weight: 700">Назначение</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167" align="center">
+			<p class="MsoNormal"><span style="color:black">6</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">MAC - адрес получателя</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167" align="center">
+			<p class="MsoNormal"><span style="color:black">6</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">MAC - адрес отправителя</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167" align="center">
+			<p class="MsoNormal"><span style="color:black">2</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">
+			тип следующего протокола в 
+			соответствии с
+			RFC-1700</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167" align="center">
+			<p class="MsoNormal"><span style="color:black">45 - 1500</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">данные </span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="167" align="center">
+			<p class="MsoNormal"><span style="color:black">4</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="305">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">контрольная сумма</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">&nbsp;&nbsp;Значения поля &quot;тип следующего протокола&quot; определены 
+в рекомендации
+RFC1700. Данное поле с теми же значениями 
+используется также в протоколах Bridge* и Router* (название условное). Кодировка поля следующая: первый 
+байт старший, второй младший.</span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="color: black; font-weight: 700; text-decoration: underline">
+Обеспечение совместимости с протоколом IEEE802.3</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Протокол Ethernet отличается от протокола IEEE802.3 практически только одним полем:&nbsp; 
+13-14 байты в Ethernet обозначают тип следующего протокола, а в протоколе 
+IEEE802.3 - длину информационной части кадра (пакета). Поэтому для обеспечения 
+согласования протоколов было принято следующее правило кодирования. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Если значение данных полей лежит в диапазоне 0000-05DC 
+то принимается решение, что текущий протокольный блок относится к протоколу 
+IEEE802.3 и это поле является длиной информационной части кадра (пакета). А если 
+значения данных полей лежит вне этого диапазона, то принимается решение, что 
+текущий протокольный блок относится к протоколу Ethernet, и поле указывает тип 
+следующего протокола. </span></p>
+<h6 style="text-align: center"><font size="4">Протокол IEEE802.3-MAC</font></h6>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">Назначение - передача МАС-кадров между абонентами ЛВС. 
+Используется как непосредственно в Ethernet сетях, так и при связи сегментов 
+сетей через другие среды (Frame Relay, ATM и др.).&nbsp; Состав полей кадра пакета 
+приведен в таблице. Первый байт каждого поля старший. При передаче через 
+физическую среду передачи данных (кабель), упаковывается между стартовой 
+преамбулой и хвостовиком кадра.</span></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" id="table2">
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color: black; font-weight: 700">
+			Размер поля в байтах</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color: black; font-weight: 700">Назначение</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color:black">6</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">MAC - адрес получателя</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color:black">6</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">MAC - адрес отправителя</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color:black">2</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">длина информационной части&nbsp; дейтаграммы</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color:black">45 - 1500</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">данные (802.2 заголовок и данные)</span></td>
+		</tr>
+		<tr>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" align="center">
+			<p class="MsoNormal"><span style="color:black">4</span></td>
+			<td style="padding:2.25pt 2.25pt 2.25pt 2.25pt" width="251">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">контрольная сумма</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">&nbsp;&nbsp; Поле длины&nbsp; информационной части &nbsp; дейтаграммы 
+кодируется следующим образом: первый байт старший, второй младший. &nbsp;</span></p>
+<h6 style="text-align: center"><font size="4">Протокол SNAP</font></h6>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">Обеспечивает уточнение протокола дальнейшей обработки. 
+Как правило используется после протокола IEEE 802.2.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Структура протокольного блока</span></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" style="width: 257px" id="table3">
+		<tr>
+			<td width="10%" valign="top" style="width:10.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color: black; font-weight: 700">Байты</span></td>
+			<td valign="top" style="width: 46%; padding: 5.25pt">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color: black; font-weight: 700">Назначение</span></td>
+		</tr>
+		<tr>
+			<td width="10%" valign="top" style="width:10.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color:black">0 ... 2</span></td>
+			<td valign="top" style="width: 46%; padding: 5.25pt">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">резерв</span></td>
+		</tr>
+		<tr>
+			<td width="10%" valign="top" style="width:10.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color:black">3, 4</span></td>
+			<td valign="top" style="width: 46%; padding: 5.25pt">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">тип следующего протокола </span></td>
+		</tr>
+		<tr>
+			<td width="10%" valign="top" style="width:10.0%;padding:5.25pt 5.25pt 5.25pt 5.25pt">
+			<p class="MsoNormal" style="text-align: center">
+			<span style="color:black">. . .</span></td>
+			<td valign="top" style="width: 46%; padding: 5.25pt">
+			<p class="MsoNormal" style="text-align: justify">
+			<span style="color:black">данные</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">Значения поля &quot;тип следующего протокола&quot; определены в 
+рекомендации
+RFC1700. Данное поле с теми же значениями 
+используется также в протоколах Bridge* и Router* (название условное). </span>
+</p>
+<p class="MsoNormal" style="text-align: center"><b>
+<span style="color:black"><font size="4">FTP</font></span></b></p>
+<p class="MsoNormal" style="text-align:justify;text-indent:35.45pt">
+<span style="color:black">
+<span style="color: black; font-weight: 700">FTP</span> (File Transfer 
+Protocol, протокол передачи файлов) — протокол, изначально разработанный и 
+применяемый для передачи файлов с помощью Интернета. Без этого протокола было бы 
+невозможным скачивание из Сети музыки, фильмов и других объемных данных, без 
+которых современный пользователь компьютера не может представить свою жизнь. 
+Существует множество программ, которые, используя протокол FTP, позволяют скачивать значительные 
+объемы информации даже в условиях плохого соединения и низкой скорости передачи 
+данных.</span><b><span style="color:black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4"><span>HTTP</span></font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">
+<span style="color: black; font-weight: 700">HTTP</span><font color="#000000">
+</font>(HyperText Transport Protocol, гипертекстовый транспортный протокол) — 
+протокол, предназначенный для организации пересылки данных веб-страниц по 
+Интернету или локальной сети. За время своего существования этот протокол 
+претерпел значительные изменения; известно несколько его версий.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Особенностью протокола
+HTTP является то, что он может передавать 
+любую информацию — текстовую и графическую. Это позволяет использовать при 
+разработке веб-страниц дополнительные средства, которые делают их анимированными 
+и красиво оформленными.</span></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">SLIP и РРР</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">С протоколами SLIP (Serial Line Internet Protocol, 
+протокол последовательного подключения к Интернету) и PPP (Point-to-Point 
+Protocol, протокол двухточечной связи) в основном работают провайдеры, которые 
+используют для организации доступа в Интернет выделенные телефонные линии или 
+другие каналы.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">SLIP и РРР используются для организации постоянного 
+подключения к Интернету с помощью модема. Для обычного пользователя наличие 
+постоянного соединения с Интернетом является достаточно дорогим, поскольку при 
+этом нужно платить как за время пребывания в Интернете, так и за используемую 
+телефонную линию. Это могут позволить себе только достаточно крупные компании и 
+интернет-провайдеры. Первые из них, как правило, в этом случае располагают одним 
+или несколькими серверами с данными, а также личными веб-страницами, которые 
+должны быть постоянно доступны через Интернет. Вторые используют постоянное 
+подключение, поскольку это их работа.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Протоколы SLIP и РРР работают на нижних уровнях модели 
+взаимодействия&nbsp; открытых систем, что позволяет специальным образом готовить 
+пакеты данных для передачи их другими протоколами, например TCP/IP 
+или IPX/SPX. Главное отличие протокола SLIP от протокола РРР заключается в том, 
+что первый работает только на компьютерах с установленной операционной системой 
+Unix и протоколом TCP/IP, 
+а второй используется на компьютерах, работающих под управлением системы класса
+Windows NT, которая умеет обращаться 
+практически с любыми протоколами передачи данных.</span></p>
+<p class="MsoBodyTextIndent2" align="justify" style="text-indent: 35px; margin-top: 0">
+<span style="font-size:12.0pt">Данные протоколы предназначены для организации 
+выхода в Интернет и работы в нем с&nbsp; использованием различных браузеров, 
+менеджеров закачек и других программ.&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">IMAP</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black"><b>IMAP</b> (Interactive Mail Access Protocol, 
+протокол интерактивного доступа к электронной почте) — наиболее «продвинутый» 
+почтовый протокол, предназначенный для приема электронных сообщений с почтового 
+сервера. В большинстве случаев боле удобным и эффективным является использование 
+протокола IMAP, чем РОРЗ.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">К <u>достоинствам</u> протокола относится возможность 
+частичного скачивания письма, разбития принимаемого письма на части с 
+последующим склеиванием и многое другое.&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">РОРЗ</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black"><b>РОРЗ</b> (Post Office Protocol 3, почтовый протокол 
+версии 3) — почтовый протокол, который используется для приема электронных 
+сообщений с почтового сервера.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Обычно РОРЗ работает в паре с протоколом SMTP, что позволяет организовать 
+эффективную систему отсылки и приема электронных сообщений.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Интерфейс протокола еще более простой, чем интерфейс
+SMTP, и с этим связаны определенные 
+неудобства. Так, отсутствует возможность выборочного скачивания письма или 
+просмотра содержимого письма непосредственно на почтовом сервере.</span><b><span style="color:black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">SMTP</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black">
+<span style="color: black; font-weight: 700">SMTP</span> (Simple Mail 
+Transfer Protocol, упрощенный протокол пересылки почты) — протокол, основной 
+задачей которого является отсылка подготовленных специальным образом сообщений. 
+Перед тем, как это сделать, протокол устанавливает соединение между 
+компьютерами, что гарантирует доставку сообщения.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Протокол
+SMTP очень простой и эффективный, однако 
+эта эффективность не распространяется на все задачи и возможности. Так, он не 
+обладает даже простейшим механизмом аутентификации и возможностью шифрования 
+данных при передаче между почтовыми серверами. Самым большим недостатком
+SMTP является его неспособность к пересылке 
+графики.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">Чтобы не отказываться от этого довольно хорошего 
+протокола, было принято решение расширить его несколькими полезными и 
+необходимыми расширениями. Таким расширением, например, является MIME (Multipurpose 
+Internet Mail Extensions, многоцелевое расширение почтовой службы в Интернете), 
+благодаря которому существует возможность отсылать файлы любого формата и 
+содержания. Кроме того, разработан стандарт UUENCODE, позволяющий передавать 
+текстовые сообщения в разных кодировках.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black">Особенностью почтовых протоколов является 
+однозадачность. Например, протокол, отсылающий сообщения, не способен их 
+принимать, и наоборот. Именно поэтому такие протоколы работают парами.</span><b><span style="color:black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">SPX</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black"><b>SPX</b> (Sequenced Packet eXchange, 
+последовательный обмен пакетами) — «родной брат» IPX, без которого его нельзя 
+назвать полноценным протоколом. Эти протоколы используются вместе и имеют общее 
+название — IPX/SPX.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0">
+<span style="color:black"><u>Главная задача протокола SPX</u> — установка 
+логического соединения между выбранными компьютерами с последующей передачей 
+подготовленных дейтаграмм.</span><b><span style="color:black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: center"><b><span style="color: black">
+<font size="4">IPX</font></span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-bottom: 0">
+<span style="color:black"><b>IPX</b> (Internetwork Packet eXchange, протокол 
+межсетевого обмена объектами) — один из самых «ходовых» протоколов, используемых 
+на сетевом уровне. Главной его задачей является определение оптимального 
+маршрута между двумя выбранными компьютерами с использованием для этого данных 
+других протоколов.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="color:black">В первую очередь данный протокол вычисляет адрес 
+компьютера, которому необходимо отправить пакет — дейтаграмму. Определив адрес 
+нужного компьютера, он снабжает дейтаграмму служебной информацией (адресом 
+отправителя и получателя) и отправляет «в путь» по выбранному маршруту.</span></p>
+<p class="MsoBodyTextIndent2" style="margin-top: 0; margin-bottom: 0">
+<span style="font-size:12.0pt">Однако самостоятельно этот протокол работать не 
+может, поскольку не способен устанавливать соединение между компьютерами. 
+Соответственно, от IPX нельзя ожидать высокой степени надежности доставки 
+пакетов.</span></p>
+<p class="MsoBodyTextIndent2" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="justify" style="text-indent: 35px"><span style="font-size:12.0pt">
+Основной целью практической работы является приобретение навыков разработки 
+распределенного приложения архитектуры «клиент-сервер», осуществляющего обмен 
+данными в локальной сети через </span>
+<span lang="EN-US" style="font-size: 12.0pt">Windows</span><span lang="EN-US" style="font-size:12.0pt">
+</span><span lang="EN-US" style="font-size: 12.0pt">Sockets</span><span lang="EN-US" style="font-size:12.0pt">
+</span><span lang="EN-US" style="font-size: 12.0pt">TCP</span><span style="font-size:12.0pt">-соединения.</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: -36.0pt; margin-left: 36.0pt" align="center">
+<b><font size="4">1.</font></b><span style="font-style: normal; font-variant: normal; font-weight: 700; font-family: Times New Roman"><font size="4">&nbsp;</font></span><span style="font-size: 12.0pt; font-weight: 700"><font size="4">Разработка 
+серверной части приложения</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-size:
+12.0pt">Ознакомьтесь со схемой сервера. Создайте с помощью </span>
+<span lang="EN-US" style="font-size: 12.0pt">Visual</span><span lang="EN-US" style="font-size:12.0pt">
+</span><span lang="EN-US" style="font-size: 12.0pt">Studio</span><span style="font-size:12.0pt"> 
+консольное приложение </span><span lang="EN-US" style="font-size: 12.0pt">
+ServerT</span><span style="font-size:12.0pt">, которое будет использовано для 
+построения серверной части. </span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-size:12.0pt">Далее:</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0" align="justify">
+<span style="font-size:
+12.0pt">Инициализируйте библиотеку WS2_32.DLL (</span><span lang="EN-US" style="font-size: 12.0pt">WSAStartup</span><span style="font-size:12.0pt">()).</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New; color: black">
+<font size="2">if (WSAStartup(0x0202, (WSADATA *)&amp;buff[0]))</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New; color: black">
+<font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New; color: black">
+<font size="2">&nbsp;&nbsp;&nbsp;&nbsp; printf(&quot;Error WSAStartup %d\n&quot;, WSAGetLastError());</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New; color: black">
+<font size="2">&nbsp;&nbsp;&nbsp;&nbsp; return -1;</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New"><font size="2">}</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size:
+12.0pt">Создайте сокет (</span><span lang="EN-US" style="font-size: 12.0pt">sS</span><span style="font-size:12.0pt"> 
+= </span><span lang="EN-US" style="font-size: 12.0pt">socket</span><span style="font-size:12.0pt">()).</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">SOCKET 
+mysocket;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="color: black; font-family: Courier New"><font size="2">mysocket = 
+socket(AF_INET, SOCK_STREAM, 0);</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">&nbsp;<span style="font-size:12.0pt">Установите 
+параметры сокета (</span>bind<span style="font-size:12.0pt">()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Courier New; color: black">if (bind(mysocket, 
+(sockaddr *)&amp;local_addr, sizeof(local_addr)))</span></font></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+printf(&quot;Error bind %d\n&quot;, WSAGetLastError());</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+closesocket(mysocket); </font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+WSACleanup();</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; return 
+-1;</span></font></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">}</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">Используйте функцию для постановки сокет в режим 
+прослушивания (listen<span style="font-size:12.0pt">()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">if (listen(mysocket, 
+0x100))</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+printf(&quot;Error listen %d\n&quot;, WSAGetLastError());</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+closesocket(mysocket);</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+WSACleanup();</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; return 
+-1;</span></font></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">}</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size:
+12.0pt">&nbsp;Определите разрешение на подключение к сокету (cS = accept())</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">
+client_socket = accept(mysocket, (sockaddr *)&amp;client_addr, &amp;client_addr_size);</font></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">&nbsp;Инициируйте обмен между клиентом и сервером (recv<span style="font-size:12.0pt">() 
+и send()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">send(my_sock, 
+sHELLO, sizeof(sHELLO), 0);</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">bytes_recv = 
+recv(my_sock, &amp;buff[0], sizeof(buff), 0);</font></span><span style="font-size: 12.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">Закройте сокет и завершите работу с библиотекой 
+(closesocket<span style="font-size:12.0pt">(</span>sS<span style="font-size:12.0pt">),
+</span>WSACleanup<span style="font-size:12.0pt">()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">closesocket</font></span><span lang="EN-US" style="font-size: 12.0pt; font-family: Courier New">(my_sock);</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">WSACleanup();</font></span><span lang="EN-US" style="font-size: 12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: -36.0pt; margin-left: 36.0pt" align="center">
+<b><font size="4">2. Разработка клиентской части приложения</font></b></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-size: 12.0pt">Ознакомьтесь со схемой клиента. Создайте с 
+помощью Visual<span style="font-size:12.0pt"> </span>Studio<span style="font-size:12.0pt"> 
+консольное приложение </span>ClientT<span style="font-size:12.0pt">, которое 
+будет использовано для построения клиентской части. </span></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-size:12.0pt">Далее:</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0" align="justify">
+<span style="font-size: 12.0pt">Инициализируйте библиотеку WS2_32.DLL (WSAStartup<span style="font-size:12.0pt">()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">if 
+(WSAStartup(0x202, (WSADATA *)&amp;buff[0]))</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; 
+printf(&quot;WSAStart error %d\n&quot;, WSAGetLastError());</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; return 
+-1;</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">}</font></span><span style="font-size:
+12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">Создайте сокет (sS<span style="font-size:12.0pt"> 
+= </span>socket<span style="font-size:12.0pt">()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; SOCKET 
+my_sock;</span></font></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">&nbsp;&nbsp;&nbsp; my_sock 
+= socket(AF_INET, SOCK_STREAM, 0);</font></span><span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size:
+12.0pt">Напишите функцию подключения к серверу.</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">
+connect(my_sock, (sockaddr *)&amp;dest_addr, sizeof(dest_addr));</font></span><span style="font-size:
+12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size: 12.0pt">Инициируйте обмен между клиентом и сервером (recv<span style="font-size:12.0pt">() 
+и send()).</span></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">nsize = 
+recv(my_sock, &amp;buff[0], sizeof(buff) - 1, 0);</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">send(my_sock, 
+&amp;buff[0], strlen(&amp;buff[0]), 0);</font></span><span style="font-size:
+12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px">
+<span style="font-size:
+12.0pt">Закройте сокет и завершите работу с библиотекой (closesocket(sS), 
+WSACleanup()).&nbsp;</span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New; color: black"><font size="2">closesocket(my_sock);</font></span></p>
+<p class="MsoNormal" style="text-autospace: none; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Courier New; color: black">WSACleanup();</span></font><span lang="EN-US" style="font-size: 12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: -36.0pt; margin-left: 36.0pt" align="center">
+<b><font size="4">3. Обмен данными между сервером и клиентом</font></b></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-size: 12.0pt">Запустите на выполнение приложение ServerT<span style="font-size:12.0pt"> 
+и убедитесь, что оно приостановилось на вызове функции </span>accept<span style="font-size:12.0pt">.</span></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 12.0pt">Запустите на выполнение приложение ClientT<span style="font-size:12.0pt">, 
+дождитесь пока придет приветственное сообщение от сервера. Отправьте сообщение 
+серверу.</span></span></p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0" align="justify">
+<span style="font-size:
+12.0pt">&nbsp;Построение серверной и клиентской частей приложения должно 
+соответствовать схеме:</span><span lang="EN-US" style="font-size: 12.0pt">&nbsp;</span></p>
+<p class="MsoBodyTextIndent2" align="center" style="text-align: center">
+<img border="0" src="../ris/image291.png" width="470" height="446"></p>
+<p align="center"><b>Рис. 19. 1. </b>Обмен данными между сервером и клиентом</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>1.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman; font-weight: 700">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font:7.0pt &quot;Times New Roman&quot;">
+</span>Что называется протоколом?</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>2.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman; font-weight: 700">&nbsp;&nbsp;&nbsp;</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;
+</span>Какую информацию требует протокол передачи данных?</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>3.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman; font-weight: 700">&nbsp;&nbsp;</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span>Что такое локальная сеть?</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>4.</b><span style="font-style: normal; font-variant: normal; font-weight: 700; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Что такое глобальная сеть?</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>5.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman; font-weight: 700">&nbsp;</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;
+</span>Перечислите протоколы передачи данных.</p>
+<p class="MsoBodyTextIndent2" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</body>
+</html>

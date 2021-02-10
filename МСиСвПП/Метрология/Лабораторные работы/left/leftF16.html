@@ -1,0 +1,1240 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+h2
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:28.8pt;
+	text-align:justify;
+	text-indent:-28.8pt;
+	page-break-after:avoid;
+	tab-stops:42.55pt center 8.0cm right 439.45pt;
+	font-size:14.0pt;
+	font-family:Arial;
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 16<br>СПОСОБЫ ПРЕДСТАВЛЕНИЯ 
+ИНФОРМАЦИИ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-size: 12.0pt; font-family: Times New Roman">изучить способы 
+представления числовых, текстовых данных, основных арифметических и логических 
+операций над ними.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" align="center" style="text-align: center"><b>
+<font size="4">Внутреннее представление данных</font></b></p>
+<p class="MsoNormal" align="center" style="text-align: center"><b>
+<font size="4"><a name="_Toc508365156">Двоичная форма целых чисел. Количество 
+информации</a></font></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px">ЭВМ является 
+электрическим прибором. Она управляется с помощью электрических сигналов. 
+Поэтому любые данные должны быть некоторым универсальным образом представлены в 
+таком виде, чтобы их можно было легко перевести на «электрический» язык. Таким 
+свойством обладают двоичная форма целых чисел. Для записи числа в двоичной форме 
+используются только два символа 0 и 1. Эти символы легко поставить в 
+соответствие некоторому фиксированному значению напряжения в электрических 
+схемах ЭВМ (см. рис. 16.1).</p>
+<p class="MsoCaption" style="margin:0cm;margin-bottom:.0001pt" align="center">
+<img border="0" src="../ris/image248.gif" width="436" height="129"></p>
+<p align="center"><b><font size="2">Рис. 16.1.</font></b><font size="2"> Поток 
+данных в двоичной форме</font></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px">Чтобы 
+обрабатывать данные, необходимо иметь некоторый универсальный способ 
+представления операций с целыми числами, чтобы эти операции были легко 
+представимы на «электрическом» языке. Оказывается, что этому условию 
+удовлетворяют три операции с двоичными числами. Это операции логического 
+сложения «ИЛИ», логического умножения «И» и отрицания «НЕ».</p>
+<p class="MsoCaption" style="page-break-after: avoid; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: 10px" align="right">
+<b>&nbsp;Операции с двоичными числами&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Таблица 16.1</b></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 76.3pt" id="table5">
+		<tr>
+			<td width="82" valign="top" style="width: 61.7pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span lang="EN-US" style="font-size: 11.0pt; font-weight: 700">x</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span lang="EN-US" style="font-size: 11.0pt; font-weight: 700">y</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt; font-weight: 700">ИЛИ</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt; font-weight: 700">И</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt; font-weight: 700">НЕ х</span></td>
+		</tr>
+		<tr>
+			<td width="82" valign="top" style="width: 61.7pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+		</tr>
+		<tr>
+			<td width="82" valign="top" style="width: 61.7pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+		</tr>
+		<tr>
+			<td width="82" valign="top" style="width: 61.7pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: medium none; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+		</tr>
+		<tr>
+			<td width="82" valign="top" style="width: 61.7pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">1</span></td>
+			<td width="82" valign="top" style="width: 61.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 11.0pt">0</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-indent: 35px; margin-bottom: 0" align="justify">
+&nbsp;Таким образом, все данные, с которыми работают ЭВМ, представлены в виде 
+двоичных чисел, а все действия с данными сводятся к комбинации трёх логических 
+операций.</p>
+<p class="a0" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Рассмотрим сложение чисел 
+4+3. В двоичной форме эти числа будут иметь вид соответственно 0100 и 0011. 
+Выполняя операцию логического сложения с каждым разрядом обоих чисел, получим 
+число 0111, что является двоичным представлением числа 7.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span lang="EN-US">&nbsp;</span>Количество информации, соответствующее двоичному 
+числу, называют <b><i>битом</i></b> [<span lang="EN-US">bit</span>]. Число, 
+которое представлено <span lang="EN-US">N</span> битами называется
+<span lang="EN-US">N</span>-битным или <span lang="EN-US">N</span>-разрядным.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+В дальнейшем оказалось удобным оперировать последовательностями нулей и единиц, 
+объединённых в группы фиксированного размера.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+Наибольшее значение имеет последовательность из восьми двоичных чисел - 
+8-разрядное число. Количество информации, соответствующее такому числу, 
+называется <b><i>байтом</i></b> [<span lang="EN-US">byte</span>]. Кроме того, 
+используются группы, называемые <b><i>словом</i></b> [<span lang="EN-US">word</span>]. 
+Размер слова зависит от характеристик конкретной ЭВМ, но, как правило, в 
+большинстве современных ЭВМ размер слова равен 2 байтам.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+Очень часто программистам приходится непосредственно работать с двоичными 
+числами, поэтому, чтобы упростить эту работу, часто используются 
+шестнадцатеричное представление двоичных чисел.</p>
+<p class="a0" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Для упрощения перевода 
+целых чисел в двоичную и шестнадцатеричную формы составляется следующая таблица:</p>
+<p class="a0" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+&nbsp;</p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; margin-left: 65.95pt" id="table6">
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">10</font></sub></span></b></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">2</font></sub></span></b></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">16</font></sub></span></b></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">10</font></sub></span></b></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">2</font></sub></span></b></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<b><span style="font-family: Arial"><font size="2">Х</font><sub><font size="2">16</font></sub></span></b></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0000</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">8</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1000</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">8</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0001</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">9</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1001</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">9</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">2</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0010</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">2</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">10</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1010</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">A</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">3</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0011</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">3</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">11</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1011</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">B</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">4</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0100</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">4</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">12</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1100</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">C</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">5</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0101</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">5</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">13</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1101</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">D</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">6</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0110</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">6</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">14</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1110</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">E</font></span></td>
+	</tr>
+	<tr>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">7</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">0111</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">7</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">15</font></span></td>
+		<td width="75" valign="top" style="width: 56.05pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span style="font-family: Arial"><font size="2">1111</font></span></td>
+		<td width="75" valign="top" style="width: 56.1pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+		<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+		<span lang="EN-US" style="font-family: Arial"><font size="2">F</font></span></td>
+	</tr>
+</table>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0">&nbsp;43<sub>10</sub>= 2В<sub>16</sub> 
+= 00101011<sub>2</sub></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0" align="justify">
+&nbsp;Таким образом, первая задача, которая ставится в информатике – это задача 
+представления любых данных в форме целых чисел (в цифровой форме).</p>
+<p class="MsoBodyText" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center"><b><a name="_Toc508365157"><font size="4">Цифровое 
+представление символов</font></a></b></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-bottom: 0" align="justify">
+Правило цифрового представления символов следующее: каждому символу ставится в 
+соответствие некоторое целое число, то есть каждый символ нумеруется.</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример. </span></b>Рассмотрим 
+последовательность строчных букв русского алфавита: а, б, в, г, д, е, ё, ж, з, 
+и, й, к, л, м, н, о, п, р, с, т, у, ф, х, ц, ч, ш, щ, ъ, ы, ь, э, ю, я. Присвоив 
+каждой букве номер от 0 до 33, получим простейший способ представления символов. 
+Последнее число - 32 в двоичной форме имеет вид 100000, то есть для хранения 
+символа в памяти понадобится 6 бит. Так как с помощью шести бит можно 
+представить число 2<sup>6</sup> – 1 = 63, то шести бит будет достаточно для 
+представления 64 букв.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;Имеются разные стандарты для представления символов, которые отличаются лишь 
+порядком нумерации символов. Наиболее распространён американский стандартный код 
+для информационного обмена - <b><i>ASCII</i></b> [<span lang="EN-US">American 
+Standard Code for Information Interchange</span>] введён в США в 1963г. В 1977 
+году в несколько модифицированном виде он был принят в качестве всемирного 
+стандарта Международной организации стандартов [<span lang="EN-US">International 
+Standards Organization</span> - <span lang="EN-US">ISO</span>] под названием I<span lang="EN-US">SO</span>-646. 
+Согласно этому стандарту каждому символу поставлено в соответствие число от 0 до 
+255. Символы от 0 до 127 – латинские буквы, цифры и знаки препинания – 
+составляют постоянную часть таблицы. Остальные символы используются для 
+представления национальных алфавитов. Конкретный состав этих символов 
+определяется <b><i>кодовой страницей</i></b>. В русской версии ОС
+<span lang="EN-US">Windows</span>95 используется кодовая страница 866. В ОС
+<span lang="EN-US">Linux</span> для представления русских букв более 
+употребительна кодировка КОИ-8.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Недостатки такого способа кодировки национального алфавита очевидны. Во-первых, 
+невозможно одновременное представление русских и, например, французских букв. 
+Во-вторых, такая кодировка совершенно непригодна для представления китайских или 
+японских иероглифов. В 1991 году была создана некоммерческая организация
+<span lang="EN-US">Unicode</span>, в которую входят представители ряда фирм (<span lang="EN-US">Borland</span>,
+<span lang="EN-US">IBM</span>, <span lang="EN-US">Lotus</span>,
+<span lang="EN-US">Microsoft</span>, <span lang="EN-US">Novell</span>,
+<span lang="EN-US">Sun</span>, <span lang="EN-US">WordPerfect</span> и др.), и 
+которая занимается развитием и внедрением нового стандарта. Кодировка <b><i>
+<span lang="EN-US">Unicode</span></i></b> использует 16 разрядов и может 
+содержать 65536 символов. Это символы большинства народов мира, элементы 
+иероглифов, спецсимволы, 5000 мест для частного использования, резерв из 30000 
+мест.</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример</span></b></p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">ASCII</span>-код символа <span lang="EN-US">A</span> = 65<sub>10</sub> 
+= 41<sub>16</sub> = 01000111<sub>2</sub>;</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">ASCII</span>-код символа <span lang="EN-US">G</span> = 71<sub>10</sub> 
+= 47<sub>16</sub> = 01000111<sub>2</sub>;</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">ASCII</span>-код символа <span lang="EN-US">Z</span> = 90<sub>10</sub> 
+= 5<span lang="EN-US">A</span><sub>16</sub> = 01011010<sub>2</sub>.</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">ASCII</span>-код символа <span lang="EN-US">C</span> = 67<sub>10</sub> 
+= 43<sub>16</sub> = 01100111<sub>2</sub></p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">Unicode</span>-код символа <span lang="EN-US">C</span> = 67<sub>10</sub> 
+= 0000000001100111<sub>2</sub>.</p>
+<p class="MsoBodyText" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center"><b><a name="_Toc508365158"><font size="4">Цифровое 
+представление вещественных чисел</font></a></b></p>
+<p class="MsoNormal" style="text-indent: 35px" align="justify">Для того, чтобы 
+представить вещественное число в виде набора целых чисел, его необходимо 
+привести к нормализованной форме:</p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span lang="EN-US" style="font-family: Arial">x</span><span style="font-family: Arial"> 
+= </span><span lang="EN-US" style="font-family: Arial">M</span><span style="font-family: Arial">*2</span><sup><span lang="EN-US" style="font-family: Arial">P</span></sup></b>;</p>
+<p class="MsoNormal" align="justify">где <b>
+<span lang="EN-US" style="font-family: Arial">M</span></b> - называется <b><i>
+мантиссой</i></b> (дробной частью), а <b>
+<span lang="EN-US" style="font-family: Arial">P</span></b> - <b><i>экспонентой</i></b> 
+(порядком).</p>
+<p style="text-indent: 35px; margin-top: 0" align="justify">После этого мантисса 
+и порядок переводятся в двоичное представление. В памяти ЭВМ вещественное число 
+хранится в виде:</p>
+<p align="center">
+<img border="0" src="../ris/image249.gif" width="277" height="37"></p>
+
+<p class="MsoNormal" align="justify" style="margin-bottom: 0">здесь <b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">S</span></b> – 
+признак знака. Поэтому необходимо также определить, какой размер памяти будет 
+отведён под все три части нормализованного числа.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+Далее должны быть определены правила (алгоритмы), по которым будут выполняться 
+арифметические операции с нормализованными вещественными числами. Совокупность 
+таких алгоритмов, а также правил представления чисел в нормализованной форме 
+называется арифметикой <b><i>плавающих чисел</i></b> [<span lang="EN-US">floating 
+point number</span>].</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+Поскольку размер памяти, отводимый под мантиссу и порядок, ограничен, то 
+вещественные числа представляются с некоторой погрешностью (точность десятичных 
+цифр) и имеют ограниченный диапазон изменения. Чем больше размер памяти для 
+плавающего числа, тем точнее можно представить вещественное число. Поэтому для 
+пользователя основными характеристиками арифметики плавающего числа являются 
+длина числа (размер), измеряемая в битах, и точность представления числа. По 
+точности представления вещественных чисел различают плавающие числа <b><i>
+одинарной и двойной точности</i></b> [<span lang="EN-US">single and double 
+precision</span>].</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример. </span></b>Рассмотрим принцип цифрового 
+представления вещественного числа 15,375. Пусть под мантиссу отведено 5 
+десятичных разрядов, а под порядок – 2 разряда. Представим число в 
+нормализованной форме: 15,375 <span style="font-family: Symbol">»</span> 
+1,9219*2<sup>3</sup>. Так как в нормализованной форме первая цифра всегда равна 
+единице, то её можно не хранить. Тогда число будет представлено в виде целого 
+числа 9219003 с относительной погрешностью не более 10<sup>-4</sup>, то есть 
+число верных десятичных чисел равно 4. В памяти ЭВМ это число будет храниться в 
+двоичной форме, причём можно легко подсчитать, что для хранения такого числа 
+потребуется 27 бит. Максимальное число, которое можно представить таким образом 
+- 9999999=1,99999*10<sup>99</sup>, а минимальное, не равное нулю - 
+0000100=0,00001. Если предусмотреть один бит для хранения знака порядка, то 
+минимально представляемое число будет равно 00001-99, то есть 0,00001*10<sup>-99</sup>.</p>
+<p class="a1" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+При попытке выйти за допустимый диапазон ЭВМ выдаст сообщение о переполнении (<span lang="EN-US">underflow
+</span>или <span lang="EN-US">overflow</span>).&nbsp;</p>
+<p class="MsoNormal" align="justify">Конкретные характеристики арифметики 
+различны для разных стандартов. Для ПЭВМ наиболее распространённым является
+<span lang="EN-US">IEEE</span>-стандарт (<span lang="EN-US">IEEE</span>-754-1985) 
+[<span lang="EN-US">Institute of Electrical and Electronic Engineers</span>], 
+согласно которому вещественные числа представляются в трёх основных формах (см. 
+табл. 1.<span lang="EN-US">2</span>).</p>
+<p class="MsoCaption" style="margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: 10px" align="right">
+<b>Данные с плавающей точкой по <span lang="EN-US">IEEE</span>-стандарту
+<a name="_Ref501466773">Таблица 16.2</a> </b></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none" id="table10">
+		<tr style="page-break-inside: avoid">
+			<td valign="top" style="width: 66px; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			Тип</span></td>
+			<td valign="top" style="width: 53px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			Размер,</span></p>
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			бит</span></td>
+			<td colspan="2" valign="top" style="width: 140px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			Диапазон изменения чисел</span></p>
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			максимум&nbsp;&nbsp;&nbsp; минимум</span></td>
+			<td valign="top" style="width: 217px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 1.1pt; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			Точность десятичн. цифр</span></td>
+			<td width="103" valign="top" style="width: 76.9pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 1.1pt; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
+			Машинное</span></p>
+			<p class="MsoNormal" align="center" style="text-align: center; text-indent: 1.1pt; margin-top: 0; margin-bottom: 0">
+			<span style="font-size: 10.0pt; font-family: Symbol; font-weight: 700">
+			e</span></td>
+		</tr>
+		<tr>
+			<td valign="top" style="width: 66px; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">
+			single</span></td>
+			<td valign="top" style="width: 53px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">32</span></td>
+			<td valign="top" style="width: 64px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">3.4*10<sup>-38</sup></span></td>
+			<td valign="top" style="width: 61px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">3.4*10<sup>38</sup></span></td>
+			<td valign="top" style="width: 217px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">6</span></td>
+			<td width="103" valign="top" style="width: 76.9pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">1,192*10<sup>-7</sup></span></td>
+		</tr>
+		<tr>
+			<td valign="top" style="width: 66px; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">
+			double</span></td>
+			<td valign="top" style="width: 53px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">64</span></td>
+			<td valign="top" style="width: 64px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">1.7*10<sup>-308</sup></span></td>
+			<td valign="top" style="width: 61px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">1.7*10<sup>308</sup></span></td>
+			<td valign="top" style="width: 217px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">15</span></td>
+			<td width="103" valign="top" style="width: 76.9pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">2,221*10<sup>-16</sup></span></td>
+		</tr>
+		<tr>
+			<td valign="top" style="width: 66px; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">
+			long double</span></td>
+			<td valign="top" style="width: 53px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">80</span></td>
+			<td valign="top" style="width: 64px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">3.4*10<sup>-4932</sup></span></td>
+			<td valign="top" style="width: 61px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">3.4*10<sup>4932</sup></span></td>
+			<td valign="top" style="width: 217px; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">19</span></td>
+			<td width="103" valign="top" style="width: 76.9pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center;text-indent:0cm">
+			<span style="font-size: 10.0pt; font-family: Arial">1,084*10<sup>-19</sup></span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Здесь нужно заметить, что характеристики плавающего числа двойной точности будут 
+з<b>ависеть от той арифметики, которая используется на конкретной ЭВМ.</b></p>
+<p class="a0" style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Запишем число 15,375 в 
+двоичном виде:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 15.375 = 1111.011<sub>2</sub> 
+= 1.111011*2<sup>11</sup><sub>2</sub></b></p>
+<p class="a1" style="text-indent: 35px" align="justify">Тогда согласно стандарту
+<span lang="EN-US">IEEE</span> число будет представляться:</p>
+<p class="a1" style="margin-bottom: 0"><span lang="EN-US">single</span></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0">15,375 = 0 1000.0001.0 
+111.0110.0000.0000.0000.0000<sub>2</sub> = 41760000<sub>16</sub></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><span lang="EN-US">long 
+double</span></p>
+<p class="a1" style="margin-top: 0">15,375 = 0 1000.0000.00010. 
+1110.1100.0000.0000. … 0000<sub>2</sub> = 402ЕС00000000000<sub>16</sub>.</p>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0" align="justify">
+Особенности плавающей арифметики могут существенно влиять на результаты 
+расчётов, вплоть до того, что погрешность может сделать невозможным получение 
+какого-либо результата вообще, поэтому знание деталей реализации арифметики 
+плавающих чисел является необходимым для программистов.</p>
+<p class="a0" style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Существует особая 
+характеристика плавающей арифметики – <i>машинное эпсилон</i>. Это число, 
+которое определяется как</p>
+<p class="a1" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="../ris/image250.gif" width="61" height="20"><!--[if gte mso 9]><![endif]-->.</p>
+<p class="a1" style="text-indent: 35px" align="justify">Для плавающего числа 
+единичной точности (по IEEE стандарту):</p>
+<p class="a1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="../ris/image251.gif" width="119" height="31"><!--[if gte mso 9]><![endif]-->.</p>
+<p class="a1" style="text-indent: 35px" align="justify">Это значит, если 
+написать программу на языке BASIC:</p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+a</span>=1.2</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+b</span>=1.<span lang="EN-US">e</span>-7</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">
+print a</span>+<span lang="EN-US">b</span></b></p>
+<p class="a1" align="justify" style="margin-bottom: 0">то результат, который 
+выдаст программа, будет равен 1.2.</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0">Поэтому 
+программы, учитывающие особенности плавающей арифметики могут трактовать все 
+числа, меньшие, чем машинное эпсилон, практически равными нулю.&nbsp;</p>
+<p class="MsoBodyText" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center"><a name="_Toc508365159"><b><font size="4">Цифровое 
+представление изображений</font></b></a></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Под изображением будем понимать прямоугольную область, закрашенную непрерывно 
+изменяющимся цветом. Поэтому для представления изображений в целых числах 
+необходимо отдельно дискретизировать прямоугольную область и цвет.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0">
+Для описания области она разбивается на множество точечных элементов – <b><i>
+пикселов</i></b> [<span lang="EN-US">pixel</span>]. Само множество называется <b>
+<i>растром</i></b> [<span lang="EN-US">bit map</span>, <span lang="EN-US">dot 
+matrix</span>, <span lang="EN-US">raster</span>] (см. рис. 16.2), а изображения, 
+которые формируются на основе растра, называются <b><i>растровыми</i></b>.</p>
+<p align="center">
+<img border="0" src="../ris/image252.gif" width="383" height="189"></p>
+<p align="center"><b><font size="2">Рис. 16. 2.</font></b><font size="2"> 
+Дискретизация области изображения</font></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Число пикселов называется <b><i>разрешением</i></b> [<span lang="EN-US">resolution</span>]. 
+Часто встречаются значения 640х480, 800х600, 1024х768, 1280х1024. Каждый пиксел 
+нумеруется, начиная с нуля слева направо и сверху вниз.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Для представления цвета используются цветовые модели. <b><i>Цветовая модель</i></b> 
+[<span lang="EN-US">color model</span>] это правило, по которому может быть 
+вычислен цвет. Самая простая цветовая модель – битовая. В ней для описания цвета 
+каждого пиксела (чёрного или белого) используется всего один бит. Для 
+представления полноцветных изображений используются несколько более сложных 
+моделей. Известно, что любой цвет может быть представлен как сумма трёх основных 
+цветов: красного, зелёного и синего. Если интенсивность каждого цвета 
+представить числом, то любой цвет будет выражаться через набор из трёх чисел. 
+Так определяется наиболее известная цветовая <b><i><span lang="EN-US">RGB</span></i></b>-модель. 
+На каждое число отводится один байт. Так можно представить 2<sup>24</sup> цвета, 
+то есть примерно 16,7 млн. цветов. Белый цвет в этой модели представляется как 
+(1,1,1), чёрный – (0,0,0), красный (1,0,0), синий (0,0,1). Жёлтый цвет является 
+комбинацией красного и зелёного и потому представляется как (1,1,0).</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0" align="justify">
+<b>Пример.</b> Пусть имеется изображение вида</p>
+<p align="center">
+<img border="0" src="../ris/image253.gif" width="370" height="168"></p>
+<p class="a1" style="text-indent: 35px" align="justify">Будем считать, что белый 
+цвет представляется нулём, а чёрный – единицей, тогда в однобитовой модели такое 
+изображение представится в виде:</p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000000000000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000000000000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000111110000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000100010000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000100010000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000111110000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000000000000000</b></p>
+<p class="a1" style="margin-top: 0; margin-bottom: 0"><b>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0000000000000000</b></p>
+<p class="a1" style="text-indent: 35px" align="justify">В шестнадцатеричном виде 
+этот двоичный набор будет выглядеть так:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00 00 00 00 0<span lang="EN-US">F</span> 
+80 08 80 08 80 0<span lang="EN-US">F</span> 80 00 00 00 00</b></p>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0" align="justify">Всего 
+для хранения такого изображения потребуется 16 байт.</p>
+<p class="a1" style="text-indent: 35px; margin-top: 0" align="justify">Данное 
+изображение легко преобразовать в RGB-модель. Достаточно заменить все нули 
+тройками (1,1,1), а все единицы - тройками (0,0,0). Тогда получим следующее 
+шестнадцатеричное представление изображения:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">FF FF FF FF FF FF FF 
+FF FF FF FF FF FF F</span>0 00 1<span lang="EN-US">F FF FF</span></b></p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">FF F</span>1
+<span lang="EN-US">FF</span> 1<span lang="EN-US">F FF FF FF F</span>1
+<span lang="EN-US">FF</span> 1<span lang="EN-US">F FF FF FF F</span>0 00 1<span lang="EN-US">F 
+FF FF</span></b></p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="EN-US">FF FF 
+FF FF FF FF FF FF FF FF FF FF</span></b></p>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0" align="justify">Для 
+хранения такого изображения потребуется 48 байт.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0" align="justify">
+&nbsp;Цветовая модель <b><i><span lang="EN-US">RGB</span></i></b><span lang="EN-US">
+</span>[<span lang="EN-US">Red</span>-<span lang="EN-US">Green</span>-<span lang="EN-US">Blue</span>] 
+была стандартизирована в 1931 г. и впервые использована в цветном телевидении. 
+Модель <span lang="EN-US">RGB</span> является <b><i>аддитивной</i></b> моделью, 
+то есть цвет получается в результате сложения базовых цветов. Существуют и 
+другие цветовые модели, которые для ряда задач оказываются более 
+предпочтительными, чем <span lang="EN-US">RGB</span>-модель. Например, для 
+представления цвета в принтере используется <b><i>субтрактивная</i></b> <b><i>
+<span lang="EN-US">CMY</span></i></b>-модель [<span lang="EN-US">Cyan</span>-<span lang="EN-US">Magenta</span>-<span lang="EN-US">Yellow</span>], 
+цвет в которой получается в результате вычитания базовых цветов из белого цвета. 
+Белому цвету в этой модели соответствует (0,0,0), чёрному - (1,1,1), голубому - 
+(1,0,0), сиреневому - (0,1,0), жёлтому - (0,0,1). В цветовой модели <b><i>
+<span lang="EN-US">HSV</span></i></b><span lang="EN-US"> </span>[<span lang="EN-US">Hue</span>-<span lang="EN-US">Saturation</span>-<span lang="EN-US">Value</span>] 
+цвет представляется через цвет, насыщенность и значение, а в модели <b><i>
+<span lang="EN-US">HLS</span></i></b><span lang="EN-US"> </span>[<span lang="EN-US">Hue</span>-<span lang="EN-US">Lightness</span>-<span lang="EN-US">Saturation</span>] 
+через оттенок, яркость и насыщенность. Современные графические редакторы, как 
+правило, могут работать с несколькими цветовыми моделями.</p>
+<p class="MsoBodyText" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center"><b><a name="_Toc508365160"><font size="4">Цифровое 
+представление звука</font></a></b></p>
+<p class="MsoNormal" style="text-indent: 35px" align="justify">Звук можно 
+описать в виде совокупности синусоидальных волн определённых частоты и 
+амплитуды. Частота волны определяет высоту звукового тона, амплитуда – громкость 
+звука. Частота измеряется в герцах (Гц [<span lang="EN-US">Hz</span>]). Диапазон 
+слышимости для человека составляет от 20 Гц до 17000 Гц (или 17 кГц).</p>
+<p align="center">
+<img border="0" src="../ris/image254.gif" width="640" height="225"></p>
+<p align="center"><b><a name="_Ref501518567"><font size="2">Рис. 16.</font></a><font size="2"> 
+3. </font></b><font size="2">Дискретизация звукового сигнала</font></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Задача цифрового представления звука, таким образом, сводится к задаче описания 
+синусоидальной кривой. Принцип такого представления изображён на рис. 16. 2.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Каждой дискретной выборке присваивается целое число – значение амплитуды. 
+Количество выборок в секунду называется <b><i>частотой выборки</i></b> &nbsp;[<span lang="EN-US">sampling 
+rate</span>]. Количество возможных значений амплитуды называется <b><i>точностью 
+выборки</i></b><i> </i>[<span lang="EN-US">sampling size</span>]. Таким образом, 
+звуковая волна представляется в виде ступенчатой кривой. Ширина ступеньки тем 
+меньше, чем больше частота выборки, а высота ступеньки тем меньше, чем больше 
+точность выборки.</p>
+<p class="a0" style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Возможности наиболее 
+распространённой современной аппаратуры предусматривают работу с частотой 
+выборки до 44,1 кГц, что позволяет правильно описывать звук частотой до 22,05 
+кГц. Точность выборки имеет всего два значения 8 бит и 16 бит. То есть для 
+представления амплитуды 8-битного звука используется 2<sup>8</sup> = 256 уровней 
+амплитуды.</p>
+<p class="MsoBodyText" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center"><b><a name="_Toc508365161"><font size="4">Сжатие данных</font></a></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Внутреннее представление данных характеризуется избыточностью. Например, при 
+кодировании символов русского алфавита можно учесть частоту, с которой эти 
+символы встречаются в предложениях русского языка. Тогда для цифрового 
+представления текста потребуется меньшее количество информации. Объём данных 
+имеет большое значение не только для хранения, но также непосредственно влияет 
+на скорость передачи данных по каналам вычислительных сетей. Поэтому были 
+разработаны специальные методы (алгоритмы<b><i> сжатия данных</i></b> [<span lang="EN-US">data 
+compression</span>]), с помощью которых можно существенно уменьшить объём 
+данных. Существуют как универсальные алгоритмы, которые рассматривают данные как 
+простую последовательность битов, так и специализированные, которые 
+предназначены для сжатия данных определённого типа (изображений, текста, звука и 
+видео). Эффективность сжатия характеризуется <b><i>коэффициентом сжатия</i></b> 
+[<span lang="EN-US">compression ratio</span>], который определяется как 
+отношение размера исходных данных к размеру сжатых. В некоторых случаях этот 
+коэффициент достигает значения 10.</p>
+<p class="a0" style="text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="justify">
+<b><span style="letter-spacing:0pt">Пример. </span></b>Рассмотрим принцип сжатия 
+простейшего универсального <span lang="EN-US">RLE</span>-метода. Для этого 
+рассмотрим представление изображения, полученного в примере выше.</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0">
+Особенность данного представления заключается в том, что в нём содержатся 
+длинные последовательности подряд идущих нулей или единиц. В <span lang="EN-US">
+RLE</span>-методе предлагается ставить сначала значение числа повторений, а 
+затем повторяющегося числа. Тогда сжатое закодированное изображение получит вид:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; С4 00 0<span lang="EN-US">F</span> 
+80 08 80 08 80 0<span lang="EN-US">F</span> 80 С4 00</b></p>
+<p class="a1" align="justify" style="text-indent: 35px">Здесь число С 
+используется как признак последовательности одинаковых символов. То есть С4 
+означает, что далее идёт последовательность из 4 символов. Размер хранимого 
+изображения&nbsp; уменьшился с 16 до 12 байт. Коэффициент сжатия равен 1,33. 
+Эффективность сжатия будет зависеть от размера и содержания изображения. Если то 
+же самое изображение преобразовать в цветовую <span lang="EN-US">RGB</span>-модель, 
+то в сжатой форме оно получит вид:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СD FF F0 00 1F C3 FF F1 FF 1F C3 FF F1 FF 1F C3 FF 
+F0 00 1F CE FF</b></p>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0" align="justify">То 
+есть вместо 48 байт сжатое изображение занимает 22 байта, а коэффициент сжатия 
+равен 2,18.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+Алгоритмы сжатия широко применяются для более компактного хранения изображений. 
+Для этого было разработано большое число <b><i>графических форматов</i></b> 
+растровых изображений.</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример. </span></b>Наиболее популярными 
+являются графические форматы: <b><i><span lang="EN-US">BMP</span></i></b> [<span lang="EN-US">Bit 
+MaP</span>], <b><i><span lang="EN-US">PCX</span></i></b>, <b><i>
+<span lang="EN-US">GIF</span></i></b> [<span lang="EN-US">Graphics Interchange 
+Format</span>], <b><i><span lang="EN-US">TIFF</span></i></b><span lang="EN-US">
+</span>[<span lang="EN-US">Tagged Image File Format</span>], <b><i>
+<span lang="EN-US">JPEG</span></i></b><span lang="EN-US"> </span>[<span lang="EN-US">Joint 
+Photographic Experts Group</span>], которые по существу различаются между собой 
+используемыми методами сжатия. Форматы <span lang="EN-US">BMP</span> и
+<span lang="EN-US">PCX</span> используют <span lang="EN-US">RLE</span>-алгоритм, 
+форматы <span lang="EN-US">GIF</span> и <span lang="EN-US">TIFF</span> –
+<span lang="EN-US">LZW</span>-алгоритм, <span lang="EN-US">JPEG</span> 
+использует одноимённый алгоритм сжатия.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+&nbsp;Звук и видео также требуют для своего цифрового представления очень большого 
+объёма памяти, поэтому без алгоритмов сжатия работа с видео и звуковыми данными 
+была бы невозможной. Фактическим стандартом для представления звука стал формат
+<span lang="EN-US">MP</span>3, а для представления видеоданных – формат
+<span lang="EN-US">MPEG</span>.<b>&nbsp;</b></p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:35.45pt">
+<b><a name="_Toc508365162"><font size="4">Внешнее представление данных</font></a></b></p>
+<h2 align="center" style="text-align: center; text-indent: 0cm; margin-left: 28.8pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<a name="_Toc508365163"><span style="font-family: Times New Roman">
+<font size="4">Файлы и каталоги</font></span></a></h2>
+<p class="MsoNormal" align="justify" style="text-indent: 35px">Любые данные, 
+представленные в виде совокупности целых чисел, хранятся в памяти ЭВМ в виде 
+файлов. <b><i>Файл</i></b> [<span lang="EN-US">file</span>] – именованная 
+целостная совокупность данных, причём не имеет значения, каких именно данных. 
+Для файла данные – это лишь набор целых чисел в двоичной форме, поэтому файл – 
+это просто последовательность байтов. Для пользователя имеют значение лишь два 
+признака, которые характеризуют файл как таковой: имя файла и его размер. Размер 
+файлов измеряется в байтах.</p>
+<p class="MsoCaption" style="margin:0cm;margin-bottom:.0001pt">&nbsp;</p>
+<p class="MsoCaption" style="margin:0cm;margin-bottom:.0001pt" align="center">
+<img border="0" src="../ris/image255.gif" width="494" height="177"></p>
+<p align="center"><b><font size="2">Рис. 16. 3. </font></b><font size="2">Дерево 
+каталогов</font></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Как правило, файлы сортируются пользователем согласно определённым признакам по 
+группам. Список такой группы называется <b><i>каталогом</i></b> [<span lang="EN-US">directory</span>]. 
+Таким образом, организуется особая иерархическая структура – <b><i>дерево 
+каталогов</i></b> (см. рис. 16. 3 – имена каталогов подчёркнуты).</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0">
+Вершина такого дерева называется <b><i>корневым каталогом</i></b> [<span lang="EN-US">root 
+directory</span>]. Имя корневого каталога всегда строго определено (на рис. 16. 
+3 - <span lang="EN-US">C</span>:\) и зависит от файловой системы .</p>
+<h2 align="center" style="text-align: center; text-indent: 0cm; margin-left: 28.8pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman"><a name="_Toc508365164">
+<font size="4">Модели и базы данных</font></a></span></h2>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+Многие объекты в конкретных прикладных задачах могут быть представлены не в 
+двоичной форме, а в виде сложной информационной структуры. Например, чертёж 
+детали можно представить в виде совокупности отрезков прямых. Тогда в памяти ЭВМ 
+нужно будет хранить не растр, а совокупность вещественных чисел, описывающих 
+координаты концов отрезков.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Формализованное описание информационных структур и операций над ними называется
+<b><i>моделью данных</i></b> [<span lang="EN-US">data model</span>].</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример. </span></b>Например, для описания 
+шрифтов применяются три модели: битовая, векторная и <span lang="EN-US">true</span>-<span lang="EN-US">type</span>. 
+Рассмотрим, как можно представить символ «С» с помощью битовой модели.</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0">Битовая 
+модель использует тот же принцип, что и битовая цветовая модель для растровых 
+изображений. Каждому символу отводится матрица фиксированного размера. Пусть 
+матрица имеет размер 8х10:</p>
+<p class="a1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img border="0" src="../ris/image256.png" width="77" height="73"></p>
+<p class="a1" style="text-indent: 35px" align="justify">&nbsp;После такого 
+графического представления символа, его можно описать десятью числами, размером 
+1 байт каждое:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00 3С 66 С0 С0 С0 66 
+3С 00 00</b></p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-bottom: 0">Такие 
+описания составляются для всех символов алфавита, цифр, знаков препинания и 
+помещаются в один файл – файл битового шрифта. Все символы, которые выводятся в 
+текстовом режиме, представлены посредством битовых шрифтов и записаны в ПЗУ.</p>
+<p class="a1" align="justify" style="text-indent: 35px; margin-top: 0">
+Рассмотренное в примерах выше изображение можно представить через описание 
+четырёх отрезков прямых линий, задавая координаты концов отрезков:</p>
+<p class="a1"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4,2-8,2) (4,2-4,5) 
+(4,5-8,5) (8,5-8,2)</b></p>
+<p class="a1" style="text-indent: 35px; margin-bottom: 0" align="justify">Для 
+такого описания требуется 16 чисел. В результате появляется возможность 
+различных геометрических преобразований изображения (масштабирование, повороты, 
+растяжения и др.). Такой способ описания изображений называется векторным и 
+широко используется в проектировании. Но нужно чётко понимать, что при выводе на 
+экран монитора данное изображение будет представлено в растровой форме.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+В реальных задачах для описания данных требуется очень много файлов, причём 
+данные, содержащиеся в этих файлах, некоторым образом связаны между собой. 
+Например, описание информации по деятельности некоторой судоходной компании 
+будет включать в себя технические данные по судам компании, дислокацию судов, 
+данные по участкам водных путей, размерам канальных и портовых сборов, данные по 
+фрахтовым ставкам, данные для определения эксплуатационных расходов по каждому 
+судну и т.д. Поэтому управление файлами в таких случаях оказывается очень 
+сложным. Чтобы преодолеть эти сложности, исходные данные должны быть 
+организованы в <b><i>базу данных</i></b> [<span lang="EN-US">data base</span>] – 
+совокупность взаимосвязанных данных, сохраняемых и управляемых в соответствии с 
+некоторыми правилами. Эти правила также называются <b><i>моделью данных</i></b>. 
+Конкретное построение базы данных и используемая модель данных определяются 
+решаемой задачей.</p>
+<p class="a0" style="text-indent: 35px; margin: 0 0cm" align="justify"><b>
+<span style="letter-spacing:0pt">Пример. </span></b>Существуют несколько моделей 
+данных: сетевая, иерархическая, реляционная, объектно-ориентированная. В 
+последнее время наиболее широко используемой является реляционная модель данных. 
+Согласно этой модели все данные организуются в совокупность связанных таблиц.
+</p>
+<p> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="justify" style="text-indent: 35px; margin-bottom: 0">Разработать 
+программу на С++, которая выполняет перевод из десятичной системы счисления в 
+шестнадцатеричную и двоичную.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0">
+<b>Пример программы, которая выполняет перевод десятичного числа в 
+шестнадцатеричную и двоичную системы.</b></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+#include</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+<span style="color:maroon">&quot;stdafx.h&quot;</span></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+#include</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+<span style="color:maroon">&lt;iostream&gt;</span></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+#include</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+<span style="color:maroon">&quot;windows.h&quot;</span></span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+using</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+<span style="color:blue">namespace</span> std;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+buff[20];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+buff2[20];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+Perevod(<span style="color:blue">int</span> n)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> ost = 0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> col = 0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> i = 
+0;i&lt;20;i++)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>((n%2)== 0)buff[i]=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">else</span> <span style="color:blue">if</span>((n%2)!= 
+0)buff[i]=1;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; ost = 
+n/2;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; </span>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">col++;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp; n = 
+ost;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">if</span>(n == 0)<span style="color:blue">break</span>;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> i1 = 0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> j = 
+(col-1); j &gt;= 0; j--)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buff2[i1] = buff[j];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i1++;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">return</span> col;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">}</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+int</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+main()</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SetConsoleOutputCP(1251);</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> col = 0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">int</span> 
+chislo1=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> chislo=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> param=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">char</span> H[16]={<span style="color:maroon">'0'</span>,<span style="color:maroon">'1'</span>,<span style="color:maroon">'2'</span>,<span style="color:maroon">'3'</span>,<span style="color:maroon">'4'</span>,<span style="color:maroon">'5'</span>,<span style="color:maroon">'6'</span>,<span style="color:maroon">'7'</span>,<span style="color:maroon">'8'</span>,<span style="color:maroon">'9'</span>,<span style="color:maroon">'A'</span>,<span style="color:maroon">'B'</span>,<span style="color:maroon">'C'</span>,<span style="color:maroon">'D'</span>,<span style="color:maroon">'E'</span>,<span style="color:maroon">'F'</span>};</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> D[256];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">char</span> DH[256];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cout &lt;&lt; <span style="color:maroon">&quot;Vvedite chislo v desyatichnom vide: &quot;</span>;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cin 
+&gt;&gt; chislo;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+chislo1=chislo;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> i=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">while</span> (chislo1/16!=0)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D[i]=chislo1%16;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chislo1=chislo1/16;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D[i]=chislo1;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> d=i;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">int</span> m=0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span> (<span style="color:blue">int</span> k=0; 
+k&lt;=d; k++)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">for</span> (<span style="color:blue">int</span> 
+j=0; j&lt;16; j++)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:blue">if</span> (D[i]==j)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DH[m]=H[j];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m++;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i--;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cout&lt;&lt; <span style="color:maroon">&quot;Chislo v shestnadcatirichnom vide: &quot;</span>;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span> (<span style="color:blue">int</span> j=0; 
+j&lt;=d; j++)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; DH[j];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">cout&lt;&lt;endl;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: blue">
+char</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New"> 
+buf[20];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+itoa(chislo,buf,2);</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; col 
+= Perevod(chislo);</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cout&lt;&lt;<span style="color:maroon">&quot;</span></span><span style="font-size: 10.0pt; font-family: Courier New; color: maroon">С</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New; color: maroon">hislo 
+v dvoichnom vide: &quot;</span><span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">for</span>(<span style="color:blue">int</span> k = 0; k 
+&lt; col;k++)</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 10.0pt; font-family: Courier New">{</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;buff2[k];</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+</p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; 
+endl&lt;&lt;endl;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="color:blue">return</span> 0;</span></p>
+<p class="MsoNormal" align="left" style="text-align: left; text-indent: 0cm; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-size: 10.0pt; font-family: Courier New">}&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-indent: 0cm; text-autospace: none">
+<img border="0" src="../ris/image257.png" width="597" height="359"></p>
+<p align="center">
+<span style="font-family:&quot;Times New Roman&quot;;color:black">
+<font size="2"><b>Рис.&nbsp;16. 4. </b>Результат выполнения программы</font></span></p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>1.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;</b>&nbsp;&nbsp;
+</span>Для чего необходимо двоичное представление чисел?</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>2.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;&nbsp;</b>&nbsp;
+</span>Как называют количество информации, соответствующее двоичному числу?</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>3.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;&nbsp;</b>&nbsp;
+</span>Правило цифрового представления символов<span lang="EN-US">.</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;
+</span></b>Наиболее распространенный стандартный код для представления символов. 
+Принцип работы<span lang="EN-US">.</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>5.<span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;
+</span></b>Какие числа называются плавающими<span lang="EN-US">?</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>6.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;&nbsp;&nbsp;</b>
+</span>Как осуществляется цифровое представления изображений?</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>7.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;&nbsp;</b>&nbsp;
+</span>Для чего необходимы алгоритмы сжатия данных? Принцип их работы<span lang="EN-US">.</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>8.<span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;
+</span></b>В виде чего хранятся любые данные в памяти ЭВМ? Что такое каталог<span lang="EN-US">?</span></p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>9.</b><span style="font-style: normal; font-variant: normal; font-size: 7.0pt; font-family: Times New Roman"><b>&nbsp;&nbsp;&nbsp;</b>
+</span>Для чего нужна модель данных?</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</body>
+</html>

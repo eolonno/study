@@ -1,0 +1,930 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 11<br>РАБОТА С ПРОГРАММНЫМИ 
+СРЕДСТВАМИ INTERNERT. УТИЛИТЫ PING И TRACEROUTE</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman" lang="ru">исследовать </span>
+<span style="line-height: 115%; font-family: Times New Roman">вероятностно-<span lang="ru">временные</span>
+<span lang="ru">характеристики</span> сети с использованием утилиты ping,
+<span lang="ru">исследовать</span> топологии фрагментов Internet с 
+использованием утилиты traceroute.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p style="margin-bottom:.0001pt;text-align:center;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<b><span style="font-size:14.0pt">Утилита ping</span></b></p>
+<p style="margin-bottom:.0001pt;text-align:center;text-indent:1.0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Утилита ping (Packet Internet Groper) является 
+одним из главных средств, используемых для отладки сетей, и служит для 
+принудительного вызова ответа конкретной машины. Она позволяет проверять работу 
+программ TCP/IP на удаленных машинах, адреса устройств в локальной сети, адрес и 
+маршрут для удаленного сетевого устройства. В выполнении команды ping участвуют 
+система маршрутизации, схемы разрешения адресов и сетевые шлюзы. Это утилита 
+низкого уровня, которая не требует наличия серверных процессов на зондируемой 
+машине, поэтому успешный результат при прохождении запроса вовсе не означает, 
+что выполняются какие-либо сервисные программы высокого уровня, а говорит о том, 
+что сеть находится в рабочем состоянии, питание зондируемой машины включено и 
+машина не отказала (&quot;не висит&quot;). </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Утилита ping имеется не только в UNIX, но и в 
+большинстве реализаций TCP/IP для других операционных систем. В Windows утилита 
+ping имеется в комплекте поставки, но представляет собой программу, 
+выполняющуюся в сеансе DOS из командной строки. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Запросы утилиты ping передаются по протоколу ICMP 
+(Internet Control Message Protocol). Получив такой запрос, программное 
+обеспечение, реализующее протокол IP у адресата, немедленно посылает эхо-ответ. 
+Эхо-запросы посылаются заданное количество раз (ключ -n) или по умолчанию до тех 
+пор, пока пользователь не введет команду прерывания (Ctrl+C или Del), после чего 
+выводятся статистические данные. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Обратите внимание</u>: поскольку с утилиты ping начинается хакерская атака, некоторые серверы 
+в целях безопасности могут не посылать эхо-ответы (например, www.microsoft.com). 
+Не ждите напрасно, введите команду прерывания. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Формат команды: </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+ping [-t][-a][-n][-l][-f][-i TTL][-v TOS] 
+[-r][][имя машины][[-j списокУзлов]|[-k списокУзлов]][-w] </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Параметры утилиты ping<span lang="EN-US">:</span> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellpadding="0" width="637" style="width: 477.9pt" id="table1">
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><b>Ключи</b></td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.8pt"><b>Функции</b></td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-t &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Отправка пакетов на указанный узел до команды прерывания&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-a &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Определение адресов по именам узлов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-n &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Число отправляемых запросов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-l &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Размер буфера отправки&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-f &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Установка флага, запрещающего фрагментацию пакета&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-i TTL &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Задание времени жизни пакета (поле &quot;Time To Live&quot;)&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-v TOS &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Задание типа службы (поле &quot;Type Of Service&quot;)&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-r </td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Запись маршрута для указанного числа переходов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-s &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Штамп времени для указанного числа переходов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-j список узлов </td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Свободный выбор маршрута по списку узлов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-k список узлов </td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Жесткий выбор маршрута по списку узлов&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="143" style="width:107.1pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">-w итервал &nbsp;</td>
+		<td width="488" style="width:366.3pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.8pt">Интервал ожидания каждого ответа в миллисекундах&nbsp;</td>
+	</tr>
+</table>
+</div>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+На практике большинство опций в формате команды 
+можно опустить, тогда в командной строке может быть: ping имя узла. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2"># ping www.tut.by </font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Обмен пакетами с 207.227.119.10 по 32 байт: </font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=196мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=198мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=193мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=195мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=199мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=196мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=192мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=197мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=197мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Время ожидания запроса истекло. </font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=202мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=192мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=191мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=193мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=200мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=196мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=196мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=199мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=196мс TTL=237
+</font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">Ответ от 207.227.119.10: число байт=32 время=193мс TTL=237
+</font> </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Статистика Ping для 207.227.119.10: Пакетов: 
+послано = 20, получено = 19, потеряно = 1 (5% потерь) Приблизительное время 
+передачи и приема: наименьшее = 191 мс, наибольшее = 202 мс, среднее = 186 мс </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Обратите внимание</u>: максимальное значение TTL по умолчанию принимается равным 255 узлов. 
+Следовательно, чтобы определить количество узлов, через которые прошел пакет, 
+надо от 255 отнять полученное значение TTL. (На практике это бывает не всегда). </p>
+<p style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:justify; text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:center;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<b><span style="font-size:14.0pt">Утилита tracert </span></b></p>
+<p style="margin-bottom:.0001pt;text-align:center;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Программа tracert позволяет выявлять 
+последовательность шлюзов, через которые проходит IP-пакет на пути к пункту 
+своего назначения. У этой команды есть очень много опций, большинство из которых 
+применяются системными администраторами крайне редко. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Формат команды: </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+tracert имя_машины </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Как обычно, имя_машины может быть задано в 
+символической или числовой форме. Выходная информация представляет собой список 
+машин, начиная с первого шлюза и заканчивая пунктом назначения. Кроме того, 
+показано полное время прохождения каждого шлюза. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Пример: </u></p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">st1@pds:~ &gt; tracert www.newslink.org </font> </p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">tracert to www.newslink.org (207.227.119.10),30 hops max,40 
+byte packets </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 lgw.ccs.sut.ru (195.19.219.129)1 ms 1 ms 1 ms
+</font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 ing-e0.nw.ru (195.19.194.68)5 ms 2 ms 2 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 StPetersburg-LE-4.Relcom.EU.net (193.125.189.189)4 ms 2 ms 
+6 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 cwrussia-relcom.SPB.cwrussia.ru (213.152.128.249)29 ms 33 
+ms 19 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 bar2-serial6-1-0-0.NewYorknyr.cw.net(206.24.205.153)166 ms 
+168 ms 170 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 acr2-loopback.NewYorknyr.cw.net(206.24.194.62)166 ms 163 
+ms 167 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p4-2.nycmny1-ba1.bbnplanet.net (4.24.7.69)177 ms 175 ms 
+172 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p7-0.nycmny1-br1.bbnplanet.net (4.24.6.229)174 ms 176 ms 
+170 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p4-0.nycmny1-br2.bbnplanet.net (4.24.6.226)170 ms 175 ms 
+171 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 so-4-0-0.chcgil2-br1.bbnplanet.net (4.24.9.65)184 ms 184 
+ms 183 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p6-0.chcgil1-br1.bbnplanet.net (4.24.9.70)181 ms 182 ms 
+185 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p4-0.chcgil1-br2.bbnplanet.net (4.24.5.226)181 ms 189 ms 
+184 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<font face="Arial" size="2">18 p2-0.nchicago2-br1.bbnplanet.net (4.0.5.210)184 ms 183 ms 
+182 ms </font></p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<span lang="EN-US">&nbsp;</span></p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Команда traceroute работает путем установки поля 
+времени жизни (числа переходов) исходящего пакета таким образом, чтобы это время 
+истекало до достижения пакетом пункта назначения. Когда время жизни истечет, 
+текущий шлюз отправит сообщение об ошибке на машину-источник. Каждое приращение 
+поля времени жизни позволяет пакету пройти на один шлюз дальше. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+Команда traceroute посылает для каждого значения 
+поля времени жизни три пакета. Если промежуточный шлюз распределяет трафик по 
+нескольким маршрутам, то эти пакеты могут возвращаться разными машинами. В этом 
+случае на печать выводятся они все. Некоторые системы не посылают уведомлений о 
+пакетах, время жизни которых истекло, а некоторые посылают уведомления, которые 
+поступают обратно на машину-источник только после того, как истекло время их 
+ожидания командой traceroute. Эти шлюзы обозначаются рядом звездочек. Даже если 
+конкретный шлюз определить нельзя, traceroute чаще всего сможет увидеть 
+следующие за ним узлы маршрута. </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Для проверки состояния связи с узлами сети Internet и изучения маршрутизации 
+сети можно использовать сайты <a href="http://www.ping.eu">www.ping.eu</a>,
+<a href="http://www.rassanov.ru">www.rassanov.ru</a>,
+<a href="http://www.cqcounter.com">www.cqcounter.com</a> и др. &nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Утилита ping</span></b></p>
+<p style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Задание 1. </b>С помощью команды ping проверить состояние связи с узлами 
+bstu.unibel.by, tut.by или другими по желанию, но не менее 7-и узлов. Число 
+отправляемых запросов рекомендуется взять равным 20. </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Пример выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+В результате выполнения проверки состояние связи будут выведены статистические 
+данные, содержащие сведения о размере полученного эхо-пакета, IP-адрес 
+проверяемого узла, номер отправляемого запроса (значение параметра icmp_seq), 
+значение параметра ttl, время получения эхо-ответа (параметр time), статистику о 
+количестве отправленных, принятых и утерянных пакетов (packets transmitted, 
+received, lossed), а также сведения о максимальном, минимальном и среднем 
+значениях времени, которое потребовалось для получения ответа.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping tut.by</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p align="center" style="margin-bottom:.0001pt;text-align:center;
+margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<img border="0" src="../ris/image159.png" width="486" height="262"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span lang="ru"><b><font size="2">Рис. 11. 1. </font></b></span><font size="2">
+Результат проверки соединения с сайтом <span lang="EN-US">tut</span>.</font><span lang="EN-US"><font size="2">by</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping mts.by</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image160.png" width="415" height="270"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center"><b>
+<font size="2"><span lang="ru">Рис. 11. </span>2<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат 
+проверки соединения с сайтом <span lang="EN-US">mts</span>.</font><span lang="EN-US"><font size="2">by</font></span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping mail.ru</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image161.png" width="478" height="275"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center"><b>
+<font size="2"><span lang="ru">Рис. 11. </span>3<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат 
+проверки соединения с сайтом mail.ru</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size: 14.0pt; font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping ya.ru</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p align="center" style="margin-bottom:.0001pt;text-align:center;
+margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<img border="0" src="../ris/image162.png" width="432" height="273"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>4<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат проверки соединения с сайтом
+</font><font size="2">ya.ru</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size:13.0pt">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping kinomania.ru</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image163.png" width="560" height="272"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>5<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат проверки соединения с сайтом
+</font><font size="2">kinomania.ru</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping vkontakte.ru</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image164.png" width="565" height="274"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>6<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат проверки соединения с сайтом
+</font><font size="2">vkontakte.ru</font></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Ping 360.by</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image165.png" width="409" height="275"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>7<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат проверки соединения с сайтом 360.by</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Задание 2. </b>Результаты исследований 
+представить в таблице: </p>
+<p style="text-align: justify; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellpadding="0" width="628" style="width: 470.8pt" id="table2">
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Доменное имя</b></td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>IP-адрес</b></td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Страна</b></td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Число потерянных запросов, %</b></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Среднее время прохождения запроса, мс</b></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>255 - TTL</b></td>
+	</tr>
+</table>
+</div>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:117.9pt;
+margin-bottom:.0001pt;text-align:justify"><span style="font-size:14.0pt">&nbsp;</span></p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Пример выполнения задания<span lang="EN-US">:</span></u></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+&nbsp;</p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellpadding="0" width="628" style="width: 470.8pt" id="table3">
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Доменное имя</b></td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>IP-адрес</b></td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Страна</b></td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Число потерянных запросов, %</b></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>Среднее время прохождения запроса, мс</b></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+		<b>255 - TTL</b></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">tut.by</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">86.57.250.18</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РБ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt"><span lang="EN-US">93.117</span></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">199</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+		<span lang="EN-US">mts</span>.by</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">193.232.248.79</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РБ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt"><span lang="EN-US">79.958</span></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">8</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">mail.ru</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">194.67.57.126</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РФ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt"><span lang="EN-US">43.665</span></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">134</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">ya.ru</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">87.250.251.11</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РФ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt"><span lang="EN-US">43.221</span></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">197</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+		kinomania.ru</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">87.242.75.119</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РФ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt"><span lang="EN-US">56.616</span></td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">195</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+		vkontakte.ru</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">93.186.225.6</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РФ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">44.478</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">196</span></td>
+	</tr>
+	<tr>
+		<td width="89" style="width:66.7pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">360.by</td>
+		<td width="118" style="width:88.5pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">86.57.250.30</td>
+		<td width="66" style="width:49.2pt;padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">РБ</td>
+		<td width="127" style="width:95.05pt;padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt">0</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:
+  7.1pt">92.880</td>
+		<td style="padding:.75pt .75pt .75pt .75pt">
+		<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center;
+  text-indent:7.1pt"><span lang="EN-US">199</span></td>
+	</tr>
+</table>
+</div>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 14.0pt; font-family: Times New Roman">&nbsp;</span></p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<b>Задание 3. </b>Представить графики статистической информации, в котором указать среднее время 
+прохождения запроса (мс) каждого сетевого узла. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Пример выполнения задания<span lang="EN-US">:</span></u></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image166.gif" width="601" height="325"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>8<span lang="ru">. </span>&nbsp;</font></b><font size="2">Сводный график среднего времени прохождения пакета для каждого домена</font></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:78.0pt;
+margin-bottom:.0001pt;text-align:justify;text-indent:-35.45pt"><b>
+<span style="font-size:14.0pt">&nbsp;&nbsp;</span></b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;
+margin-bottom:.0001pt;text-align:center;"><b><span style="font-size: 14.0pt">
+<span style="font-size:14.0pt">
+Утилита </span>tracert</span></b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;
+margin-bottom:.0001pt;text-align:center;">&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<b>Задание 4. </b>Произвести трассировку узлов www.mail.ru, gazeta.ru или любых других по желанию, 
+но не менее 7-и узлов. Результаты протоколировать в файл st.log. Представить 
+графики времени прохождения шлюзов для каждого узла (для 3-х пакетов), указать 
+наиболее узкие места в сети. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<u>Пример выполнения задания: </u></p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+В результате выполнения трассировки будет 
+выведена таблица, содержащая следующие сведения: количество шлюзов, через 
+которые прошел пакет (столбец Hop); 
+минимальное, максимальное и среднее значение времени прохождения шлюзов (столбцы 
+Min, Max, Avg); IP-адрес 
+(столбец IP address); 
+название хоста (столбец Host); 
+место нахождения шлюза (столбец Geo Information) 
+и координаты (столбцы
+Latitude, Longitude), 
+а также расстояние от одного шлюза до другого (столбец Distance).</p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 
+gazeta.ru</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image167.png" width="647" height="435"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image168.png" width="644" height="423"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>9<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат выполнения трассировки сайта gazeta.ru и карта маршрута прохождения 
+пакета</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image169.gif" width="508" height="208"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>10<span lang="ru">. </span>&nbsp;</font></b><font size="2">График времени прохождения шлюзов до сайта gazeta.ru</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute ya.ru</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image170.png" width="677" height="433"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image171.png" width="676" height="339"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>11<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат выполнения трассировки сайта <span lang="EN-US">ya</span>.ru и карта 
+маршрута прохождения пакета</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image172.gif" width="567" height="246"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>12<span lang="ru">. </span>&nbsp;</font></b><font size="2">График времени прохождения шлюзов до сайта <span lang="EN-US">ya</span>.ru</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 
+byfly.by</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image173.png" width="665" height="440"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image174.png" width="667" height="335"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>13<span lang="ru">. </span>&nbsp;</font></b><font size="2">Результат выполнения трассировки сайта <span lang="EN-US">byfly</span>.<span lang="EN-US">by</span> 
+и карта маршрута прохождения пакета</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image175.gif" width="576" height="246"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>14<span lang="ru">. </span>&nbsp;</font></b><font size="2">График времени прохождения шлюзов до сайта <span lang="EN-US">byfly</span>.</font><span lang="EN-US"><font size="2">by</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 360.by</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image176.png" width="643" height="426"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image177.png" width="637" height="390"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>15<span lang="ru">. </span></font></b>
+<font size="2">Результат выполнения трассировки сайта 360.<span lang="EN-US">by</span> и карта 
+маршрута прохождения пакета</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image178.gif" width="553" height="238"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>16<span lang="ru">. </span></font></b>
+<font size="2">График времени прохождения шлюзов до сайта 360.</font><span lang="EN-US"><font size="2">by</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute tut.by</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image179.png" width="663" height="445"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image180.png" width="662" height="334"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>17<span lang="ru">. </span></font></b>
+<font size="2">Результат выполнения трассировки сайта <span lang="EN-US">tut</span>.<span lang="EN-US">by</span> 
+и карта маршрута прохождения пакета</font></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p align="center" style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image181.gif" width="571" height="246"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>18<span lang="ru">. </span></font></b>
+<font size="2">График времени прохождения шлюзов до сайта <span lang="EN-US">tut</span>.</font><span lang="EN-US"><font size="2">by</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 
+onliner.by</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image182.png" width="676" height="438"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image183.png" width="671" height="377"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>19<span lang="ru">. </span></font></b>
+<font size="2">Результат выполнения трассировки сайта <span lang="EN-US">onliner</span>.<span lang="EN-US">by</span> 
+и карта маршрута прохождения пакета</font></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p align="center" style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image184.png" width="568" height="249"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>20<span lang="ru">. </span></font></b>
+<font size="2">График времени прохождения шлюзов до сайта <span lang="EN-US">onliner</span>.</font><span lang="EN-US"><font size="2">by</font></span><font size="2"><br clear="all" style="page-break-before: always">
+&nbsp;</font></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 
+ztema.ru</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image185.png" width="670" height="463"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image186.png" width="669" height="445"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>21<span lang="ru">. </span></font></b>
+<font size="2">Результат выполнения трассировки сайта <span lang="EN-US">zmeta</span>.<span lang="EN-US">ru</span> 
+и карта маршрута прохождения пакета</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image187.png" width="565" height="247"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>22<span lang="ru">. </span></font></b>
+<font size="2">График времени прохождения шлюзов до сайта <span lang="EN-US">zmeta</span>.</font><span lang="EN-US"><font size="2">ru</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:justify;margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<b>Задание 5. </b>Описать маршрут прохождения для двух выбранных 
+узлов. Описание маршрута включает название страны, города и сети, через которые 
+прошел пакет. </p>
+<p style="margin-bottom:.0001pt;text-align:justify;text-indent:35px; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+&nbsp;<u>Пример выполнения задания:</u></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:1.0cm">
+<span style="font-size:14.0pt">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute mts.by</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image188.png" width="586" height="235"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>23<span lang="ru">. </span></font></b>
+<font size="2">Маршрут прохождения запроса до сайта <span lang="EN-US">mts</span>.by</font></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font face="Symbol">&THORN;</font>&nbsp;&nbsp;&nbsp;&nbsp; Traceroute 
+microsoft.com</b></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:64.35pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image189.png" width="587" height="360"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<b>
+<font size="2"><span lang="ru">Рис. 11. </span>24<span lang="ru">. </span></font></b>
+<font size="2">Маршрут прохождения запроса до сайта <span lang="EN-US">microsoft</span>.</font><span lang="EN-US"><font size="2">com</font></span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+&nbsp;</p>
+<p style="margin-bottom:0cm;margin-bottom:.0001pt;margin-left:0cm; margin-right:0cm; margin-top:0cm" align="center">
+<b><span style="font-size: 14.0pt">Содержание отчета </span></b></p>
+<p style="margin-bottom:0cm;margin-bottom:.0001pt;margin-left:0cm; margin-right:0cm; margin-top:0cm" align="center">&nbsp;</p>
+<p style="margin-bottom:0;text-align:justify;text-indent:35px; margin-top:0">
+<font face="Times New Roman">1) Результаты тестирования. </font></p>
+<p style="margin-bottom:0;text-align:justify;text-indent:35px; margin-top:0">
+<font face="Times New Roman">2) Таблица с результатами исследований согласно 
+Заданию 2. </font></p>
+<p style="margin-bottom:0;text-align:justify;text-indent:35px; margin-top:0">
+<font face="Times New Roman">3) Графики статистической информации согласно 
+Заданию 3. </font></p>
+<p style="margin-bottom:0;text-align:justify;text-indent:35px; margin-top:0">
+<font face="Times New Roman">4) Листинг произведенной трассировки узлов. </font></p>
+<p style="margin-bottom:0;text-align:justify;text-indent:35px; margin-top:0">
+<font face="Times New Roman">5) Описание маршрута прохождения трассировки.
+</font></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="line-height: 115%; font-family: Times New Roman">6) 
+Графики времени прохождения шлюзов (по количеству узлов) с анализом узких мест 
+сети.</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b><font face="Times New Roman">1. </font></b><font face="Times New Roman">Практическое применение утилиты ping.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>2. </b>Для чего используют утилиту traceroute?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>3. </b>По какому протоколу передаются запросы утилиты ping?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>4. </b>Формат утилиты ping
+и назначения параметров.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>5. </b>Что такое TTL и для чего оно используется?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>6. </b>В чем отличие команд
+traceroute и tracert?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>7. </b>Формат команды
+tracert.</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>8. </b>На каком протоколе основана утилита traceroute?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>9. </b>Какие данные показаны на выходной информации утилиты ping?</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<font face="Times New Roman"><b>10. </b>Какие данные показаны на выходной информации утилиты tracert?
+</font></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,708 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title></title>
+<style>
+<!--
+span.FontStyle12
+	{font-family:"Franklin Gothic Book";
+	}
+span.FontStyle16
+	{font-family:"Franklin Gothic Book";
+	}
+span.FontStyle15
+	{font-family:"Franklin Gothic Book";
+	font-weight:bold}
+table.MsoTableGrid
+	{border:1.0pt solid windowtext;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 18<br>ГЛОБАЛЬНАЯ СЕТЬ INTERNET. ОБЗОР 
+ОСНОВНЫХ ТЕХНОЛОГИЙ ДОСТУПА</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">научиться устанавливать сетевые 
+параметры в операционной системе. Провести тестирование скорости соединения с 
+Интернетом и сравнить результаты с типичными результатами других поставщиков 
+Интернета.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+Все с<u>овременные технологии обеспечения доступа в Интернет, в зависимости от 
+способа связи с удаленным абонентом</u> (в данном случае - с 
+интернет-провайдером), можно разделить на<u> три категории</u>:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;- <b>беспроводные системы</b> (включающие спутниковые системы, а также системы 
+персональной сотовой связи, обеспечивающие доступ мобильных пользователей);</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;- о<b>птоволоконные системы </b>(к ним также можно отнести и системы связи на 
+базе коаксиального кабеля, используемые, в частности, в кабельном телевидении);</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+&nbsp;- <b>традиционные проводные линии связи</b> (подразделяющиеся, в свою очередь, 
+на две большие подгруппы - выделенные линии и телефонные линии с коммутируемым 
+доступом).</p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span style="font-size:14.0pt">Технология DSL</span></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<b>&nbsp;</b>DSL (от анг. Digital Subscriber Loop) - цифровой абонентский шлейф, 
+семья технологий широкополосного доступа в Интернет. Стандартная скорость приёма 
+данных колеблется от 128 Кбит/с до 24,000 Кбит/с в зависимости от используемой 
+технологии DSL и её уровня. В технологии ADSL скорость передачи данных ниже 
+скорости их приёма, зато симметрична для SDSL. Изобретателем модемов DSL был 
+Джозеф В. Лехлайтер, работник фирмы Bellcore, который в 80х гг. 
+продемонстрировал проект конструкции этих устройств. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Локальное подключение коммутируемой телефонной сети общего пользования (Public 
+Switched Telephone Network ) первоначально было запроектировано для голосовой 
+связи и сигнализации - самых старых, основных телефонных услуг POTS, ещё не было 
+понятия обмена данными. По экономическим причинам телефонная система номинально 
+передаёт звуковой сигнал между частотами 300 и 3,400 Гц, что соответствует 
+требованиям в отношении диапазона человеческой речи, чтобы она была ясной и 
+понятной. Услуги, оказываемые через модемы Dial-up, ограничены пропускной 
+способностью канала POTS. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+В локальных коммутаторах речевой сигнал подвергается дискретному преобразованию 
+до потока данных 64 Кбит/с в виде 8 битового сигнала, использующего частоты 
+квантования 8,000 Гц, поскольку в соответствии с теорией Найквиста любой сигнал 
+выше 4,000 Гц пропускается телефонной сетью. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Локальное подключение, соединяющее коммутатор с большинством абонентов, способно 
+передавать более высокие частоты, чем 3.4 кГц лимит POTS. Лимит может быть выше 
+в зависимости от расстояния и качества подключения. Технология DSL использует 
+эту более высокую, неиспользуемую полосу соединения путём создания широких 
+каналов 4312.5 Гц, начинающихся между 10 и 100 кГц, в зависимости от 
+конфигурации системы. Распределение каналов продолжается на всё более высоких 
+частотах (до 1.1 МГц для ADSL) до тех пор, пока новые каналы не будут признаны 
+непригодными к использованию. Каждый канал расширен, чтобы его можно было 
+использовать на более чем одном маршруте как в случае соединений POTS. Большее 
+количество пригодных для использования каналов приравнивается к большей 
+доступной полосе, поэтому важными характеристиками являются расстояние и 
+качество линии. Резерв пригодных для использования каналов разделяется на две 
+группы потоков движения, передачи и приёма, на основе предварительно 
+сконфигурированной пропорции. В заложенной группе отдельные каналы скреплены в 
+одну пару циклов, каждый в своём направлении. Как и аналоговые модемы, 
+передатчики DSL постоянно контролируют качество каналов и, в зависимости от 
+того, является ли данный канал полезным или нет, добавляются или удаляются. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;Коммерческий успех DSL и подобных технологий в большой степени отражает тот 
+факт, что в последние годы, когда электроника становится более быстрой и 
+дешёвой, стоимость выкапывания траншей для прокладки новых кабелей остаётся 
+по-прежнему высокой. Все технологии DSL используют очень сложные алгоритмы 
+переработки цифрового сигнала, преодолевая ограничения присущие парам проводов. 
+Не так давно стоимость такой прокладки могла быть огромной, но благодаря 
+технологии VLSI, стоимость прокладки DSL на существующих локальных линиях, с 
+мультиплексором DSLAM на одном конце и модемом DSL на другом, требует меньше 
+средств по сравнению с тем, какие могли бы быть при установке новой 
+оптоволоконной линии, при том же маршруте и расстоянии. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+&nbsp;Технология DSL используется в большинстве квартир и малых офисов, 
+соответствующие фильтры позволяют одновременно передавать голосовые сигналы и 
+DSL. Модем DSL может использовать ту же абонентскую линию, что и устройства 
+связи на основе POTS, включая факсы и аналоговые модемы. В течение каждого 
+промежутка времени только один модем DSL может использовать линию абонента. 
+Стандартным методом предоставления доступа DSL нескольким компьютерам в одном 
+помещении является применение маршрутизатора (роутера), который устанавливает 
+связь между модемом DSL и локальной сетью ETHERNET либо Wi-Fi. Для установки 
+связи между абонентом и Интернет-провайдером используются каналы потоков 
+передачи и приёма.&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span style="font-size:14.0pt">Технология WLAN</span></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<b>&nbsp;WLAN</b> - Wireless Local Area Network - в настоящее время это, пожалуй, 
+самый популярный и чаще всего применяемый метод беспроводного доступа в Интернет 
+для конечных пользователей. Это решение не относится к тем, которые обеспечивают 
+высокое качество услуг (QOS,) однако стоимость инвестиций в устройства полностью 
+компенсирует этот недостаток. Оборудование, особенно на 2,4 ГГц, относительно 
+дёшево и цены на него продолжают падать. В числе прочего и по этой причине оно 
+охотно используется малыми Интернет-провайдерами для решения проблемы последней 
+мили. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;Стандарт IEEE 802.11 популяризируется комитетом по стандартам локальных и 
+городских сетей (LMSC - Local and Metropolitan Area Networks Standards Committee) 
+IEEE Computer Society. Перед тем как его утвердили в июне 1997г., ему 
+предшествовало шесть рабочих версий. В окончательной форме он был признан и как 
+стандарт IEEE, и как стандарт ISO/IEC. Это позволило большому количеству 
+производителей и продавцов разработать широкий спектр устройств для 
+общедоступной полосы ISM (Industrial, Scientific and Medical) и UNII (Unlicensed 
+National Information Infrastructure). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;В настоящее время преобладает несколько стандартов беспроводных сетей WLAN. 
+Самые популярные из них это 802.11а, 802.11b и 802.11g. С учётом этого 
+определено нескольких физических уровней, позволяющих проектировщику выбрать 
+один из них в зависимости от требований системы или потребностей будущих 
+пользователей. Стандарт IEEE 802.11 определяет два самых низких уровня модели 
+беспроводных компьютерных сетей, работающих с производительностью в радио канале 
+до 2 Мбит/с. Он предусматривает два вида радио-интерфейса: работающий в полосе 
+2,4 ГГц и в инфракрасном диапазоне. Для первоначальной спецификации IEEE 802.11 
+была характерна низкая мощность и проблемы с совместимостью. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+&nbsp;Опубликованная в 1999 года спецификация 802.11b определяла новый уровень PHY, 
+который обеспечивал большую битовую скорость с применением DSSS (Direct Sequence 
+Spread Spectrum) в диапазоне 2,4 ГГц. Устройства, работающие в этом стандарте, 
+могут передавать данные со скоростью до 11 Мб/с. Спецификация 802.11а была 
+представлена в 2001 году и определяет уровень PHY, действующий в полосе 5 ГГц. 
+Максимальная пропускная способность возросла до 54 Мб/с, в т.ч., благодаря 
+применению нового метода модуляции OFDM (Orthogonal Frequency Division 
+Multiplexing). 802.11g - это самая новая спецификация уровня PHY, работающая в 
+диапазоне 2,4 ГГц и использующая технологию рассеивания спектра OFDM.<b>&nbsp;</b></p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span style="font-size:14.0pt">Оптоволоконная технология</span></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px"><b>&nbsp;FITL (Fiber 
+In The Loop)</b> - оптоволоконная система абонентской сети Последним 
+предложением мировых телекоммуникационных концернов являются оптико-волоконные 
+абонентские системы, позволяющие одновременно предоставлять различные 
+телекоммуникационные и телевизионные услуги. К системам этого типа относится 
+известная система под названием FITL, т.е. Fiber In The Loop (пер. оптическое 
+волокно в абонентской линии). FITL позволяет сконструировать общую сеть для 
+обслуживания абонентов телефонных и телевизионных линий с ограниченным 
+использованием либо без медных кабелей, применявшихся до сих пор. Системы FITL 
+предназначены для удовлетворения постоянно растущих требований к операторам 
+публичных телекоммуникационных сетей. Кроме оказания основных 
+телекоммуникационных услуг, таких как телефонная связь, всё чаще говорится об 
+оказании услуг, выходящих за пределы стандартного перечня, таких как услуги 
+мультимедиа: видео по требованию, видеоконференции, видеотелефон, быстрый доступ 
+в сеть Интернет, электронные покупки и тому подобное. Система FITL широко 
+использует оптико-волоконную технологию, признанную и проверенную в кабельных 
+линиях теле-трансмиссии. Она предполагает использование оптических носителей в 
+основном в магистральной и распределительной части традиционной сети доступа. В 
+зависимости от расположения оптической сетевой единицы ONU (Optical Network Unit) 
+различают три архитектуры сети: FTTB (Fibre To The Building), FTTC (Fibre To The 
+Curb) и FTTH (Fibre To The Home). Название архитектуры указывает на место 
+расположения ONU. Все эти решения для доступа к узлу услуг могут использовать 
+транспортную часть телекоммуникационной сети, которая также основана на 
+оптико-волоконном кабеле. &nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span style="font-size:14.0pt">Технология DVB-S</span></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<b>&nbsp;DVB-S</b> является в настоящее время одним из самых популярных методов 
+спутникового доступа в Интернет. Как и у каждого канала, у DVB-S есть свои 
+достоинства и недостатки, обусловленные непосредственно физической формой и 
+законами, которым она подчиняется. К самым значительным <u>достоинствам</u> 
+можно отнести: </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+- <b>Всеобщее покрытие</b> - эта технология при использовании соответствующих 
+созвездий размещения спутников на орбитах (розеткой, полярные) в состоянии 
+обеспечить практически всеобщее покрытие, включая зоны в больших географических 
+широтах (полюса Земли). К сожалению, в настоящий момент для коммерческого 
+использования применяется геостационарная орбита, которая обеспечивает доступ в 
+зонах умеренных географических широт (Европа и т.д.). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;- <b>Эластичность</b> - очевидно, что технология основана на беспроводной 
+радиопередаче, вследствие чего клиент свободен от любых кабелей, соединяющих его 
+с оператором. В результате это позволяет использовать переносные (работающие не 
+в движении, но с возможностью переноса) и мобильные (с возможностью работы в 
+движении) терминалы доступа, что гарантирует эластичность путём адаптации 
+системы к потребностям клиентов. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+&nbsp;Существует нескольких проблем, связанных с доступом этого вида. Оператор, 
+прежде всего, должен гарантировать постоянный доступ к своей сети (постоянный 
+доступ к услугам и непрерывность предоставления данной услуги). Он также обязан 
+гарантировать соответствующее качество оказываемых услуг (QoS) и постоянный 
+контроль этого параметра. Невыполнение этих условий может привести к тому, что 
+сегодняшний клиент с высокими требованиями (напр. банк) вынужден будет 
+воспользоваться услугами другого оператора. Следующая проблема - максимальная 
+мощность, излучаемая приёмно-передаточной системой (EIRP), которая строго 
+назначается организациями, контролирующими область телекоммуникации на 
+территории данного государства. Остальные достаточно важные аспекты - это 
+необходимая вместимость системы и обеспечение необходимой ширины полос в 
+соответствующих диапазонах частоты. &nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center"><b>
+<span style="font-size:14.0pt">Технология WiMAX</span></b></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+&nbsp;<b>WiMAX</b> является беспроводной технологией доступа в Интернет, 
+обеспечивающей широкополосный доступ к сети конечным пользователям в основном на 
+территории города. Она основана на американском стандарте IEEE 802.16 и 
+европейском ETSI HiperMAN. WiMAX представляет собой альтернативу проводным сетям 
+особенно в зонах со слабо развитой структурой телекоммуникационных сетей. WiMAX 
+обеспечивает оптимальное решение т.н. проблемы последней мили, то есть 
+подключения канала к конечному клиенту. Оба стандарта (европейский и 
+американский) позволяют создать множество различных конфигураций базовых 
+станций, что в результате может привести к ситуации, когда устройства разных 
+производителей будут несовместимы. В числе прочих по этой причине задачей WiMAX 
+является унификация метода конфигурации устройств, чтобы решить эту проблему. 
+Обсуждаемые решения должны обеспечить совместимость устройств, как при наличии 
+непосредственной визуальной видимости антенн, так и без неё, и дать операторам 
+возможность расширить спектр услуг за счёт мобильного доступа в Интернет, 
+создавая конкурентоспособные решения (VoIP) для сети мобильной связи. Описанные 
+в этой статье решения касаются стандарта 802.16, поэтому целесообразно начать с 
+представления этого стандарта. Стандарт создавался, начиная с 1999 года и, как и 
+можно ожидать, за это время появилось несколько его версий, из которых в 
+настоящий момент действуют две: &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+- 802.16-2004 завершенный в 2004 году, предлагает доступ к сети для терминалов 
+не находящихся в движении. &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+- 802.16e завершенный в 2005 году, предлагает доступ к сети для терминалов как 
+стационарных, так и мобильных. Сертификация устройств, соответствующих этому 
+стандарту, должна начаться в 2007 году. Как уже упоминалось ранее, технология не 
+требует непосредственной видимости антенн, то есть использует модель 
+распространения радиоволн NLOS (анг. Non Line of Sight). Применение этой модели 
+поставило перед создателями стандарта множество проблем, самой значительной из 
+которых было увеличение дальности покрытия системы. Поскольку при отсутствии 
+оптической видимости имеет место многолучевое распространение, то есть до 
+приёмника доходит несколько разных сигналов, с разным опозданием и степенью 
+затухания, и с иной поляризацией, чем при непосредственном сигнале. </p>
+<p> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="center"><b><span style="font-family:&quot;Times New Roman&quot;">
+<font size="4">1. Настройка Windows XP для работы по коммутируемому 
+беспарольному доступу</font></span></b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">
+</font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;">Создание соединения.</span></b><span style="font-family:&quot;Times New Roman&quot;">
+</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">1. Зайдите в меню создания 
+нового соединения: </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;">Пуск -&gt; Панель 
+управления -&gt; Cетевые подключения -&gt; Создание нового соединения</span></b><span style="font-family:&quot;Times New Roman&quot;">
+</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">2. В появившемся окне 
+&quot;Мастер новых подключений&quot; нажмите кнопку &quot;Далее&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image265.jpg" width="502" height="393"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">3. В окне &quot;Тип сетевого 
+подключения&quot; выберите пункт &quot;Подключить к Интернету&quot; и нажмите кнопку &quot;Далее&quot; .</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image266.jpg" width="501" height="392"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">4. В следующем окне 
+выбираете пункт &quot;Установить подключение вручную&quot; и нажимаете кнопку &quot;Далее&quot;
+</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman">.</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image267.jpg" width="503" height="391"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">5. В окне &quot;Подключение к 
+Интернету&quot; выбираете пункт &quot;Через обычный модем&quot; и нажимаете кнопку &quot;Далее&quot;
+</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image268.jpg" width="503" height="389"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">6. В окне &quot;Имя 
+подключения&quot; вводим любое имя создаваемого нами соединения, например &quot;belpak&quot; и 
+жмем кнопку &quot;Далее&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image269.jpg" width="503" height="392"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">7. В окне &quot;Введите 
+телефонный номер&quot; вводим дозвоночный номер и жмем кнопку &quot;Далее&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image270.jpg" width="503" height="390"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">8. В окне &quot;Детали учетной 
+записи в Интернете&quot; вводим любое имя, убираем опцию &quot;Включить брандмауэр для 
+подключения к Интернету&quot; и жмем кнопку &quot;Далее&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image271.jpg" width="501" height="392"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">9. В окне &quot;Завершение 
+работы мастера новых подключений&quot; жмем кнопку &quot;Готово&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image272.jpg" width="501" height="392"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">На этом создание 
+соединения завершено. </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt" align="justify"><b>
+<span style="font-family:&quot;Times New Roman&quot;">&nbsp;</span></b></p>
+<p style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">1.1. 
+Настройка параметров соединения.</font></span></b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">
+</font></span></p>
+<p style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">1. Зайдите в свойства 
+созданного соединения: </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;">Пуск -&gt; Панель 
+управления -&gt; Cетевые подключения -&gt; Правой кнопкой мышки на созданное 
+соединения и выбираем пункт меню &quot;Свойства&quot;</span></b><span style="font-family:
+&quot;Times New Roman&quot;"> </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">2. В появившемся окне 
+выключаем опцию &quot;Использовать правила набора номера&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image273.jpg" width="367" height="449"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">3. Переключаемся на 
+закладку &quot;Сеть&quot;, выбираем протокол TCP/IP и заходим в &quot;Свойства&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image274.jpg" width="364" height="449"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">4.&nbsp;В появившемся окне 
+вводим адреса DNS-серверов: 193.232.248.2 и 193.232.248.45, при работе со 
+статическим IP-адресом необходимо также ввести Ваш IP-адрес, затем жмем кнопку &quot;OK&quot;.
+</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image275.jpg" width="403" height="454"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">На этом настройка 
+параметров соединения завершена, жмем кнопку &quot;OK&quot;. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">1.2. 
+Запуск соединения.</font></span></b><span style="font-family:&quot;Times New Roman&quot;"><font size="4">
+</font></span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">1. Запускаем созданное 
+соединение: </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-family:&quot;Times New Roman&quot;">Пуск -&gt; Панель 
+управления -&gt; Cетевые подключения -&gt; Нажимаем два раза на созданное соединение</span></b><span style="font-family:&quot;Times New Roman&quot;">
+</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">2. В появившемся окне 
+вводим любое имя и нажимаем кнопку &quot;Вызов&quot; </span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image276.jpg" width="347" height="449"></p>
+<p class="MsoNormal" align="center"><font size="4">&nbsp;<span class="FontStyle12"><b><span style="font-family: Times New Roman">2. 
+Настройка локальной сети в </span>
+<span lang="EN-US" style="font-family: Times New Roman">Windows XP</span></b></span></font><b><font size="4">&nbsp;</font></b></p>
+<p class="Style5" style="line-height: normal; text-indent: 35px" align="justify">
+<span class="FontStyle16"><span style="font-family: Times New Roman">1.&nbsp;&nbsp; 
+Перейдите в папку </span></span><span class="FontStyle15">
+<span style="font-family: Times New Roman">Пуск &gt; Настройка &gt; Панель управления 
+&gt; Сетевые подключе­ния </span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">(или </span></span>
+<span class="FontStyle15"><span style="font-family: Times New Roman">Панель 
+управления &gt; Сетевые под­ключения). </span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">Найдите ярлык </span></span>
+<span class="FontStyle15"><span style="font-family: Times New Roman">Подключение 
+по локальной сети, </span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">кликните по нему пра­вой клавишей и в 
+открывшемся меню выбе­рите пункт </span></span><span class="FontStyle15">
+<span style="font-family: Times New Roman">Свойства.</span></span>&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image277.png" width="486" height="375"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px">&nbsp;<span class="FontStyle16"><span style="font-family: Times New Roman">2. 
+В открывшемся окошке выберите из списка компонентов </span></span>
+<span class="FontStyle15"><span style="font-family: Times New Roman">Протокол 
+Интернета (TCP/IP), </span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">кликните по нему левой клавишей мыши 
+и нажмите кнопку </span></span><span class="FontStyle15">
+<span style="font-family: Times New Roman">Свойства.</span></span></p>
+<p class="MsoNormal" align="center">&nbsp;<img border="0" src="../ris/image278.png" width="367" height="450"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+&nbsp;<span class="FontStyle16"><span style="font-family: Times New Roman">3. В 
+открывшемся окне установите пара­метры, как указано на иллюстрации (число, 
+следующее за последней точ­кой в </span>
+<span lang="EN-US" style="font-family: Times New Roman">IP</span><span style="font-family: Times New Roman">-адресе 
+может варьироваться на ваше усмотрение в пределах от 2 до 254, но </span>
+<span lang="EN-US" style="font-family: Times New Roman">IP</span><span style="font-family: Times New Roman">-адрес 
+не должен совпадать с </span>
+<span lang="EN-US" style="font-family: Times New Roman">IP</span><span style="font-family: Times New Roman">-адресами 
+других компьютеров и устройств).</span></span></p>
+<p class="Style6" style="text-align: justify; text-indent: 35px; line-height: normal; margin-top: 0; margin-bottom: 0">
+<span class="FontStyle16"><span style="font-family: Times New Roman">Нажмите
+</span></span><span class="FontStyle15">
+<span lang="EN-US" style="font-family: Times New Roman">OK</span><span style="font-family: Times New Roman">,
+</span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">окошко закроется. В откры­том окошке 
+также нажмите </span></span><span class="FontStyle15">
+<span lang="EN-US" style="font-family: Times New Roman">OK</span><span style="font-family: Times New Roman">.
+</span></span><span class="FontStyle16">
+<span style="font-family: Times New Roman">Настройка подключения по локальной 
+сети завершена. </span></span></p>
+<p class="MsoNormal" align="center">&nbsp;<img border="0" src="../ris/image279.png" width="354" height="399"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px">&nbsp;Так же 
+можно получить <span lang="EN-US">IP</span>-адрес автоматически.</p>
+<p class="MsoNormal" style="text-align: center"><font size="4">&nbsp;</font><span class="FontStyle12"><b><font size="4"><span style="font-family: Times New Roman">3. 
+Настройка беспроводной сети в </span></font>
+<span lang="EN-US" style="font-family: Times New Roman"><font size="4">Windows 
+XP</font></span></b></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+&nbsp;С Ноутбука или Карманного компьютера, можно подключиться к Интернет если у Вас 
+есть:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+- сотовый телефон GSM с GPRS.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+- адаптер WiFi он же IEEE 802.11a, IEEE 802.11b или IEEE 802.11g;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b>&nbsp;1. Подключение по GPRS.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Соединив ноутбук с телефоном через ИК-порт, Bluetooth-соединение или через 
+специальный кабель на COM или USB порт компьютера, необходимо создать 
+подключение к Интернету (Панель управления -&gt; Сеть и удаленный доступ к сети). 
+Телефон, выполняя функцию модема, свяжется по специальному номеру с Вашим 
+оператором сотовой связи и при входе в Интернет станет транслировать соединение 
+на ноутбук.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;Следует иметь ввиду, что по скорости и надежности соединение через сотовый 
+телефон уступает даже модемному соединению по коммутируемым телефонным линиям<i>.</i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<b><i>&nbsp;</i>&nbsp;2. Подключение по WiFi.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Для него нужно, чтобы точка доступа WiFi находилась на расстоянии не более 100 м 
+от Вашего ноутбука. На практике, в городских условиях расстояние, увы, всего 20 
+- 50 м. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+&nbsp;1. В окне Сетевые подключения нажмите правую кнопку мыши на значке Беспроводное 
+сетевое соединение и в ниспадающем меню выберите Свойства. </p>
+<p class="MsoNormal" align="center">&nbsp;<img border="0" src="../ris/image280.png" width="704" height="525"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px">&nbsp;2. На вкладке 
+Общие удостоверьтесь, что стоят галочки на кнопке-флажке При подключении вывести 
+значок в области уведомлений и на кнопке-флажке Уведомлять при ограниченном или 
+отсутствующем подключении (для удобства). </p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image281.png" width="367" height="450"></p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span>3. Вверху диалогового окна Беспроводное сетевое 
+соединение - свойства нажмите вкладку Беспроводные сети. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Если там нет вкладки Беспроводные сети, то внизу окна Беспроводное сетевое 
+соединение - свойства нажмите кнопку OK.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+В меню Пуск нажмите Настройка &gt; Панель управления.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Затем в окне Панель управления дважды щелкните на значке Администрирование &gt; 
+Службы.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Удостоверьтесь, что служба под именем Wireless Zero Configuration (или 
+Беспроводная настройка) в состоянии Работает.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Иначе дважды щелкните на Wireless Zero Configuration и в окне свойств службы 
+нажмите кнопку Пуск, а затем кнопку OK.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Затем снова в окне Сетевые подключения нажмите правую кнопку мыши на значке 
+Беспроводное сетевое соединение и выберите Свойства. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+На вкладке Беспроводные сети удостоверьтесь, что стоит галочка на кнопке-флажке 
+Использовать Windows для настройки сети.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+Затем в секции Предпочитаемые сети для продолжения установки нажмите кнопку 
+Добавить.&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image282.png" width="367" height="450"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span>4. На вкладке Связи в поле Сетевое имя (SSID) 
+напечатайте MIAN (все буквы - заглавные).</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Отметить галочкой пункт &quot;Подключиться, даже если сеть не ведет вещание&quot; </p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+В поле Проверка подлинности в ниспадающем меню выберите WPA. </p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Если там нет WPA, то обновите драйвер беспроводного сетевого адаптера. </p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Затем в поле Шифрование данных в ниспадающем меню выберите TKIP.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0">
+Удостоверьтесь, что галочка на кнопке-флажке Это прямое соединение 
+компьютер-компьютер; точки доступа не используется не стоит. &nbsp;&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image283.png" width="369" height="476"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span>5. Вверху диалогового окна Свойства беспроводной сети 
+нажмите вкладку Проверка подлинности.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+В поле Тип EAP в ниспадающем меню выберите Protected EAP (PEAP).</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Снимите галочку с кнопки-флажка Проверять подлинность как у компьютера при 
+доступности сведений о компьютере.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Удостоверьтесь, что галочка на кнопке-флажке Проверять подлинность как у гостя 
+при отсутствии сведений о компьютере или пользователе не стоит.</p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-top: 0">
+Затем нажмите кнопку Свойства для продолжения установки. &nbsp;&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image284.png" width="368" height="450"></p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+&nbsp;6. В диалоговом окне Защищенные свойства EAP снимите галочку с кнопки-флажка 
+Проверять сертификат сервера.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Удостоверьтесь, что в поле Выбор метода проверки подлинности стоит Secured 
+password (EAPMSCHAP v2).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Поставьте галочку на кнопке-флажке Включить быстрое переподключение.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+Затем нажмите кнопку Настроить.&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image285.png" width="383" height="466"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+&nbsp;7. В диалоговом окне Свойства EAP MSCHAPv2 снимите галочку с кнопки-флажка 
+Автоматически использовать имя входа и пароль Windows (и имя домена, если 
+существует).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Нажмите кнопку ОК. &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+8. В диалоговом окне Защищенные свойства EAP нажмите кнопку ОК.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Вверху диалогового окна Свойства беспроводной сети нажмите вкладку Подключение.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Удостоверьтесь, что стоит галочка на кнопке-флажке Подключаться, если сеть 
+находится в радиусе действия.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Нажмите кнопку ОК. &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+9. В диалоговом окне Беспроводное сетевое соединение - свойства нажмите кнопку 
+OK, чтобы закончить настройку соединения. &nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image286.png" width="367" height="450"></p>
+<p class="MsoNormal" align="justify" style="text-indent: 35px; margin-bottom: 0">
+&nbsp;10. Windows XP впервые попытается соединиться, и в панели задач появится 
+всплывающая подсказка.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Нажмите на этой всплывающей подсказке. &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+11. В окне Ввод учетных данных в полях Имя пользователя и Пароль напечатайте 
+соответствующие данные.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+Поле Домен оставьте пустым.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+Нажмите кнопку OK.&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image287.png" width="347" height="365"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+Если Вы пользуетесь Windows 98/2000 придется воспользоваться ПО прилагаемом к 
+WiFi адаптеру. Обычно это русифицированная программа и проблем возникнуть не 
+должно.&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0">
+Проверять состояние подключения можно с помощью иконки, которая должна появиться 
+в системном трее. Щелкнув по ней, вы можете увидеть состояние вашего подключения 
+и мощность сигнала.</p>
+<p class="MsoNormal" align="center" style="text-align:center"><font size="4">&nbsp;</font><b><font size="4">4. 
+Тестирование скорости соединения с Интернетом.</font></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-bottom: 0">
+&nbsp;В этой лабораторной работе Вам так же предлагается провести тестирование 
+скорости соединения с Интернетом и сравнить результаты с типичными результатами 
+других поставщиков Интернета. Speedtest представляет собой приложение для 
+тестирования скорости и качества соединения с Интернетом.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;1. Зайдите на сайт <span lang="EN-US">
+<a style="color: blue; text-decoration: underline; text-underline: single" href="http://www.testskorosti.ru/">
+http<span lang="RU">://</span>www<span lang="RU">.</span>testskorosti<span lang="RU">.</span>ru<span lang="RU">/</span></a></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+&nbsp;Приложение проверяет 3 основных параметра:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+1.<span lang="EN-US">Download Speed</span> – скорость приёма данных из Интернета 
+на Ваш компьютер</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+2.<span lang="EN-US">Upload Speed</span> - скорость передачи данных с Вашего 
+компьютера в Интернет.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+3.<span lang="EN-US">Ping</span> (<span lang="EN-US">latency</span>) - время в 
+миллисекундах, необходимое для передачи в Интернет и приёма обратно малого 
+пакета данных.</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">2. Чтобы начать тест, 
+выберите сервер, расположенный ближе всего к Вашему месту жительства и нажмите 
+кнопку &quot;</span><span lang="EN-US" style="font-family: Times New Roman">Begin</span><span lang="EN-US" style="font-family:&quot;Times New Roman&quot;">
+</span><span lang="EN-US" style="font-family: Times New Roman">test</span><span style="font-family:&quot;Times New Roman&quot;">&quot; 
+– «Начать тест».</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image288.png" width="632" height="476"></p>
+<p style="margin:0cm;margin-bottom:.0001pt">
+<span lang="EN-US" style="font-family: Times New Roman">&nbsp;</span></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image289.png" width="629" height="399"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family:&quot;Times New Roman&quot;">3. Подождите пока 
+произойдет тестирование и Вы увидите результаты.</span></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image290.png" width="635" height="424"></p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman">4. Заполните таблицу, вписав в нее 
+IP-адрес, скорость приёма данных из Интернета на Ваш компьютер, скорость 
+передачи данных с Вашего компьютера в Интернет, время в миллисекундах, 
+необходимое для передачи в Интернет и приёма обратно малого пакета данных. 
+Сравните Ваши результаты с результатами других поставщиков Интернета, сделайте 
+выводы.&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<div align="center">
+	<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none" id="table1">
+		<tr style="height: 44.4pt">
+			<td width="159" style="width: 119.6pt; height: 44.4pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			<span lang="EN-US">IP</span></b></td>
+			<td width="160" style="width: 119.65pt; height: 44.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			Download Speed, kb/s&nbsp;</b></td>
+			<td width="160" style="width: 119.65pt; height: 44.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			Upload Speed, kb/s&nbsp;</b></td>
+			<td width="160" style="width: 119.65pt; height: 44.4pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			Ping (latency), ms&nbsp;</b></td>
+		</tr>
+		<tr style="height: 35.6pt">
+			<td width="159" valign="top" style="width: 119.6pt; height: 35.6pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></td>
+			<td width="160" valign="top" style="width: 119.65pt; height: 35.6pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></td>
+			<td width="160" valign="top" style="width: 119.65pt; height: 35.6pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></td>
+			<td width="160" valign="top" style="width: 119.65pt; height: 35.6pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>1.</b> Какие существуют технологии обеспечения доступа в Интернет, в 
+зависимости от способа связи с удаленным абонентом?</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>2. </b>Что такое <span lang="EN-US">DSL</span>? Перечислите все 
+разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.</b> Что такое <span lang="EN-US">WLAN</span>? Перечислите все 
+разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>4. </b>Что такое <span lang="EN-US">FITL</span>? Перечислите все 
+разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>5. </b>Что такое <span lang="EN-US">DVB</span>-<span lang="EN-US">S</span>? 
+Перечислите все разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>6. </b>Что такое <span lang="EN-US">WiMAX</span>? Перечислите все 
+разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>7.</b> Что такое <span lang="EN-US">OFDM</span>? Перечислите все 
+разновидности.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>8. </b>Перечислите последовательные этапы настройки подключения беспарольного 
+доступа в Интернет.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>9. </b>Перечислите последовательные этапы настройки подключения локальной 
+сети.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<b>10.</b> Перечислите последовательные этапы настройки подключения 
+беспроводного доступа в Интернет.</p>
+<p class="MsoNormal" style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+</body>
+</html>

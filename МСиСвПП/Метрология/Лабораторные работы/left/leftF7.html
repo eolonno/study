@@ -1,0 +1,234 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 7<br>СОЗДАНИЕ HTML-СТРАНИЦЫ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">создать HTML страницу, изучить 
+основные теги для разработки HTML страниц, рассмотреть способы сохранения и 
+просмотра созданных страниц (с помощью программ Блокнот и Internet Explorer).</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Для создания HTML страницы необходимо записать в программе <i>Блокнот</i> 
+соответствующий код, состоящий из набора тегов (команд), сохранить данный 
+документ с расширением HTML и открыть его с помощью программы <i>Internet 
+Explorer</i>.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Как в любом языке программирования в языке HTML содержится большое количество 
+разнообразных тегов. </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Тег HTML состоит из следующих друг за другом в определенном порядке элементов:
+</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;левой угловой скобки &lt; ;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;необязательного слэша /, который означает, что тег является конечным тегом, 
+закрывающим некоторую структуру; </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;имени тега;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;необязательных, если даже тег может иметь их, атрибутов. Тег может быть без 
+атрибутов или сопровождаться одним или несколькими атрибутами; </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;правой угловой скобки &gt;.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Большинство, но не все теги HTML спарены так, что за открывающим тегом (&lt;HTML 
+&gt;), следует соответствующий закрывающий тег (&lt;/HTML &gt;), а между ними содержится 
+текст или другие теги. В таких случаях два тега и часть документа, отделенная 
+ими, образуют блок, называемый HTML элементом. Некоторые теги являются 
+элементами HTML сами по себе, и для них соответствующий конечный тег неверен.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Для каждого тега определяется множество возможных атрибутов. Большинство тегов 
+допускает один или несколько атрибутов, однако атрибутов может и совсем не быть. 
+Значения атрибутов должны быть отделены пробелами или незаполненными строками, к 
+&nbsp;примеру:</p>
+<p class="MsoNormal" style="text-align: justify">
+<span lang="EN-US" style="font-family: Verdana"><font size="2">&lt;BODY bgcolor = 
+&quot;red&quot; &nbsp;text = &quot;#0000FF&quot;&gt;</font></span></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+В приведенном примере устанавливаются красный цвет фона страницы и синий цвет 
+основного текста.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Структура &nbsp;HTML страницы состоит из следующих элементов:</u></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;тег &lt;html&gt; указывает программе просмотра страниц что это html документ;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;тег &lt;head&gt; определяет место, где помещается различная информация не 
+отображаемая в теле документа. Здесь располагается тег названия документа и теги 
+для поисковых машин;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;тег &lt;title&gt; не является частью отображаемого текста. Он может отображаться, 
+например, как заголовок страницы или название окна. Только один &lt;title&gt; может 
+быть в документе. Элемент &lt;title&gt; должен использоваться для идентификации 
+содержимого документа;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+—&nbsp;тег &lt;body&gt; определяет видимую часть документа. В этом разделе располагается 
+вся содержательная часть документа (текст статьи, фотографии, формы для 
+заполнения, другие объекты). Он имеет свои атрибуты, например bgcolor 
+(устанавливает цвет фона документа, используя значение цвета в виде RRGGBB, либо 
+используя константы цвета);</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Вот пример простого HTML&#8209;документа: </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;HTML&gt;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;HEAD&gt;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Verdana">&lt;TITLE&gt; HTML-документ &lt;/TITLE&gt;</span></font></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;/HEAD&gt;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;BODY &nbsp;BGCOLOR = &quot;#F08080&quot;&gt;
+</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<font size="2"><span style="font-family: Verdana">&lt;H1&gt;Заголовок&lt;/H1&gt;</span></font></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;P&gt;Первый абзац</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;P&gt;Второй абзац</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;/BODY&gt;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Verdana"><font size="2">&lt;/HTML&gt;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Этот HTML&#8209;документ отображается браузером Internet Explorer так, как показано на 
+рис.&nbsp;7. 1.</p>
+<p class="MsoNormal" style="text-indent:35.45pt" align="center">
+<span style="font-size: 14.0pt; font-family: Verdana">
+<img border="0" src="../ris/image121.png" width="561" height="456">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent:35.45pt" align="center">
+<font size="2">
+<b>Рис. 7. 1.</b> Отображение HTML-документа</font></p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font size="4">Теги для форматирования текста.</font></b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Если нужно отобразить некоторый текст с использованием определенного шрифта, 
+отличного от того, который применяется браузером по умолчанию, то можно 
+воспользоваться элементом FONT. Он вводится при помощи парных тегов &lt;FONT&gt; и &lt;/FONT&gt;.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Параметры шрифта для элемента FONT устанавливаются заданием значений следующих 
+его атрибутов:</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+• face&nbsp;— задает название шрифта, например Arial или System;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+• size&nbsp;— задает размер шрифта (значение от 1 до 7, по умолчанию используется 
+значение 3);</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+• color&nbsp;—&nbsp; задает цвет шрифта.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Задание начертания текста является, возможно, самым простым средством 
+форматирования содержимого документа, которое доступно в HTML. Для изменения 
+начертания текста в HTML&#8209;код добавляются элементы, приведенные в таблице.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image122.png" width="654" height="251"></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;H1&gt; … &lt;/H1&gt;, &lt;H2&gt; … &lt;/H2&gt;, … ,&lt;H6&gt; … &lt;/H6&gt; — заголовки 1, 2, … 6 уровня. 
+Заголовки можно выравнивать при помощи атрибута align , который может&nbsp; иметь 
+значения [ left | right | center | justify].</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;P&gt; — новый абзац. Можно в конце абзаца поставить &lt;/P&gt;, но это не обязательно.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;BR&gt; — новая строка. Этот тег не закрывается (то есть нет тега &lt;/BR&gt;)</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;HR&gt; — горизонтальная линия</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;BLOCKQUOTE&gt;…&lt;/BLOCKQUOTE&gt;&nbsp;— цитата. Обычно текст сдвигается вправо.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;PRE&gt; … &lt;/PRE&gt; — режим preview. В этом режиме текст заключается в рамку и никак 
+не форматируется.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font size="4">Гиперссылки</font></b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Link&nbsp;— цвет не посещённой гиперссылки </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+vlink&nbsp;— цвет посещённой гиперссылки </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+alink&nbsp;— цвет выбранной гиперссылки (при наведении на неё указателя)</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;a name=&quot;NAME&quot;&gt;&lt;/a&gt; &nbsp;— Отмечает часть текста как цель для гипперссылок в 
+документе.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&lt;a xhref=&quot;http://www.cyberguru.ru/#NAME&quot;&gt;&lt;/a&gt;&nbsp;— Создает гиперссылку на часть 
+текущего документа.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Нужно отметить , что язык HTML не чувствителен к регистру.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Создайте HTML страницу примерно следующего вида, используя изученные теги: </p>
+<p class="MsoNormal" align="center">
+<img border="0" src="../ris/image123.png" width="693" height="508"></p>
+<p class="MsoNormal" align="center">
+<font size="2">
+<b>Рис. 7. 2. </b>Отображение HTML-страницы</font></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+1. Задайте по умолчанию следующие параметры для всех страниц (переопределив, тег 
+&lt;body&gt;):</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет фона</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- размер шрифта</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет шрифта</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- семейство шрифта (например, Arial) </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+2. Задайте по умолчанию следующие параметры для всех абзацев :</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- выравнивание абзаца</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- отступ красной строки</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- размер и цвет первой буквы </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+3.Задайте по умолчанию следующие свойства ссылок для всех страниц:</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет и оформление ссылки</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет и оформление активной ссылки</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет и оформление посещенной ссылки</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- цвет и оформление ссылки, в момент нахождения курсора мыши над ней </p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<hr size=5>
+<p align="center" style="margin-bottom: 12px"><b>Контрольные вопросы</b><br>
+</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>1. </b>С помощью каких программ можно открывать документ HTML?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>2.</b> При употреблении тега &lt;HTML&gt; обязателен ли закрывающий тег?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>3.</b> Перечислите основные структурные элементы HTML-страницы?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>4. </b>Каковы функции тега &lt;Title&gt;? Сколько тегов &lt;Title&gt; может 
+присутствовать в документе?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>5.</b> Каковы функции тега &lt;Body&gt;?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>6.</b> Перечислите основные теги для форматирования текста?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>7. </b>Какова функция элемента SUB ?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>8.</b> Какова величина размера шрифта установленная по умолчанию и 
+максимально возможная?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>9.</b> Перечислите теги задания цвета гиперссылок и опишите их?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>10.</b> Чувствителен ли HTML к регистру?</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+</body>
+</html>

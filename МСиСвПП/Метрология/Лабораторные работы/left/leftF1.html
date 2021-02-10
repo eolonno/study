@@ -1,0 +1,392 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 1<br></b>
+<span style="line-height: 115%; font-family: Times New Roman; text-transform: uppercase; font-weight:700">
+Изучение компонентов материнской платы</span></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-size: 12.0pt; line-height: 115%; font-family: Times New Roman">
+<span lang="ru">рассмотреть</span> организацию ЭВМ на основе шинной архитектуры. 
+Изучить компоненты материнской платы. Изучить основные узлы и устройства ПК. 
+Выяснить их назначение и взаимосвязь.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" style="text-indent: 42.55pt; line-height: normal; margin-bottom: 1pt" align="center">
+<a name="шинная_структура_связей"><b>
+<span style="font-size: 13.5pt; font-family: Times New Roman">Структура связей</span></b></a><b><span style="font-size: 13.5pt; font-family: Times New Roman"> 
+компонентов в микропроцессорных системах</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Чаще всего в 
+микропроцессорных системах применяется так называемая шинная структура связей 
+между отдельными устройствами, входящими в систему. Суть шинной структуры связей 
+сводится к следующему.</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:42.55pt;line-height:normal">
+<img border="0" src="../ris/image015.jpg" width="310" height="141"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:42.55pt;line-height:normal">
+<span style="font-family: Times New Roman"><font size="2"><span lang="ru"><b>
+Рис. 1.1.</b> </span>Классическая структура связей.</font></span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">При классической 
+структуре связей все сигналы и коды между устройствами передаются по отдельным 
+линиям связи. При этом в системе получается очень много линий связи и разных 
+протоколов обмена информацией. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Если рассматривать 
+шинную структуру связей, то в ней все сигналы между устройствами передаются по 
+одним и тем же линиям связи, но в разное время (так называемая 
+мультиплексированная передача). Причем передача по всем линиям связи может 
+осуществляться в обоих направлениях (двунаправленная передача). В результате 
+количество линий связи существенно сокращается, а правила обмена (протоколы) 
+упрощаются. Группа линий связи, по которым передаются сигналы или коды как раз и 
+называется шиной (англ. bus). </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Понятно, что при 
+шинной структуре связей легко осуществляется пересылка всех информационных 
+потоков в нужном направлении, например, их можно пропустить через один процессор, 
+что очень важно для микропроцессорной системы. Однако при шинной структуре 
+связей вся информация передается по линиям связи последовательно во времени, по 
+очереди, что снижает быстродействие системы по сравнению с классической 
+структурой связей. </span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:42.55pt;line-height:normal">
+<img border="0" src="../ris/image016.jpg" width="378" height="137"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:42.55pt;line-height:normal">
+<span style="font-family: Times New Roman"><font size="2"><span lang="ru"><b>
+Рис. 1.2. </b></span>Шинная структура связей.</font></span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Однако на данный 
+момент основные производители делают новые шаги и переходят на более современные 
+структуры связей. Основной прорыв совершила корпорация </span>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: Times New Roman">Intel</span><span style="font-size: 12.0pt; font-family: Times New Roman">, 
+представив общественности </span>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: Times New Roman">Quick 
+Path Interface </span>
+<span style="font-size: 12.0pt; font-family: Times New Roman">(</span><span lang="EN-US" style="font-size: 12.0pt; font-family: Times New Roman">QPI</span><span style="font-size: 12.0pt; font-family: Times New Roman">).</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<img border="0" src="../ris/image017.png" width="585" height="307"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal"><font size="2">
+<span style="font-family: Times New Roman" lang="ru"><b>Рис. 1.3. </b></span>
+<span lang="EN-US" style="font-family: Times New Roman">Quick Path Interface</span></font></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Данная схема, как 
+мы видим из рисунка была разработана с учётом как постоянного увеличения 
+количества ядер ЦП, так и увеличения количества самих ЦП. Как видно из рисунка 
+такая система предполагает непосредственное обращение процессора к оперативной 
+памяти, что подразумевает наличие контроллеров памяти на самих процессорах. А 
+это уже является модифицированной классической структурой связей. Но, как 
+говорится, всё новое&nbsp;— это хорошо забытое старое, и, как результат, скорость 
+работы данных систем в разы превышает скорость работы систем на основе шинной 
+структуры.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Компания AMD также 
+не стоит на месте и предлагает технология HyperTransport, которая представляет 
+собой высокопроизводительный интер-фейс типа “точка-точка” предназначенный для 
+связи интегральных микросхем. Другим ключевым новововедением стандарта 
+HyperTransport стала появившая-ся совместимость с интерфейсом PCI-Express, в 
+добавок к уже существующей поддержке PCI и PCI-X. Стоит отметить, что 
+HyperTransport 3.0 способна обес-печить пропускную способность до 20,8 Гб/с в 
+каждом из направлений, что является крайне высоким показателем.</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<img border="0" src="../ris/image018.jpg" width="450" height="353"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<span style="font-family: Times New Roman"><font size="2"><span lang="ru"><b>
+Рис. 1.4. </b></span>Hyper Transport</font></span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Сейчас многие 
+производители увлечены данными концепциями и без со-мнения за ними будет будущее, 
+однако на рынках ещё достаточно материнских плат на шинной структуре и в 
+подавляющем большинстве в тех компьютерах, которыми мы пользуемся. А потому в 
+дальнейшем в лабораторной работе мы будем говорить о шинно-ориентированных 
+материнских платах.</span></p>
+<p class="MsoNormal" style="text-align: center; text-indent: 42.55pt; line-height: normal; margin-bottom: .0001pt">
+<a name="материнская_плата_пк"><b>
+<span style="font-size: 13.5pt; font-family: Times New Roman">Материнская плата 
+ПК</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman"><b>Матери&#769;нская 
+пла&#769;та</b> (англ. motherboard, MB, также используется название англ. mainboard — 
+главная плата; сленг. мама, мать, материнка) — это сложная многослойная печатная 
+плата, на которой устанавливаются основные компоненты персонального компьютера (центральный 
+процессор, контроллер ОЗУ и собственно ОЗУ, загрузочное ПЗУ, контроллеры базовых 
+интерфейсов ввода-вывода). Как правило, материнская плата содержит разъёмы (слоты) 
+для подключения дополнительных контроллеров, для подключения которых обычно 
+используются шины USB, PCI и PCI-Express. В системную магистраль (системную шину) 
+микропроцессорной системы входит три основные информационные шины: адреса, 
+данных и управления.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Основные 
+компоненты материнской платы:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">1. <b>Центральный 
+процессор.</b></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">2. <b>Набор 
+системной логики</b> (англ. chipset) — набор микросхем, обеспечивающих 
+подключение ЦПУ к ОЗУ и контроллерам периферийных устройств. Как правило, 
+современные наборы системной логики строятся на базе двух интегральных 
+микросхемах (ИМ): «северного» и «южного мостов»:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-family: Times New Roman">&nbsp;&nbsp; </span>
+<span style="font-size: 12.0pt; font-family: Times New Roman">- <i>
+Северный мост</i> (англ. Northbridge), MCH (Memory controller hub), системный 
+контроллер — обеспечивает подключение ЦПУ к узлам, использующим 
+высокопроизводительные шины: ОЗУ, графический контроллер. В качестве шины для 
+подключения графического контроллера на современных материнских платах 
+используется PCI Express. Ранее использовались общие шины (ISA, VLB, PCI) и шина 
+AGP.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">&nbsp;&nbsp; - <i>
+Южный мост</i> (англ. Southbridge), ICH (I/O controller hub), периферийный 
+контроллер — содержит контроллеры периферийных устройств (жёсткого диска, 
+Ethernet, аудио), контроллеры шин для подключения периферийных устройств (шины 
+PCI, PCI-Express и USB), а также контроллеры шин, к которым подключаются 
+устройства, не требующие высокой пропускной способности (LPC — используется для 
+подключения загрузочного ПЗУ; также шина LPC используется для подключения 
+мультиконтроллера (англ. Super I/O) — микросхемы, обеспечивающей поддержку «устаревших» 
+низкопроизводительных интерфейсов передачи данных: последовательного и 
+параллельного интерфейсов, контроллера клавиатуры и мыши).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">3. <b>ОЗУ.</b></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">4. <b>Загрузочное 
+ПЗУ</b> — хранит ПО, которое исполняется сразу после включения питания. Как 
+правило, загрузочное ПЗУ содержит BIOS, однако может содержать и ПО, работающие 
+в рамках EFI.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Как правило, 
+северный и южный мосты реализуются в виде отдельных интегральных микросхем, 
+однако существуют и одночиповые решения. Именно набор системной логики 
+определяет все ключевые особенности материнской платы и то, какие устройства 
+могут подключаться к ней.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">В виде схемы всё 
+выглядит следующим образом:</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<img border="0" src="../ris/image019.png" width="400" height="582"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<span style="font-family: Times New Roman"><font size="2"><span lang="ru"><b>
+Рис. 1.5. </b></span>Компоненты материнской платы</font></span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">В системную 
+магистраль (системную шину) микропроцессорной системы входит три основные 
+информационные шины: адреса, данных и управления.</span></p>
+<p class="MsoNormal" style="text-align: center; text-indent: 42.55pt; line-height: normal; margin-bottom: .0001pt">
+<a name="шина_данных"><b>
+<span style="font-size: 13.5pt; font-family: Times New Roman">Шина данных</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Это основная шина, 
+ради которой и создается вся система. Количество ее разрядов (линий связи) 
+определяет скорость и эффективность информационного обмена, а также максимально 
+возможное количество команд. Шина данных всегда двунаправленная, так как 
+предполагает передачу информации в обоих направлениях. Наиболее часто 
+встречающийся тип выходного каскада для линий этой шины — выход с тремя 
+состояниями. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Обычно шина данных 
+имеет 8, 16, 32 или 64 разряда. Понятно, что за один цикл обмена по 64-разрядной 
+шине может передаваться 8 байт информации, а по 8-разрядной — только один байт. 
+Разрядность шины данных определяет и разрядность всей магистрали. Например, 
+когда говорят о 32-разрядной системной магистрали, подразумевается, что она 
+имеет 32-разрядную шину данных.</span></p>
+<p class="MsoNormal" style="text-align: center; text-indent: 42.55pt; line-height: normal; margin-bottom: .0001pt">
+<b><span style="font-size: 13.5pt; font-family: Times New Roman">Шина адреса</span></b></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Вторая по важности 
+шина, которая определяет максимально возможную сложность микропроцессорной 
+системы, то есть допустимый объем памяти и, следовательно, максимально возможный 
+размер программы и максимально возможный объем запоминаемых данных. Количество 
+адресов, обеспечиваемых шиной адреса, определяется как $ 2^N$, где N — 
+количество разрядов. Например, 16-разрядная шина адреса обеспечивает 65536 
+адресов. Разрядность шины адреса обычно кратна 4 и может достигать 32 и даже 64. 
+Шина адреса может быть однонаправленной (когда магистралью всегда управляет 
+только процессор) или двунаправленной (когда процессор может временно передавать 
+управление магистралью другому устройству, например контроллеру ПДП). </span>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Как в шине данных, 
+так и в шине адреса может использоваться положительная логика или отрицательная 
+логика. При положительной логике высокий уровень напряжения соответствует 
+логической единице на соответствующей линии связи, низкий — логическому нулю. 
+При отрицательной логике — наоборот. </span></p>
+<p class="MsoNormal" style="text-indent: 42.55pt; line-height: normal; margin-bottom: .0001pt" align="center">
+<a name="шина_управления"><b>
+<span style="font-size: 13.5pt; font-family: Times New Roman">Шина управления</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Это 
+вспомогательная шина, управляющие сигналы на которой определяют тип текущего 
+цикла и фиксируют моменты времени, соответствующие разным частям или стадиям 
+цикла. Кроме того, управляющие сигналы обеспечивают согласование работы 
+процессора (или другого хозяина магистрали, задатчика, master) с работой памяти 
+или устройства ввода/вывода (устройства-исполнителя, slave). Управляющие сигналы 
+также обслуживают запрос и предоставление прерываний, запрос и предоставление 
+прямого доступа. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Сигналы шины 
+управления могут передаваться как в положительной логике (реже), так и в 
+отрицательной логике (чаще). Линии шины управления могут быть как 
+однонаправленными, так и двунаправленными. Типы выходных каскадов могут быть 
+самыми разными: с двумя состояниями (для однонаправленных линий), с тремя 
+состояниями (для двунаправленных линий), с открытым коллектором (для 
+двунаправленных и мультиплексированных линий). </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Для снижения 
+общего количества линий связи магистрали часто применяется мультиплексирование 
+шин адреса и данных. То есть одни и те же линии связи используются в разные 
+моменты времени для передачи как адреса, так и данных (в начале цикла — адрес, в 
+конце цикла — данные). Для фиксации этих моментов (стробирования) служат 
+специальные сигналы на шине управления. Понятно, что мультиплексированная шина 
+адреса/данных обеспечивает меньшую скорость обмена, требует более длительного 
+цикла обмена (Рис. 3.4.). По типу шины адреса и шины данных все магистрали также 
+делятся на мультиплексированные и немультиплексированные. </span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<img border="0" src="../ris/image020.jpg" width="454" height="109"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<span style="font-family: Times New Roman"><font size="2"><span lang="ru"><b>
+Рис. 1.6. </b></span>Мультиплексирование шин адреса и данных</font></span></p>
+<p class="MsoNormal" style="text-indent: 42.55pt; line-height: normal; margin-bottom: .0001pt" align="center">
+<a name="порты_и_контроллеры"><b>
+<span style="font-size: 13.5pt; font-family: Times New Roman">Порты и 
+контроллеры.</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Рассматривая IBM-совместимую 
+компьютерную архитектуру можно разделить все устройства на системные (процессор, 
+оперативная память и т.д.) и внешние, которые подразделяются на запоминающие (жесткий 
+диск, CR-ROM и т.д.) и устройства ввода/вывода (клавиатура, принтер и т.д.). 
+Каждое из устройств должно подсоединяться к системной шине. Существуют следующие 
+основные способы подключения устройств к системной шине: </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<a name="разъем"><b>
+<span style="font-size: 12.0pt; font-family: Times New Roman">Разъем</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Используется для 
+системных устройств. Обычно встроен в материнскую плату. Устройство подключенное 
+к разъему с точки зрения архитектуры является жизненно необходимым для работы ПК. 
+Системная шина также имеет разъемы на материнской плате для подключения 
+контроллеров. Наиболее распространненными являются PCI, AGP и PCI-Express. 
+Используя разъем устройство подключается непосредственно к системной шине </span>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<a name="порт"><b><span style="font-size: 12.0pt; font-family: Times New Roman">
+Порт</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Представляет собой 
+аналог разъема с тем отличием, что порт предназначен для подключения внешних 
+устройств не соединяющихся напрямую с материнской платой. Работу устройств 
+подключенных посредством порта обычно контролирует операционнная система. 
+Различают: </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Symbol">·</span><span style="font-size: 7pt; font-family: Times New Roman"> </span>
+<span style="font-size: 12.0pt; font-family: Times New Roman">
+<u>параллельные порты</u>, в которых данные передаются параллельными блоками. 
+Последовательные порты: COM.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;</span></span><span style="font-size: 7pt; font-family: Times New Roman"> </span>
+<span style="font-size: 12.0pt; font-family: Times New Roman">
+<u>последовательные порты</u>, в которых данные передаются последовательно друг за 
+другом. Параллельные порты: LPT.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size: 10.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;</span></span><span style="font-size: 7pt; font-family: Times New Roman"> </span>
+<span style="font-size: 12.0pt; font-family: Times New Roman">
+<u>последовательно-параллельные порты</u>, в которых данные передаются последователь-но, 
+но параллельными блоками. Последовательно-параллельные порты: USB.</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Синонимом порта 
+является интерфейс. </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-bottom: .0001pt">
+<a name="контроллер"><b>
+<span style="font-size: 12.0pt; font-family: Times New Roman">Контроллер</span></b></a></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35.45pt;line-height:normal">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Обеспечивает 
+сопряжение внешнего устройства и системной платы. Контроллеры бывают либо 
+интегрированными (встроенными) в материнскую плату(контроллер клавиатуры, 
+жесткого диска и т.д.), либо выполняются в виде отдельной платы, вставляющейся в 
+разъем на МП, в этом случае контроллер называют адаптером (видеоадаптер, сетевой 
+адаптер и т.д.). </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Общая организация 
+узлов и устройств ЭВМ:</span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal" align="center">
+<img border="0" src="../ris/image021.jpg" width="698" height="493"></p>
+<p align="center"><span style="line-height: 115%; font-family: Times New Roman">
+<font size="2"><span lang="ru"><b>Рис. 1.7. </b></span>Архитектура ЭВМ.</font></span></p>
+<p> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="justify" style="text-indent: 35.45pt">&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">Внимательно 
+рассмотреть представленную материнскую плату на рисунке ниже. На&nbsp; ее примере 
+выделить основные компоненты, а также их назначение материнской платы, 
+предоставленной преподавателем. </span></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+42.55pt;line-height:normal"><b>
+<span style="font-size: 12.0pt; font-family: Times New Roman">Нумерация 
+компонентов:</span></b></p>
+<p style="margin-left: 6px; margin-top: 0">
+<span style="font-size: 12.0pt; line-height: 115%; font-family: Times New Roman">
+1.Центральный процессор <br>
+2.Оперативная память <br>
+3.Чипсет <br>
+4.Видеокарта <br>
+5.Разъёмы для подключения специализированных устройств PCI <br>
+6.Шина PCI <br>
+7.Аудиочипсет <br>
+8.Джампер <br>
+9.Чипсет <br>
+10.Внешние разъёмы <br>
+11.Системные преобразователи напряжения (катушки) <br>
+12.Микросхема BIOS <br>
+13.Разъемы для подключения жестких дисков <br>
+14.Для подключения flop</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 115%; font-family: Times New Roman">py</span><span style="font-size: 12.0pt; line-height: 115%; font-family: Times New Roman">-дисковода
+<br>
+15.Разъём питания <br>
+16.Батарейка для BIOS <br>
+17.Индикаторы</span></p>
+<p align="center">
+<img border="0" src="../ris/image022.jpg" width="619" height="896"></p>
+<p align="center"><span style="line-height: 115%; font-family: Times New Roman">
+<font size="2">&nbsp;<span lang="ru"><b>Рис. 1.8. </b></span>Пример материнской 
+платы.</font></span></p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;">
+<span lang="ru"><b>1. </b></span>Какие шины входят в состав системной магистрали?</span></p>
+<p class="MsoNormal" style="text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;">
+<span lang="ru"><b>2. </b></span>Что такое «порт»? Каковы наиболее 
+распространенные типы портов?</span></p>
+<p class="MsoNormal" style="text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;">
+<span lang="ru"><b>3. </b></span>Какие компоненты содержит материнская плата? В 
+чем их назначение?</span></p>
+<p class="MsoNormal" style="text-indent: 42.55pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 6<br>ИЗУЧЕНИЕ И ХАРАКТЕРИСТИКА 
+КОМПОНЕНТОВ ЭВМ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman"><span lang="ru">и</span>зучить 
+основные компоненты ЭВМ и их характеристики, провести тестирование 
+быстродействия ОЗУ, построить структурную схему ПК.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>FSB </b>(Front Side Bus) – шина в двухшинной архитектуре DIB корпорации Intel 
+шина, связывающая процессор с оперативно запоминающие устройство (ОЗУ).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>DMI </b>(Desktop Management Interface) — интерфейс программирования 
+приложений (<span lang="EN-US">Application Programming Interface</span> –
+<span lang="EN-US">API</span>), позволяющий программному обеспечению собирать 
+данные о характеристиках компьютера. Спецификация DMI разработана консорциумом 
+Distributed <span lang="EN-US">Management Task Force</span> (<span lang="EN-US">DTMF</span>), 
+возглавляемом фирмой <span lang="EN-US">Intel</span>. Данный интерфейс позволяет 
+пользователю получить информацию об аппаратном обеспечении ПК.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>SPD </b>(Serial Presence Detect) – спецификация, описывающая технологию 
+записи, хранения и считывания информации о характеристиках 168-контактных 
+модулей DIMM</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Чипсет </b>(chip set) – набор микросхем, спроектированных для совместной 
+работы с целью выполнения набора каких-либо функций. Так, в компьютерах чипсет 
+выполняет роль связующего компонента, обеспечивающего совместное 
+функционирование подсистем памяти, ЦПУ, ввода-вывода и других. Чипсеты 
+встречаются и в других устройствах, например, в радиоблоках сотовых телефонов. 
+Чипсет состоит из двух основных микросхем (иногда они объединяются в один чип):</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>MCH </b>(Memory Controller Hub) — контроллер-концентратор памяти&nbsp;— северный 
+мост (northbridge)&nbsp;— обеспечивает взаимодействие центрального процессора (ЦП) с 
+памятью и видеоадаптером (PCI Express). В новых чипсетах часто имеется 
+интегрированная видеоподсистема. Контроллер памяти может быть интегрирован в 
+процессор (например Opteron, Nehalem, UltraSPARC T1).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>ICH </b>(I/O Controller Hub) — контроллер-концентратор ввода-вывода — южный 
+мост (southbridge)&nbsp;— обеспечивает взаимодействие между ЦП и жестким диском, 
+картами PCI, интерфейсами IDE, SATA, USB и пр. Также иногда к чипсетам относят 
+микросхему <b>Super I/O</b>, которая подключается к южному мосту и отвечает за 
+низкоскоростные порты RS232,<span lang="ru"> </span>LPT, PS/2.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Everest Ultimate Edition </b>— программа для просмотра информации об 
+аппаратной и программной конфигурации компьютера. Программа анализирует 
+конфигурацию компьютера и выда<span style="font-family: Times New Roman" lang="ru">е</span>т 
+подробную информацию об установленных в системе &nbsp;устройствах — процессорах, 
+системных платах, видеокартах, аудиокартах, модулях памяти и так далее, а также 
+информацию об их характеристиках, поддерживаемых ими наборах команд и режимах 
+работы, их производителях, установленном программном обеспечении, конфигурации 
+операционной системы и установленных драйверах.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+В программе имеется достаточно широкий <u>набор тестов</u>:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 1.0cm; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Symbol">·</span><span style="font-family: Times New Roman" lang="ru">
+</span>чтение из памяти — тестирует скорость пересылки данных из ОЗУ к 
+процессору;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 1.0cm; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Symbol">·</span><span style="font-family: Times New Roman" lang="ru">
+</span>запись в память;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 1.0cm; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Symbol">·</span><span style="font-family: Times New Roman" lang="ru">
+</span>копирование в памяти — тестирует скорость пересылки данных из одних ячеек 
+памяти в другие через кэш процессора;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 1.0cm; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Symbol">·</span><span style="font-family: Times New Roman" lang="ru">
+</span>задержка памяти — тестирует среднее время считывания процессором данных 
+из ОЗУ;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CPU Queen </b>— тестирует производительность процессора в целочисленных 
+операциях при решении классической «Задачи с ферзями»;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CPU PhotoWorxx </b>— тестирует производительность блоков целочисленных 
+арифметических операций, умножения, а также подсистемы памяти при выполнении 
+ряда стандартных операций с RGB-изображениями;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CPU ZLib </b>— тестирует производительность процессора и подсистемы памяти 
+при создании архивов формата ZIP при помощи популярной открытой библиотеки ZLib. 
+Использует целочисленные операции;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CPU AES </b>— тестирует скорость процессора при выполнении шифрования по 
+криптоалгоритму AES. Способен использовать низкоуровневые команды шифрования 
+процессоров VIA C3 и C7, что позволяет последнему быть одним из лидеров теста, 
+превосходя по производительности ряд многоядерных процессоров Intel и AMD;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>FPU Julia </b>— тестирует производительность блоков процессора, выполняющих 
+операции с плавающей запятой, в вычислениях с 32-разрядной точностью. Моделирует 
+несколько фрагментов фрактала Жюлиа. При возможности использует инструкции MMX, 
+SSE и 3DNow!;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>FPU Mandel </b>— тестирует производительность блоков процессора, выполняющих 
+операции с плавающей запятой, в вычислениях с 64-разрядной точностью путем 
+моделирования нескольких фрагментов фрактала Мандельброта. Способен использовать 
+инструкции SSE2.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>FPU SinJulia </b>— усложненный вариант теста FPU Julia. Тестирует 
+производительность блоков процессора, выполняющих операции с плавающей запятой, 
+в вычислениях с 80-разрядной точностью. Использует инструкции x87, 
+предназначенные для вычисления тригонометрических и показательных функций.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Тайминги оперативной памяти</b>. Схема таймингов включает в себя задержки CL-tRCD-tRP-tRAS 
+соответственно. Для работы с памятью необходимо для начала выбрать чип, с 
+которым мы будем работать. Делается это командой CS (Chip Select). Затем 
+выбирается банк и строка. Перед началом работы с любой строкой необходимо ее 
+активировать. Делается это командой выбора строки RAS (Row Address Strobe), при 
+выборе строки она активируется. Затем нужно выбрать столбец командой CAS (Column 
+Address Strobe) – эта же команда инициирует чтение. Затем считать данные и 
+закрыть строку, совершив предварительный заряд (precharge) банка.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CL</b>(Cas Latency) – минимальное время между подачей команды на чтение (CAS) 
+и началом передачи данных (задержка чтения).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>tRCD </b>(RAS to CAS delay) – время, необходимое для активизации строки банка, 
+или минимальное время между подачей сигнала на выбор строки (RAS) и сигнала на 
+выбор столбца (CAS).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>tRP </b>(Row Precharge) – время, необходимое для предварительного заряда 
+банка (precharge). Иными словами, минимальное время закрытия строки, после чего 
+можно активировать новую строку банка.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>tRAS </b>(Active to Precharge) – минимальное время активности строки, то есть 
+минимальное время между активацией строки (ее открытием) и подачей команды на 
+предзаряд (начало закрытия строки). Строка не может быть закрыта раньше этого 
+времени.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>CR </b>(Command Rate) – Время, необходимое для декодирования контроллером 
+команд и адресов. Иначе, минимальное время между подачей двух команд. При 
+значении 1T команда распознается 1 такт, при 2T – 2 такта, 3T – 3 такта.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+Это все основные тайминги. Остальные тайминги имеют меньшее влияние на 
+производительность.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: center; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b><font size="4">Порты (каналы ввода - вывода)</font></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+На задней стенке корпуса современных ПК размещены (точнее могут размещаться) 
+следующие порты:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Game </b>– для игровых устройств (для подключения джойстика).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>VGA </b>(Video Graphics Array) – выход контроллера графического адаптера (видеокарты) 
+для подключения монитора.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>COM-port </b>– асинхронные последовательные (обозначаемые СОМ1 — СОМЗ). Через 
+них обычно подсоединяются мышь, модем и тому подобное.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>PS/2 </b>– асинхронные последовательные порты для подключения клавиатура и 
+манипулятора мышь.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>LPT </b>– параллельные (обозначаемые LPT1—LPT4), к ним обычно подключаются 
+принтеры.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>USB </b>(Universal Serial Bus) – универсальный интерфейс для подключения 127 
+устройств (этот интерфейс может располагаться на передней или боковой стенке 
+корпуса).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>IEЕЕ-1394 </b>(FireWire) – интерфейс для передачи больших объемов видео 
+информации в реальном времени (для подключения цифровых видеокамер, внешних 
+жестких дисков, сканеров и другого высокоскоростного оборудования). Интерфейсом 
+FireWire оснащены все видеокамеры, работающие в цифровом формате. Может 
+использоваться и для создания локальных сетей.</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+<b><span style="font-family: Times New Roman">iRDA </span></b>
+<span style="font-family: Times New Roman">- инфракрасные порты предназначены 
+для беспроводного подключения карманных или блокнотных ПК или сотового телефона 
+к настольному компьютеру. Связь обеспечивается при условии прямой видимости, 
+дальность передачи данных не более 1 м. Если в ПК нет встроенного iRDA адаптера, 
+то он может быть выполнен в виде дополнительного внешнего устройства (USB iRDA 
+адаптера), подключаемого через USB-порт. А также разъемы звуковой карты для 
+подключения колонок, микрофона и линейный выход.</span></p>
+<p style="text-indent: 35.45pt"> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>Задание 1. Ознакомьтесь с суммарной информацией о компьютере.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="ru">1.<b> </b></span>Запустите программу <b><span lang="EN-US">
+Everest Ultimate Edition</span></b><span lang="EN-US">.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="ru">2.</span>В левом меню в раскрывающемся списке «Компьютер» 
+выберите пункт «Суммарная информация».</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image030.png" width="666" height="551"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3.<span lang="ru"> </span>Выпишите из списка основных параметров исследуемого 
+компьютера в правом окне:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип компьютера;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип операционной системы;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+имя компьютера;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+имя пользователя;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип центрального процессора (ЦП);</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип системной платы;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип чипсета системной платы;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+количество и тип оперативной (системной) памяти;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип видеоадаптера;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип монитора;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+тип и объем дискового накопителя;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 100pt; margin-top: 0; margin-bottom: 0">
+перечислить другие устройства ввода-вывода, имеющиеся на исследуемом ПК.</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 2. Ознакомьтесь с ЦП исследуемого компьютера.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В левом меню в раскрывающемся списке «Системная плата» 
+выберите пункт «ЦП».</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image031.png" width="673" height="555"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Выпишите основные параметры ЦП из списка в правом окне:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+тип ЦП;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+название ядра (псевдоним) ЦП;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+степинг ЦП;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+наборы инструкций;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+исходная частота;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+размер и характеристики кэш памяти ЦП;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+физические параметры ЦП:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+тип корпуса;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+размер корпуса;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+число транзисторов;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+технологический процесс;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+размер кристалла;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+напряжение питания ядра;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+напряжение;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+типичная мощность;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 71.4pt; margin-top: 0; margin-bottom: 0">
+максимальная мощность.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В левом меню в раскрывающемся списке «Компьютер» выберите пункт «Разгон».</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image032.png" width="680" height="518"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+4<span lang="ru">. </span>Выпишите текущую частоту процессора. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+5.<span lang="ru"> </span>Сравните исходную частоту процессора с текущей.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 3. Ознакомьтесь с материнской (системной) платой ПК.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В левом меню в раскрывающемся списке «Системная плата» 
+выберите пункт «Системная плата». </p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image033.png" width="674" height="425"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Выпишите из списка основных параметров материнской 
+платы в правом окне:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+название материнской платы и фирму;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+свойства шины FSB:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+тип шины;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+ширина шины; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+реальная частота; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+эффективная частота; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+пропускная способность; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+свойства шины памяти:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+тип шины;&nbsp; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+ширина шины; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+соотношение <span lang="EN-US">DRAM</span>:FSB;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+реальная частота; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+эффективная частота; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+пропускная способность; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+название чипсета – Intel Hub Interface;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+физическую информацию о системной плате:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+число гнезд для ЦП;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+разъемы ОЗУ; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+встроенные устройства; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+размеры системной платы; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+чипсет системной платы. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; text-autospace: none; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 4. Ознакомьтесь со свойствами модулей ОЗУ.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В левом меню в раскрывающемся списке «Системная плата» 
+выберите пункт «SPD».</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image034.png" width="656" height="451"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Выпишите свойства модулей ОЗУ и основные тайминги 
+памяти, для разных частот.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 5. Ознакомьтесь с чипсетом материнской платы.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В левом меню в раскрывающемся списке «Системная плата» 
+выберите пункт «Чипсет».</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Ознакомьтесь со свойствами «северного моста» чипсета. 
+Для этого в верхнем окне выберите пункт «Северный мост». </p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image035.png" width="654" height="542"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3.<span lang="ru"> </span>Выпишите:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+название «северного моста»;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+поддерживаемые скорости FSB;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+поддерживаемые типы оперативной памяти;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+тип контроллера памяти;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+максимальный объем оперативной памяти;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+основные тайминги памяти (CR, tRAS, tRP, tRCD, CL).</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 34.8pt; text-autospace: none; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; text-align: justify; margin-top: 0; margin-bottom: 0">
+4.<span lang="ru"> </span>Ознакомьтесь со свойствами «южного моста» чипсета. Для 
+этого в верхнем окне выберите пункт «Южный мост».</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image036.png" width="654" height="573"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+5.<span lang="ru"> </span>Перечислите устройства, содержащиеся в «южном мосте».</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 6. Ознакомьтесь с системой хранения данных ПК – постоянно 
+запоминающими устройствами (ПЗУ).</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В левом меню в раскрывающемся списке «Хранение данных» 
+выберите пункт «Хранение данных Windows». В правом верхнем окне появится список 
+всех возможных ПЗУ исследуемого компьютера.</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image037.png" width="642" height="652"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Рассмотрите параметры жесткого диска и оптического DVD 
+накопителя. Для этого выпишите их основные характеристики. Такие как:</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+название ЖД;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+производитель;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+емкость;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+интерфейс подключения;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+физические параметры.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; text-autospace: none; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 7. Ознакомьтесь с имеющимися на плате портами ввода-вывода.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>В разделе «Компьютер» выберите пункт «DMI». </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Из раздела «Системные разъемы» выпишите имеющиеся на 
+материнской плате разъемы. </p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image038.png" width="633" height="595"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3.<span lang="ru"> </span>Из раздела «Разъемы портов» выпишите разъемы для 
+подключения внешних устройств ввода-вывода, для каждого укажите тип порта.</p>
+<p class="a" align="center" style="text-align:center">
+<img border="0" src="../ris/image039.jpg" width="628" height="519"></p>
+<p class="a" align="center" style="text-align:center">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 8. Проведите тестирование быстродействия ОЗУ.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1.<span lang="ru"> </span>Перейти в раздел «Тест» в левом меню.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2.<span lang="ru"> </span>Выберите пункт «Чтение из памяти» для тестирования 
+скорости пересылки данных из ОЗУ к процессору. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3.<span lang="ru"> </span>Для начала тестирования нажмите кнопку «Обновить» либо 
+клавишу «F5» на клавиатуре.</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image040.png" width="629" height="606"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+4.<span lang="ru"> </span>Выберите пункт «Запись в память». </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+5.<span lang="ru"> </span>Нажмите кнопку «Обновить» для начала тестирования.</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image041.png" width="630" height="593"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+6.<span lang="ru"> </span>Выберите пункт «Копирование в памяти» для тестирования 
+скорости пересылки данных из одних ячеек памяти в другие через кэш процессора.
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+7.<span lang="ru"> </span>Нажмите кнопку «обновить» либо клавишу «F5» на 
+клавиатуре.</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image042.png" width="633" height="589"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+8.<span lang="ru"> </span>Выберите пункт «Задержка в памяти» для тестирования 
+среднего времени считывания процессором данных из ОЗУ. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+9.<span lang="ru"> </span>Нажмите клавишу «F5» на клавиатуре для тестирования.</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none; ">
+<img border="0" src="../ris/image043.png" width="636" height="595"></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b>Задание 9. По результатам предыдущих пунктов постройте структурную схему ПК.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr size=5>
+<p align="center" style="margin-top: 0; margin-bottom: 12px"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.</b><span lang="ru"> </span>Основные принципы построения ЭВМ, структура Дж. 
+фон Неймана.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.</b><span lang="ru"> </span>Классическая архитектура ЭВМ и принципы фон 
+Неймана.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.</b><span lang="ru"> </span>Нарисуйте структурную схема ПК, поясните 
+назначение всех компонентов. Центральный процессор, основные характеристики. 
+Система памяти: состав, назначение. Оперативная память DRAM: строение, основные 
+параметры. Системная магистраль: определение, назначение, параметры.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.</b><span lang="ru"> </span>Шины FSB, Hyper Transport, PCI, PCI-E: 
+назначение, основные параметры, быстродействие .</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>5.</b><span lang="ru"> </span>«Северный мост», «Южный мост»: состав, 
+назначение.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>6.</b><span lang="ru"> </span>Устройства ввода-вывода ПК.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>7.</b><span lang="ru"> </span>Факторы, влияющие на производительность ПК.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>8.</b><span lang="ru"> </span>Какие устройства к каким портам могут 
+подключаться.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</body>
+</html>

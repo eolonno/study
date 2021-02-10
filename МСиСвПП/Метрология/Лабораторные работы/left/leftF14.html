@@ -1,0 +1,438 @@
+<html>
+<head>
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 14<br>НАСТРОЙКА ПАРАМЕТРОВ TCP/IP</b></p>
+<hr size=5>
+<p align="justify" style="text-indent: 35.45pt" ><b>Цель работы</b> — 
+<span style="font-family: Times New Roman">изучить способы диагностики настроек 
+стека протоколов TCP/ IP; получить сведения о настройке TCP/IP.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+На концептуальной модели взаимодействия открытых систем OSI основан стек 
+протоколов <b><i>TCP/IP</i></b><i> </i>(<i>Transmission Control Protocol — 
+протокол управления передачей / Internet Protocol — Интернет-протокол</i>), 
+который предоставляет ряд стандартов для связи компьютеров и сетей.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b><i>Стек протоколов TCP/IP</i></b> — промышленный стандарт, который позволяет 
+организовать сеть масштаба предприятия и связывать компьютеры, работающие под 
+управлением различных операционных систем. &nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:35.45pt">
+<img border="0" src="../ris/image001.png" width="516" height="340"></p>
+<p class="MsoNormal" align="center" style="margin-top:6.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<span style="font-size:
+10.0pt"><b>Рис. 13.1.</b> Связь протоколов в стеке </span>
+<span lang="EN-US" style="font-size: 10.0pt">TCP</span><span style="font-size:10.0pt">/</span><span lang="EN-US" style="font-size: 10.0pt">IP</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Применение стека протоколов TCP/IP дает следующие преимущества: </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.</b>
+	поддерживается почти всеми операционными системами; почти все большие сети 
+	основаны на TCP/IP; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.</b>
+	технология позволяет соединить разнородные системы; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.</b>
+	надежная, расширяемая интегрированная среда на основе модели «клиент – 
+	сервер»; </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.</b>
+	получение доступа к ресурсам сети Интернет. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Каждый узел <b><i>TCP/IP</i></b> идентифицирован своим логическим IP-адресом, 
+который идентифицирует положение компьютера в сети почти таким же способом, как 
+номер дома идентифицирует дом на улице. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Реализация <b><i>TCP/IP</i></b> позволяет узлу <b><i>TCP/IP</i></b> использовать 
+статический IP-адрес или получить IP-адрес автоматически с помощью <b><i>
+DHCP-сервера</i></b><i> (Dynamic Host Configuration Protocol — протокол 
+динамической конфигурации хоста).</i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" align="center" style="margin-top:3.75pt;text-align:center;
+line-height:15.0pt">
+<img border="0" src="../ris/image002.jpg" width="518" height="425"></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<span style="font-size:10.0pt"><b>Рис. 13.2.</b> Реализация стека </span>
+<span lang="EN-US" style="font-size: 10.0pt">TCP</span><span style="font-size:10.0pt">/</span><span lang="EN-US" style="font-size: 10.0pt">IP</span></p>
+<p class="MsoNormal" align="center" style="text-align:center;text-indent:35.45pt">
+<b><font size="4">&nbsp;Сетезависымые и сетенезависимые уровни стека TCP/IP</font></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Для простых сетевых конфигураций, основанных на локальных сетях <i>(LAN, Local 
+Area Network)</i>, он поддерживает автоматическое назначение IP-адресов. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+По умолчанию компьютеры клиентов, работающие под управлением ОС <b>Windows</b> 
+или <b>Linux</b>, получают информацию о настройке протокола <b><i>TCP/IP</i></b> 
+автоматически от службы <b><i>DHCP</i></b>.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Однако даже в том случае, если в сети доступен <b><i>DHCP-сервер</i></b>, 
+необходимо назначить статический IP-адрес для отдельных компьютеров в сети. 
+Например, компьютеры с запущенной службой <b><i>DHCP</i></b> не могут быть 
+клиентами <b><i>DHCP</i></b>, поэтому они должны иметь статический IP-адрес. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Если служба <b><i>DHCP</i></b> недоступна, можно настроить <b><i>TCP/IP</i></b> 
+для использования статического IP-адреса. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Для каждой платы сетевого адаптера в компьютере, которая использует <b><i>TCP/IP</i></b>, 
+можно установить IP-адрес, маску подсети и шлюз по умолчанию. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Ниже в таблице 1 описаны параметры, которые используются при настройке 
+статического адреса <b><i>TCP/IP</i></b>.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 5px">
+<b>Таблица 1.</b> Параметры, используемые при настройке статического адреса TCP/IP</p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" id="table3">
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			<span style="font-size:11.0pt">Параметр</span></b></td>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			<span style="font-size:11.0pt">Описание</span></b></td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" align="center" style="text-align:center">
+			IP-адрес</td>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align:justify">Логический 32-битный 
+			адрес, который идентифицирует TCP/IP узел. Каждой плате сетевого 
+			адаптера в компьютере с запущенным протоколом TCP/IP необходим 
+			уникальный IP-адрес, такой, как 192.168.0.108. Каждый адрес имеет 
+			две части: ID сети, который идентифицирует все узлы в одной 
+			физической сети и ID узла, который идентифицирует узел в сети. В 
+			этом примере ID сети — 192.168.0, и ID узла — 108. </td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" align="center" style="text-align:center">Маска</p>
+			<p class="MsoNormal" align="center" style="text-align:center">
+			подсети</td>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align:justify">Подсети делят 
+			большую сеть на множество физических сетей, соединенных 
+			маршрутизаторами. Маска подсети закрывает часть IP-адреса так, чтобы 
+			TCP/IP мог отличать ID сети от ID узла. При соединении узлов TCP/IP, 
+			маска подсети определяет, где находится узел получателя: в локальной 
+			или удаленной сети. Для связи в локальной сети компьютеры должны 
+			иметь одинаковую маску подсети. </td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" align="center" style="text-align:center">Шлюз 
+			по</p>
+			<p class="MsoNormal" align="center" style="text-align:center">
+			умолчанию</td>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align:justify">Промежуточное 
+			устройство в локальной сети, на котором хранятся сетевые 
+			идентификаторы других сетей предприятия или Интернета. TCP/IP 
+			посылает пакеты в удаленную сеть через шлюз по умолчанию (если 
+			никакой другой маршрут не настроен), который затем пересылает пакеты 
+			другим шлюзам, пока пакет не достигнет шлюза, связанного с указанным 
+			адресатом. </td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<i>&nbsp;</i></p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+Если сервер с запущенной службой <b><i>DHCP</i></b> доступен в сети, он 
+автоматически предоставляет информацию о параметрах <b><i>TCP/IP</i></b> 
+клиентам <b><i>DНСР</i></b>. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="../ris/image003.png" width="447" height="533"></p>
+<p class="MsoNormal" align="center" style="margin-top:6.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<span style="font-size:
+10.0pt"><b>Рис. 13.3.</b> Схема функционирования протоколов TCP/IP</span><br>
+</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="margin-top: 0; margin-bottom: 0"><b>Задание 1. Проверьте 
+работоспособность стека протоколов TCP/IP.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Запустите консоль: ПУСК – ПРОГРАММЫ – СТАНДАРТНЫЕ – КОМАНДНАЯ СТРОКА. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>В 
+командной строке введите команду: &nbsp;<b>ipconfig /all | more</b>. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Используя приведенную ниже информацию, создайте в своей папке текстовый документ 
+со следующими данными: </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: задание 1. проверьте работоспособность стека протоколов tcp/ip.; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%; border-collapse: collapse; border: medium none" id="table4">
+		<tr style="height: 18.0pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 18.0pt; border: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Имя компьютера;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 18.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: 1.0pt solid windowtext; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 17.25pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 17.25pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Основной 
+			DNS-суффикс;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 17.25pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 16.5pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 16.5pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Описание 
+			DNS-суффикса для подключения;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 16.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 15.75pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 15.75pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Физический 
+			адрес;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 15.75pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 15.0pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 15.0pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">DHCP включен;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 15.0pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 14.25pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 14.25pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Автоконфигурация 
+			включена;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 14.25pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 14.25pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 14.25pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">IP-адрес 
+			автоконфигурации;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 14.25pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 14.25pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 14.25pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Маска подсети;</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 14.25pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+		<tr style="height: 13.5pt">
+			<td width="48%" nowrap style="width: 48.2%; height: 13.5pt; border-left: 1.0pt solid windowtext; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span style="font-size:10.5pt">Шлюз по 
+			умолчанию</span></td>
+			<td width="51%" nowrap style="width: 51.8%; height: 13.5pt; border-left: medium none; border-right: 1.0pt solid windowtext; border-top: medium none; border-bottom: 1.0pt solid windowtext; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal">
+			<span style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></td>
+		</tr>
+	</table>
+</div>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+&nbsp;<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Убедитесь в работоспособности стека TCP/IP, отправив эхо-запросы на IP-адреса. 
+Для этого воспользуйтесь командой ping: </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></b>
+отправьте эхо-запросы на локальный адрес компьютера (<i>loopback</i>) <b>ping 
+127.0.0.1</b> (на экране должны появиться сообщения о полученном ответе от узла 
+127.0.0.1); </p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image004.jpg" width="623" height="186"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp; </span></b>
+отправьте эхо-запрос по другому IP-адресу, например 192.168.4.1.</p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image005.jpg" width="623" height="186"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>&nbsp;Задание 2. Настройте стек протоколов TCP/IP для использования статического 
+IP-адреса.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>&nbsp;1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Откройте окно Сетевые подключения: ПУСК – ПАНЕЛЬ УПРАВЛЕНИЕ – СЕТЬ И ПОДКЛЮЧЕНИЯ 
+К ИНТЕРНЕТУ – СЕТЕВЫЕ ПОДКЛЮЧЕНИЯ. </p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image006.png" width="611" height="381"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Откройте окно Подключения по локальной сети. Для этого можно воспользоваться 
+контекстным меню. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>В 
+появившемся диалоговом окне на вкладке Общие откройте свойства протокола 
+Интернета TCP/IP. </p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image007.png" width="316" height="383"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Щелкните переключатель Использовать следующий IP-адрес и введите в 
+соответствующие поля данные: IP-адрес, Маску подсети, Основной шлюз, 
+Предпочитаемый DNS. </p>
+<p class="MsoNormal" align="center" style="margin-bottom:12.0pt;text-align:center">
+<img border="0" src="../ris/image008.png" width="316" height="351"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Примените параметры кнопкой ОК. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Закройте окно свойств подключения кнопкой ОК (если потребуется, то согласитесь 
+на перезагрузку компьютера). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Проверьте работоспособность стека протоколов TCP/IP. </p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-size:10.5pt">&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" align="center" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>Задание 3. Настройте TCP/IP для автоматического получения IP-адреса.</b></p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Откройте окно Сетевые подключения: ПУСК – ПАНЕЛЬ УПРАВЛЕНИЕ – СЕТЬ И ПОДКЛЮЧЕНИЯ 
+К ИНТЕРНЕТУ – СЕТЕВЫЕ ПОДКЛЮЧЕНИЯ. </p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Вызовите свойства Подключения по локальной сети. </p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Откройте свойства Протокол Интернета TCP/IP. </p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Установите переключатель Получить IP-адрес автоматически. </p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image009.png" width="326" height="366"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Примените параметры кнопкой ОК. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Закройте окно свойств подключения кнопкой ОК (если потребуется, то согласитесь 
+на перезагрузку компьютера). </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Проверьте работоспособность стека протоколов TCP/IP. &nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 6.0pt; margin-bottom: 0">
+<b>Задание 4. Получение нового IP-адреса.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Запустите консоль: ПУСК – ПРОГРАММЫ – СТАНДАРТНЫЕ – КОМАНДНАЯ СТРОКА. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Введите команду для сброса назначенных адресов: <b>ipconfig /release</b>.</p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image010.jpg" width="450" height="263"></p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image011.jpg" width="359" height="225"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Введите команду для получения нового адреса: <b>ipconfig / renew</b>.</p>
+<p class="a" align="center" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image012.jpg" width="401" height="203"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Проверьте работоспособность стека протоколов TCP/IP. <b>
+<span style="font-size: 12.0pt; font-family: Times New Roman">
+<br clear="all" style="page-break-before:always">
+&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 6px; margin-bottom: 0">
+<b>Задание 5. Создайте IP-калькулятор в табличном процессоре для облегчения 
+формирования маски подсети.</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>&nbsp;1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Откройте <span lang="EN-US">Microsoft Office Exel</span> и сформируйте таблицу 
+по следующему шаблону:</p>
+<p class="MsoNormal" align="center" style="margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center">
+<img border="0" src="../ris/image013.png" width="692" height="270"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>Далее 
+необходимо ввести в ячейки B5, J5, R5, Z5 формулы для перевода двоичного 
+представления IP-адреса в точечную десятичную нотацию по октетам. Введите в 
+ячейку B5 формулу для преобразования 1-го октета IP-адреса в десятичную систему 
+счисления: </p>
+<p class="MsoNormal" style="margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-align:justify" align="center">
+<img border="0" src="../ris/image014.jpg" width="639" height="23"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Скопируйте введенную формулу в остальные ячейки (J5, R5, Z5), внося 
+соответствующие изменения. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Самостоятельно введите в ячейки B5, J5, R5, Z5 формулы для преобразования маски 
+подсети из двоичного представления в точечную десятичную нотацию. </p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Сохраните файл в своей папке.</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+&nbsp;<br>
+</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>Что 
+представляет собой протокол TCP/IP. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+IP-адреса. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Статический IP-адрес. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Автоматическое получение IP-адреса. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;</span>5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></b>Управляющие протоколы Интернета. </p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Тестирование TCP/IP.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Маршрутизация пакетов в IP сетях.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Утилиты командной строки для работы с сетью.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>9.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Необходимый набор параметров для настройки локальной сети.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>10.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Необходимый набор параметров для настройки Интернета.</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<b>11.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp; </span></b>
+Необходимый набор параметров для выхода в другую сеть (посредствам 
+прокси-сервера).</p>
+<p class="MsoNormal" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</body>
+</html>

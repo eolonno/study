@@ -1,0 +1,319 @@
+<html>
+<head>
+<title></title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 2<br>ИССЛЕДОВАНИЕ 
+ПОРЯДКА ЗАПУСКА КОМПЬЮТЕРА</b></p>
+<hr size=5>
+<p align="justify" style="margin-bottom: 0" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+уяснить порядок начальной загрузки компьютера, знать ее этапы, возможные 
+неисправности и методы их диагностики.</p>
+<p style="margin-top: 0"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 12.0pt; font-family: Times New Roman">Оборудование:
+</span></b> <span style="font-size: 12.0pt; font-family: Times New Roman">
+компьютер в сборе.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p align="justify" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+1. При подаче питания на процессор происходит его обращение к микросхеме ПЗУ и 
+запуск программы, инициализирующей работу компьютера. В этот момент на экране 
+монитора наблюдается сообщение о версии BIOS. </p>
+<p align="justify" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+2. Процедура инициализации запускает процедуру POST, выполняющую 
+самотестирование базовых устройств (POST - Power-On Self-Test). В этот момент на 
+экране наблюдается сообщение Memory Test: и указание объема проверенной памяти 
+компьютера. </p>
+<p align="justify" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+3. При отсутствии дефектов в оперативной памяти или в клавиатуре происходит 
+обращение к микросхеме CMOS, в которой записаны данные, определяющие состав 
+компьютерной системы и ее настройки. На экране монитора эти данные отображаются 
+в таблице System Configuration. </p>
+<p align="justify" style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+4. Установив параметры жесткого диска, компьютерная система обращается в его 
+системную область, находит там загрузчик операционной системы и начинает ее 
+загрузку. При этом на экране выводится сообщение </p>
+<p class="MsoNormal" align="justify" style="text-indent: 35.45pt">Starting
+<span style="font-family:&quot;Courier New&quot;">тип операционной системы
+</span>...</p>
+<p align="justify" style="text-indent: 35.45pt">
+<span style="font-size: 12.0pt; font-family: Times New Roman">Далее работа с 
+компьютером выполняется под управлением операционной системы.</span></p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<b>Задание 1.</b><p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+1. Если монитор вычислительной системы имеет питание, отдельное от системного 
+блока, включите монитор. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+2. Включите компьютерную систему выключателем системного блока. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+3. Для наблюдения сообщений, поступающих от компьютера в процессе запуска, 
+используйте клавишу <span style="font-family:&quot;Courier New&quot;">Pause/Break</span>. 
+Она приостанавливает загрузку и дает возможность внимательно прочесть сообщение. 
+Для продолжения запуска используйте клавишу ENTER. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+4. Отметьте версию BIOS (см. Базовые сведения, п. 1). </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+5. Укажите протестированный объем памяти (см. Базовые сведения, п. 2). </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+6. Данные, определяющие состав компьютерной системы и ее настройки, на экране 
+монитора отображаются в таблице System Configuration (см. Базовые сведения, п. 
+3). Приостановив запуск с помощью клавиши PAUSE/BREAK, изучите таблицу и 
+установите: </p>
+<p style="text-indent: 55pt; margin-top: 0; margin-bottom: 0" align="justify">
+<font face="Symbol"><span lang="en">·</span> </font>сколько жестких дисков имеет 
+компьютерная система и каков их объем? </p>
+<p style="text-indent: 55pt; margin-top: 0; margin-bottom: 0" align="justify">
+<font face="Symbol"><span lang="en">·</span> </font>имеются ли дисководы гибких 
+дисков и каковы параметры используемых гибких дисков? </p>
+<p style="text-indent: 55pt; margin-top: 0; margin-bottom: 0" align="justify">
+<font face="Symbol"><span lang="en">·</span> </font>сколько последовательных и 
+параллельных портов имеется в наличии? </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+7. Определите тип устанавливаемой операционной системы (см. Базовые сведения, п. 
+4). </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+8. Дождавшись окончания запуска операционной системы, выясните у преподавателя 
+порядок завершения работы с компьютером. Приведите компьютер в исходное 
+состояние. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+9. Запишите порядок начальной загрузки компьютера, отметьте, что является 
+конечным пунктом каждого этапа. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">
+10. Заполните таблицу: </p>
+<p class="MsoNormal" align="right" style="text-align:right"><b><font size="2">
+Таблица 2. 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></b></p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" width="666" style="width: 499.5pt" id="table1">
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Элемент конфигурации</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Маркировка, тип</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Дополнительные характеристики</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Значение</b></td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">BIOS</td>
+		<td colspan="3" valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Процессор</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип </p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">наличие 
+		сопроцессора</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тактовая 
+		частота</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Оперативная 
+		память</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип </p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">объем</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Жесткий 
+		диск</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">объем</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Дисководы 
+		гибких дисков</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Порты 
+		ввода-вывода</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество:
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+		параллельные</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+		последовательные</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+</table>
+</div>
+<p class="MsoNormal">&nbsp;</p>
+<p style="margin-bottom: 0"><b>Задание 2.</b></p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">После загрузки 
+ОС следует заполнить следующую таблицу:</p>
+<p class="MsoNormal" align="right" style="text-align:right"><b><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Таблица 2. </font></b><font size="2"><b>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</b></font></p>
+<div align="center">
+<table class="MsoNormalTable" border="1" cellspacing="1" cellpadding="0" width="666" style="width: 499.5pt" id="table2">
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Элемент конфигурации</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Маркировка, тип</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Дополнительные характеристики</b></td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+		<b>Значение</b></td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">BIOS</td>
+		<td colspan="3" valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Процессор</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип </p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">наличие 
+		сопроцессора</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тактовая 
+		частота</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Оперативная 
+		память</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип </p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">объем</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Жесткий 
+		диск</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">объем</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Дисководы 
+		гибких дисков</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">тип</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">Порты 
+		ввода-вывода</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">количество:
+		</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+		параллельные</p>
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+		последовательные</td>
+		<td valign="top" style="padding:5.25pt 5.25pt 5.25pt 5.25pt">
+		<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</td>
+	</tr>
+</table>
+</div>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p align="justify">
+<span style="font-size: 14.0pt; font-family: Times New Roman"><b>Внимание!</b>
+</span><span style="font-size: 12.0pt; font-family: Times New Roman">Для 
+заполнения таблицы можно воспользоваться стандартной программой ОС </span>
+<span lang="EN-US" style="font-size: 12.0pt; font-family: Times New Roman">
+Windows </span><span style="font-size: 12.0pt; font-family: Times New Roman">
+«Сведения о системе» (путь к программе: Пуск\Программы\Стандартные\Служебные), 
+либо любым другим приложением диагностики персонального компьютера.</span></p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>1. </b>
+Основные узлы и компоненты персонального компьютера.</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>2. </b>
+Классификация ЭВМ. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>3. </b>
+Порядок загрузки компьютера; </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>4. </b>
+Основные типы BIOS </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>5. </b>
+Сообщения и звуковые сигналы о неисправности оборудования. </p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>6. </b>
+Основные различия современных ОС (Windows Vista, Windows 7) от ОС Windows XP.</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>7. </b>Типы 
+оперативной памяти.</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0"><b>8. </b>
+Краткая классификация современных процессоров (от производителей AMD и Intel).</p>
+</body>
+</html>

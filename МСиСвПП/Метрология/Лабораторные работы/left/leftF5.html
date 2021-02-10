@@ -1,0 +1,467 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 5<br>ОПТИМИЗАЦИЯ РАБОТЫ ОС WINDOWS XP</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">провести оптимизацию операционной 
+системы </span><span lang="EN-US" style="font-family: Times New Roman">Windows 
+Xp</span><span style="font-family: Times New Roman">. Проверить 
+работоспособность системы после проведения ее оптимизации. Выполнить 
+практическую часть. Сделать выводы.</span></p>
+<p align="justify" ><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Оборудование: </b> Персональный компьютер ( Intel 
+Core2Duo 2.0, 2.0 GB ОЗУ, HDD 160 GB), операционная система Windows XP SP3 Full. 
+Виртуальная машина с установленной операционной системой.</p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoFooter" style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">Мы знаем что каждый пользователь ПК 
+выбирает и настраивает операционную систему удобным для него способом. Мы будем 
+проводить оптимизацию системы </span>
+<span lang="EN-US" style="font-family: Times New Roman">Windows XP</span><span style="font-family: Times New Roman"> 
+получившей очень широкое распространение в недавнее время.</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">Операционная система </span>
+<span lang="EN-US" style="font-family: Times New Roman">Windows </span>
+<span style="font-family: Times New Roman">представляет собой взаимосвязанную 
+систему из многих компонентов, т.к. она применяется во многих областях 
+жизнедеятельности человека. Но далеко не каждый пользуется всем изобилием 
+средств и сервисов этой системы ввиду ненадобности, а зачастую эти сервисы на 
+свою поддержку могут забирать очень большую часть системного ресурса.</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">Оптимизацию операционной системы 
+начнем с корректировки системной папки windows.</span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+1.&nbsp;&nbsp;&nbsp;&nbsp; Удаляем лишние папки</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Посмотрите свойства диска на котором 
+установлена ОС и свойства системной папки. Установите их размер и зафиксируйте в 
+отчете.</span></p>
+<p class="MsoNormal" align="center" style="margin-left:36.0pt;text-align:center;
+page-break-after:avoid">
+<img border="0" src="../ris/image100.png" width="382" height="450"></p>
+<p class="MsoNormal" align="center" style="margin-left:36.0pt;text-align:center;
+page-break-after:avoid"><span style="font-family: Times New Roman">
+<font size="2"><b>Рис. 5. 1. </b>Свойства системной папки. Размер составляет 
+1.37 Гб.</font></span></p>
+<p class="MsoNormal" align="center" style="margin-left:36.0pt;text-align:center;
+page-break-after:avoid">
+<img border="0" src="../ris/image101.png" width="374" height="455"></p>
+<p class="MsoNormal" align="center" style="margin-left:36.0pt;text-align:center;
+page-break-after:avoid"><span style="font-family: Times New Roman">
+<font size="2"><b>Рис. 5. 2. </b>Свойства локального диска с ОС. Занимаемое 
+место 2.16 Гб.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;Для уменьшения размера, занимаемого 
+Windows XP, можно удалить папку %SystemRoot%\Driver Cache\i386\. Правда, после 
+этого, каждый раз когда вы будете устанавливать новое оборудование, Windows 
+будет запрашивать установочный CD. &nbsp;</span></p>
+<p class="MsoNormal" align="center" style="margin-left:11.7pt;text-align:center;
+text-indent:6.3pt">
+<img border="0" src="../ris/image102.png" width="426" height="180"></p>
+<p class="MsoNormal" align="center" style="margin-left:11.7pt;text-align:center;
+text-indent:6.3pt"><font size="2"><b><span style="font-family: Times New Roman">&nbsp;</span></b></font><span style="font-family: Times New Roman"><font size="2"><b>Рис. 
+5. 3. </b></font></span><font size="2">
+<span style="font-family: Times New Roman">Удаление папки из системного каталога 
+ОС.</span></font></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">&nbsp;Можно также отключить режим System 
+Restore, удалив тем самым информацию из папки System Volume Information. Но 
+данное действие проводить не рекомендую так как при отключении этого режима в 
+системе образуется дыра которая до сих пор не залатана производителями ОС, и 
+которой могут воспользоваться недоброжелатели.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">И еще одну папку можно удалить - %SystemRoot%\system32\dllcache\. 
+В ней хранятся защищенные системные файлы, используемые для автоматического 
+восстановления оригиналов в случае их повреждения. По умолчанию размер этой 
+папки - 400 Мб. Он задается в реестре параметром SFCQuota (0xFFFFFFFF), 
+находящимся в ключе HKEY_LOCAL_MACHINE\ SOFTWARE\ Microsoft \Windows NT \CurrentVersion 
+\Winlogon)/. С помощью команды sfc: sfc /cachesize=0 его можно сократить до нуля 
+(или до любого другого желаемого значения). </span></p>
+<p class="MsoFooter" align="center" style="text-align: center; margin-left: 36.0pt">
+<img border="0" src="../ris/image103.png" width="515" height="768"></p>
+<p class="MsoNormal" align="center" style="text-align: center; page-break-after: avoid; margin-left: 36.0pt">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 4. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Удаление 
+папки dllcache из системного каталога.</span></font></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">&nbsp;Также изменим размер который 
+выделяет система по умолчанию под эту папку.</span></p>
+<p class="MsoNormal" style="page-break-after:avoid" align="center">
+<img border="0" src="../ris/image104.png" width="678" height="488"></p>
+<p class="MsoNormal" align="center" style="text-align: center; page-break-after: avoid; margin-left: 36.0pt">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 5. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Это 
+можно сделать в редакторе реестра RegEdit .</span></font></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<img border="0" src="../ris/image105.png" width="347" height="186"></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 6. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Или с 
+помощью команды sfc.</span></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Проделайте изменение размера папки и 
+проверьте выполнение команды.</span><b><span style="font-size:
+12.0pt;font-family:&quot;Times New Roman&quot;">&nbsp;</span></b></p>
+<p class="MsoNormal" style="page-break-after:avoid" align="center">
+<img border="0" src="../ris/image106.png" width="654" height="474"></p>
+<p class="MsoNormal" style="page-break-after:avoid" align="center">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 7. </b>
+Измененное значение параметра в реестре фиксирующее размер папки в системном 
+каталоге.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;После выполнения удаления папок из 
+системного каталога проверьте результат и зафиксируйте разницу.</span></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<img border="0" src="../ris/image107.png" width="382" height="450"></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 8. </b>
+Размер системной папки после оптимизации.</font></span></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<img border="0" src="../ris/image108.png" width="374" height="455"></p>
+<p class="MsoNormal" align="center" style="text-align:center;page-break-after:avoid">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 9. </b>
+Занимаемое место ОС на жестком диске после оптимизации.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+2.&nbsp;&nbsp;&nbsp;&nbsp; Дефрагментация</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">DOS и версии Windows, не входящие в 
+семейство NT, мало заботятся об оптимизации файловой системы. Это приводит к 
+образованию &quot;дыр&quot; в разных местах дискового пространства при установке и 
+удалении программ. В результате свободные участки, вместо того чтобы образовать 
+один сплошной блок, разбросаны по всему диску. При заполнении свободного 
+пространства файлы тоже оказываются разбросанными по нескольким секторам, что 
+сильно снижает производительность - при обращении к файлу приходится читать не 
+один последовательный участок диска, а несколько, да еще расположенных 
+произвольно. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">В Windows NT используется файловая 
+система NTFS, где приняты особые меры для сохранения целостности дискового 
+пространства. Но и они не исключают фрагментации. Поэтому необходимо 
+дефрагментировать жесткий диск. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Регулярность этой процедуры зависит 
+от характера вашей деятельности на компьютере Если вы часто устанавливаете и 
+удаляете программы или постоянно создаете, перемещаете или удаляете файлы, то 
+рекомендуется выполнять дефрагментацию раз в неделю. Если же вы долгое время 
+используете одни и те же приложения, не слишком часто перемещая при этом файлы, 
+то промежуток между дефрагментациями можно увеличить до одного месяца. </span>
+</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Если диск дефрагментируется 
+достаточно часто, то вы не заметите после очередной дефрагментации ощутимого 
+прироста в производительности. Это совершенно нормально. Напротив - если прирост 
+заметен, это значит, что дефрагментацию нужно поводить чаще. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Выполним дефрагментацию системного 
+диска. Создадим отчет. Проанализируем полученные данные. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Вызовем утилиту для дефрагментации.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="../ris/image109.png" width="641" height="364"></p>
+<p class="MsoNormal" align="center" style="page-break-after: avoid; margin-left: 36.0pt">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 10. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Открытие 
+утилиты Дефрагментация.</span></font></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image110.png" width="638" height="468"></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 11. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Рабочее 
+окно программы.</span></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Выберем раздел для дефрагментации и 
+нажмем анализ. После выполнения анализа выведем отчет о состоянии раздела.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<img border="0" src="../ris/image111.png" width="469" height="476"></p>
+<p class="MsoNormal" align="center" style="page-break-after: avoid; margin-left: 36.0pt">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 12. </b>
+Окно отчета. При необходимости вы можете выполнить дефрагментацию.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+&nbsp;3.&nbsp;&nbsp;&nbsp;&nbsp; Оптимизация с помощью ключей реестра</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">В реестре Windows есть несколько 
+ключей, которые позволяют оптимизировать работу Windows с памятью. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Найдите ключ 
+ClearPageFileAtShutdown в ветви [HKEY_LOCAL_MACHINE \SYSTEM \CurrentControlSet \ControlSessionManager 
+\Memory Management]. Он позволяет удалять файл подкачки при выходе из Windows 
+(этот режим доступен также в разделе локальной безопасности). Его активация 
+приведет к большим задержкам при перезагрузке, поэтому желательно оставить его 
+значение равным 0. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ключ DisablePagingExecutive 
+запрещает записывать в файл подкачки коды (драйверы, exe-файлы), всегда оставляя 
+их в физической памяти. Если этой памяти больше 256 Мб, то установка значения в 
+1 может существенно ускорить работу системы. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ключ LargeSystemCache 
+определяет работы системного кэша (см. раздел &quot;Дополнительное ускорение&quot;).
+</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ключ SecondLevelDataCache 
+предназначен для компьютеров со старыми моделями процессоров (до Pentium II) и 
+позволяет установить размер кэша. По умолчанию его значение равно 0, что 
+соответствует 256 Кб. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Несколько ускорить работу может 
+отключение неиспользуемой подсистемы POSIX. Чтобы не возиться с удалением файлов 
+и с отключением файловой защиты Windows XP откройте [HKEY_LOCAL_MACHINE \SYSTEM 
+\CurrentControlSet \ControlSessionManager \SubSystems] и удалите строки Optional 
+и Posix. </span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Найдите все ключи с помощью утилиты 
+regedit и зафиксируйте в отчете.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">4.&nbsp;&nbsp;&nbsp;&nbsp; Дополнительная оптимизация и 
+оптимизация с помощью специализированного софта.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+Ultra DMA</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Убедитесь что для всех IDE-устройств 
+включен режим DMA. Это можно проверить в окне Device Manager &gt; IDE ATA/ATAPI 
+controllers &gt; Primary/Secondary IDE Channel &gt; Advanced Settings. Параметр Device 
+Type позволяет Windows автоматически определять подключенные устройства. Если 
+канал свободен, установите значение None - это немного ускорит загрузку системы. 
+Параметр Transfer mode Windows XP обычно включается по умолчанию и позволяет 
+Windows использовать максимальный DMA, поддерживаемый устройством либо PIO. 
+Убедитесь, что он находится в режиме DMA if available. &nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<span style="font-size: 14.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<img border="0" src="../ris/image112.png" width="404" height="455"></p>
+<p class="MsoNormal" align="center" style="page-break-after: avoid; margin-left: 36.0pt">
+<span style="font-family: Times New Roman"><font size="2"><b>Рис. 5. 13. </b>
+</font></span><font size="2"><span style="font-family: Times New Roman">Окно 
+настройди DMA.</span></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Откройте это окно и поменяйте режимы. 
+Результат зафиксируйте в отчете.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+Дополнительное ускорение</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Откройте My Computer &gt; Properties &gt; 
+Advanced &gt; Performance Settings &gt; Advanced. Значение параметра Processor 
+scheduling должно равняться Programs. В противном случае Windows будут 
+распределять процессорное время равномерно между всеми программами, включая 
+сервисы, что для игр неприемлемо. Если объем оперативной памяти составляет не 
+менее 256 Мб, включите режим System cache в разделе Memory usage. Если же памяти 
+меньше, система будет работать быстрее в режиме Programs. Этот параметр 
+аналогичен ключу реестра LargeSystemCache (см ниже). &nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<span style="font-size: 14.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<img border="0" src="../ris/image113.png" width="367" height="553"></p>
+<p class="MsoNormal" align="center" style="page-break-after: avoid; margin-left: 36.0pt">
+<font size="2"><b><span style="font-family: Times New Roman">&nbsp;Рис. 5. 14. </span>
+</b></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Далее не выходя из этого окна нажмите 
+кнопку изменить в разделе виртуальная память.</span></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image114.png" width="344" height="438"></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 15. </span></b></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Задавать файл подкачки не в коем 
+случае не рекомендуется динамическим или по выбору системы. Он должен составлять 
+половину оперативной памяти и должен быть задан статически. Так как на изменение 
+размеров файла при динамическом режиме системой тратиться очень много ресурсов и 
+понижение производительности заметно визуально.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Задайте файл подкачки необходимого 
+размера на вашем компьютере и зафиксируйте в отчете.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+Оптимизация с помощью полезного софта.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Оптимизация работы оперативной памяти 
+ПК. Как мы знаем большинство процессов проходят через оперативную память. При 
+работе с оперативной памятью зачастую встречается такое явление, когда 
+программно не реализуют ее очистку после работы с некоторыми программами. Данная 
+программа позволяет отследить такие участки. К примеру не загружая никакого 
+софта и дополнительных программ оперативная память после запуска ПК уже будет 
+содержать неиспользуемую информацию.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">На нашем примере оперативная память 
+загружена сразу же после загрузки Windows на 23 процента.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image115.png" width="403" height="292"></p>
+<p class="MsoNormal" align="center" style="text-align:center"><font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 16. </span></b>
+<span style="font-family: Times New Roman">Окно программы FreeRAM Xp Pro.</span></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;После выполнения оптимизации очищено 
+3 процента оперативной памяти.</span></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<img border="0" src="../ris/image116.png" width="403" height="292"></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;">&nbsp;</span><font size="2"><b><span style="font-family: Times New Roman">Рис. 
+5. 17. </span></b></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Специфика данной программы в том, что 
+мы можем ее настроить удобным для нас способом. Очистке при определенной 
+загруженности или очистке по времени.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="center">
+<span style="font-family: Times New Roman; font-weight: 700"><font size="4">
+Оптимизация реестра посредством софта.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Так же как и в ОЗУ в реестре 
+храниться много устаревших и неиспользуемых значений которые затрудняют поиск 
+элементов в реестре расширяя диапазон поиска. RegSuprime Pro утилита которая 
+сканирует реестр на наличие таких элементов и выполняет действие после поиска 
+предложенное пользователем.&nbsp;</span></p>
+<p class="MsoNormal" align="center">
+<img border="0" src="../ris/image117.png" width="677" height="497"></p>
+<p class="MsoNormal" align="center"><font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 18. </span></b></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Даже после установки ОС мы уже 
+стандартно имеем около 40-80 неверных или не нужных(устаревших) ключей в 
+реестре.</span></p>
+<p class="MsoNormal" align="center">
+<span style="font-family:&quot;Arial CYR&quot;">&nbsp;</span><img border="0" src="../ris/image118.png" width="681" height="492"></p>
+<p class="MsoNormal" align="center"><font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 19. </span></b></font></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;При удалении этих элементов 
+рекомендуется делать резервную копию.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Выполните проверку реестра и 
+зафиксируйте результаты в отчете.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">До этого момента мы оптимизировали 
+только систему, но как всегда операционная система бесполезна без софта, далее 
+мы попробуем объединить и подружить ОС с софтом который устанавливается на нее.
+</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Одной из программ которая поможет 
+«заточить» ваш компьютер под вас является программа Xp-Antispy.</span></p>
+<p class="MsoNormal" align="center">
+<img border="0" src="../ris/image119.png" width="678" height="502"></p>
+<p class="MsoNormal" align="center"><font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 20. </span></b></font>
+<span style="font-family: Times New Roman"><font size="2">Так выглядит рабочее 
+окно программы.</font></span></p>
+<p align="justify" style="text-indent: 35px; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Times New Roman">&nbsp;Оно может содержать до 40 пунктов 
+меню, в зависимости от того что у вас установлено на компьютере. Она позволяет 
+удалять такие вещи как встроенный брэндмауэр. Зачастую при установке своего 
+брэндмауэра стандартный считает что это опасное ПО и просто не дает сделать 
+этого.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Зафиксируйте результат выборки данной 
+программы в отчете.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">А это утилита которая может помочь 
+программистам с надоедающим окном которое выскакивает в самый неподходящий 
+момент. Окно &nbsp;“Run Time Debugger’a”. Дело в том что при установке серьезного 
+софта, который сильно влияет на ОС, таких как обновление ОС, зачастую создается 
+несоответствие и как следствие сбой в работе сервиса svchost.exe. Градации 
+ошибок вызываемых в системе после установки обновления могут исчисляться 
+сотнями. Для того чтобы исправить ситуацию необходимо использовать утилиту 
+RegCure. Она устранит разногласия системы с реестром, файлами автозагрузки, 
+выполняемыми и подключаемыми библиотеками, ассоциацией файлов к приложениям.
+</span></p>
+<p class="MsoNormal" align="center">
+<img border="0" src="../ris/image120.png" width="584" height="441"></p>
+<p class="MsoNormal" align="center"><font size="2"><b>
+<span style="font-family: Times New Roman">Рис. 5. 21. </span></b></font>
+<span style="font-family: Times New Roman"><font size="2">Окно программы в 
+работе.</font></span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;После выполнения сканирования вы 
+сможете увидеть список ошибок, расположение элементов которые их вызывают. 
+Оптимизацию ОС этой программой рекомендуется производить при критических 
+установках софта. Либо откатах системы в более раннее состояние.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Зафиксируйте результат работы 
+программы в отчет и проанализируйте полученный результат.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family:&quot;Times New Roman&quot;">&nbsp;</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Таким образом без разгона процессора 
+и поднятия вольтажа на элементах материнской платы можно добиться оптимизации и 
+ускорения работы ОС в 10-25 процентов.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">Выполните отчет в электронном виде. 
+Сделайте вывод.</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<hr size=5>
+<p align="center" style="margin-bottom: 12px"><b>Контрольные вопросы</b><br>
+</p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman"><b>1.</b> Какие системные папки можно 
+удалять без последствий для ОС?</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman"><b>2.</b> С помощью какой команды мы 
+можем изменить размер системной папки с файлами восстановления?</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman"><b>3.</b> Для чего необходима 
+дефрагментация?</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman"><b>4.</b> Как установить размер файла 
+подкачки?</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman"><b>5.</b> С помощью каких программ 
+можно оптимизировать работу ОС?</span></p>
+<p style="text-indent: 35px; margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-family: Times New Roman">&nbsp;</span></p>
+</body>
+</html>

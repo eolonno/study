@@ -1,0 +1,399 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 8<br>ОФОРМЛЕНИЕ HTML-ДОКУМЕНТА. 
+ТАБЛИЦЫ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">изучить основы организации таблиц в 
+HTML.</span></p>
+<p align="center"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Теоретическая часть</b></p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size:14.0pt">Средства описания таблиц в HTML</span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+По мере развития WWW стало ясно, что средств, которые заложены в НТМL, 
+недостаточно для качественного отображения различного типа документов. 
+Недостатком НТМL было отсутствие в его составе средств отображения таблиц. Для 
+этой цели обычно использовался предформатированный текст (тег &lt;PRE&gt;), в котором 
+таблица обрисовывалась символами АSСII. Но такая форма представления таблиц была 
+недостаточно высокого качества и выбивалась из общего стиля документа. После 
+введения таблиц в HTML у Web-мастеров появился не просто инструмент для 
+размещения текстовых и числовых данных, а мощное средство дизайна для размещения 
+в нужном месте экрана графических образов и текста. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Создание таблиц в HTML.<span style="font-size:14.0pt">
+</span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Для описания таблиц используется тег &lt;ТАВLЕ&gt;. Тег &lt;ТАВLЕ&gt;, как и многие другие, 
+автоматически переводит строку до и после таблицы. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Создание строки таблицы</b> — тег &lt;ТR&gt; Тег &lt;ТR&gt; (Таble Row, строка таблицы) 
+создает строку таблицы. Весь текст, другие теги и атрибуты, которые требуется 
+поместить в одну строку, должны размещаться между тегами &lt;ТR&gt;&lt;/ТR&gt;. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Определение ячеек таблицы</b> - тег &lt;ТD&gt; Внутри строки таблицы обычно 
+размещаются ячейки с данными. Каждая ячейка, содержащая текст или изображение, 
+должна быть окружена тегами &lt;ТD&gt;&lt;/ТD&gt;. Число тегов &lt;ТD&gt;&lt;/ТD&gt; в строке определяет 
+число ячеек (открыть) </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD COLSPAN=3&gt;Если в таблице два тега TR, то в ней две строки.&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Если в строке три тега TD,&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;то в ней&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;три столбца.&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;/TABLE&gt;</font></pre>
+<pre style="text-align: justify; text-indent: 45.0pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><i>Заголовки столбцов таблицы</i> — тег &lt;ТН&gt; </b></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Заголовки для столбцов и строк таблицы задаются с помощью тега заголовка &lt;ТН&gt;&lt;/ТН&gt; 
+(Таblе Неаder, заголовок таблицы). Эти теги подобны &lt;ТD&gt;&lt;/ТD&gt;. Отличие состоит в 
+том, что текст, заключенный между тегами &lt;ТН&gt;&lt;/ТН&gt;, автоматически записывается 
+жирным шрифтом и по умолчанию располагается посередине ячейки. Центрирование 
+можно отменить и выровнять текст по левому или правому краю. Если 
+воспользоваться &lt;ТD&gt;&lt;/ТD&gt; с тегом &lt;В&gt; и атрибутом &lt;АLIGN=center&gt;, текст тоже 
+будет выглядеть как заголовок. Однако следует иметь в виду, что не все браузеры 
+поддерживают в таблицах жирный шрифт, поэтому лучше задавать заголовки таблиц с 
+помощью &lt;ТН&gt;. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;TABLE &gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TH&gt;Заголовок центрирован по умолчанию&lt;/TH&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TH COLSPAN=2&gt;Заголовок может объединять столбцы&lt;/TH&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TH&gt;Заголовок может быть расположен перед столбцами&lt;/TH&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&lt;TH ROWSPAN=3&gt;Заголовок может объединять строки&lt;/TH&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;/TABLE&gt;</font></pre>
+<pre style="text-align: justify; text-indent: 45.0pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><i>Использование заголовков таблицы</i> — тег &lt;САРТIОN&gt; </b></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Тег &lt;CAPTION&gt; позволяет создавать заголовки таблицы. По умолчанию заголовки 
+центрируются и размещаются либо над (&lt;САРТION АLIGN=top&gt;), либо под таблицей (&lt;САРТION 
+ALIGN=bottom&gt;). Заголовок может состоять из любого текста и изображений. Текст 
+будет разбит на строки, соответствующие ширине таблицы. Иногда тег &lt;САРТION&gt; 
+используется для подписи под рисунком. Для этого достаточно описать таблицу без 
+границ. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;CAPTION ALIGN=top&gt;Заголовок над таблицей&lt;/CAPTION&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;/TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;CAPTION ALIGN=bottom&gt;Заголовок под таблицей &lt;/CAPTION&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Текст или данные&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;/TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут NOWRAP<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Обычно любой текст, не помещающийся в одну строку ячейки таблицы, переходит на 
+следующую строку. Однако при использовании атрибута NOWRAP с тегами &lt;ТН&gt; или &lt;ТD&gt; 
+длина ячейки расширяется настолько, чтобы заключенный в ней текст поместился в 
+одну строку. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут СОLSPAN<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Теги &lt;ТD&gt; и &lt;ТН&gt; модифицируются с помощью атрибута СОLSPAN (Column Span, 
+соединение столбцов). Если вы хотите сделать какую-нибудь ячейку шире, чем 
+верхняя или нижняя, можно воспользоваться атрибутом СОLSPAN, чтобы растянуть ее 
+над любым количеством обычных ячеек. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&lt;TABLE BORDER=&quot;3&quot;&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;Если вы хотите сделать какую-нибудь</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ячейку шире, чем верхняя или нижняя,</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD&gt;можно воспользоваться атрибутом</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; СОLSPAN=, &lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;TD BGCOLOR=white COLSPAN=&quot;2&quot; &gt; чтобы</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; растянуть ее над любым количеством</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; обычных ячеек.&lt;/TD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp;&nbsp;&nbsp; &lt;/TR&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; &lt;/TABLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут ROWSPAN<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Атрибут ROWSPAN, используемый в тегах &lt;ТD&gt; и &lt;ТН&gt;, подобен атрибуту СОLSPAN=, 
+только он задает число строк, на которые растягивается ячейка. Если вы указали в 
+атрибуте ROWSPAN=s число, большее единицы, то соответствующее количество строк 
+должно находиться под растягиваемой ячейкой. Внизу таблицы ее поместить нельзя.
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут WIDТН<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Атрибут WIDТН применяется в двух случаях. Можно поместить его в тег &lt;ТАВLЕ&gt;, 
+чтобы дать ширину всей таблицы, а можно использовать в тегах &lt;ТR&gt; или &lt;ТН&gt;, 
+чтобы задать ширину ячейки или группы ячеек. Ширину можно указывать в пикселах 
+или в процентах. Например, если вы задали в теге &lt;ТАВLЕ&gt; WIDTH=250, вы получите 
+таблицу шириной 250 пикселов независимо от размера страницы на мониторе. При 
+задании WIDТН=50% в теге &lt;ТАВLЕ&gt; таблица будет занимать половину ширины страницы 
+при любом размере изображения на экране. Так что, указывая ширину таблицы в 
+пикселах, имейте в виду, что если у пользователя узкая область просмотра, ваша 
+страница может выглядеть несколько странно. Если вы пользуетесь пикселами, и 
+таблица оказывается шире области просмотра, внизу появится полоса прокрутки для 
+перемещения вправо и влево по странице. В зависимости от поставленных задач и 
+тот, и другой способ задания ширины таблицы может оказаться полезным. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут СЕLLРАDDING<span style="font-size:14.0pt">
+</span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Данный атрибут определяет ширину пустого пространства между содержимым ячейки и 
+ее границами, то есть задает поля внутри ячейки. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут CELLSPACING<span style="font-size:14.0pt">
+</span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Атрибут СЕLLSPACING определяет ширину промежутков между ячейками в пикселах. 
+Если этот атрибут не указан, по умолчанию задается величина, равная двум 
+пикселам. С помощью атрибута СЕLLSPASING= можно размещать текст и графику там, 
+где вам нужно. Если вы хотите оставить пустое место, можно вписать в ячейку 
+пробел. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибуты АLIGN и VALIGN<span style="font-size:14.0pt">
+</span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Теги &lt;ТR&gt;, &lt;ТD&gt; и &lt;ТН&gt; можно модифицировать с помощью атрибутов ALIGN и VALIGN.
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+·&nbsp; Атрибут АLIGN определяет выравнивание текста и графики по горизонтали, то 
+есть по левому или правому краю, либо по центру. Горизонтальное выравнивание 
+может быть задано несколькими способами: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALIGN=blееdleft прижимает содержимое ячейки вплотную к левому краю. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ALIGN=left выравнивает содержимое ячейки по левому краю с учетом отступа, 
+заданного атрибутом СЕLLPADDING. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; АLIGN=сеnter располагает содержимое ячейки по центру. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; АLIGN=right выравнивает содержимое ячейки по правому краю с учетом 
+отступа, заданного атрибутом СЕLLPADDING. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp; Атрибут VALIGN осуществляет выравнивание текста и графики внутри ячейки по 
+вертикали. Вертикальное выравнивание может быть задано несколькими способами:
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VALIGN=top выравнивает содержимое ячейки по ее верхней границе. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VALIGN=middle центрирует содержимое ячейки по вертикали. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VALIGN=bottom выравнивает содержимое ячейки по ее нижней границе. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут BGCOLOR<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Данный атрибут позволяет установить цвет фона. В зависимости от того, с каким 
+тегом (TABLE, TR, TD) он применяется, цвет фона может быть установлен для всей 
+таблицы, для строки или для отдельной ячейки. Значением данного атрибута 
+является RGB-код или стандартное название цвета. </p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут BACKGROUND<span style="font-size:14.0pt">
+</span></span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:45.0pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Данный атрибут задает фоновое изображение для таблиц. Применим к тегам TABLE и 
+TD. Его значением является URL файла с фоновым изображением. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size: 14.0pt">Атрибут BORDER<span style="font-size:
+14.0pt"> </span></span></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+В теге &lt;ТАВLЕ&gt; часто определяют, как будут выглядеть рамки, то есть линии, 
+окружающие ячейки таблицы и саму таблицу. Если вы не зададите рамку, то получите 
+таблицу без линий, но пространство под них будет отведено. Того же результата 
+можно добиться, задав &lt;ТАВLЕ ВОRDER=0&gt;. Иногда хочется сделать границу потолще, 
+чтобы она лучше выделялась. Можно для привлечения внимания к рисунку или тексту 
+задать исключительно жирные границы. При создании вложенных таблиц приходится 
+делать для разных таблиц границы различной толщины, чтобы их легче было 
+различать. <br>
+</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Постройте таблицу следующего вида: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellpadding="0" style="margin-left: 36.0pt" id="table1">
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify">
+			<img border="0" src="../ris/image124.jpg" width="477" height="108"></td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: 45.0pt; vertical-align: baseline">
+			<strong><font size="2">Figure:</font></strong><font size="2"> 
+			Таблица №1.</font></td>
+		</tr>
+	</table>
+</div>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Постройте таблицу следующего вида: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellpadding="0" style="margin-left: 36.0pt" id="table2">
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: .5pt">
+			<img border="0" src="../ris/image125.jpg" width="485" height="117"></td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: 45.0pt; vertical-align: baseline">
+			<strong><font size="2">Figure:</font></strong><font size="2"> 
+			Таблица №2.</font></td>
+		</tr>
+	</table>
+</div>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Постройте таблицу следующего вида: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellpadding="0" style="margin-left: 36.0pt" id="table3">
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: .55pt">
+			<img border="0" src="../ris/image126.jpg" width="334" height="324"></td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: 45.0pt; vertical-align: baseline">
+			<strong><font size="2">Figure:</font></strong><font size="2"> 
+			Таблица №3.</font></td>
+		</tr>
+	</table>
+</div>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Постройте таблицу следующего вида: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellpadding="0" style="margin-left: 36.0pt" id="table4">
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: 1.35pt">
+			<img border="0" src="../ris/image127.jpg" width="317" height="320"></td>
+		</tr>
+		<tr>
+			<td style="padding:.75pt .75pt .75pt .75pt">
+			<p class="MsoNormal" style="text-align: justify; text-indent: 45.0pt; vertical-align: baseline">
+			<strong><font size="2">Figure:</font></strong><font size="2"> 
+			Таблица №4.</font></td>
+		</tr>
+	</table>
+</div>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Использование стандартного параметра BORDER приводит к 
+неоднозначности отображения границы таблицы. Точнее каждый браузер 
+интер-претирует вид границы по своему. Для устранения подобного разночтения 
+создают таблицу с простой однопиксельной рамкой. Последовательность действий 
+такова: </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+a.&nbsp;&nbsp; Создать таблицу &quot;подложку&quot;, состоящую из одной строки и одного столбца. 
+Залить ее требуемым цветом. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+b.&nbsp; Далее в эту таблицу помещаем вложенную, заливая каждую ячейку нужным цветом.
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+c.&nbsp; Устанавливаем свойство CELLSPACING вложенной таблицы равным 1, тогда нижняя 
+таблица будет просвечивать и образует рамку толщиной 1 пиксель. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Создайте таблицу 6x6 с простой однопиксельной рамкой. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Создайте для таблицы № 4 простую однопиксельную рамку. </p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<hr size=5>
+<p align="center" style="margin-top: 0; margin-bottom: 12px"><b>Контрольные вопросы</b><br>
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>1.</b> Какие функции выполняет тег &lt;TR&gt;? Имеет ли он закрывающий тег?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>2.</b> Какой существует аналог тега &lt;TH&gt;?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>3.</b> Для чего используется тег&lt;CAPTION&gt;?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>4.</b> Каковы функции атрибутов ROWSPAN &nbsp;и СОLSPAN?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>5.</b> Каков будет результат выполнения тега &lt;ТАВLЕ ВОRDER=0&gt;?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>6. </b>Чему можно задать цвет при помощи атрибута BGCOLOR? Какие существуют 
+варианты записи цвета?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>7.</b> Для чего используются атрибуты ALIGN и VALIGN? Какими способами они 
+могут быть заданы?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>8. </b>В каких случаях применяется атрибут WIDТН?</p>
+<p style="text-align: justify; text-indent: 35px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+</body>
+</html>

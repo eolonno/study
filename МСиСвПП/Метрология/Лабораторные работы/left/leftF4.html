@@ -1,0 +1,1012 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 4<br>ПОЛУЧЕНИЕ ИНФОРМАЦИИ О СИСТЕМЕ</b></p>
+<hr size=5>
+<p ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-family: Times New Roman">изучить работу функций по получению 
+информации о системе.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+Существует много функций для получения информации о системе. Ниже приведены 
+некоторые из них с подробным описанием их параметров.</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">1) GetLogicalDrives</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetLogicalDrives возвращает число</span> –
+<span lang="BE">битовую маску</span>,<span lang="BE"> в которой хранятся все 
+доступные диски.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+DWORD GetLogicalDrives(VOID);</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция не имеет параметров.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Если функция вызвана правильно, то она возвращает число</span> –
+<span lang="BE">битовую маску</span>,<span lang="BE"> в которой хранятся все 
+доступные диски ( если </span>нулевой<span lang="BE"> бит равен 1, то диск &quot;A:&quot; 
+присутствует, и т.д.)</span>. <span lang="BE">Если функция вызвана не правильно, 
+то она возвращает 0.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><i><u>Пример</u></i>:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><span lang="BE" style="font-family: Courier New"><font size="2">int n;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char dd[4];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">DWORD dr = 
+GetLogicalDrives();</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">for( int i = 0; 
+i &lt; 26; i++ )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">n = 
+((dr&gt;&gt;i)&amp;0x00000001);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( n == 1 )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">dd[0] = 
+char(65+i); dd[1] = ':'; dd[2] = '\';</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">dd[3] = 0;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 70.8pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; 
+&quot;Available disk drives : &quot; &lt;&lt; dd &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">}</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">}</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">2) GetDriveType</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetDriveType возвращает тип диска (removable, fixed, 
+CD-ROM, RAM disk, или network drive).</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">UINT GetDriveType(LPCTSTR lpRootPathName);</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">lpRootPathName </span>— у<span lang="BE">казатель 
+на не нулевую стоку в которой хранится имя главной директории на диске [in]. 
+Обратный слэш должен присутствовать! Если lpRootPathName равно NULL, то функция 
+использует текущую директорию.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция возвращает тип диска.</span> Возможные варианты типов 
+дисков представлены в табл. 1.</p>
+<p class="MsoNormal" align="right" style="text-align:right"><b><font size="2">
+Таблица 4. 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></b></p>
+<div align="center">
+	<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none" id="table1">
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			<span lang="BE">Значение</span></b></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: 1.0pt solid black; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" align="center" style="text-align:center"><b>
+			<span lang="BE">Описание</span></b></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_UNKNOWN</font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">Не известный тип</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_NO_ROOT_DIR</font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">Не правильный путь</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_REMOVABLE</font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal"><span lang="BE"><font size="3">Съёмный диск</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_FIXED</font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">Фиксированный диск</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_REMOTE</font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">Удалённый или network диск</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_CDROM </font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">CD-ROM диск</font></span></td>
+		</tr>
+		<tr>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: 1.0pt solid black; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">DRIVE_RAMDISK </font></span></td>
+			<td width="319" valign="top" style="width: 239.25pt; border-left: medium none; border-right: 1.0pt solid black; border-top: medium none; border-bottom: 1.0pt solid black; padding-left: 5.4pt; padding-right: 5.4pt; padding-top: 0cm; padding-bottom: 0cm">
+			<p class="MsoNormal" style="text-align:justify"><span lang="BE">
+			<font size="3">RAM диск</font></span></td>
+		</tr>
+	</table>
+	<p class="MsoNormal" style="text-align: justify">&nbsp;</div>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><u>&nbsp;Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">int d;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">d = 
+GetDriveType( &quot;c:\&quot; );</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_UNKNOWN )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; 
+UNKNOWN&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_NO_ROOT_DIR )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; DRIVE 
+NO ROOT DIR&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_REMOVABLE )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; 
+REMOVABLE&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_FIXED )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; FIXED&quot; 
+&lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_REMOTE )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; 
+REMOTE&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_CDROM )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; CDROM&quot; 
+&lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if( d == 
+DRIVE_RAMDISK )</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; 
+RAMDISK&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">3) GetVolumeInformation</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetVolumeInformation возвращает информацию о файловой 
+системе и дисках (директориях).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">BOOL GetVolumeInformation (</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPCTSTR lpRootPathName,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPTSTR lpVolumeNameBuffer,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">DWORD nVolumeNameSize,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPDWORD lpVolumeSerialNumber,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPDWORD lpMaximumComponentLength,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPDWORD lpFileSystemFlags,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPTSTR lpFileSystemNameBuffer,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">DWORD nFileSystemNameSize</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPCTSTR lpRootPathName</span> — <span lang="BE">
+&nbsp;имя диска (директории) [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpVolumeNameBuffer</span><span lang="EN-US"> 
+— </span><span lang="BE">название диска [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">DWORD nVolumeNameSize</span> — <span lang="BE">
+длина буфера названия диска [in] </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPDWORD lpVolumeSerialNumber</span> —
+<span lang="BE">сериальный номер диска [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPDWORD lpMaximumComponentLength</span> —
+<span lang="BE">максимальная длина файла [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPDWORD lpFileSystemFlags</span> — <span lang="BE">
+опции файловой системы [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpFileSystemNameBuffer</span> —
+<span lang="BE">имя файловой системы [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">DWORD nFileSystemNameSize</span> — <span lang="BE">
+длина буфера имени </span>файловой сис­темы<span lang="BE"> [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Если функция вызвана правильно, то она возвращает не нулевое 
+значение(TRUE). Если функция вызвана не правильно, то она возвращает 0(FALSE).</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><u>Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char 
+VolumeNameBuffer[100];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char 
+FileSystemNameBuffer[100];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">unsigned long 
+VolumeSerialNumber;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2"><br>
+BOOL GetVolumeInformationFlag = GetVolumeInformationA(</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">&quot;c:\&quot;,<br>
+VolumeNameBuffer,<br>
+100,<br>
+&amp;VolumeSerialNumber,<br>
+NULL, //&amp;MaximumComponentLength,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">NULL, 
+//&amp;FileSystemFlags,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+FileSystemNameBuffer,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">100</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+if(GetVolumeInformationFlag != 0)</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Volume 
+Name is &quot; &lt;&lt; VolumeNameBuffer</font></span></p>
+<p class="MsoNormal" style="text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">&lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Volume 
+Serial Number is &quot; &lt;&lt; VolumeSerialNumber &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; File 
+System is &quot; &lt;&lt; FileSystemNameBuffer &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">}<br>
+else</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Not 
+Present (GetVolumeInformation)&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">4) GetDiskFreeSpaceEx</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetDiskFreeSpaceEx выдаёт информацию о доступном месте 
+на диске.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">BOOL GetDiskFreeSpaceEx(</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">LPCTSTR lpDirectoryName, </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">PULARGE_INTEGER lpFreeBytesAvailable,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">PULARGE_INTEGER lpTotalNumberOfBytes,</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">PULARGE_INTEGER</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPCTSTR lpDirectoryName</span> — <span lang="BE">
+имя диска (директории) [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">PULARGE_INTEGER lpFreeBytesAvailable</span> —
+<span lang="BE">доступно для использования (байт) [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">PULARGE_INTEGER lpTotalNumberOfBytes</span> —
+<span lang="BE">&nbsp;максимальный объём (в байтах) [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">PULARGE_INTEGER lpTotalNumberOfFreeBytes </span>—<span lang="BE"> 
+свободно на диске (в байтах) [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Если функция вызвана правильно, то она возвращает не нулевое 
+значение (TRUE). Если функция вызвана не правильно, то она возвращает 0 (FALSE).<br>
+<br>
+&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><u>Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><span lang="BE" style="font-family: Courier New"><font size="2">DWORD 
+FreeBytesAvailable;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">DWORD 
+TotalNumberOfBytes;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">DWORD 
+TotalNumberOfFreeBytes;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">BOOL 
+GetDiskFreeSpaceFlag = GetDiskFreeSpaceEx(</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">&quot;c:\&quot;,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+(PULARGE_INTEGER)&amp;FreeBytesAvailable,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+(PULARGE_INTEGER)&amp;TotalNumberOfBytes,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+(PULARGE_INTEGER)&amp;TotalNumberOfFreeBytes</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">);<br>
+<br>
+if(GetDiskFreeSpaceFlag != 0)</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">{</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Total 
+Number Of Free Bytes = &quot; &lt;&lt; (unsigned long)TotalNumberOfFreeBytes &lt;&lt; &quot;( &quot; &lt;&lt; 
+double(unsigned long(TotalNumberOfFreeBytes))/1024/1000 &lt;&lt; &quot; Mb )&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Total 
+Number Of Bytes = &quot; &lt;&lt; (unsigned long)TotalNumberOfBytes &lt;&lt; &quot;( &quot; &lt;&lt; 
+double(unsigned long(TotalNumberOfBytes))/1024/1000 <br>
+&lt;&lt; &quot; Mb )&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">}<br>
+else</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot; Not 
+Present (GetDiskFreeSpace)&quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">5) GlobalMemoryStatus</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GlobalMemoryStatus возвращает информацию о</span>б<span lang="BE"> 
+используемой системой памяти.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">VOID GlobalMemoryStatus(LPMEMORYSTATUS lpBuffer);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPMEMORYSTATUS lpBuffer </span><span lang="EN-US">
+—</span><span lang="BE"> указатель на структуру MEMORYSTATUS<br>
+&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">typedef struct 
+_MEMORYSTATUS{</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">DWORD dwLength; 
+// длина структуры в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">DWORD 
+dwMemoryLoad; // загрузка памяти в процентах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwTotalPhys; // максимальное количество физической памяти в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwAvailPhys; // свободное количество физической памяти в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwTotalPageFile; // макс. кол. памяти для программ в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwAvailPageFile; // свободное кол. памяти для программ в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwTotalVirtual; // максимальное количество виртуальной памяти в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">SIZE_T 
+dwAvailVirtual; // свободное количество виртуальной памяти в байтах</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">}</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">MEMORYSTATUS, 
+*LPMEMORYSTATUS;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция не возвращает параметров</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><i><u>Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><span lang="BE" style="font-family: Courier New"><font size="2">// The 
+MemoryStatus structure is 32 bytes long.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// It should be 
+32.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// 78 percent of 
+memory is in use.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+65076 total Kbytes of physical memory.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+13756 free Kbytes of physical memory.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+150960 total Kbytes of paging file.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+87816 free Kbytes of paging file.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+1fff80 total Kbytes of virtual memory.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">// There are 
+1fe770 free Kbytes of virtual memory.</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2"><br>
+#define DIV 1024</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">#define WIDTH 7</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char *divisor = 
+&quot;K&quot;;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">MEMORYSTATUS 
+stat;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+GlobalMemoryStatus (&amp;stat);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;The 
+MemoryStatus structure is %ld bytes long.n&quot;,stat.dwLength);<br>
+printf (&quot;It should be %d.n&quot;, sizeof (stat));</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;%ld 
+percent of memory is in use.n&quot;, stat.dwMemoryLoad);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*ld total %sbytes of physical memory.n&quot;, WIDTH, stat.dwTotalPhys/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*ld free %sbytes of physical memory.n&quot;, WIDTH, stat.dwAvailPhys/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*ld total %sbytes of paging file.n&quot;, WIDTH, stat.dwTotalPageFile/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*ld free %sbytes of paging file.n&quot;, WIDTH, stat.dwAvailPageFile/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*lx total %sbytes of virtual memory.n&quot;, WIDTH, stat.dwTotalVirtual/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">printf (&quot;There 
+are %*lx free %sbytes of virtual memory.n&quot;, WIDTH, stat.dwAvailVirtual/DIV, 
+divisor);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">6) GetComputerName, GetUserNameA</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetComputerName возвращает NetBIOS</span>-<span lang="BE">имя 
+локального компьютера.<br>
+<br>
+BOOL GetComputerName( LPTSTR lpBuffer,LPDWORD lpnSize);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="BE">&nbsp;</span><span lang="BE">LPTSTR lpBuffer</span> —<span lang="BE"> имя 
+локального компьютера (длина буфера равна MAX_COMPUTERNAME_LENGTH + 1) [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPDWORD lpnSize</span><span lang="EN-US"> — </span>
+<span lang="BE">размер буфера (лучше поставить MAX_COMPUTERNAME_LENGTH + 1) 
+[out/in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Если функци</span>я<span lang="BE"> вызван</span>а<span lang="BE"> 
+правильно, то он</span>а<span lang="BE"> возвраща</span>е<span lang="BE">т не 
+нулевое значение (TRUE). Если функци</span>я<span lang="BE"> вызван</span>а<span lang="BE"> 
+не правильно, то он</span>а<span lang="BE"> возвраща</span>е<span lang="BE">т 0 
+(FALSE).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+Функция GetUserName возвращает имя текущего </span>пользователя<span lang="BE">.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">BOOL GetUserName(LPTSTR lpBuffer, LPDWORD nSize);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpBuffer</span> — <span lang="BE">&nbsp;имя 
+юзера (длина буфера равна UNLEN + 1) [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPDWORD nSize </span>—<span lang="BE"> размер 
+буфера (лучше поставить UNLEN + 1) [out/in]</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Если функци</span>я<span lang="BE"> вызван</span>а<span lang="BE"> 
+правильно, то он</span>а<span lang="BE"> возвраща</span>е<span lang="BE">т не 
+нулевое значение (TRUE). Если функци</span>я<span lang="BE"> вызван</span>а<span lang="BE"> 
+не правильно, то он</span>а<span lang="BE"> возвраща</span>е<span lang="BE">т 0 
+(FALSE).</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><i><u>Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE"><br>
+</span><span lang="BE" style="font-family: Courier New"><font size="2">char 
+ComputerName[MAX_COMPUTERNAME_LENGTH + 1];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">unsigned long 
+len_ComputerName=MAX_COMPUTERNAME_LENGTH + 1;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char 
+UserName[UNLEN + 1];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">unsigned long 
+len_UserName = UNLEN + 1;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">BOOL comp = 
+GetComputerName(</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">ComputerName,</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+&amp;len_ComputerName</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">);<br>
+if (comp != 0)</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; 
+&quot;Computer Name is &quot; &lt;&lt; ComputerName &lt;&lt;endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">else</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; 
+&quot;Computer Name is NOT FOUND !!! &quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">comp = 
+GetUserNameA (UserName, &amp;len_UserName);</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">if (comp != 0)</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;User 
+Name is &quot; &lt;&lt; UserName &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">else</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;User 
+Name is NOT FOUND !!! &quot; &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="BE">7) GetSystemDirectory, GetTempPath, GetWindowsDirectory, 
+GetCurrentDirectory</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetSystemDirectory возвращает путь к системной 
+директории.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">UINT GetSystemDirectory(LPTSTR lpBuffer, UINT uSize);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpBuffer</span> — <span lang="BE">буфер для 
+системной директории [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">UINT uSize</span><span lang="EN-US"> — </span>
+<span lang="BE">размер буфера [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция возвращает размер буфера для системной директории не 
+включая нулевого значения в конце, если она вызвана правильно. Если функция 
+вызвана не правильно, то она возвращает 0.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetTempPath возвращает путь к директории, отведённой для 
+временных файлов.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE">DWORD GetTempPath(DWORD nBufferLength, LPTSTR lpBuffer);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">DWORD nBufferLength</span><span lang="EN-US"> —
+</span><span lang="BE">размер буфера [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpBuffer</span> — <span lang="BE">буфер для 
+временной директории [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция возвращает размер буфера для системной директории не 
+включая нулевого значения в конце, если она вызвана правильно. Если функция 
+вызвана не правильно, то она возвращает 0.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetWindowsDirectory возвращает путь к Windows 
+директории.<br>
+<br>
+UINT GetWindowsDirectory(LPTSTR lpBuffer,UINT uSize );</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">LPTSTR lpBuffer</span> — <span lang="BE">буфер для 
+Windows директории [out]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang="BE">UINT uSize</span><span lang="EN-US"> — </span>
+<span lang="BE">размер буфера [in]</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция возвращает размер буфера для системной директории не 
+включая нулевого значения в конце, если она вызвана правильно. Если функция 
+вызвана не правильно, то она возвращает 0.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Функция GetCurrentDirectory возвращает путь к текущей 
+директории.<br>
+<br>
+DWORD GetCurrentDirectory(DWORD nBufferLength, LPTSTR);</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Параметры</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-top: 0; margin-bottom: 0; margin-left:35.45pt">
+–&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DWORD nBufferLength — размер буфера [in]</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-top: 0; margin-bottom: 0; margin-left:35.45pt">
+–&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+LPTSTR lpBuffer — буфер для текущей 
+директории [out]</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -21.25pt; margin-left: 35.45pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Wingdings">§<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang="BE"><u>Возвращаемое значение</u>:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+<span lang="BE">Эта функция возвращает размер буфера для системной директории не 
+включая нулевого значения в конце, если она вызвана правильно. Если функция 
+вызвана не правильно, то она возвращает 0.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><u>Пример:</u></i></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.4pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">char path[100];</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+GetSystemDirectory( path, 100 );</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;System 
+Directory is &quot; &lt;&lt; path &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">GetTempPath( 
+100, path );</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;Temp 
+path is &quot; &lt;&lt; path &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+GetWindowsDirectory( path, 100 );</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;Windows 
+directory is &quot; &lt;&lt; path &lt;&lt; endl;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family: Courier New"><font size="2">&nbsp;</font></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">
+GetCurrentDirectory( 100, path );</font></span></p>
+<p style="margin-top: 0; margin-bottom: 0">
+<span lang="BE" style="font-family: Courier New"><font size="2">cout &lt;&lt; &quot;Current 
+directory is &quot; &lt;&lt; path &lt;&lt; endl;</font></span></p>
+<p> &nbsp;<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;&nbsp;&nbsp;&nbsp;Разработайте 
+приложение, в котором будут реализованы следующие пункты:</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод</span><span lang="BE"> битов</span>ой<span lang="BE"> 
+маск</span>и,<span lang="BE"> в которой храняться все доступные диски.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image023.png" width="462" height="146"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод</span><span lang="BE"> тип</span>а<span lang="BE"> 
+диска</span>.</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image024.png" width="462" height="74"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод</span><span lang="BE"> информаци</span>и<span lang="BE"> 
+о файловой системе и дисках (директориях).</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image025.png" width="462" height="98"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+4.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод</span><span lang="BE"> информаци</span>и<span lang="BE"> 
+о доступном месте на диске.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image026.png" width="462" height="86"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+5.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод</span><span lang="BE"> информаци</span>и<span lang="BE"> 
+о</span>б<span lang="BE"> используемой системой памяти.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image027.png" width="462" height="158"></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+6.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод </span><span lang="BE">NetBIOS</span>-<span lang="BE">имя 
+локального компьютера</span> и <span lang="BE">имя текущего </span>пользователя.</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image028.png" width="462" height="86"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+7.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-size: 14.0pt">Вывод </span><span lang="BE">пут</span>и<span lang="BE"> 
+к системной директории</span>, <span lang="BE">к директории, отведённой для 
+временных файлов</span>, <span lang="BE">к Windows директории</span> и к
+<span lang="BE">текущей директории</span>.</p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 36.0pt; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="../ris/image029.png" width="462" height="110"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Контрольные вопросы</b><br>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>1.</b><span style="font-family: Times New Roman"> </span>
+<font face="Times New Roman">Какая функция </font><span lang="BE">возвращает тип 
+диска</span>?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>2.</b> Какая функция выдаёт информацию о доступном месте на диске?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>3.</b> Какая функция возвращает имя текущего пользователя?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>4.</b> Какая функция возвращает путь к текущей директории?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>5.</b> Какая функция возвращает NetBIOS-имя локального компьютера?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>6. </b>Какая функция возвращает путь к директории, отведённой для временных 
+файлов?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>7.</b> Какая функция возвращает битовую маску, в которой хранятся все 
+доступные диски?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>8.</b> Какая функция возвращает путь к системной директории?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>9.</b> Какая функция возвращает информацию об используемой системой памяти?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>10.</b> Какая функция возвращает путь к Windows директории?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+<b>11.</b> Какая функция возвращает информацию о файловой системе и дисках 
+(директориях)?</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 35pt; margin-left: 0cm; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+</body>
+</html>

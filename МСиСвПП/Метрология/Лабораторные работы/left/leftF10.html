@@ -1,0 +1,727 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+<title></title>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 10<br>ИЗУЧЕНИЕ СЕТИ ЭВМ С&nbsp; 
+ИСПОЛЬЗОВАНИЕМ СИСТЕМНЫХ УТИЛИТ</b></p>
+<hr size=5>
+<p align="justify" ><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Цель работы</b> — 
+<span style="font-size: 12.0pt; line-height: 115%; font-family: Times New Roman">
+<span lang="ru">и</span>спользуя стандартные сетевые утилиты, проанализировать 
+конфигурацию сети на платформе ОС Windows, т.е. получить свой IP-адрес, узнать 
+имя домена, имена компьютеров, входящих в домен, просмотреть и при необходимости 
+подключить общие ресурсы, определить причину возможных неполадок, так же 
+получить информацию об использовании портов.</span></p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Мониторинг и анализ сети представляют собой важные этапы контроля работы сети. 
+Для решения этих задач регулярно производится сбор данных, который дает базу для 
+измерения реакции сети на изменения и перегрузки. Чтобы осуществить сетевую 
+передачу, нужно проверить корректность подключения клиента к сети, наличие у 
+клиента хотя бы одного протокола сервера, знать IP-адрес компьютеров сети и т. 
+д. Поэтому в сетевых операционных системах, и в частности, в Windows, существует 
+множество мощных утилит для пересылки текстовых сообщений, управления общими 
+ресурсами, диагностике сетевых подключений, поиска и обработки ошибок. Утилиты 
+запускаются из командной строки или из сеанса MS DOS.</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-top: 0cm; margin-bottom: .0001pt" align="center"><b>
+<font size="4">Системные утилиты </font></b></p>
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal" align="center"><b><font size="4">Утилита hostname </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит имя локального компьютера (хоста). Она доступна только после установки 
+поддержки протокола TCP/IP. </p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">&nbsp;Утилита ipconfig </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит диагностическую информацию о конфигурации сети TCP/IP. Эта утилита 
+позволяет просмотреть текущую конфигурацию IP-адресов компьютеров сети. 
+Синтаксис утилиты ipconfig: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+ipconfig [/all | /renew [адаптер] | /release [адаптер]], </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где all - выводит сведения о имени хоста, DNS (Domain Name Service), типе узла, 
+IP-маршрутизации и др. Без этого параметра команда ipconfig выводит только IP-адреса, 
+маску подсети и основной шлюз; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/renew [адаптер] - обновляет параметры конфигурации DHCP (Dynamic Host 
+Configuration Protocol – автоматическая настройка IP-адресов). Эта возможность 
+доступна только на компьютерах, где запущена служба клиента DHCP. Для задания 
+адаптера используется имя, выводимое командой ipconfig без параметров; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/release [адаптер] - очищает текущую конфигурацию DHCP. Эта возможность 
+отключает TCP/IP на локальных компьютерах и доступна только на клиентах DHCP. 
+Для задания адаптера используется имя, выводимое командой ipconfig без 
+параметров. Эта команда часто используется перед перемещением компьютера в 
+другую сеть. После использования утилиты ipconfig /release, IP-адрес становиться 
+доступен для назначения другому компьютеру. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Запущенная без параметров, команда ipconfig выводит полную конфигурацию TCP/IP, 
+включая IP адреса и маску подсети. &nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита net view </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Просматривает список доменов, компьютеров или общих ресурсов на данном 
+компьютере. Синтаксис утилиты net view: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net view [\\компьютер | /domain[:домен]]; </p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net view /network:nw [\\компьютер] – используется в сетях Novell NetWare, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где \\компьютер - задает имя компьютера для просмотра общих ресурсов; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/domain[:домен] - задает домен, для которого выводится список компьютеров. Если 
+параметр не указан, выводятся сведения обо всех доменах в сети; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/network:nw - выводит все доступные серверы в сети Novell NetWare. Если указано 
+имя компьютера, выводится список его ресурсов в сети Net-Ware. С помощью этого 
+ключа могут быть просмотрены ресурсы и в других локальных сетях. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Вызванная без параметров, утилита выводит список компьютеров в текущем домене.
+</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита ping </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Проверяет соединения с удаленным компьютером или компьютерами. Эта команда 
+доступна только после установки поддержки протокола TCP/IP. Синтаксис утилиты 
+ping: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+ping [-t] [-a] [-n счетчик] [-l длина] [-f] [-i ttl] [-v тип] [-r счетчик] [-s 
+число] [[-j список_комп] | [-k список_комп]] [-w интервал] список_назн, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где -t - повторяет запросы к удаленному компьютеру, пока программа не будет 
+остановлена; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-a - разрешает имя компьютера в адрес; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-n счетчик - передается число пакетов ECHO, заданное параметром. По умолчанию – 
+4; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-l длина - отправляются пакеты типа ECHO, содержащие порцию данных заданной 
+длины. По умолчанию - 32 байта, максимум – 65527; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-f - отправляет пакеты с флагом запрещения фрагментации (Do not Fragment). 
+Пакеты не будут разрываться при прохождении шлюзов на своем маршруте; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-i ttl - устанавливает время жизни пакетов TTL (Time To Live); </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-v тип - устанавливает тип службы (Type Of Service) пакетов; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-r счетчик - записывает маршрут отправленных и возвращенных пакетов в поле 
+записи маршрута Record Route. Параметр счетчик задает число компьютеров в 
+интервале от 1 до 9; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-s число - задает число ретрансляций на маршруте, где делается отметка времени;
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-j список_комп - направляет пакеты по маршруту, задаваемому параметром 
+список_комп. Компьютеры в списке могут быть разделены промежуточными шлюзами (свободная 
+маршрутизация). Максимальное количество, разрешаемое протоколом IP, равно 9; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-k список_комп - направляет пакеты по маршруту, задаваемому параметром 
+список_комп. Компьютеры в списке не могут быть разделены промежуточными шлюзами 
+(ограниченная маршрутизация). Максимальное количество, разрешаемое протоколом 
+IP, равно 9; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-w интервал - указывает промежуток времени ожидания (в миллисекундах); </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+список_назн - указывает список компьютеров, которым направляются запросы; </p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита netstat </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит статистику протокола и текущих подключений сети TCP/IP. Эта команда 
+доступна только после установки поддержки протокола TCP/IP. Синтаксис утилиты 
+netstat: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+netstat [-a] [-e] [-n] [-s] [-p протокол] [-r] [интервал], </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где -a - выводит все подключения и сетевые порты. Подключения сервера обычно не 
+выводятся; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-e - выводит статистику Ethernet. Возможна комбинация с ключом –s; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-n - выводит адреса и номера портов в шестнадцатеричном формате (а не имена);
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-s - выводит статистику для каждого протокола. По умолчанию выводится статистика 
+для TCP, UDP, ICMP (Internet Control Message Protocol) и IP. Ключ -p может быть 
+использован для указания подмножества стандартных протоколов; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-p протокол - выводит соединения для протокола, заданного параметром. Параметр 
+может иметь значения tcp или udp. Если используется с ключом -s для вывода 
+статистики по отдельным протоколам, то параметр может принимать значения tcp, 
+udp, icmp или ip; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-r - выводит таблицу маршрутизации; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+интервал - обновляет выведенную статистику с заданным в секундах интервалом. 
+Нажатие клавиш CTRL+B останавливает обновление статистики. Если этот параметр 
+пропущен, netstat выводит сведения о текущей конфигурации один раз. &nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита tracert </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Диагностическая утилита, предназначенная для определения маршрута до точки 
+назначения с помощью посылки эхо-пакетов протокола ICMP с различными значениями 
+срока жизни (TTL, Time-To-Live). При этом требуется, чтобы каждый маршрутизатор 
+на пути следования пакетов уменьшал эту величину по крайней мере на 1 перед 
+дальнейшей пересылкой пакета. Это делает параметр TTL эффективным счетчиком 
+числа ретрансляций. Предполагается, что когда параметр TTL становится равен 0, 
+маршрутизатор посылает системе-источнику сообщение ICMP «Time Exceeded». Утилита 
+tracert определяет маршрут путем посылки первого эхо-пакета с параметром TTL, 
+равным 1, и с последующим увеличением этого параметра на единицу до тех пор, 
+пока не будет получен ответ из точки назначения или не будет достигнуто 
+максимальное до-пустимое значение TTL. Маршрут определяется проверкой сообщений 
+ICMP «Time Exceeded», полученных от промежуточных маршрутизаторов. Однако 
+некоторые маршрутизаторы сбрасывают пакеты с истекшим временем жизни без 
+отправки соответствующего сообщения. Эти маршрутизаторы невидимы для утилиты 
+tracert. Синтаксис утилиты tracert:</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+tracert [-d] [-h макс_узл] [-j список_компьютеров] [-w интервал] точка_назн, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где -d - отменяет разрешение имен компьютеров в их адреса; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-h макс_узл - задает максимальное количество ретрансляций, используемых при 
+поиске точки назначения; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-j список_компьютеров - задает список_компьютеров для свободной маршрутизации;
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-w интервал - задает интервал в миллисекундах, в течение которого будет 
+ожидаться ответ; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+точка_назн - указывает имя конечного компьютера. </p>
+<p style="line-height: normal; margin-bottom: .0001pt" class="MsoNormal" align="center">
+<b><font size="4">Утилита net use </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Подключает общие сетевые ресурсы или выводит информацию о подключениях 
+компьютера. Команда также управляет постоянными сетевыми соединениями. Синтаксис 
+утилиты net use: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net use [устройство | *] [\\компьютер\ресурс[\том]] [пароль | *]] [/user:[домен\]имя_пользователя] 
+[[/delete] | [/persistent:{yes | no}]] </p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net use устройство [/home[пароль | *]] [/delete:{yes | no}] </p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net use [/persistent:{yes | no}], </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где устройство - задает имя ресурса при подключении/отключении. Существует два 
+типа имен устройств: дисководы (от D: до Z:) и принтеры (от LPT1: до LPT3:). 
+Ввод символа звездочки обеспечит подключение к следующему доступному имени 
+устройства; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+\\компьютер\ресурс - указывает имя сервера и общего ресурса. Если параметр 
+компьютер содержит пробелы, все имя компьютера от двойной обратной черты (\\) до 
+конца должно быть заключено в кавычки (&quot; &quot;). Имя компьютера может иметь длину от 
+1 до 15 символов; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+\том - задает имя тома системы Novell NetWare. Для подключения к серверам Novell 
+NetWare должна быть запущена служба клиента сети Novell NetWare (для Windows 
+2000 Professional) или служба шлюза сети Novell NetWare (для Windows 2000 
+Server); </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+пароль - задает пароль, необходимый для подключения к общему ресурсу;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+* - выводит приглашение для ввода пароля. При вводе с клавиатуры символы пароля 
+не выводятся на экран; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/user - задает другое имя пользователя для подключения к общему ресурсу; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+домен - задает имя другого домена. Если домен не указан, используется текущий 
+домен; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+имя_пользователя - указывает имя пользователя для подключения; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/delete - отменяет указанное сетевое подключение. Если подключение задано с 
+символом звездочки, будут отменены все сетевые подключения; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/home - подключает пользователя к его основному каталогу; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/persistent - управляет постоянными сетевыми подключениями. По умолчанию берется 
+последнее использованное значение. Подключения без устройства не являются 
+постоянными; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+уes - cохраняет все существующие соединения и восстанавливает их при следующем 
+подключении; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+no - не сохраняет выполняемые и последующие подключения. Существующие 
+подключения восстанавливаются при следующем входе в систему. Для удаления 
+постоянных подключений используется ключ /delete. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Вызванная без параметров утилита net use извлекает список сетевых подключений. &nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита net send </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Отправка сообщения другому пользователю, компьютеру или псевдониму в сети. 
+Служба сообщений должна быть запущена на компьютере для получения сообщений. 
+Синтаксис утилиты net send: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net send {имя | * | /domain[:имя] | /users} сообщение, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где имя - указывает имя пользователя, имя компьютера или псевдоним, которому 
+будет отправлено сообщение. Если имя компьютера содержит пробелы, оно должно 
+быть заключено в кавычки (&quot; &quot;). Длинные имена пользователей, введенные в формате 
+NetBIOS, могут привести к возникновению исключительных ситуаций. Имена NetBIOS 
+ограничены 16 символами, но Windows 2000 резервирует 16-ый символ; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+* - отправляет сообщение всем членам группы; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/domain[:имя] - отправляет сообщение всем именам в домене компьютера. Если 
+параметр имя указан, сообщение будет отправлено всем именам заданного домена или 
+рабочей группы; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/users - отправляет сообщение всем пользователям, подключенным к серверу;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+сообщение - указывает текст сообщения. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<p style="margin-bottom: 0" align="justify"><b>Задание на лабораторную работу.<span lang="ru">
+</span></b>Используя стандартные сетевые утилиты, проанализировать конфигурацию 
+сети на платформе ОС Windows, т.е. получить свой IP-адрес, узнать имя домена, 
+имена компьютеров, входящих в домен.</p>
+<p style="line-height: normal; margin-bottom: .0001pt" class="MsoNormal" align="center">
+<b><font size="4">Утилита hostname </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит имя локального компьютера (хоста). Она доступна только после установки 
+поддержки протокола TCP/IP. Пример вызова команды hostname: &nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Пример выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-align:center;text-indent:1.0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm">
+<img border="0" src="../ris/image128.png" width="608" height="87"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 
+10. 1</font></span></b></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="line-height: normal; margin-bottom: .0001pt" class="MsoNormal" align="center">
+<b><font size="4">Утилита ipconfig </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит диагностическую информацию о конфигурации сети TCP/IP. Эта утилита 
+позволяет просмотреть текущую конфигурацию IP-адресов компьютеров сети. 
+Синтаксис утилиты <i>ipconfig</i>: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<i>ipconfig</i> [/<i>all</i> | /<i>renew</i> [адаптер] | /<i>release</i> [адаптер]],
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-bottom:.0001pt;text-align:center"><b><u>
+<span style="text-decoration: none; font-size: 14.0pt">&nbsp;</span></u></b><img border="0" src="../ris/image129.jpg" width="625" height="570"></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-bottom:.0001pt;text-align:center">
+<b><span lang="ru"><font size="2">Рис. 
+10. </font></span></b><span lang="ru"><font size="2"><b>2</b></font></span></p>
+<p style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:63.8pt;
+margin-bottom:.0001pt;text-align:justify">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+all - выводит сведения о имени хоста, DNS (Domain Name Service), типе узла, IP-маршрутизации 
+и др. Без этого параметра команда ipconfig выводит только IP-адреса, маску 
+подсети и основной шлюз; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image130.jpg" width="563" height="278"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 
+10. 3</font></span></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/renew [адаптер] - обновляет параметры конфигурации DHCP (Dynamic Host 
+Configuration Protocol – автоматическая настройка IP-адресов). Эта возможность 
+доступна только на компьютерах, где запущена служба клиента DHCP. Для задания 
+адаптера используется имя, выводимое командой ipconfig без параметров; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image131.jpg" width="562" height="82"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 
+10. 4</font></span></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+/release [адаптер] - очищает текущую конфигурацию DHCP. Эта возможность 
+отключает TCP/IP на локальных компьютерах и доступна только на клиентах DHCP. 
+Для задания адаптера используется имя, выводимое командой ipconfig без 
+параметров. Эта команда часто используется перед перемещением компьютера в 
+другую сеть. После использования утилиты ipconfig /release, IP-адрес становиться 
+доступен для назначения другому компьютеру.</p>
+<p class="a" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image132.jpg" width="557" height="84"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 
+10. </font></span></b><span lang="ru"><font size="2"><b>5</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Запущенная без параметров, команда ipconfig выводит полную конфигурацию TCP/IP, 
+включая IP адреса и маску подсети. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- без параметров: </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image133.jpg" width="556" height="143"></p>
+<p style="text-align: center; text-indent: -35.45pt; margin-left: 78.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span style="font-size:14.0pt">&nbsp;</span></b><b><span lang="ru"><font size="2">Рис. 
+10. 6</font></span></b></p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита net view </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Просматривает список доменов, компьютеров или общих ресурсов на данном 
+компьютере. Синтаксис утилиты net view: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net view [\\компьютер | /domain[:домен]]; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Вызванная без параметров, утилита выводит список компьютеров в текущем домене.
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- без параметров: </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image134.jpg" width="540" height="191"></p>
+<p class="a" style="text-align: center; text-indent: 1.0cm">
+<span style="font-size: 14.0pt">&nbsp;</span><b><span lang="ru"><font size="2">Рис. 
+10. 7</font></span></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;- с параметром \\компьютер: </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image135.jpg" width="564" height="247"></p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<span style="color:windowtext">&nbsp;</span><b><span lang="ru"><font size="2">Рис. 
+10. </font></span></b><span lang="ru"><font size="2"><b>8</b></font></span></p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита ping </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Проверяет соединения с удаленным компьютером или компьютерами. Эта команда 
+доступна только после установки поддержки протокола TCP/IP. Синтаксис утилиты 
+ping: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+ping [-t] [-a] [-n счетчик] [-l длина] [-f] [-i ttl] [-v тип] [-r счетчик] [-s 
+число] [[-j список_комп] | [-k список_комп]] [-w интервал] список_назн, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: center; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image136.jpg" width="626" height="265"></p>
+<p style="text-align: center; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 10. </font></span></b><span lang="ru">
+<font size="2"><b>9</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-без параметра:</p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image137.jpg" width="564" height="169"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>10</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;где -t - повторяет запросы к удаленному компьютеру, пока программа не будет 
+остановлена; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image138.jpg" width="559" height="213"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>11</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-a - разрешает имя компьютера в адрес; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image139.jpg" width="565" height="169"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>12</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-n счетчик - передается число пакетов ECHO, заданное параметром. По умолчанию – 
+4; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image140.jpg" width="564" height="175"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>13</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-l длина - отправляются пакеты типа ECHO, содержащие порцию данных заданной 
+длины. По умолчанию - 32 байта, максимум – 65527; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image141.jpg" width="564" height="171"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>14</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;-f - отправляет пакеты с флагом запрещения фрагментации (Do not Fragment). 
+Пакеты не будут разрываться при прохождении шлюзов на своем маршруте; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image142.jpg" width="569" height="169"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>15</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-i ttl - устанавливает время жизни пакетов TTL (Time To Live); </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image143.jpg" width="569" height="169"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>16</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-r счетчик - записывает маршрут отправленных и возвращенных пакетов в поле 
+записи маршрута Record Route. Параметр счетчик задает число компьютеров в 
+интервале от 1 до 9; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image144.jpg" width="569" height="212"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>17</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-s число - задает число ретрансляций на маршруте, где делается отметка времени;
+</p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image145.jpg" width="569" height="208"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>18</b></font></span></p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">&nbsp;Утилита netstat </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выводит статистику протокола и текущих подключений сети TCP/IP. Эта команда 
+доступна только после установки поддержки протокола TCP/IP. Синтаксис утилиты 
+netstat: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+netstat [-a] [-e] [-n] [-s] [-p протокол] [-r] [интервал], </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+где -a - выводит все подключения и сетевые порты. Подключения сервера обычно не 
+выводятся; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image146.jpg" width="550" height="433"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>19</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-e - выводит статистику Ethernet. Возможна комбинация с ключом –s; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image147.jpg" width="555" height="141"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>20</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-n - выводит адреса и номера портов в шестнадцатеричном формате (а не имена);
+</p>
+<p class="a" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image148.jpg" width="555" height="110"></p>
+<p class="a" style="text-indent: 1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>21</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-s - выводит статистику для каждого протокола. По умолчанию выводится статистика 
+для TCP, UDP, ICMP (Internet Control Message Protocol) и IP. Ключ -p может быть 
+использован для указания подмножества стандартных протоколов; </p>
+<p class="a" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image149.jpg" width="535" height="684"></p>
+<p class="a" style="text-indent: 1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>22</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-p протокол - выводит соединения для протокола, заданного параметром. Параметр 
+может иметь значения tcp или udp. Если используется с ключом -s для вывода 
+статистики по отдельным протоколам, то пара-метр может принимать значения tcp, 
+udp, icmp или ip; </p>
+<p class="a" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image150.png" width="517" height="73"></p>
+<p class="a" style="text-indent: 1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>23</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-r - выводит таблицу маршрутизации; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+интервал - обновляет выведенную статистику с заданным в секундах интервалом. 
+Нажатие клавиш CTRL+B останавливает обновление статистики. Если этот параметр 
+пропущен, netstat выводит сведения о текущей конфигурации один раз. </p>
+<p class="a" style="text-align:center;text-indent:1.0cm">
+<img border="0" src="../ris/image151.png" width="641" height="284"></p>
+<p class="a" style="text-align: center; text-indent: 1.0cm"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>24</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+- без параметров: </p>
+<p class="a" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image152.png" width="536" height="98"></p>
+<p class="a" style="text-indent: 1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>25</b></font></span>&nbsp;</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита tracert </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Диагностическая утилита, предназначенная для определения маршрута до точки 
+назначения с помощью посылки эхо-пакетов протокола ICMP с раз-личными значениями 
+срока жизни (TTL, Time-To-Live). При этом требуется, чтобы каждый маршрутизатор 
+на пути следования пакетов уменьшал эту величину по крайней мере на 1 перед 
+дальнейшей пересылкой пакета. Это делает параметр TTL эффективным счетчиком 
+числа ретрансляций. Предполагается, что когда параметр TTL становится равен 0, 
+маршрутизатор посылает системе-источнику сообщение ICMP «Time Exceeded». Утилита 
+tracert определяет маршрут путем посылки первого эхо-пакета с параметром TTL, 
+равным 1, и с последующим увеличением этого параметра на единицу до тех пор, 
+пока не будет получен ответ из точки назначения или не будет достигнуто 
+максимальное допустимое значение TTL. Маршрут определяется проверкой сообщений 
+ICMP «Time Exceeded», полученных от промежуточных маршрутизаторов. Однако 
+некоторые маршрутизаторы сбрасывают пакеты с истекшим временем жизни без 
+отправки соответствующего сообщения. Эти маршрутизаторы невидимы для утилиты 
+tracert. Синтаксис утилиты tracert:</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+tracert [-d] [-h макс_узл] [-j список_компьютеров] [-w интервал] точка_назн,</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-без параметров</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image153.png" width="630" height="118"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 10. </font></span></b><span lang="ru">
+<font size="2"><b>26</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;-d - отменяет разрешение имен компьютеров в их адреса; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image154.png" width="479" height="104"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>27</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-h макс_узл - задает максимальное количество ретрансляций, используе-мых при 
+поиске точки назначения; </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image155.png" width="553" height="110"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>28</b></font></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+-w интервал - задает интервал в миллисекундах, в течение которого будет 
+ожидаться ответ; точка_назн - указывает имя конечного компьютера.</p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image156.png" width="546" height="104"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>29</b></font></span></p>
+<p style="line-height: normal; margin-bottom: .0001pt" class="MsoNormal" align="center">
+<b><font size="4">&nbsp;Утилита net use </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Подключает общие сетевые ресурсы или выводит информацию о подключениях 
+компьютера. Команда также управляет постоянными сетевыми соединениями. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Синтаксис утилиты net use: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net use [устройство | *] [\\компьютер\ресурс[\том]] [пароль | *]] [/user:[домен\]имя_пользователя] 
+[[/delete] | [/persistent:{yes | no}]] </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Вызванная без параметров утилита net use извлекает список сетевых подключений.
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="margin-bottom:.0001pt;text-indent:1.0cm; margin-left:0cm; margin-right:0cm; margin-top:0cm" align="center">
+<img border="0" src="../ris/image157.png" width="595" height="114"></p>
+<p style="text-align: center; text-indent: 1.0cm; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><span lang="ru"><font size="2">Рис. 10. </font></span></b><span lang="ru">
+<font size="2"><b>30</b></font></span></p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Утилита net send </font></b></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Отправка сообщения другому пользователю, компьютеру или псевдониму в сети. 
+Служба сообщений должна быть запущена на компьютере для получения сообщений. 
+Синтаксис утилиты net send: </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+net send {имя | * | /domain[:имя] | /users} сообщение, </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<u>Примеры выполнения задания:</u></p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;* - отправляет сообщение всем членам группы; </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+сообщение - указывает текст сообщения. </p>
+<p class="Default" style="text-indent:1.0cm" align="center">
+<img border="0" src="../ris/image158.png" width="540" height="39"></p>
+<p class="Default" style="text-indent:1.0cm" align="center"><b><span lang="ru">
+<font size="2">Рис. 10. </font></span></b><span lang="ru"><font size="2"><b>31</b></font></span></p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">Рекомендации и замечания</font></b></p>
+<p style="text-indent: 35px; text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-indent: 35px; text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+На основе рассмотренных сетевых утилит ОС Windows разрабатываются 
+пользовательские приложения, реализующие мониторинг и диагностику ло-кальных 
+сетей. Они позволяют минимизировать усилия по поиску и исправле-нию ошибок в 
+конфигурации сети и помогают системному администратору контролировать трафик. В 
+настоящее время создано большое количество про-грамм этого направления: Monitor 
+It, Nautilus NetRanger, CiscoWorks 2000, Ser-viceSentinel и д.р. Они 
+распространяются через Internet на условиях freeware. Windows NT Server обладает 
+встроенными инструментами мониторинга: Event Viewer, Performance Monitor, 
+Network Monitor.</p>
+<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="center">
+<b><font size="4">&nbsp;Содержание отчета </font></b></p>
+<p style="text-indent: 35px; text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-indent: 35px; text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+1) Титульный лист. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+2) Постановку задачи. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+3) Теоретические сведения. </p>
+<p style="text-indent: 35px; text-align: justify; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+4) Иерархическую схему процедур. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+5) Текст основных процедур. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+6) Результаты работы </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+7) Выводы.</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<hr size=5>
+<p align="center" style="margin-top: 0; margin-bottom: 0"><font size="2"><b>Контрольные вопросы</b></font><br>
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>1.</b> Исправить синтаксис утилиты. C:\Program Files\Far\&gt;net view all. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>2.</b> Для чего нужна утилита net send? Описать ее синтаксис. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>3. </b>Укажите неверный параметр C:\net use B:\\fit-s1\:install. </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>4. </b>Можно ли утилитой tracert задать максимальное число ретрансляций? </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>5.</b> Какой протокол необходим для работы с утилитой ping? </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>6. </b>Какой результат выдаст утилита net stat с параметрами –a s –r? </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>7.</b> Для чего необходима утилита hostname? </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>8.</b> Зачем используется параметр all в утилите ipconfig? </p>
+<p style="text-align: justify; text-indent: 35px; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+</body>
+</html>

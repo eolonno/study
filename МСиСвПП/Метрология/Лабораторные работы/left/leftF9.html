@@ -1,0 +1,951 @@
+<html>
+<head>
+<title></title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+<body background="../ris/g2.gif" bgproperties="fixed" text="black">
+<p align="center"><b>ЛАБОРАТОРНАЯ РАБОТА № 9<br>СОЗДАНИЕ ИНТЕРАКТИВНОГО 
+WEB-ПРИЛОЖЕНИЯ НА ЯЗЫКЕ PHP</b></p>
+<hr size=5>
+<p style="text-indent: 35.45pt; margin-top: 10px; margin-bottom: 0" ><b>Цель работы</b> — 
+1) установить комплекс для работы с PHP;</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2) изучить основы языка PHP;</p>
+<p style="text-indent: 35.45pt; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+3) создать на языке php интерактивное web-приложение&nbsp;— простейший<b><br></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; калькулятор, способный выполнять простейшие арифметические действия.</p>
+<p align="center"><b>Теоретическая часть</b></p>
+<p class="aCxSpFirst" style="text-align: center; text-indent: -18.0pt; line-height: normal; margin-left: 18.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<font size="4"><span lang="EN-US"><b>I.</b></span><span style="font-family: Times New Roman">
+</span></font><b><font size="4">Установка сервера </font><span lang="EN-US">
+<font size="4">PHP</font></span></b></p>
+<p class="aCxSpFirst" style="text-align: center; text-indent: -18.0pt; line-height: normal; margin-left: 18.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<p class="aCxSpMiddle" align="center" style="text-align: center; line-height: normal; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Ход работы</b></p>
+<p class="aCxSpMiddle" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+a.<span style="font-family: Times New Roman; font-size: 7pt"> </span>Зайдите в 
+папку с установочным файлом и запустите его. <span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpMiddle" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpMiddle" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<img border="0" src="../ris/image044.jpg" width="617" height="371"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 1</font></b></p>
+<p class="a" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+b. <span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;</span>Программа 
+установки имеет следующий вид:</p>
+<p class="a" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="a" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image045.jpg" width="618" height="307"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 2</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Для продолжения установки нажмите клавишу ENTER</p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span>Появится запрос 
+на указание полного пути к директории, в которую следует установить комплекс. По 
+умолчанию будет предложен следующий путь:&nbsp; <a href="file:///C:/WebServers">C:\WebServers</a>.</p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpLast" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 21.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span><img border="0" src="../ris/image046.jpg" width="620" height="304"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 3</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Нажмите клавишу ENTER, чтобы принять настройки по умолчанию 
+(рекомендуется) или введите другой путь.</p>
+<p class="aCxSpLast" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp; </span>Подтвердите 
+установку комплекса в выбранную директорию (введите символ ‘y’) и нажмите 
+клавишу ENTER.</p>
+<p class="aCxSpLast" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpLast" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image047.jpg" width="621" height="303"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 4</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+e.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp; </span>В окне появится 
+информация о виртуальном диске. </p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image048.jpg" width="623" height="302"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 5</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+f. Появится запрос на указание буквы виртуального диска. Можно ввести любую 
+неиспользуемую букву, но оптимальный вариант&nbsp;— Z. </p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image049.jpg" width="623" height="308"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 6</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Нажмите клавишу ENTER.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+g. В окне появится сообщение о создании виртуального диска и готовности 
+программы произвести копирование файлов в указанную директорию.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image050.jpg" width="623" height="307"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 7</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+h. В окне появится информация о двух возможных режимах запуска комплекса и 
+запрос о выборе режима.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<img border="0" src="../ris/image051.jpg" width="623" height="307"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 8</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Введите ‘1’ и нажмите клавишу ENTER.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+i. В окне появится запрос о создании на рабочем столе ярлыков для запуска 
+комплекта.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<img border="0" src="../ris/image052.jpg" width="623" height="309"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 9</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; line-height: normal; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Согласитесь с созданием ярлыков (это упрощает работу с сервером PHP)&nbsp;—введите 
+‘y’ и нажмите клавишу ENTER.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+j. В окне появится сообщение об окончании процедуры установки.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt" align="center">
+<img border="0" src="../ris/image053.jpg" width="623" height="303"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 10</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+k. Запустите сервер с помощью созданного на рабочем столе ярлыка Start servers.</p>
+<p class="aCxSpMiddle" style="text-align: justify; line-height: normal; margin-left: 2.0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image054.jpg" width="78" height="238"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 11</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+l. На какое-то мгновение появится черное окно загрузки программы и исчезнет. 
+После этого Денвер перейдет в рабочее состояние. Чтобы перезапустить Денвер или 
+отключить его воспользуйтесь ярлыками&nbsp; Restart servers и Stop servers 
+соответственно.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image055.png" width="669" height="331"></p>
+<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; text-indent: 0cm; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 12</font></b></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+m. Введите в строку браузера http://localhost и убедитесь, что с жесткого диска 
+запустился сайт с описанием Денвера.</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image056.png" width="668" height="499"></p>
+<p class="MsoNormal" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-top: 6px; margin-bottom: 12px">
+<b><font size="2">Рис. 9. 13</font></b></p>
+<p class="aCxSpMiddle" style="text-align: center; line-height: normal; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b><font size="4">II.</font></b><span style="font-family: Times New Roman"><font size="4">
+</font></span><b><font size="4">Создание приложения на </font>
+<span lang="EN-US"><font size="4">PHP</font></span></b></p>
+<p style="text-align: center; margin-right: 0cm; margin-top: 0cm; margin-bottom: 12px">
+<span style="font-size: 14.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style="font-size:14.0pt">Основы Web-программирования
+</span></b></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong><span style="letter-spacing:-.3pt">Web-программирование&nbsp;—</span></strong><span style="letter-spacing:-.3pt"> 
+разработка любых программных продуктов, предназначенных для работы на сайтах 
+World Wide Web. Строго говоря, даже разработка web-страниц на чистом HTML 
+является web-программированием, ведь при просмотре страницы браузер фактически 
+исполняет код HTML, форматируя текст согласно инструкциям этого языка. В 
+настоящее время под web-программированием понимают создание CGI-приложений и 
+использование на web-странице технологий JavaScript и VBScript для достижений 
+сложных эффектов.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>Web-сервер&nbsp;— </strong>программа, запущенная на узле сети Интернет и 
+выдающая посетителям этого узла web-страницы по запросам. Также web-сервером 
+часто называется узел, на котором эта программа запущена, или даже компьютер, 
+являющийся таким узлом. </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong><span style="letter-spacing:-.2pt">CGI </span></strong>
+<span style="letter-spacing:-.2pt">(сокращение от Common Gateway Interface)&nbsp;— 
+технология, позволяющая запускать на web-сервере программы, имеющие возможность 
+получать данные от посетителей сайтов, поддерживаемых этим web-сервером, и в 
+свою очередь выдавать им обработанные данные в виде web-страниц или других 
+файлов.</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Для использования технологии CGI программа web-сервер должна удовлетворять 
+определенным критериям&nbsp;— &quot;поддерживать CGI&quot;. Если программа, запускаемая на 
+web-сервере, представлена не двоичным кодом (т. е. скомпилированным файлом), а 
+текстовым, то для ее выполнения требуется программа-интерпретатор того языка, на 
+котором написана эта программа. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Такой интерпретатор включается в состав web-сервера и вызывается им при 
+необходимости заняться выполнением программного кода. CGI-сценарий (CGI-скрипт)&nbsp;— 
+программа (в текстовом виде), предназначенная для исполнения на web-сервере. Для 
+создания CGI-скриптов можно использовать любой язык программирования &nbsp;— важно 
+лишь, чтобы на том web-сервере, где предполагается эту программу запускать, 
+имелся интерпретатор этого языка. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<b>Препроцессор</b>&nbsp;— программа, работающая совместно с web-сервером, которая 
+просматривает все или некоторые файлы, выдаваемые web-сервером посетителям, и 
+выполняет над ними определенные действия в зависимости от содержащихся в этих 
+файлах инструкций. РНР является именно препроцессором, что, собственно, и видно 
+из его названия. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Все языки программирования, используемые при разработке web-сайтов, можно 
+разделить на две большие группы. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+К <i>первой</i> относятся те из них, код которых выполняется на компьютере 
+посетителя сайта, т. е. в браузере, запущенном на компьютере пользователя. Это 
+известные всем JavaScript и VBScript. Программы на этих языках встраиваются в 
+код web-страниц или выносятся в отдельный файл, обращение к которому 
+осуществляется из web-страницы (в этом случае браузер все равно обрабатывает 
+такие «вынесенные» программы таким же образом, как если бы они были встроены в 
+код страницы). </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.2pt">Во <i>вторую</i> группу включаются те языки, 
+программы на которых выполняются на том компьютере, где расположен web-сервер. 
+Эта группа более обширна&nbsp;— дело в том, что в принципе на web-сервере могут 
+исполняться программы на любом языке, даже командных </span>
+<code style="font-family: Courier New"><span style="letter-spacing: -.2pt">.bat</span></code><span style="letter-spacing: -.2pt">-файлов 
+MS-DOS, важно лишь, чтобы на нем была установлена программа-интерпретатор этого 
+языка, удовлетворяющая стандарту CGI, которому также должен удовлетворять сам 
+web-сервер. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<b>РНР</b> относится ко второй группе&nbsp;— программа на РНР исполняется на 
+web-сервере. Однако от других CGI-языков РНР сильно отличается в лучшую сторону 
+прежде всего своей простотой. При создании программы на РНР нет необходимости 
+учитывать все те многочисленные мелоч, которые отравляют жизнь программистам на 
+Perl или C++,&nbsp;— не надо заботиться о правах доступа к файлам сценария, не надо 
+прописывать точные пути к различным модулям, нет
+<span style="letter-spacing: -.4pt">необходимости следить за </span>отсутствием 
+в файле скрипта недопустимых символов. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Синтаксис языка РНР допускает его легкое освоение как начинающим программистом, 
+так и тем, кто уже использовал ранее какой-либо язык программирования. Можно 
+целиком и полностью сосредоточиться на решаемой задаче и не думать о мелочах. 
+Именно это и делает РНР подходящим выбором для web-дизайнера, который, начав его 
+использовать, может вообще забыть о каких-либо других CGI-языках. (Впрочем, если 
+исходить из механизма действия, то РНР более правильно называть не &quot;CGI-языком&quot;, 
+а препроцессором<span style="letter-spacing:-.2pt">&nbsp;— </span>что, собственно, 
+отражено даже в его названии. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+В то время как CGI-приложение просто выдает некие данные в браузер посетителя, 
+препроцессор просматривает все или некоторые файлы, выдаваемые web-сервером 
+посетителю, и ищет в них определенные команды, которые и выполняет. Именно такой 
+способ работы и позволяет указывать код программ на РНР непосредственно в тексте 
+web-страниц.) Одним из наиболее заметных достоинств РНР является возможность без 
+особых затруднений работать с серверами баз данных. </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Возможности РНР можно весьма серьезно 
+расширить с помощью дополнительных модулей, содержащих различные функции. Эти 
+модули при необходимости размещаются на web-сервере, на котором установлен 
+PHP-интерпретатор. Большое количество готовых модулей можно загрузить с адреса 
+http://www.php.net, там же в разделе документации приведено и полное их 
+описание. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Например, модуль Zlib позволяет работать из программы на РНР с архивами в 
+формате Gzip, а модуль libswf - с Flash-презентациями, создавая и редактируя их 
+прямо из программы на РНР. </p>
+<p style="text-align: center; text-indent: 35px; margin-right: 0cm; margin-top: 12px; margin-bottom: 12px">
+<font size="4"><span style="font-family: Symbol">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><b><font size="4">История создания PHP </font></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+В отличие от многих других языков программирования, РНР был создан не какой-либо 
+корпорацией или гением-программистом, а обычным пользователем, Расмусом 
+Лердорфом, в далеком 1994 году. Цель разработки языка была проста<span style="letter-spacing:-.2pt">&nbsp;—
+</span>сделать домашнюю страничку Расмуса более интерактивной, а значит, и более 
+привлекательной для посетителей. Расмус разработал базовый синтаксис и написал 
+первый интерпретатор своего языка, получившего название Personal Home Page Tools, 
+т. е. РНР. Этот интерпретатор мог обрабатывать лишь несколько основных команд, 
+однако начало было положено. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+В 1995 году Расмус доработал интерпретатор РНР, соединив его с другой своей 
+программой, умевшей обрабатывать HTML-формы (именовавшейся FI<span style="letter-spacing:-.2pt">&nbsp;—
+</span>от &quot;Form Interpretator&quot;), а также сделал так, что интерпретатор, 
+получивший название PHP/FI Version 2, мог становиться частью web-сервера. Это 
+новшество позволило программам на РНР исполняться очень быстро. Кроме того, в 
+том же 1995 году интерпретатор РНР был дополнен возможностями1 обработки новых 
+команд, в частности, команд для работы с серверами баз данных и автоматического 
+создания gif-файлов (последнее, к примеру, может быть использовано для генерации 
+кнопок-счетчиков посещений). PHP/FI был размещен в Сети для всеобщего 
+использования, и началось его повсеместное распространение. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+К концу 1997 года РНР использовался более чем на пятидесяти тысячах сайтов. 
+Web-мастера быстро оценили достоинства нового языка web-программирования, такие 
+как легкость освоения и богатство возможностей, и вскоре традиционные Perl и С 
+стали сдавать свои позиции. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+<span style="letter-spacing: -.3pt">Так как исходный код интерпретатора был 
+открыт (а сам интерпретатор, понятно, бесплатен), то энтузиасты стали заниматься 
+его доработкой, и летом 1998 года появился на свет РНРЗ&nbsp;— детище Зива Сураски и 
+Энди Гутманса (Zeev Suraski and Andi Gutmans). РНРЗ был создан практически &quot;с 
+нуля&quot;, так как его авторы сочли код предыдущих версий недостаточно эффективным. 
+Кроме того, РНРЗ стал весьма легко расширяемым продуктом. Любой, создавший на 
+основе определенных стандартов модуль расширения РНР, позволяющий, скажем, 
+работать с архивами какого-либо типа, мог этот модуль интегрировать с 
+программными файлами РНР без каких-либо серьезных затрат времени и сил. </span>
+</p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+Уже к концу 1999 года число сайтов, построенных на основе РНР, перевалило за 
+миллион. Весьма важным достоинством РНР также являлось то, что программы, 
+позволявшие обрабатывать команды РНР, были созданы практически для всех 
+операционных систем, от Windows до Unix и Linux. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+В 2000-м году вышла разработанная компанией Zend Technologies четвертая версия 
+интерпретатора РНР, дополненная множеством новых функций. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+В настоящее время именно она является наиболее распространенной<span style="letter-spacing:-.2pt">&nbsp;—
+</span>РНР используется более чем на 20% сайтов Сети. Сейчас готова и проходит 
+апробацию уже пятая версия данного языка. </p>
+<p style="text-align: center; text-indent: 35px; margin-right: 0cm; margin-top: 12px; margin-bottom: 12px">
+<span style="font-size: 14.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style="font-size:14.0pt">Синтаксис PHP </span></b></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+Синтаксис PHP во многом заимствован из таких языков как C, Java и Perl. Файл, 
+обрабатываемый сервером как правило имеет расширение php. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+Поэтому, если вы знакомы хотя бы с одним из них, вам не составит особого труда 
+просто сесть и начать писать программы на PHP. </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+PHP-код включаются в html-код в следующем виде: </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;?PHP&nbsp; текст_кода&nbsp; ?&gt;</font></pre>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-size:14.0pt;
+font-family:&quot;Times New Roman&quot;">или</span></pre>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;?</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&nbsp; текст_кода;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">?&gt;</font></pre>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin-top: 12px; margin-bottom: 12px">
+<strong><i><font style="font-size: 14pt; text-decoration: underline">Коментарии</font></i></strong></p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+PHP поддерживает комментарии 'C', 'C++' и оболочки Unix. Например: </p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;?php echo &quot;This is a test&quot;; // Это однострочный комментарий в стиле c++</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">/* Это многострочный комментарий,</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">это ещё одна его строка */</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">echo &quot;This is yet another test&quot;; echo &quot;One Final Test&quot;;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2"># Это комментарий в shell-стиле ?&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">echo</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;?php echo &quot;Эта информация будет выведена в HTML&quot;;?&gt; </font></pre>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin-top: 12px; margin-bottom: 12px">
+<strong><i><font style="font-size: 14pt; text-decoration: underline">Присвоение 
+значений переменным</font></i></strong></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Переменные в программах на PHP отделяются символами $. </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; margin-top: 0; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">$city = &quot;Tula&quot;; </font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">city – переменная, Tula - значение </font></pre>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">&nbsp;</p>
+<p style="text-align: center; margin-right: 0cm; margin-top: 12px; margin-bottom: 12px">
+<span style="font-size: 14.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style="font-size:14.0pt">Некоторые операции</span></b></p>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family: Wingdings"><b><font size="3">&uuml;</font></b><span style="font-style: normal; font-variant: normal; font-weight: 700; font-family: Times New Roman"><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></span><u><span style="font-family: Times New Roman; font-weight: 700"><font size="3">Инкремента/декремента</font></span></u></pre>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; margin-left: 35.45pt" id="table5">
+		<tr>
+			<td width="73" valign="top" style="width:55.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">++$a</font></span></pre>
+			</td>
+			<td width="151" valign="top" style="width:4.0cm;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Pre-increment</font></span></pre>
+			</td>
+			<td width="366" valign="top" style="width:274.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Увеличивает $a на 1,затем возвращает $a</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="73" valign="top" style="width:55.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a++</font></span></pre>
+			</td>
+			<td width="151" valign="top" style="width:4.0cm;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Post-increment</font></span></pre>
+			</td>
+			<td width="366" valign="top" style="width:274.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Возвращает $a, затем увеличивает $a на 1</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="73" valign="top" style="width:55.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">--$a</font></span></pre>
+			</td>
+			<td width="151" valign="top" style="width:4.0cm;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Pre-decrement</font></span></pre>
+			</td>
+			<td width="366" valign="top" style="width:274.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Уменьшает $a на 1, затем возвращает $a</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="73" valign="top" style="width:55.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a--</font></span></pre>
+			</td>
+			<td width="151" valign="top" style="width:4.0cm;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Post-decrement</font></span></pre>
+			</td>
+			<td width="366" valign="top" style="width:274.7pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Возвращает $a, затем уменьшает $a на 1</font></span></pre>
+			</td>
+		</tr>
+	</table>
+</div>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family: Wingdings"><b><font size="3">&uuml;</font></b><span style="font-style: normal; font-variant: normal; font-weight: 700; font-family: Times New Roman"><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></span><u><span style="font-family: Times New Roman; font-weight: 700"><font size="3">Арифметические</font></span></u></pre>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="595" style="width: 446.5pt; border-collapse: collapse; margin-left: 40.85pt" id="table6">
+		<tr>
+			<td width="92" valign="top" style="width:69.2pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a + $b</font></span></pre>
+			</td>
+			<td width="123" valign="top" style="width:92.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Сложение</font></span></pre>
+			</td>
+			<td width="380" valign="top" style="width:285.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Сумма $a и $b</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="92" valign="top" style="width:69.2pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a - $b</font></span></pre>
+			</td>
+			<td width="123" valign="top" style="width:92.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Вычитание</font></span></pre>
+			</td>
+			<td width="380" valign="top" style="width:285.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Разность $a и $b</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="92" valign="top" style="width:69.2pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a * $b</font></span></pre>
+			</td>
+			<td width="123" valign="top" style="width:92.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Умножение</font></span></pre>
+			</td>
+			<td width="380" valign="top" style="width:285.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Произведение $a и $b</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="92" valign="top" style="width:69.2pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a / $b</font></span></pre>
+			</td>
+			<td width="123" valign="top" style="width:92.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Деление</font></span></pre>
+			</td>
+			<td width="380" valign="top" style="width:285.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Частное от деления $a на $b</font></span></pre>
+			</td>
+		</tr>
+		<tr>
+			<td width="92" valign="top" style="width:69.2pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">$a % $b</font></span></pre>
+			</td>
+			<td width="123" valign="top" style="width:92.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Остаток</font></span></pre>
+			</td>
+			<td width="380" valign="top" style="width:285.15pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family:&quot;Times New Roman&quot;"><font size="3">Целочисленный остаток от деления $a на $b</font></span></pre>
+			</td>
+		</tr>
+	</table>
+</div>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-family: Wingdings"><b><font size="3">&uuml;</font></b><span style="font-style: normal; font-variant: normal; font-weight: 700; font-family: Times New Roman"><font size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span></span><u><span style="font-family: Times New Roman; font-weight: 700"><font size="3">Строковые</font></span></u></pre>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Имеются две строковые операции. Первая&nbsp;— операция ('.'), которая возвращает 
+объединение из правого и левого аргументов. Вторая&nbsp;— операция присвоения ('.='), 
+которая присоединяет правый аргумент левому аргументу.</p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">$a = &quot;Hello &quot;; $b = $a . &quot;World!&quot;; // теперь $b содержит &quot;Hello World!&quot;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">$a = &quot;Hello &quot;; $a .= &quot;World!&quot;; // теперь $a содержит &quot;Hello World!&quot;</font></pre>
+<p style="text-align: center; margin-right: 0cm; margin-top: 12px; margin-bottom: 12px">
+<font size="4"><span style="font-family: Symbol">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><b><font size="4">Выражения сравнения</font></b></p>
+<p style="text-align: justify; text-indent: 35.45pt; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+Выражения сравнения вычисляются в 0 или 1, означая FALSE или TRUE 
+(соответственно). PHP поддерживает </p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table7">
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">&gt;&nbsp;</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:1.05pt;line-height:normal"><font size="3">больше</font></td>
+		</tr>
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">&gt;=</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">больше или равно</font></td>
+		</tr>
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">==</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:1.05pt;line-height:normal"><font size="3">равно</font></td>
+		</tr>
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">!=</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:1.05pt;line-height:normal"><font size="3">не равно</font></td>
+		</tr>
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">&lt;&nbsp;</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:1.05pt;line-height:normal"><font size="3">меньше</font></td>
+		</tr>
+		<tr>
+			<td width="68" valign="top" style="width:51.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:0cm;line-height:normal"><font size="3">&lt;=</font></td>
+			<td width="180" valign="top" style="width:134.65pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+  justify;text-indent:1.05pt;line-height:normal"><font size="3">меньше или равно</font></td>
+		</tr>
+	</table>
+</div>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">&nbsp;</p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+Эти выражения чаще всего используются внутри условных операторов, таких как if.
+</p>
+<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+Сравнения: </p>
+<div align="center">
+	<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse" id="table8">
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<span lang="EN-US"><font size="3">$a == $b</font></span></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">равно </font><span lang="EN-US"><font size="3">TRUE</font></span><font size="3">, 
+			если $</font><span lang="EN-US"><font size="3">a</font></span><font size="3"> 
+			равно $</font><span lang="EN-US"><font size="3">b</font></span></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a != $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">не равно TRUE, если $a не равно $b</font></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a &lt;&gt; $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">не равно TRUE, если $a не равно $b</font></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a &lt; $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">меньше TRUE, если $a строго меньше $b</font></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a &gt; $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">больше TRUE, если $a строго больше $b</font></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a &lt;= $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">меньше или равно TRUE, если $a меньше или равно $b</font></td>
+		</tr>
+		<tr>
+			<td width="102" valign="top" style="width:76.3pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">$a &gt;= $b</font></td>
+			<td width="482" valign="top" style="width:361.45pt;padding:0cm 5.4pt 0cm 5.4pt">
+			<p style="margin:0cm;margin-bottom:.0001pt;text-align:justify">
+			<font size="3">больше или равно TRUE, если $a больше или равно $b</font></td>
+		</tr>
+	</table>
+</div>
+<p style="text-align: center; margin-right: 0cm; margin-top: 12px; margin-bottom: 12px">
+<font size="4"><span style="font-family: Symbol">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Times New Roman"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</font></span><b><font size="4">Некоторые операторы</font></b></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>include &quot;имя файла&quot;<span lang="EN-US">&nbsp;</span>—</strong> команда для 
+включения содержимого одного файла в другой. Содержимое файла, имя которого 
+указывается в команде, целиком и полностью вставляется на то место, где 
+располагается эта команда, при этом все коды РНР, содержащиеся во вставляемом 
+файле, исполняются так же, как если бы они были на месте этой команды. (Помните, 
+что файл именно вставляется<span style="letter-spacing:-.2pt">&nbsp;— </span>т. е., 
+например, пути к картинкам, которые должны присутствовать во вставляемом файле, 
+следует указывать от местонахождения того файла, в котором находилась команда 
+include.) Если файл, включаемый в страницу при помощи команды include, 
+отсутствует, то вместо него размещается уведомление об этом, а программа на РНР 
+выполняется дальше. (При необходимости завершения обработки и выдачи 
+web-страницы в случае отсутствия включаемого файла, вместо команды include 
+следует использовать команду require.) </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong><span style="letter-spacing:-.4pt">mail (&quot;Кому&quot;, &quot;Тема&quot;, &quot;Текст 
+сообщения&quot;, &quot;Дополнительные заголовки&quot;)</span><span lang="EN-US" style="letter-spacing: -.4pt">&nbsp;</span><span style="letter-spacing:-.4pt">—</span></strong><span style="letter-spacing:-.4pt"> 
+отправка почтового сообщения. При выполнении данной команды на сервере в 
+соответствии с указанными параметрами формируется электронное письмо и 
+отправляется с помощью установленной на сервере почтовой программы. В качестве 
+параметра &quot;Кому&quot; может выступать набор адресов, разделенных запятыми. 
+&quot;Дополнительные заголовки&quot; могут быть любые (естественно, допустимые почтовыми 
+протоколами!), разделяться они должны должны комбинацией символов /n, которая в 
+РНР означает перевод строки. (Если среди &quot;Дополнительных заголовков&quot; не указано 
+поле From, то оно заполняется по умолчанию почтовой программой web-сервера, 
+например, именем &quot;Unprivileged User&quot;.) </span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>echo (&quot;текст&quot;)<span lang="EN-US">&nbsp;</span>—</strong> вывод на 
+web-страницу какого-либо текста. Чтобы вывести на web-страницу значение 
+какой-либо переменной, достаточно просто написать ее имя внутри выводимой 
+строки: команда echo &quot;это цифра $а&quot; выведет в web-страницу текст &quot;это цифра 1&quot;, 
+если ранее переменной $а было присвоено значение, равное единице. В случае 
+необходимости использовать в выводимой строке кавычки или иные специальные 
+символы перед этими символами следует ставить символ &quot; . </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong><span style="letter-spacing:-.3pt">if (условие) {...команды, которые 
+должны выполняться, если условие верно...;} else {...команды, которые должны 
+выполняться, если условие неверно...} </span>
+<span lang="EN-US" style="letter-spacing: -.3pt">&nbsp;</span><span style="letter-spacing:-.3pt">—</span></strong><span style="letter-spacing:-.3pt"> 
+команда, позволяющая выполнить то или иное действие в зависимости от истинности 
+верности или ложности того или иного условия. В фигурных скобках может 
+располагаться несколько команд, разделенных точкой с запятой. </span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>for (начальное значение счетчика, условие продолжения цикла, изменение 
+счетчика на каждом шаге цикла) { ...команды... ;}<span lang="EN-US">&nbsp;</span>—</strong> 
+цикл, т. е. повторение указанных в нем команд столько раз, сколько позволит 
+условие изменения счетчика цикла (т. е. переменной, специально выделенной для 
+подсчета числа выполнений команд цикла). </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>while (условие) { ...команды... }<span lang="EN-US">&nbsp;</span>—</strong> 
+цикл с условием. Команды в фигурных скобках выполняются до тех пор, пока 
+выполняется условие в заголовке цикла. Для того чтобы цикл прервался, нужно, 
+чтобы условие выполняться перестало - поэтому внутри цикла необходимо 
+предусмотреть возможность влиять на это условие. </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>Цикл do {. . .команды. . . } while (условие) </strong>работает так же, 
+однако команды, указанные в фигурных скобках, будут выполнены по меньшей мере 
+один раз<span style="letter-spacing:
+-.2pt">&nbsp;— </span>даже если условие выполняться не будет. Прервать выполнение 
+любого цикла можно оператором break -дальнейшее выполнение программы пойдет с 
+команды, следующей после закрывающей фигурной скобки. Оператор же continue 
+прерывает текущую стадию выполнения цикла, т. е. после этого оператора 
+дальнейшее выполнение программы начнется с очередной проверки условия заголовка 
+цикла. </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<strong>switch (выражение) {case значение: ... команды...; break; case другое 
+значение: ... команды...; break;} <span lang="EN-US">&nbsp;</span>—</strong> оператор 
+выбора. При его работе содержимое, заключённое в фигурные скобки, 
+просматривается сверху вниз. Как только будет найден оператор case со значением, 
+совпадающим со значением выражения, РНР начнёт выполнять весь код, следующий за 
+этим оператором case до последней фигурной скобки оператора switch или до 
+первого оператора break, в зависимости от того, что появится раньше. (Обратите 
+внимание, что если команду break не указать в конце кода, относящегося к одному 
+варианту значения выражения в заголовке оператора switch, PHP будет выполнять 
+код дальше, т. е. тот, который принадлежит уже следующему оператору case! Это&nbsp;— 
+одно из отличий данного оператора от аналогичных в других языках 
+программирования.) В конце оператора switch можно указать оператор default. Код, 
+стоящий после него, выполнится в том случае, если значение выражения в заголовке 
+оператора не совпадет ни с одним из значений после операторов case. </p>
+<p class="MsoNormal" style="text-align: justify; line-height: normal; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<b>foreach (переменная as массив) { . . .команды. .. ;</b><strong><span style="letter-spacing:.2pt">}</span><span lang="EN-US" style="letter-spacing: .2pt">&nbsp;</span></strong>— 
+поочередное считывание всех элементов массива. Foreach считывает в указанную в 
+его параметрах переменную поочередно все элементы указанного в них же массива, 
+выполняя каждый раз указанный в фигурных скобках код, в котором может 
+использоваться указанная переменная. (Значения элементов массива этим оператором 
+только считываются, их модификация при помощи команды foreach невозможна.) </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Оператор foreach может быть использован 
+только в РНР версии 4.0 и выше. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+Программа на РНР может прерываться кодом web-страницы<span style="letter-spacing:-.2pt">&nbsp;—
+</span>для этого достаточно вставить закрывающий тэг до этого кода и открывающий<span style="letter-spacing:-.2pt">&nbsp;—
+</span>после. Все, что находится между ними, будет выдаваться в браузер без 
+какой-либо обработки, рассматриваясь как выводимое с помощью команды echo. Иными 
+словами, код </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="letter-spacing: -.5pt"><font size="2">&lt;?php if ($a==l) { ?&gt; &lt;р&gt;Переменная а равна 1 &lt;/p&gt; &lt;?php&gt;}?&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">эквивалентен коду</span></p>
+<pre style="text-align: justify; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="letter-spacing: -.5pt"><font size="2">&lt;?php if ($a==l) {echo &quot;&lt;p&gt; Переменная а равна 1 &lt;/p&gt;&quot;;}?&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Однако, первый вариант меньше нагружает 
+процессор компьютера, на котором расположен интерпретатор РНР. Из сказанного 
+также следует, что все программы на РНР, расположенные на одной web-странице, 
+представляют собой одну большую программу, несмотря на то, что они разделяются 
+блоками обычного текста страницы. Именно поэтому переменная, объявленная в 
+расположенном в начале страницы коде, сохраняет свое значение не только до ее 
+конца, но и во всех присоединяемых с помощью команды include файлах. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">&nbsp;</p>
+<hr size=5>
+<p align="center"><b>Практическая часть</b></p>
+<span style="font-weight:700">Задание:</span><b><i> </i></b>
+<span style="font-weight:700">создайте простейший калькулятор 
+следующего вида:</span><p style="margin:0cm;margin-bottom:.0001pt;text-align:justify;text-indent:35.45pt">
+&nbsp;</p>
+<p align="center" style="margin:0cm;margin-bottom:.0001pt;text-align:center">
+<img border="0" src="../ris/image057.png" width="251" height="107"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:0cm;line-height:normal">
+<b><font size="2">Рис. 9. 14</font></b><font size="2">. Интерфейс приложения «Калькулятор»</font></p>
+<p style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35px; margin-top:0">&nbsp;</p>
+<p style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:
+justify;text-indent:35px; margin-top:0"><span style="letter-spacing: -.3pt">Результат вычислений должен выводиться следующим 
+образом:</span><span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:0cm;line-height:normal">
+<img border="0" src="../ris/image058.png" width="256" height="134"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;text-indent:0cm;line-height:normal">
+<font size="2"><b>Рис. 9. 15. </b>Интерфейс приложения «Калькулятор»</font></p>
+<p class="aCxSpFirst" align="center" style="text-align: center; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpFirst" align="center" style="text-align: center; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<b>Ход работы</b></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">a. Создайте 
+папку с именем calc для разработки приложения на 
+виртуальном диске Z в папке home.</span></p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 53.85pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image059.png" width="403" height="252"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal"><span style="font-weight:700">
+<font size="2">Рис. 9. 16</font></span></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: -18.0pt; line-height: normal; margin-left: 49.65pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">b. <span style="letter-spacing:-.3pt">Файлы, которые будут 
+запускаться при доступе через доменное имя http://</span>calc<span style="letter-spacing:-.3pt"> 
+должны храниться в папке www внутри только что созданного домена. Т.е. </span>
+Z<span style="letter-spacing:-.3pt">:\home\</span>calc<span style="letter-spacing:-.3pt">\www. 
+Поэтому необходимо создать папку </span>
+www<span style="letter-spacing:-.3pt"> 
+в папке </span>calc<span style="letter-spacing:-.3pt"> 
+и сохранять файлы проекта в ней. После этого нужно перезапустить Денвер (при 
+помощи иконки Restart Denwer на рабочем столе), для того, чтобы он создал новый 
+виртуальных хост с именем http:// calc. При этом в папке www появится файл 
+журнала ошибок error.</span></span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+&nbsp;</p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image060.png" width="393" height="192"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal">
+<span style="font-weight:700"><font size="2">Рис. 9. 17</font></span></p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: -17.85pt; line-height: normal; margin-left: 49.6pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">c. Зайдите в 
+папку www и создайте текстовый документ. Сохраните его как
+calc.php. </span> </p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Для просмотра созданной web-страницы (формы) в строке 
+браузера необходимо набрать http://calc и выбрать calc.php.</span></p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.6pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<span style="font-size:12.0pt">&nbsp;</span></p>
+<p class="aCxSpLast" align="center" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+<img border="0" src="../ris/image061.png" width="629" height="380"></p>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:center;
+line-height:normal"><span style="font-weight:700"><font size="2">Рис. 9. 18</font></span></p>
+<p class="a" style="text-align: justify; text-indent: -17.85pt; line-height: normal; margin-left: 49.6pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">d. Введите 
+следующий код:</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;HTML&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;HEAD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;TITLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">Калькулятор</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;/TITLE&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;/HEAD&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;BODY&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;/BODY&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">&lt;/HTML&gt;</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">&lt;?php</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">global $action; </font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">function show() </font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">{</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">?&gt;</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 54.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">
+<span style="letter-spacing:-.3pt">Здесь переменная action отвечает за выбранное арифметическое действие.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">
+<span style="letter-spacing: -.3pt">Функция show осуществляет вывод на экран формы калькулятора.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing:-.3pt">e. Для создания формы на стороне клиента для занесения данных используйте 
+тег</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span style="color: #C00000"><font size="2">&lt;form&gt;</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span style="color: #C00000"><font size="2">&lt;form action=url method=get|post&gt;</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span style="color:#C00000"><font size="2">…</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><font size="2"><span style="color: #C00000">&lt;/form&gt;</span></font></b></pre>
+<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; text-autospace: none; margin-left: 2.0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+&nbsp;</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Атрибут action=url
+определяет url 
+GCI-приложения, предназначенного для обработки присланных данных. По умолчанию 
+используется текущий url.</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">Атрибут
+method=get|post
+указывает метод передачи данных серверу. Метод get (используется по умолчанию) 
+предполагает передачу данных GCI-приложению через переменные среды, 
+устанавливаемые на стороне сервера. В зависимости от web-сервера и операционной 
+системы могут использоваться разные переменные среды. Для передачи данных, 
+присланных методом get, используется переменная QUERY_STRING. </span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing:-.3pt">f. Далее создайте интерфейс калькулятора, как показано на рис. 
+9. 14 и 9. 15. </span>
+</p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">
+<span style="letter-spacing: -.3pt">g. После фрагмента кода, отвечающего за интерфейс калькулятора, вставьте фрагмент кода, реализующий вычисления, т.е. функцию calc.</span></p>
+<p style="text-align: justify; text-indent: 35px; margin-top: 0; margin-bottom: .0001pt">&nbsp;</p>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;HTML&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;HEAD&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;TITLE&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><font size="2">Калькулятор</font></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;/TITLE&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;/HEAD&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;BODY&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;?php</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">global $action; </font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">function show() </font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">{</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">?&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;form action=calc.php method=&quot;get&quot;&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">…</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;/form&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;?</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">}</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">function calc()</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">{</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">…</font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><b><span lang="EN-US" style="color: #C00000"><font size="2">} </font></span></b></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">…</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">?&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;/BODY&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-family: Courier New; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span lang="EN-US"><font size="2">&lt;/HTML&gt;</font></span></pre>
+<pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 54.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">
+<span style="letter-spacing: -.3pt">Для реализации функции используйте оператор выбора switch.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">
+<span style="letter-spacing:-.3pt">Для операции деления организуйте проверку деления на 0 с выводом сообщения об ошибке.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">
+<span style="letter-spacing:-.3pt">Если кнопка «Вычислить» нажата, но числа не введены, то по умолчанию оба числа принимаются равными нулю.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: .0001pt; text-indent:35px">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><span style="font-weight:700">Задание для самостоятельного выполнения</span></p>
+<p style="margin-top: 0; margin-bottom: 0" align="justify">
+<span style="font-weight: 700">Вариант 1.</span> Реализуйте в калькуляторе операцию возведения числа в квадрат (Х2). Значение вводится только в поле «Первое число».</p>
+<pre style="text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;">&nbsp;</span></pre>
+<pre style="text-align: center; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><img border="0" src="../ris/image062.png" width="399" height="143"></pre>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:center;
+line-height:normal"><font size="2"><span style="font-weight:700">Рис. 9. 19. </span>
+Интерфейс калькулятора</font></p>
+<pre style="text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</pre>
+<div align="justify">
+	<p style="margin-top: 0; margin-bottom: 0" align="justify">
+	<span style="font-weight: 700">Вариант 2.</span> Реализуйте в калькуляторе операцию извлечения квадратного корня из числа (&#8730;Х). Значение вводится только в поле «Первое число». 
+	</div>
+<pre style="text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><span style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;">&nbsp;</span></pre>
+<pre style="text-align: center; text-indent: 35.45pt; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt"><img border="0" src="../ris/image063.png" width="460" height="141"></pre>
+<p class="MsoNormal" align="center" style="margin-bottom:0cm;margin-bottom:.0001pt;text-align:center;
+line-height:normal"><font size="2"><span style="font-weight:700">Рис. 9. 20. </span>
+Интерфейс калькулятора</font></p>
+	<p align="justify" style="text-indent: 35px"><i>
+	<span style="line-height: 115%; font-family: Times New Roman; color: #C00000; letter-spacing: -.2pt">
+Примечание:</span></i><span style="line-height: 115%; font-family: Times New Roman; letter-spacing: -.2pt"> 
+для возведения числа в любую степень используется функция </span><b>
+<span lang="EN-US" style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">
+pow</span><span style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">($</span><span lang="EN-US" style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">a</span><span style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">, 
+$</span><span lang="EN-US" style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">b</span><span style="line-height: 115%; font-family: Courier New; color: #C00000; letter-spacing: -.2pt">)</span><span style="line-height: 115%; font-family: Times New Roman; letter-spacing: -.2pt">,
+</span></b>
+<span style="line-height: 115%; font-family: Times New Roman; letter-spacing: -.2pt">
+где $a&nbsp;— число, возводимое в степень, $</span><span lang="EN-US" style="line-height: 115%; font-family: Times New Roman; letter-spacing: -.2pt">b</span><span style="line-height: 115%; font-family: Times New Roman; letter-spacing: -.2pt">&nbsp;— 
+значение степени.</span></p>
+<hr size=5>
+<p align="center" style="margin-bottom: 12px"><b>Контрольные вопросы</b><br>
+</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>1.</b> Что такое виртуальный диск?</p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>2.</b><span style="font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;
+</span>В каких режимах может запускаться комплекс Денвер? </p>
+<p class="aCxSpMiddle" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>3.</b><span style="font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;
+</span>Как запустить сайт с описанием Денвера?</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>4.</b> Что такое web-программирование?</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>5.</b> Что такое web-сервер?</p>
+<p class="aCxSpFirst" style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt">
+<b>6.</b> Для чего служит технология CGI?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>7.</b> На какие группы можно разделить языки программирования, используемые при 
+разработке web-сайтов? К какой из групп относится PHP?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>8.</b> Исправьте ошибку синтаксиса: <font face="Courier New" size="2">&nbsp;?&lt;PHP текст_кода &gt;?</font></p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>9.</b> Как в PHP ставятся комментарии?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>10.</b>&nbsp;Каким символом в PHP отделяются переменные?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>11.</b> Каким символом в PHP отделяются команды?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>12.</b> В чем отличие оператора switch в PHP от аналогичных операторов в других 
+языках программирования?</p>
+<p style="text-align: justify; text-indent: 35.45pt; line-height: normal; margin-top: 0; margin-bottom: .0001pt" class="aCxSpFirst">
+<b>13.</b> В какой папке должны храниться файлы, которые будут запускаться через 
+доменное имя http://my_site (укажите полный путь, при условии, что используется 
+виртуальный диск M)?</p>
+<p class="aCxSpFirst" style="line-height: normal; text-align: justify; text-indent: 35.45pt; margin-top: 0; margin-bottom: .0001pt">
+&nbsp;</p>
+</body>
+</html>
