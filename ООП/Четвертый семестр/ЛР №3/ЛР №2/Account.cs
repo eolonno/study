@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace ЛР__2
 {
@@ -17,8 +18,11 @@ namespace ЛР__2
         }
         public Owner owner { get; set; }
         public string AccountType { get; set; }
+        [Required(ErrorMessage = "Введите данные!")]
         public double Balance { get; set; }
+        [Required(ErrorMessage = "Введите данные!")]
         public bool SMSNotifications { get; set; }
+        [Required(ErrorMessage = "Введите данные!")]
         public bool InternetBanking { get; set; }
         public Account(Owner _Owner, string accountType, double balance, bool SMS, bool Banking)
         {

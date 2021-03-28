@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace ЛР__2
 {
@@ -14,7 +15,9 @@ namespace ЛР__2
         {
 
         }
+        [RegularExpression(@"\w*", ErrorMessage = "Некорректные данные!")]
         public string FIO { get; set; }
+        [Passport]
         public string Passport { get; set; }
         public DateTime BirthDate { get; set; }
         public Owner(string fio, string passport, DateTime birthDate)

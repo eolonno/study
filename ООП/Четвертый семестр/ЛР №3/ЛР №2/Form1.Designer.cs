@@ -79,6 +79,16 @@ namespace ЛР__2
             this.TotalGridView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OperationTypeGridView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.dateLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StatusObjects = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.tabControl.SuspendLayout();
@@ -90,6 +100,10 @@ namespace ЛР__2
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HistoryGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -105,14 +119,15 @@ namespace ЛР__2
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(-1, 2);
+            this.tabControl.Location = new System.Drawing.Point(-1, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(954, 730);
+            this.tabControl.Size = new System.Drawing.Size(954, 705);
             this.tabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.Transaction);
             this.tabPage1.Controls.Add(this.Total);
             this.tabPage1.Controls.Add(this.label12);
@@ -142,7 +157,7 @@ namespace ЛР__2
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(946, 704);
+            this.tabPage1.Size = new System.Drawing.Size(946, 679);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Добавление";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -446,14 +461,13 @@ namespace ЛР__2
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(946, 704);
+            this.tabPage2.Size = new System.Drawing.Size(946, 679);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "БД";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FIO,
             this.Passport,
@@ -464,12 +478,12 @@ namespace ЛР__2
             this.Banking});
             this.dataGridView1.Location = new System.Drawing.Point(52, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 619);
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(842, 619);
             this.dataGridView1.TabIndex = 45;
             // 
             // FIO
             // 
-            this.FIO.Frozen = true;
             this.FIO.HeaderText = "ФИО";
             this.FIO.Name = "FIO";
             this.FIO.ReadOnly = true;
@@ -477,42 +491,36 @@ namespace ЛР__2
             // 
             // Passport
             // 
-            this.Passport.Frozen = true;
             this.Passport.HeaderText = "Паспорт";
             this.Passport.Name = "Passport";
             this.Passport.ReadOnly = true;
             // 
             // Birth
             // 
-            this.Birth.Frozen = true;
             this.Birth.HeaderText = "Дата рождения";
             this.Birth.Name = "Birth";
             this.Birth.ReadOnly = true;
             // 
             // AccountType
             // 
-            this.AccountType.Frozen = true;
             this.AccountType.HeaderText = "Тип счета";
             this.AccountType.Name = "AccountType";
             this.AccountType.ReadOnly = true;
             // 
             // Balance
             // 
-            this.Balance.Frozen = true;
             this.Balance.HeaderText = "Баланс";
             this.Balance.Name = "Balance";
             this.Balance.ReadOnly = true;
             // 
             // SMS
             // 
-            this.SMS.Frozen = true;
             this.SMS.HeaderText = "СМС";
             this.SMS.Name = "SMS";
             this.SMS.ReadOnly = true;
             // 
             // Banking
             // 
-            this.Banking.Frozen = true;
             this.Banking.HeaderText = "Банкинг";
             this.Banking.Name = "Banking";
             this.Banking.ReadOnly = true;
@@ -522,7 +530,7 @@ namespace ЛР__2
             this.tabPage3.Controls.Add(this.HistoryGridView);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(946, 704);
+            this.tabPage3.Size = new System.Drawing.Size(946, 679);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "История";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -536,7 +544,8 @@ namespace ЛР__2
             this.OperationTypeGridView});
             this.HistoryGridView.Location = new System.Drawing.Point(160, 35);
             this.HistoryGridView.Name = "HistoryGridView";
-            this.HistoryGridView.Size = new System.Drawing.Size(595, 622);
+            this.HistoryGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.HistoryGridView.Size = new System.Drawing.Size(590, 622);
             this.HistoryGridView.TabIndex = 0;
             // 
             // DateGridView
@@ -563,12 +572,85 @@ namespace ЛР__2
             // 
             this.errorProvider3.ContainerControl = this;
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.помощьToolStripMenuItem,
+            this.поискToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(950, 24);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.оПрограммеToolStripMenuItem1});
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
+            // 
+            // оПрограммеToolStripMenuItem1
+            // 
+            this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
+            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.оПрограммеToolStripMenuItem1.Text = "О программе";
+            this.оПрограммеToolStripMenuItem1.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            // 
+            // поискToolStripMenuItem
+            // 
+            this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.поискToolStripMenuItem.Text = "Поиск";
+            this.поискToolStripMenuItem.Click += new System.EventHandler(this.поискToolStripMenuItem_Click);
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(ЛР__2.Account);
+            // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dateLabel,
+            this.timeLabel,
+            this.StatusObjects});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 654);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(940, 22);
+            this.statusStrip1.TabIndex = 55;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(60, 17);
+            this.dateLabel.Text = "StatusTime";
+            // 
+            // StatusObjects
+            // 
+            this.StatusObjects.Name = "StatusObjects";
+            this.StatusObjects.Size = new System.Drawing.Size(73, 17);
+            this.StatusObjects.Text = "StatusObjects";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(107, 17);
+            this.timeLabel.Text = "toolStripStatusLabel1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 728);
             this.Controls.Add(this.tabControl);
+            this.Controls.Add(this.menuStrip2);
             this.Name = "Form1";
             this.Text = "Счет";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -587,7 +669,14 @@ namespace ЛР__2
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HistoryGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -621,13 +710,6 @@ namespace ЛР__2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Passport;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Birth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccountType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SMS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Banking;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -641,6 +723,23 @@ namespace ЛР__2
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn OperationTypeGridView;
         private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
+        private System.Windows.Forms.BindingSource accountBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Passport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccountType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SMS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Banking;
+        private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel dateLabel;
+        private System.Windows.Forms.ToolStripStatusLabel StatusObjects;
+        private System.Windows.Forms.ToolStripStatusLabel timeLabel;
     }
 }
 

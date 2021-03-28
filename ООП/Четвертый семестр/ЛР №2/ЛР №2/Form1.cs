@@ -23,7 +23,7 @@ namespace ЛР__2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AccountGenerator();
+            //AccountGenerator();
         }
 
         private void DataGridRowAdd(DataGridView dgv, DateTime? Date = null)

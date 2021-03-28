@@ -9,16 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace ЛР__2
 {
     public partial class Form1 : Form
     {
+        Timer timer = new Timer();
         private List<Account> Accounts = new List<Account>();
         private List<Operation> Operations = new List<Operation>();
         public Form1()
         {
             InitializeComponent();
+
+            timer = new Timer() { Interval = 1000 };
+            timer.Tick += timer_Tick;
+            timer.Start();
+
+            StatusObjects.Text = "Количество счетов: " + Accounts.Count.ToString();
+        }
+        void timer_Tick(object sender, EventArgs e)
+        {
+            dateLabel.Text = DateTime.Now.ToLongDateString();
+            timeLabel.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,7 +41,7 @@ namespace ЛР__2
 
         private void DataGridRowAdd(DataGridView dgv, DateTime? Date = null)
         {
-            int Index = dataGridView1.Rows.Add();
+            int Index = dgv.Rows.Add();
             dgv.Rows[Index].Cells["FIO"].Value = Accounts[Index].owner.FIO;
             dgv.Rows[Index].Cells["Passport"].Value = Accounts[Index].owner.Passport;
             dgv.Rows[Index].Cells["Birth"].Value = Accounts[Index].owner.BirthDate;
@@ -36,6 +49,8 @@ namespace ЛР__2
             dgv.Rows[Index].Cells["Balance"].Value = Accounts[Index].Balance;
             dgv.Rows[Index].Cells["SMS"].Value = Accounts[Index].SMSNotifications ? "+" : "-";
             dgv.Rows[Index].Cells["Banking"].Value = Accounts[Index].InternetBanking ? "+" : "-";
+
+            StatusObjects.Text = "Количество счетов: " + Accounts.Count.ToString();
 
             Operations.Add(new Operation("Создание счета", null, Date != null ? Convert.ToDateTime(Date) : DateTime.Now));
         }
@@ -202,6 +217,14 @@ namespace ЛР__2
                 Account.Toggle(SMSPanel),
                 Account.Toggle(BankingPanel)));
 
+            var Results = new List<ValidationResult>();
+            var Context = new ValidationContext(Accounts.Last());
+            if(!Validator.TryValidateObject(Accounts.Last(), Context, Results, true))
+            {
+                foreach (var error in Results)
+                    MessageBox.Show(error.ErrorMessage, "Ошибка!");
+            }
+
             DataGridRowAdd(dataGridView1);
             ClearFields();
         }
@@ -244,6 +267,18 @@ namespace ЛР__2
         private void Total_Validated(object sender, EventArgs e)
         {
             errorProvider3.Clear();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Версия 0.2076 alfa beta gamma delta \nРазраб: Аникеенко Егор", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void поискToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm(Accounts);
+
+            searchForm.Show();
         }
     }
 }
