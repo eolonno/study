@@ -1,0 +1,85 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LR4_5"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="LR4_5.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="635.257" Width="464">
+    <Window.Resources>
+        <System:String x:Key="m_File">File</System:String>
+        <System:String x:Key="m_File_New">New</System:String>
+        <System:String x:Key="m_File_Open">Open</System:String>
+        <System:String x:Key="m_File_Save">Save</System:String>
+        <System:String x:Key="m_Edit">Edit</System:String>
+        <System:String x:Key="m_Undo">Undo</System:String>
+        <System:String x:Key="m_Copy">Copy</System:String>
+        <System:String x:Key="m_Paste">Paste</System:String>
+        <System:String x:Key="m_Help">Help</System:String>
+        <System:String x:Key="m_Language">Language</System:String>
+        <System:String x:Key="m_Theme">Theme</System:String>
+        <System:String x:Key="m_Black_theme">Black</System:String>
+        <System:String x:Key="m_White_theme">White</System:String>
+        <System:String x:Key="m_Style">Style</System:String>
+        <System:String x:Key="m_Black">Dark</System:String>
+        <System:String x:Key="m_White">White</System:String>
+    </Window.Resources>
+    <StackPanel HorizontalAlignment="Stretch" Height="613" VerticalAlignment="Top" Width="Auto" Margin="0,0,-6.4,0">
+        <Menu VerticalAlignment="Top" Margin="0,0,10,0" Height="29">
+            <MenuItem Header="{DynamicResource m_File}">
+                <MenuItem x:Name="_NewFile" Click="_NewFile_Click" Header="{DynamicResource m_File_New}"/>
+                <MenuItem x:Name="menuOpen" Header="{DynamicResource m_File_Open}" FontFamily="{DynamicResource menuFont}" Foreground="{DynamicResource menuFontColor}" Command="ApplicationCommands.Open" Background="{DynamicResource menuBackgroundColor}" BorderThickness="0">
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="Open" Executed="CommandBinding_Open"/>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+                <MenuItem x:Name="menuSave" Header="{DynamicResource m_File_Save}" FontFamily="{DynamicResource menuFont}" Foreground="{DynamicResource menuFontColor}" Command="ApplicationCommands.Save" Background="{DynamicResource menuBackgroundColor}" BorderThickness="0">
+                    <MenuItem.CommandBindings>
+                        <CommandBinding Command="Save" Executed="CommandBinding_Save"/>
+                    </MenuItem.CommandBindings>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource m_Edit}" Height="25">
+                <MenuItem x:Name="_Undo" Command="Undo" Header="{DynamicResource m_Undo}"/>
+                <MenuItem x:Name="_Copy" Command="Copy" Header="{DynamicResource m_Copy}"/>
+                <MenuItem x:Name="_Paste" Command="Paste" Header="{DynamicResource m_Paste}"/>
+            </MenuItem>
+            <MenuItem x:Name="_Help" Command="ApplicationCommands.Help" Header="{DynamicResource m_Help}"/>
+            <MenuItem x:Name="menuLanguage" Header="{DynamicResource m_Language}"/>
+            <MenuItem Header="{DynamicResource m_Theme}">
+                <MenuItem x:Name="BlackTheme" Click="BlackTheme_Click" Header="{DynamicResource m_Black_theme}"/>
+                <MenuItem x:Name="WhiteTheme" Click="WhiteTheme_Click" Header="{DynamicResource m_White_theme}"/>
+            </MenuItem>
+        </Menu>
+        <ToolBar VerticalAlignment="Top" Margin="0,0,10,0" Height="39" HorizontalAlignment="Right" Width="454">
+            <ToggleButton Command="ToggleBold" ToolTip="Bold">
+                <Image Height="12" Source="D:\_Labs_2_sem\Proga\OOP_Laba_4_5\bold.png"/>
+            </ToggleButton>
+            <Separator/>
+            <ToggleButton Command="ToggleItalic" ToolTip="Italy">
+                <Image Height="16" Source="D:\_Labs_2_sem\Proga\OOP_Laba_4_5\italy.png"/>
+            </ToggleButton>
+            <Separator/>
+            <ToggleButton Command="ToggleUnderline" ToolTip="Underlined">
+                <Image Source="D:\_Labs_2_sem\Proga\OOP_Laba_4_5\Underlined.png"/>
+            </ToggleButton>
+            <Separator/>
+            <ComboBox x:Name="_Font" SelectionChanged="FontFamily_SelectionChanged" Width="155" Margin="0,9,0,9.4"/>
+            <Slider x:Name="_FontSize" Width="74" ValueChanged="_FontSize_OnValueChanged" Minimum="6" Maximum="72" Margin="0,10,0,0" Height="23" VerticalAlignment="Top"/>
+            <!--<xcolor:ColorPicker Name="ClrPcker_Background" Width="100" SelectedColor="Black" SelectedColorChanged="ClrPcker_Background_OnSelectedColorChanged"/>-->
+            <ComboBox x:Name="_Color" Width="94" Height="13" Margin="0,10,0,15.4">
+                <Button x:Name="_Red" Width="40" Height="10" Click="_Red_Click" Background="#FFD60E0E"/>
+                <Button x:Name="_Black" Width="40" Height="10" Click="_Black_Click" Background="Black"/>
+                <Button x:Name="_Blue" Width="40" Height="10" Click="_Blue_Click" Background="Blue"/>
+                <Button x:Name="Green" Width="40" Height="10" Click="Green_Click" Background="Green"/>
+            </ComboBox>
+            <MenuItem x:Name="changeStyle" Visibility="Hidden" Header="{DynamicResource m_Style}" FontFamily="{DynamicResource menuFont}" Foreground="{DynamicResource menuFontColor}" Background="{DynamicResource menuBackgroundColor}">
+                <MenuItem x:Name="changeStyle_dark" Header="{DynamicResource m_Black}" FontFamily="{DynamicResource menuFont}" Foreground="{DynamicResource menuFontColor}" Click="changeStyle_Click" Background="{DynamicResource menuBackgroundColor}" BorderThickness="0"/>
+                <MenuItem x:Name="changeStyle_white" Header="{DynamicResource m_White}" FontFamily="{DynamicResource menuFont}" Foreground="{DynamicResource menuFontColor}" Click="changeStyle_Click" Background="{DynamicResource menuBackgroundColor}" BorderThickness="0"/>
+            </MenuItem>
+        </ToolBar>
+        <TabControl x:Name="_ControlBox" Height="516" Margin="16,0,26,0"/>
+        <Label x:Name="CountWord" Height="16" Margin="16,0,26,0"/>
+    </StackPanel>
+</Window>

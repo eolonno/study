@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+  <Window.Resources>
+    <Style TargetType="Button">
+      <Setter Property="Margin" Value="20 8 20 8" />
+      <Setter Property="Width" Value="100" />
+      <Setter Property="Height" Value="30" />
+    </Style>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <DataGrid AutoGenerateColumns="False" x:Name="phonesGrid" CanUserAddRows="False" IsReadOnly="False" >
+      <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding ID}" Header="Id" Width="120"/>
+        <DataGridTextColumn Binding="{Binding City}" Header="City" Width="125"/>
+        <DataGridTextColumn Binding="{Binding Street}" Header="Street" Width="125"/>
+        <DataGridTextColumn Binding="{Binding House}" Header="House" Width="125"/>
+        <DataGridTemplateColumn Header="Map" x:Name="Map">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Image Source="{Binding Map}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Binding="{Binding MapData}" Header="MapData"/>
+        <DataGridTemplateColumn Header="Choose image" IsReadOnly="True">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Button Click="Button_Click" >Choose
+              </Button>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+      <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+      <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+      <Button x:Name="addButton" Content="add" Click="AddButton_Click" />
+      <Button Click="BackButton_Click" Width="Auto">
+        Prev
+      </Button>
+      <Button Click="NextButton_Click"  Width="Auto">
+        Next
+      </Button>
+    </StackPanel>
+  </Grid>
+</Window>

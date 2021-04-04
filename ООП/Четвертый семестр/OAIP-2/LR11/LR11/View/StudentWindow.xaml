@@ -1,0 +1,33 @@
+﻿<Window x:Class="LR11.View.StudentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LR11.View"
+        mc:Ignorable="d"
+        Title="StudentWindow" Height="200" Width="300">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="100" />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <TextBlock Text="GroupId" />
+    <TextBlock Text="Name" Grid.Row="1" />
+    <TextBlock Text="Note" Grid.Row="2" />
+
+    <TextBox Text="{Binding GroupId}" Grid.Column="1" IsReadOnly="True"/>
+    <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="1" />
+    <TextBox Text="{Binding Note}" Grid.Column="1" Grid.Row="2" />
+
+    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="3" Grid.Column="1">
+      <Button IsDefault="True" Click="Accept_Click" MinWidth="60" Margin="5">OK</Button>
+      <Button IsCancel="True" MinWidth="60" Margin="5">Отмена</Button>
+    </StackPanel>
+  </Grid>
+</Window>

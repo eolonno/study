@@ -1,0 +1,40 @@
+﻿<Window x:Class="OOP_Laba_9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Laba_9"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+  <StackPanel>
+
+    <TabControl>
+      <TabItem>
+        <TabItem.Header>Game</TabItem.Header>
+
+        <DataGrid x:Name="GameDataGrid" AutoGenerateColumns="False">
+
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="GameId" Binding="{Binding Path=Game_ID}"/>
+            <DataGridTextColumn Header="FEN" Binding="{Binding Path=FEN}"/>
+            <DataGridComboBoxColumn x:Name="SelectStatus" Header="GameStatus" SelectedItemBinding="{Binding Path=Game_Status}">
+            </DataGridComboBoxColumn>
+          </DataGrid.Columns>
+
+        </DataGrid>
+      
+      </TabItem>
+    </TabControl>
+
+
+    <Grid>
+
+    </Grid>
+
+  </StackPanel>
+
+
+
+</Window>

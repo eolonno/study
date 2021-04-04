@@ -31,18 +31,31 @@ CMainFrame::~CMainFrame()
 {
 }
 
+void CMainFrame::OnGetMinMaxInfo(MINMAXINFO* lpMMI) {
+
+	lpMMI->ptMinTrackSize.x = 1000; // absolute minimum width for CMainFrame
+	lpMMI->ptMinTrackSize.y = 500; // absolute minimum height for CMainFrame
+
+	//CFrameWnd::OnGetMinMaxInfo(lpMMI);
+}
+
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
 
 	// create a view to occupy the client area of the frame
-	if (!m_wndView.Create(NULL, NULL, AFX_WS_DEFAULT_VIEW,
+	if (!m_wndView.Create(NULL, NULL, WS_CHILD | WS_VISIBLE | WS_BORDER | WS_OVERLAPPEDWINDOW,
 		CRect(0, 0, 0, 0), this, AFX_IDW_PANE_FIRST, NULL))
 	{
 		TRACE0("Failed to create view window\n");
 		return -1;
 	}
+	lpMMI->ptMinTrackSize.x = 1000; // absolute minimum width for CMainFrame
+	lpMMI->ptMinTrackSize.y = 600; // absolute minimum height for CMainFrame
+
+	lpMMI->ptMaxTrackSize.x = 1000; // absolute minimum width for CMainFrame
+	lpMMI->ptMaxTrackSize.y = 600; // absolute minimum height for CMainFrame
 	return 0;
 }
 

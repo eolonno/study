@@ -38,8 +38,9 @@ public:
 protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnSetFocus(CWnd *pOldWnd);
+	void OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 	DECLARE_MESSAGE_MAP()
-
+	
 };
 
 

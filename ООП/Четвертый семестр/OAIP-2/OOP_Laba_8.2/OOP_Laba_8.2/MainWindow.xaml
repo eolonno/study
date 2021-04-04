@@ -1,0 +1,65 @@
+﻿<Window x:Class="OOP_Laba_8._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Laba_8._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"  >
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TabControl x:Name ="mainTab" SelectionChanged="MainTab_SelectionChanged">
+      <TabItem x:Name="accountItem" Header="Student">
+        <DataGrid x:Name="StudentGrid" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="0,0,0,0.4">
+          <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding BOOK_ID}" IsReadOnly="True" Header="ID"/>
+            <DataGridTextColumn Binding="{Binding BOOK_TYPE}" Header="Жанр книги"/>
+            <DataGridTextColumn Binding="{Binding BOOK_NAME}" Header="Название книги" />
+            <DataGridTextColumn Binding="{Binding BOOK_AUTHOR}" Header="Автор книги" />
+            <DataGridTextColumn Binding="{Binding BOOK_SHORT_DESC}" Header="Краткое описание книги"/>
+            <!--<DataGridTextColumn Binding="{Binding BOOK_COVER_NAME}" Header="Возраст"/>-->
+            <DataGridTemplateColumn Header="Фото">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Image Width="30" Height="30" Source="{Binding BOOK_COVER}" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+                    <Image.ToolTip>
+                      <ToolTip Width="200" Height="150">
+                        <StackPanel>
+                          <Image Source="{Binding BOOK_COVER}" />
+                        </StackPanel>
+                      </ToolTip>
+                    </Image.ToolTip>
+                  </Image>
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+          </DataGrid.Columns>
+        </DataGrid>
+      </TabItem>
+      <TabItem x:Name="AddressItem" Header="Address">
+        <DataGrid x:Name="AddressGrid" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Disabled" CanUserAddRows="False" Margin="0,0,0,0.4">
+          <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding TYPE_ID}" IsReadOnly="True" Header="ID"/>
+            <DataGridTextColumn Binding="{Binding TYPE_NAMe}" Header="Название категории"/>
+            <DataGridTextColumn Binding="{Binding TYPE_DESCRIPTION}" Header="Описание категории"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </TabItem>
+    </TabControl>
+    <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+      <Button x:Name="saveButton" Content="Сохранить" Click="SaveButton_Click" />
+      <Button x:Name="updateButton" Content="Обновить" Click="UpdateButton_Click" />
+      <Button Click="BackButton_Click" Width="Auto">
+        <Image Source="resources\ArrowLeft.png" Height="30"></Image>
+      </Button>
+      <Button Click="NextButton_Click"  Width="Auto">
+        <Image Source="resources\ArrowRight.png" Height="30"></Image>
+      </Button>
+      <Button x:Name="deleteButton" Content="Удалить" Click="DeleteButton_Click" />
+      <Button x:Name="addButton" Content="Добавить" Click="AddButton_Click" Height="34" VerticalAlignment="Top" />
+    </StackPanel>
+  </Grid>
+</Window>

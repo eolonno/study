@@ -1,0 +1,58 @@
+﻿<Window x:Class="OOP_Laba_8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP_Laba_8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <TabControl x:Name ="mainTab" SelectionChanged="MainTab_SelectionChanged">
+      <TabItem x:Name="accountItem" Header="BOOK">
+        <DataGrid x:Name="StudentGrid" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Auto" CanUserAddRows="False" Margin="0,0,0,0.4" IsReadOnly="False">
+          <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding BOOK_ID}" IsReadOnly="True" Header="BOOK_ID"/>
+            <DataGridTextColumn Binding="{Binding BOOK_TYPE}" Header="BOOK_TYPE"/>
+            <DataGridTextColumn Binding="{Binding BOOK_NAME}" Header="BOOK_NAME" />
+            <DataGridTextColumn Binding="{Binding BOOK_AUTHOR}" Header="BOOK_AUTHOR" />
+            <DataGridTextColumn Binding="{Binding BOOK_SHORT_DESC}" Header="BOOK_SHORT_DESC"/>
+            <DataGridTextColumn Binding="{Binding Path=ImageSource}" Header="BOOK_COVER"/>
+           
+          </DataGrid.Columns>
+
+        </DataGrid>
+
+        
+      </TabItem>
+      <!--<TabItem x:Name="AddressItem" Header="Address">
+        <DataGrid x:Name="AddressGrid" AutoGenerateColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalScrollBarVisibility="Disabled" CanUserAddRows="False" Margin="0,0,0,0.4">
+          <DataGrid.Columns>
+            <DataGridTextColumn Binding="{Binding ID}" IsReadOnly="True" Header="ID"/>
+            <DataGridTextColumn Binding="{Binding StudentID}" Header="ID владельца"/>
+            <DataGridTextColumn Binding="{Binding Town}" Header="Город"/>
+            <DataGridTextColumn Binding="{Binding Index}" Header="Почтовый индекс" />
+            <DataGridTextColumn Binding="{Binding Street}" Header="Улица"/>
+            <DataGridTextColumn Binding="{Binding House}" Header="Дом"/>
+            <DataGridTextColumn Binding="{Binding Flat}" Header="Квартира"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </TabItem>-->
+    </TabControl>
+    <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+      <Button x:Name="saveButton" Content="Сохранить" Click="SaveButton_Click" />
+      <Button x:Name="updateButton" Content="Обновить" Click="UpdateButton_Click" />
+      <Button Click="BackButton_Click" Width="Auto">
+        <Image Source="Resources\ArrowLeft.png" Height="30" Width="30"/>
+      </Button>
+      <Button Click="NextButton_Click"  Width="Auto">
+        <Image Source="Resources\ArrowRight.png" Height="30"/>
+      </Button>
+      <Button x:Name="deleteButton" Content="Удалить" Click="DeleteButton_Click" />
+      <Button x:Name="addButton" Content="Добавить" Click="AddButton_Click" Height="34" VerticalAlignment="Top" />
+    </StackPanel>
+  </Grid>
+</Window>

@@ -368,8 +368,8 @@ CMatrix CreateTranslate2D(double dx, double dy)
 
 CMatrix CreateRotate2D(double fi)
 {
-	double fg = fmod(fi, 360.);
-	double ff = (fg / 180.)*pi;
+	double fg = fmod(fi, 360);
+	double ff = (fg / 180)*pi;
 	CMatrix RM(3, 3);
 	RM(0, 0) = cos(ff);
 	RM(0, 1) = -sin(ff);
