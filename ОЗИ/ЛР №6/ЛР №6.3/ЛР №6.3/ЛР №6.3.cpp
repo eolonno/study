@@ -66,6 +66,8 @@ void crypt(int p, int g, int x, string inFileName, string outFileName) {
 
     inf.close();
     outf.close();
+
+    cout << "dsfdfs" << mul(power(32, 7, 37), 65, 37);
 }
 
 void decrypt(int p, int x, string inFileName, string outFileName) {

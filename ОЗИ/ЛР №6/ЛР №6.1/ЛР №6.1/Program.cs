@@ -36,6 +36,7 @@ namespace ЛР__6._1
                 Console.WriteLine($"Ключи равны!\nSecretKey = {SecretKey}\nK1 = {K1}\nK2 = {K2}");
             else
                 Console.WriteLine($"Ключи не равны!\nSecretKey = {SecretKey}\nK1 = {K1}\nK2 = {K2}");
+            Console.WriteLine(Power(2, 7, 37));
 
         }
         public static int Power(int a, int b, int n)
