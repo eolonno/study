@@ -1,3 +1,4 @@
+CREATE DATABASE An_MyBase;
 USE	 An_MyBase
 CREATE TABLE Группы(
 	[Номер группы] INT IDENTITY(1,1),

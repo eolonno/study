@@ -66,15 +66,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DermitoryInfo.xaml.cs">
-      <DependentUpon>DermitoryInfo.xaml</DependentUpon>
+    <Compile Include="Controls\LR8Control.cs" />
+    <Compile Include="LR8.xaml.cs">
+      <DependentUpon>LR8.xaml</DependentUpon>
     </Compile>
     <Compile Include="Saver.cs" />
     <Compile Include="Tenant.cs" />
     <Compile Include="TenantsList.xaml.cs">
       <DependentUpon>TenantsList.xaml</DependentUpon>
     </Compile>
-    <Page Include="DermitoryInfo.xaml">
+    <Page Include="LR8.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +99,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TenantsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

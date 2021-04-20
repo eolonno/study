@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ЛР__6_7">
+
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="Yellow"/>
+    <SolidColorBrush x:Key="NormalBrush" Color="Red"/>
+
+    <Style TargetType="Button">
+        <Style.Setters>
+            <Setter Property="Button.Background" Value="Black" />
+            <Setter Property="Button.Foreground" Value="White" />
+            <Setter Property="Button.FontFamily" Value="Verdana" />
+            <Setter Property="Button.Margin" Value="10" />
+        </Style.Setters>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="Foreground" Value="Red" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <DataTrigger Binding="{Binding ElementName=CheckBox1, Path=IsChecked}" Value="True">
+                <Setter Property="IsEnabled" Value="False"/>
+            </DataTrigger>
+            <EventTrigger RoutedEvent="Click">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <Dou bleAnimation Storyboard.TargetProperty="Width" Duration="0:0:1" To="150" AutoReverse="True" />
+                            <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:1" To="80" AutoReverse="True" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="RadioButton" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="Border" 
+                        CornerRadius="2"
+                        BorderThickness="1"
+                        Background="{StaticResource NormalBrush}"
+                        BorderBrush="{StaticResource NormalBorderBrush}">
+                        
+                        <ContentPresenter
+                        Margin="2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        RecognizesAccessKey="True"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

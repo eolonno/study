@@ -25,13 +25,15 @@ namespace ЛР__6_7
     {
         static Cursor CursorArrow = new Cursor(Application.GetResourceStream(new Uri("pack://application:,,,/01_normal_select.cur")).Stream);
         TenantsList TenantsList = new TenantsList();
+        LR8 LR8 = new LR8();
         public MainWindow()
         {
             InitializeComponent();
 
             Cursor = CursorArrow;
 
-            MainFrame.Content = TenantsList;
+            //MainFrame.Content = TenantsList;
+            MainFrame.Content = LR8;
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)
