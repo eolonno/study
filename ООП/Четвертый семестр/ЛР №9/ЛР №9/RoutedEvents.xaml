@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="ЛР__9.RoutedEvents"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ЛР__9"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <TextBlock Text="Direct" HorizontalAlignment="Center"/>
+                <Button x:Name="button1" Width="80" Height="50" Margin="10" >
+                    <Rectangle Width="30" Height="50" Fill="White" MouseDown="Direct_MouseDown" />
+                </Button>
+            </StackPanel>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" x:Name="DirectTextBlock" Grid.Column="1" TextWrapping="Wrap" FontSize="10"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" MouseDown="Bubbling_MouseDown">
+                <TextBlock Text="Bubbling" HorizontalAlignment="Center"/>
+                <Button x:Name="button2" Width="80" Height="50" Margin="10" Click="Bubbling_MouseDown">
+                    <Rectangle Width="30" Height="50" Fill="red" MouseDown="Bubbling_MouseDown" />
+                </Button>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center" Grid.Row="1" x:Name="BubblingTextBlock" Grid.Column="1" TextWrapping="Wrap" FontSize="10"/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" PreviewMouseDown="Tunelling_MouseDown">
+                <TextBlock Text="Tunelling" HorizontalAlignment="Center"/>
+                <Button x:Name="button3" Width="80" Height="50" PreviewMouseDown="Tunelling_MouseDown" Margin="10" >
+                    <Rectangle Width="30" Height="50" Fill="White" PreviewMouseDown="Tunelling_MouseDown" />
+                </Button>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Center" Grid.Row="1" x:Name="TunellingTextBlock" Grid.Column="1" TextWrapping="Wrap" FontSize="10" />
+        </Grid>
+    </Grid>
+</UserControl>

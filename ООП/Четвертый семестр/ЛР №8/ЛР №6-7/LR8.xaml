@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ЛР__6_7"
+      xmlns:MyNamespace="clr-namespace:ЛР__6_7"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LR8">
@@ -20,7 +21,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition x:Name="ThirdColumn"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -35,6 +36,34 @@
         <StackPanel  Grid.Column="1" Grid.Row="1">
             <RadioButton Height="50" Content="RadioButton1"/>
             <RadioButton Height="50" Content="RadioButton2"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <MyNamespace:LR8CustomControl x:Name = "customControl"  
+                 Content = "CustomControl" Width = "90" 
+                 Margin = "10" Click = "customControl_Click"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="2" FontSize="12" FontWeight="Bold" Foreground="Teal" 
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                x:Name="txtBlock">
+                <TextBlock.RenderTransform>
+                    <RotateTransform x:Name="MyRotateTransform" Angle="0" CenterX="200" CenterY="0"/>
+                </TextBlock.RenderTransform>
+
+                <TextBlock.Triggers>
+                    <EventTrigger RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+            Storyboard.TargetName="MyRotateTransform" 
+            Storyboard.TargetProperty="(RotateTransform.Angle)"
+            From="0.0" To="360" Duration="0:0:3" 
+            RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
         </StackPanel>
         
     </Grid>

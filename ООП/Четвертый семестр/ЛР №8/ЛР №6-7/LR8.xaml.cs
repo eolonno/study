@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace ЛР__6_7
 {
@@ -40,6 +41,10 @@ namespace ЛР__6_7
                 SolidColorBrush BgColor = (SolidColorBrush)TryFindResource("BackgroundColor");
                 BgColor.Color = Colors.White;
             }
+        }
+        private void customControl_Click(object sender, RoutedEventArgs e)
+        {
+            txtBlock.Text = "CustomControl";
         }
     }
 }

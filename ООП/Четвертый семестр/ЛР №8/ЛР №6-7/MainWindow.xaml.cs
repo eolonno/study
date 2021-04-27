@@ -63,6 +63,7 @@ namespace ЛР__6_7
             Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("pack://application:,,,/en-US.xaml") });
         }
 
+
         ///// <summary>
         ///// Переключение языка на русский
         ///// </summary>

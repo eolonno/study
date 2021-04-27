@@ -66,10 +66,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\LR8Control.cs" />
     <Compile Include="LR8.xaml.cs">
       <DependentUpon>LR8.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LR8CustomControl.cs" />
     <Compile Include="Saver.cs" />
     <Compile Include="Tenant.cs" />
     <Compile Include="TenantsList.xaml.cs">
@@ -106,6 +106,10 @@
     <Page Include="TenantsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
