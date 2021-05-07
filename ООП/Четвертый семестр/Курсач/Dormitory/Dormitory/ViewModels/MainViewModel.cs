@@ -21,7 +21,12 @@ namespace Dormitory.ViewModels
         }
 
         public MainViewModel()
-        { }
+        {
+            TenantsList = new ObservableCollection<TenantViewModel>();
+            TenantsList.Add(new TenantViewModel(new Tenant(){ Name = "1", LastName = "2", Course = 2, Group = 2, Room = 202, Sex = "m", Patronymic = "3"}));
+            TenantsList.Add(new TenantViewModel(new Tenant(){ Name = "1", LastName = "2", Course = 2, Group = 2, Room = 202, Sex = "m", Patronymic = "3"}));
+            
+        }
 
         #endregion
     }

@@ -36,6 +36,15 @@ namespace Dormitory.ViewModels
                 OnPropertyChanged("LastName");
             }
         }
+        public string Patronymic
+        {
+            get { return Tenant.Patronymic; }
+            set
+            {
+                Tenant.Patronymic = value;
+                OnPropertyChanged("Patronymic");
+            }
+        }
         public string Sex
         {
             get { return Tenant.Sex; }
@@ -45,7 +54,7 @@ namespace Dormitory.ViewModels
                 OnPropertyChanged("Sex");
             }
         }
-        public string Room
+        public int Room
         {
             get { return Tenant.Room; }
             set
@@ -54,7 +63,7 @@ namespace Dormitory.ViewModels
                 OnPropertyChanged("Room");
             }
         }
-        public string Course
+        public int Course
         {
             get { return Tenant.Course; }
             set
@@ -63,7 +72,7 @@ namespace Dormitory.ViewModels
                 OnPropertyChanged("Course");
             }
         }
-        public string Group
+        public int Group
         {
             get { return Tenant.Group; }
             set

@@ -10,10 +10,11 @@ namespace Dormitory.Models
     {
         public string Name { get; set; }
         public string LastName { get; set; }
+        public string Patronymic { get; set; }
         public string Sex { get; set; }
-        public string Room { get; set; }
-        public string Course { get; set; }
-        public string Group { get; set; }
+        public int Room { get; set; }
+        public int Course { get; set; }
+        public int Group { get; set; }
         
     }
 }
