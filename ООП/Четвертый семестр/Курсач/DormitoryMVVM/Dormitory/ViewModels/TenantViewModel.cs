@@ -5,18 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Dormitory.Models;
+using Dormitory.Commands;
+using System.Windows.Input;
+using Dormitory.Models.Data;
 
 namespace Dormitory.ViewModels
 {
-    class TenantViewModel : ViewModelBase
+    public class TenantViewModel : ViewModelBase
     {
         public Tenant Tenant;
         public TenantViewModel(Tenant tenant)
         {
             Tenant = tenant;
         }
+        public TenantViewModel() { }
 
         #region Свойства
+        public int Id { get; set; }
 
         public string Name
         {
@@ -83,5 +88,27 @@ namespace Dormitory.ViewModels
         }
 
         #endregion
+
+        #region Поиск
+
+
+
+        #endregion
+
+        public static implicit operator Tenant(TenantViewModel tenant)
+        {
+            TenantViewModel tenantView = new TenantViewModel()
+            {
+                Name = tenant.Name,
+                LastName = tenant.LastName,
+                Patronymic = tenant.Patronymic,
+                Sex = tenant.Sex,
+                Room = tenant.Room,
+                Course = tenant.Course,
+                Group = tenant.Group
+            };
+            return tenantView;
+        }
+
     }
 }

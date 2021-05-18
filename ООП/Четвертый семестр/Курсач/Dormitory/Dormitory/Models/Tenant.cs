@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Dormitory.Models
 {
-    internal class Tenant
+    public class Tenant
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Patronymic { get; set; }
@@ -15,6 +14,5 @@ namespace Dormitory.Models
         public int Room { get; set; }
         public int Course { get; set; }
         public int Group { get; set; }
-        
     }
 }
