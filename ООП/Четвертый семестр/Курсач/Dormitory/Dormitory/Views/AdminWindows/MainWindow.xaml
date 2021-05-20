@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         xmlns:CommonFrames="clr-namespace:Dormitory.Frames.CommonFrames"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -15,7 +14,7 @@
         xmlns:AdminFrames="clr-namespace:Dormitory.Frames.AdminFrames"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Копийка" Height="600" Width="900" Icon="/Views/AdminWindows/icon.png">
+        Title="Копийка" Height="600" Width="900" Icon="/Views/AdminWindows/icon.png" >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -30,13 +29,19 @@
         <hamburgerMenu:HamburgerMenu Background="#673ab7" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left" Panel.ZIndex="10">
             <hamburgerMenu:HamburgerMenuItem Text="Список жильцов"
                                              Height="50"
-                                             PreviewMouseDown="OpenTenantsList"/>
+                                             PreviewMouseDown="OpenTenantsList" Icon="/Views/AdminWindows/human.png"/>
             <hamburgerMenu:HamburgerMenuItem Text="Списки пользователей"
                                              Height="50"
-                                             PreviewMouseDown="OpenUsersList"/>
+                                             PreviewMouseDown="OpenUsersList" Icon="/Views/AdminWindows/users.png"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Дежурства"
+                                             Height="50"
+                                             PreviewMouseDown="OpenDutiesList" Icon="/Views/AdminWindows/duty.png"/>
             <hamburgerMenu:HamburgerMenuItem Text="Информация"
                                              Height="50"
-                                             PreviewMouseDown="OpenDormitoryInfo"/>
+                                             PreviewMouseDown="OpenDormitoryInfo" Icon="/Views/AdminWindows/magnifier.png"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Настройки"
+                                             Height="50"
+                                             PreviewMouseDown="OpenAccountEditing" Icon="/Views/AdminWindows/setting.png"/>
         </hamburgerMenu:HamburgerMenu>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -58,6 +63,8 @@
             <AdminFrames:TenantsDataGridFrame x:Name="TenantsDataGrid" Grid.Column="1" Grid.Row="1"/>
             <AdminFrames:UsersDataGridFrame Grid.Column="1" Grid.Row="1" x:Name="UsersDataGrid" Visibility="Collapsed" />
             <CommonFrames:DormitoryInfoFrame x:Name="DormitoryInfo" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+            <CommonFrames:EditAccountFrame x:Name="EditAccount" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+            <AdminFrames:DutiesListFrame x:Name="DutiesList" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>

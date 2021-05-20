@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="Dormitory.Frames.CommonFrames.EditAccountFrame"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:Dormitory.Frames"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="13"
+            TextOptions.TextFormattingMode="Ideal"
+            TextOptions.TextRenderingMode="Auto"
+            Background="{DynamicResource MaterialDesignPaper}"
+            FontFamily="{DynamicResource MaterialDesignFont}"
+            mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                   VerticalAlignment="Center"
+                   Margin="20 0"
+                   x:Name="AccountName"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Text="Изменить пароль"
+                       Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                       Margin="50 0"
+                       Grid.Row="1"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="PasswordIcon" Kind="KeyOutline" VerticalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Center"/>
+                <PasswordBox x:Name="PasswordPasswordBox" materialDesign:HintAssist.Hint="Введите пароль" 
+                            Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                            Margin="0 5"
+                            Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="RepeatedPasswordIcon" Kind="KeyOutline" VerticalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Center"/>
+                <PasswordBox x:Name="NewPasswordPasswordBox" materialDesign:HintAssist.Hint="Повторите пароль" 
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    Margin="0 5"
+                    Grid.Column="1"/>
+            </Grid>
+            <Button Content="Изменить" Click="ChangePassword"
+                Margin="0 20"/>
+            <TextBlock Text="Изменить логин"
+                       Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                       Margin="50 0"
+                       Grid.Row="1"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="LoginIcon" Kind="Account" VerticalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Center"/>
+                <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Введите старый логин" 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 5"
+                    Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="NewLoginIcon" Kind="Account" VerticalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Center"/>
+                <TextBox x:Name="NewLoginTextBox" materialDesign:HintAssist.Hint="Введите новый логин" 
+                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    Margin="0 5"
+                    Grid.Column="1"/>
+            </Grid>
+            <Button Content="Изменить" Click="ChangeLogin"
+                Margin="0 20"/>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

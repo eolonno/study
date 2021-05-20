@@ -22,11 +22,23 @@ namespace Dormitory.Frames.UserFrames
     /// </summary>
     public partial class UserRegOnDutyFrame : UserControl
     {
-        public List<Duty> duties { get; set; }
+        private List<Duty> _duties { get; set; }
+        public List<Duty> duties
+        {
+            get { return _duties; }
+            set
+            {
+                var OrderedList = value.OrderBy(x => x.TimeOfDuty).Select(x => x);
+                if (_duties != null)
+                    _duties.Clear();
+                foreach (var v in OrderedList)
+                    _duties.Add(v as Duty);
+            }
+        }
         public UserRegOnDutyFrame()
         {
             InitializeComponent();
-
+            _duties = new List<Duty>();
             duties = DataWorker.GetAllDuties();
 
             if (duties[duties.Count - 1].TimeOfDuty.Month != DateTime.Now.Month)
@@ -49,11 +61,22 @@ namespace Dormitory.Frames.UserFrames
 
             duties = DataWorker.GetAllDuties();
             DutiesDataGrid.ItemsSource = duties;
+            DutiesDataGrid.SelectedCellsChanged += DutiesDataGrid_SelectedCellsChanged;
         }
 
-        private void SignUpToDuty(object sender, MouseButtonEventArgs e)
+        private void DutiesDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            
+            Duty SelectedDuty = DutiesDataGrid.SelectedItem as Duty;
+            if (SelectedDuty != null)
+            {
+                if (SelectedDuty.Orderly == null)
+                    DataWorker.SignUpToDuty(SelectedDuty);
+                else if (SelectedDuty.Orderly == DataWorker.User.Nickname)
+                    DataWorker.RemoveDuty(SelectedDuty);
+                DutiesDataGrid.ItemsSource = null;
+                duties = DataWorker.GetAllDuties();
+                DutiesDataGrid.ItemsSource = duties;
+            }
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Dormitory.Views.UserWindows
             TenantsDataGrid.Visibility = Visibility.Collapsed;
             DormitoryInfo.Visibility = Visibility.Collapsed;
             RegOnDuty.Visibility = Visibility.Visible;
+            AccountEdit.Visibility = Visibility.Collapsed;
         }
 
         private void OpenTenantsList(object sender, MouseButtonEventArgs e)
@@ -38,14 +39,22 @@ namespace Dormitory.Views.UserWindows
             RegOnDuty.Visibility = Visibility.Collapsed;
             DormitoryInfo.Visibility = Visibility.Collapsed;
             TenantsDataGrid.Visibility = Visibility.Visible;
+            AccountEdit.Visibility = Visibility.Collapsed;
         }
         private void OpenDormitoryInfo(object sender, MouseButtonEventArgs e)
         {
             TenantsDataGrid.Visibility = Visibility.Collapsed;
             DormitoryInfo.Visibility = Visibility.Visible;
             RegOnDuty.Visibility = Visibility.Collapsed;
+            AccountEdit.Visibility = Visibility.Collapsed;
         }
-
+        private void OpenAccountEditing(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            RegOnDuty.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            AccountEdit.Visibility = Visibility.Visible;
+        }
         private void SignOut(object sender, RoutedEventArgs e)
         {
             new StartWindow().Show();

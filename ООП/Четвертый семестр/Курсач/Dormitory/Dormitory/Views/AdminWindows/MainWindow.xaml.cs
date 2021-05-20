@@ -29,22 +29,44 @@ namespace Dormitory.Views.AdminWindows
         }
         private void OpenUsersList(object sender, MouseButtonEventArgs e)
         {
-            TenantsDataGrid.Visibility = Visibility.Collapsed;
-            DormitoryInfo.Visibility = Visibility.Collapsed;
             UsersDataGrid.Visibility = Visibility.Visible;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            EditAccount.Visibility = Visibility.Collapsed;
+            TenantsDataGrid.Visibility = Visibility.Visible;
+            DutiesList.Visibility = Visibility.Collapsed;
         }
 
         private void OpenTenantsList(object sender, MouseButtonEventArgs e)
         {
             UsersDataGrid.Visibility = Visibility.Collapsed;
             DormitoryInfo.Visibility = Visibility.Collapsed;
+            EditAccount.Visibility = Visibility.Collapsed;
             TenantsDataGrid.Visibility = Visibility.Visible;
+            DutiesList.Visibility = Visibility.Collapsed;
         }
         private void OpenDormitoryInfo(object sender, MouseButtonEventArgs e)
         {
             TenantsDataGrid.Visibility = Visibility.Collapsed;
+            EditAccount.Visibility = Visibility.Collapsed;
             DormitoryInfo.Visibility = Visibility.Visible;
             UsersDataGrid.Visibility = Visibility.Collapsed;
+            DutiesList.Visibility = Visibility.Collapsed;
+        }
+        private void OpenAccountEditing(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            EditAccount.Visibility = Visibility.Visible;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            UsersDataGrid.Visibility = Visibility.Collapsed;
+            DutiesList.Visibility = Visibility.Collapsed;
+        }
+        private void OpenDutiesList(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            EditAccount.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            UsersDataGrid.Visibility = Visibility.Collapsed;
+            DutiesList.Visibility = Visibility.Visible;
         }
         private void SignOut(object sender, RoutedEventArgs e)
         {

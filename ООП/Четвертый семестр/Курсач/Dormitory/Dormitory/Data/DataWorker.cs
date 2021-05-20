@@ -185,6 +185,41 @@ namespace Dormitory.Data
             }
             return Users;
         }
+        public static void ChangePassword(string oldPass, string newPass)
+        {
+            try
+            {
+                Validator.ValidatePassword(newPass);
+            }
+            catch(ValidatingException ex)
+            { throw ex; }
+
+            string HashedPassword = Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(newPass)));
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                if (User.Password != oldPass)
+                    throw new Exception("Пароль введен неверно");
+                User.Password = newPass;
+                db.SaveChanges();
+            }
+        }
+        public static void ChangeLogin(string oldLogin, string newLogin)
+        {
+            try
+            {
+                Validator.ValidateLogin(newLogin);
+            }
+            catch (ValidatingException ex)
+            { throw ex; }
+
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                if (User.Login != oldLogin)
+                    throw new Exception("Логин введен неверно");
+                User.Login = newLogin;
+                db.SaveChanges();
+            }
+        }
 
         #endregion
 
@@ -233,11 +268,39 @@ namespace Dormitory.Data
                 db.SaveChanges();
             }
         }
-        public static void SignUpToDuty(DateTime dateTime)
+        public static void SignUpToDuty(Duty duty)
         {
             using(ApplicationContext db = new ApplicationContext())
             {
-                (db.Duties.Where(x => x.TimeOfDuty == dateTime) as Duty).Orderly = User.Nickname;
+                foreach(var dutyinner in db.Duties)
+                {
+                    if (duty.TimeOfDuty == dutyinner.TimeOfDuty)
+                        dutyinner.Orderly = User.Nickname;
+                }
+                db.SaveChanges();
+            }
+        }
+        public static void SignUpToDutyForAdmin(Duty duty)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var dutyinner in db.Duties)
+                {
+                    if (duty.TimeOfDuty == dutyinner.TimeOfDuty)
+                        dutyinner.Orderly = duty.Orderly;
+                }
+                db.SaveChanges();
+            }
+        }
+        public static void RemoveDuty(Duty duty)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var dutyinner in db.Duties)
+                {
+                    if (duty.TimeOfDuty == dutyinner.TimeOfDuty)
+                        dutyinner.Orderly = null;
+                }
                 db.SaveChanges();
             }
         }

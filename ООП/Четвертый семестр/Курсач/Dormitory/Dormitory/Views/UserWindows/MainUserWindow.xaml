@@ -6,7 +6,6 @@
         xmlns:UserFrames="clr-namespace:Dormitory.Frames.UserFrames"
         xmlns:CommonFrames="clr-namespace:Dormitory.Frames.CommonFrames"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -35,6 +34,9 @@
                                              Height="50" Icon="/Views/UserWindows/duty.png"/>
             <hamburgerMenu:HamburgerMenuItem Text="Информация" PreviewMouseDown="OpenDormitoryInfo"
                                              Height="50" Icon="/Views/UserWindows/magnifier.png"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Настройки"
+                                             Height="50"
+                                             PreviewMouseDown="OpenAccountEditing" Icon="/Views/UserWindows/setting.png"/>
         </hamburgerMenu:HamburgerMenu>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -56,6 +58,7 @@
             <UserFrames:UserTenantsDataGridFrame x:Name="TenantsDataGrid" Grid.Column="1" Grid.Row="1"/>
             <UserFrames:UserRegOnDutyFrame x:Name="RegOnDuty" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
             <CommonFrames:DormitoryInfoFrame x:Name="DormitoryInfo" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
+            <CommonFrames:EditAccountFrame x:Name="AccountEdit" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>
