@@ -37,19 +37,34 @@ namespace Dormitory.Frames
                 try
                 {
                     User user = DataWorker.RegisterUser(LoginTextBox.Text, PasswordPasswordBox.Password, NicknameComboBox.Text);
-                    new MainUserWindow(user).Show();
+                    new MainUserWindow().Show();
                     Window.GetWindow(this).Close();
                 }
-                catch(Exception ex)
+                catch(ValidatingException ex)
                 {
-                    //Разобраться как вызвать ошибку в Material Design
-                    MessageBox.Show(ex.Message);
+                    if(ex.ValidatingErrorType == ValidatingErrorTypes.PassError)
+                    {
+                        PasswordPasswordBox.ToolTip = ex.Message;
+                        PasswordRepeatedPasswordBox.ToolTip = ex.Message;
+                        PasswordRepeatedPasswordBox.Foreground = Brushes.Red;
+                        PasswordPasswordBox.Foreground = Brushes.Red;
+                        RepeatedPasswordIcon.Foreground = Brushes.Red;
+                        PasswordIcon.Foreground = Brushes.Red;
+                    }
+                    else
+                    {
+                        LoginTextBox.Foreground = Brushes.Red;
+                        LoginTextBox.ToolTip = ex.Message;
+                        LoginIcon.Foreground = Brushes.Red;
+                    }
                 }
             }
             else
             {
-                // Passwords do not compare error
-                MessageBox.Show("Пароли не совпадают");
+                PasswordRepeatedPasswordBox.Foreground = Brushes.Red;
+                PasswordPasswordBox.Foreground = Brushes.Red;
+                PasswordRepeatedPasswordBox.ToolTip = "Пароли не совпадают";
+                PasswordPasswordBox.ToolTip = "Пароли не совпадают";
             }
 
         }

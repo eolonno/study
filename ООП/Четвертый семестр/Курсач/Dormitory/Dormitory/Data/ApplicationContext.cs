@@ -13,6 +13,7 @@ namespace Dormitory.Data
     {
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Duty> Duties { get; set; }
         public ApplicationContext()
         {
             Database.EnsureCreated();

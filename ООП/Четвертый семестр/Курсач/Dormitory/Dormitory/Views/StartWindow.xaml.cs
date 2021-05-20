@@ -26,7 +26,6 @@ namespace Dormitory.Views
         }
         public void SwapRegOrAuth(bool isAuth)
         {
-
             MainGrid.Children.Clear();
             if (isAuth == true)
                 MainGrid.Children.Add(new RegisterFrame());

@@ -28,12 +28,34 @@
         <TextBlock Text="Вход" Style="{StaticResource MaterialDesignHeadline4TextBlock}"
                    Margin="70 40 0 0"/>
         <StackPanel Margin="0 30 0 0"  Width="400" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Введите логин" 
-                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                     Margin="0 5"/>
-            <PasswordBox x:Name="PasswordPasswordBox" materialDesign:HintAssist.Hint="Введите пароль" 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="AccountIcon" Kind="Account" VerticalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"
+                                         HorizontalAlignment="Center"/>
+                <TextBox x:Name="LoginTextBox" materialDesign:HintAssist.Hint="Введите логин" 
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        Margin="0 5"
+                         Grid.Column="1"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon x:Name="PasswordIcon" Kind="KeyOutline" VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"
+                                         Margin="10 0"
+                                         Grid.Column="0"/>
+                <PasswordBox x:Name="PasswordPasswordBox" materialDesign:HintAssist.Hint="Введите пароль" 
                     Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
-                    Margin="0 5"/>
+                    Margin="0 5"
+                    Grid.Column="1"/>
+            </Grid>
             <TextBlock Text="Нет аккаунта?" Style="{StaticResource MaterialDesignButtonTextBlock}"
                    HorizontalAlignment="Center"
                    PreviewMouseDown="TextBlock_PreviewMouseDown"

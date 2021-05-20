@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Dormitory.Models;
+using Dormitory.Frames.UserFrames;
+using Dormitory.Data;
 
 namespace Dormitory.Views.UserWindows
 {
@@ -18,9 +20,36 @@ namespace Dormitory.Views.UserWindows
     /// </summary>
     public partial class MainUserWindow : Window
     {
-        public MainUserWindow(User user)
+        public MainUserWindow()
         {
             InitializeComponent();
+            NicknameField.Text = DataWorker.User.Nickname;
+        }
+
+        private void OpenSignUpForDuty(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            RegOnDuty.Visibility = Visibility.Visible;
+        }
+
+        private void OpenTenantsList(object sender, MouseButtonEventArgs e)
+        {
+            RegOnDuty.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            TenantsDataGrid.Visibility = Visibility.Visible;
+        }
+        private void OpenDormitoryInfo(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Visible;
+            RegOnDuty.Visibility = Visibility.Collapsed;
+        }
+
+        private void SignOut(object sender, RoutedEventArgs e)
+        {
+            new StartWindow().Show();
+            Close();
         }
     }
 }

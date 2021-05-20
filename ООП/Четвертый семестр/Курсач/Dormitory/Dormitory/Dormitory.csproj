@@ -7,6 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\1.jpg" />
+    <None Remove="Images\2.jpg" />
+    <None Remove="Images\3.jpg" />
+    <None Remove="Images\4.jpg" />
+    <None Remove="Images\5.jpg" />
+    <None Remove="Images\6.jpg" />
+    <None Remove="Views\AdminWindows\icon.png" />
+    <None Remove="Views\icon.png" />
+    <None Remove="Views\UserWindows\duty.png" />
+    <None Remove="Views\UserWindows\human.png" />
+    <None Remove="Views\UserWindows\icon.png" />
+    <None Remove="Views\UserWindows\magnifier.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HamburgerMenu" Version="0.1.0" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
@@ -16,6 +31,22 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\2.jpg" />
+    <Resource Include="Images\3.jpg" />
+    <Resource Include="Images\4.jpg" />
+    <Resource Include="Images\5.jpg" />
+    <Resource Include="Images\6.jpg" />
+    <Resource Include="Views\AdminWindows\icon.png" />
+    <Resource Include="Views\icon.png" />
+    <Resource Include="Views\UserWindows\duty.png" />
+    <Resource Include="Views\UserWindows\human.png" />
+    <Resource Include="Views\UserWindows\icon.png" />
+    <Resource Include="Views\UserWindows\magnifier.png" />
   </ItemGroup>
 
 </Project>

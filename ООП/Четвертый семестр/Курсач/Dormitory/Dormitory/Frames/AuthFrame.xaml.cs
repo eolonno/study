@@ -29,25 +29,45 @@ namespace Dormitory.Frames
         }
         private void Auth(object sender, RoutedEventArgs e)
         {
+        //    User user = DataWorker.AuthUser("user", "123");
+        //    DataWorker.User = user;
+        //    MainUserWindow mainUserWindow = new MainUserWindow();
+        //    mainUserWindow.Show();
             try
             {
                 User user = DataWorker.AuthUser(LoginTextBox.Text, PasswordPasswordBox.Password);
+                DataWorker.User = user;
                 if (user.Status == Status.Admin)
                 {
-                    MainWindow mainWindow = new MainWindow(user);
+                    MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     Window.GetWindow(this).Close();
                 }
                 else
                 {
-                    MainUserWindow mainUserWindow = new MainUserWindow(user);
+                    MainUserWindow mainUserWindow = new MainUserWindow();
                     mainUserWindow.Show();
                     Window.GetWindow(this).Close();
                 }
             }
-            catch
+            catch (ValidatingException ex)
             {
-
+                PasswordPasswordBox.ToolTip = ex.Message;
+                LoginTextBox.ToolTip = ex.Message;
+                PasswordIcon.Foreground = Brushes.Red;
+                AccountIcon.Foreground = Brushes.Red;
+                PasswordPasswordBox.Foreground = Brushes.Red;
+                LoginTextBox.Foreground = Brushes.Red;
+                return;
+            }
+            catch (Exception ex)
+            {
+                PasswordPasswordBox.ToolTip = ex.Message;
+                LoginTextBox.ToolTip = ex.Message;
+                PasswordIcon.Foreground = Brushes.Red;
+                AccountIcon.Foreground = Brushes.Red;
+                PasswordPasswordBox.Foreground = Brushes.Red;
+                LoginTextBox.Foreground = Brushes.Red;
             }
         }
 

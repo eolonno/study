@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Dormitory.Models;
+using Dormitory.Data;
 
 namespace Dormitory.Views.AdminWindows
 {
@@ -21,11 +22,34 @@ namespace Dormitory.Views.AdminWindows
     /// </summary>
     public partial class MainWindow : Window
     {
-        User UsingUser { get; set; }
-        public MainWindow(User user)
+        public MainWindow()
         {
-            UsingUser = user;
             InitializeComponent();
+            NicknameField.Text = DataWorker.User.Nickname;
+        }
+        private void OpenUsersList(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            UsersDataGrid.Visibility = Visibility.Visible;
+        }
+
+        private void OpenTenantsList(object sender, MouseButtonEventArgs e)
+        {
+            UsersDataGrid.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Collapsed;
+            TenantsDataGrid.Visibility = Visibility.Visible;
+        }
+        private void OpenDormitoryInfo(object sender, MouseButtonEventArgs e)
+        {
+            TenantsDataGrid.Visibility = Visibility.Collapsed;
+            DormitoryInfo.Visibility = Visibility.Visible;
+            UsersDataGrid.Visibility = Visibility.Collapsed;
+        }
+        private void SignOut(object sender, RoutedEventArgs e)
+        {
+            new StartWindow().Show();
+            Close();
         }
     }
 }

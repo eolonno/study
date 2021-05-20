@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="StartWindow" Height="450" Width="800">
+        Title="Копийка" Height="450" Width="800" Icon="/Views/icon.png">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -26,6 +26,6 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid x:Name="MainGrid">
-        <Frames:RegisterFrame/>
+        <Frames:AuthFrame/>
     </Grid>
 </Window>

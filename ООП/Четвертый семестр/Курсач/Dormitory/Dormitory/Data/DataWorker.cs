@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using Dormitory.Models;
 using System.Security.Cryptography;
+using System.Reflection;
 
 namespace Dormitory.Data
 {
@@ -95,7 +96,7 @@ namespace Dormitory.Data
             }
             return result;
         }
-        public static List<Tenant> SearchByString(string str)
+        public static List<Tenant> SearchTenantsByString(string str)
         {
             List<Tenant> SearchedTenants = new List<Tenant>();
             using (ApplicationContext db = new ApplicationContext())
@@ -103,12 +104,12 @@ namespace Dormitory.Data
                 foreach (var tenant in db.Tenants)
                 {
                     //Лучше переписать с рефлексией
-                    if (tenant.Name.Contains(str) ||
-                           tenant.LastName.Contains(str) ||
-                           tenant.Patronymic.Contains(str) ||
+                    if (tenant.Name.ToLower().Contains(str) ||
+                           tenant.LastName.ToLower().Contains(str) ||
+                           tenant.Patronymic.ToLower().Contains(str) ||
                            tenant.Room.ToString().Contains(str) ||
                            tenant.Group.ToString().Contains(str) ||
-                           tenant.Sex.Contains(str) ||
+                           tenant.Sex.ToLower().Contains(str) ||
                            tenant.Course.ToString().Contains(str))
                         SearchedTenants.Add(tenant);
                 }
@@ -130,15 +131,16 @@ namespace Dormitory.Data
         #endregion
 
         #region Работа с пользователями
+
+        public static User User { get; set; }
         public static User RegisterUser(string login, string password, string nickname)
         {
             try
             {
-                Validator.ValidateString(login);
-                Validator.ValidateString(nickname);
+                Validator.ValidateLogin(login);
                 Validator.ValidatePassword(password);
             }
-            catch(Exception ex)
+            catch(ValidatingException ex)
             { throw ex; }
             
             string HashedPassword = Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(password)));
@@ -157,9 +159,86 @@ namespace Dormitory.Data
             {
                 var user = db.Users.Where(u => u.Password == HashedPassword && u.Login == login);
                 if (user.Count() == 0)
-                    return null;
+                    throw new Exception("Неверно введен логин или пароль");
                 else
                     return user.First();
+            }
+        }
+        public static List<User> GetAllUsers()
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                return db.Users.ToList();
+            }
+        }
+        public static List<User> SearchUsersByString(string str)
+        {
+            List<User> Users = new List<User>();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var user in db.Users)
+                {
+                    if (user.Login.ToLower().Contains(str) ||
+                      user.Nickname.ToLower().Contains(str))
+                        Users.Add(user);
+                }
+            }
+            return Users;
+        }
+
+        #endregion
+
+        #region Работа с дежурствами
+
+        public static List<Duty> GetAllDuties()
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                return db.Duties.ToList();
+            }
+        }
+        public static void AddDuty(DateTime dateTime, string orderly)
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                db.Duties.Add(new Duty(dateTime, orderly));
+                db.SaveChanges();
+            }
+        }
+        public static void RemoveDuty(DateTime dateTime)
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                var duty = db.Duties.Where(x => x.TimeOfDuty == dateTime) as Duty;
+                duty.Orderly = null;
+                db.SaveChanges();
+            }
+        }
+        public static void RefreshDutues(List<Duty> duties)
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var duty in db.Duties)
+                    db.Duties.Remove(duty);
+                foreach (var duty in duties)
+                    db.Duties.Add(new Duty(duty.TimeOfDuty, duty.Orderly));
+                db.SaveChanges();
+            }
+        }
+        public static void AddDutyTime(DateTime dateTime)
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                db.Duties.Add(new Duty(dateTime, null));
+                db.SaveChanges();
+            }
+        }
+        public static void SignUpToDuty(DateTime dateTime)
+        {
+            using(ApplicationContext db = new ApplicationContext())
+            {
+                (db.Duties.Where(x => x.TimeOfDuty == dateTime) as Duty).Orderly = User.Nickname;
+                db.SaveChanges();
             }
         }
 

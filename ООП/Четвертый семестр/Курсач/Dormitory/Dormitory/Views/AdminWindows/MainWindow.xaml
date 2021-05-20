@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        xmlns:CommonFrames="clr-namespace:Dormitory.Frames.CommonFrames"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -11,10 +12,10 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         xmlns:hamburgerMenu="clr-namespace:HamburgerMenu;assembly=HamburgerMenu" 
-        xmlns:local="clr-namespace:Dormitory.Frames.AdminFrames"
+        xmlns:AdminFrames="clr-namespace:Dormitory.Frames.AdminFrames"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Копийка" Height="600" Width="900" Icon="/Views/AdminWindows/icon.png">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -26,15 +27,37 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <hamburgerMenu:HamburgerMenu Background="Purple" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left" Panel.ZIndex="10">
-            <hamburgerMenu:HamburgerMenuItem Text="Списки жильцов"/>
+        <hamburgerMenu:HamburgerMenu Background="#673ab7" MenuIconColor="White" SelectionIndicatorColor="White" MenuItemForeground="White" HorizontalAlignment="Left" Panel.ZIndex="10">
+            <hamburgerMenu:HamburgerMenuItem Text="Список жильцов"
+                                             Height="50"
+                                             PreviewMouseDown="OpenTenantsList"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Списки пользователей"
+                                             Height="50"
+                                             PreviewMouseDown="OpenUsersList"/>
+            <hamburgerMenu:HamburgerMenuItem Text="Информация"
+                                             Height="50"
+                                             PreviewMouseDown="OpenDormitoryInfo"/>
         </hamburgerMenu:HamburgerMenu>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <local:TenantsDataGridFrame Grid.Column="1"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20 0">
+                <Button Content="Выход" Style="{StaticResource MaterialDesignFlatButton}" FontSize="10"
+                        Foreground="#673ab7" VerticalAlignment="Center"
+                        Click="SignOut"/>
+                <TextBlock x:Name="NicknameField" Style="{StaticResource MaterialDesignCaptionTextBlock}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"/>
+            </StackPanel>
+            <AdminFrames:TenantsDataGridFrame x:Name="TenantsDataGrid" Grid.Column="1" Grid.Row="1"/>
+            <AdminFrames:UsersDataGridFrame Grid.Column="1" Grid.Row="1" x:Name="UsersDataGrid" Visibility="Collapsed" />
+            <CommonFrames:DormitoryInfoFrame x:Name="DormitoryInfo" Grid.Column="1" Grid.Row="1" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>

@@ -45,7 +45,7 @@ namespace Dormitory.Frames.UserFrames
             }
             else
             {
-                TenantsList = DataWorker.SearchByString(str);
+                TenantsList = DataWorker.SearchTenantsByString(str);
                 RefreshDataGird();
             }
         }
