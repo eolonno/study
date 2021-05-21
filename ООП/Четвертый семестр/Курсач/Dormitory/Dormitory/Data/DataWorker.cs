@@ -101,30 +101,62 @@ namespace Dormitory.Data
             List<Tenant> SearchedTenants = new List<Tenant>();
             using (ApplicationContext db = new ApplicationContext())
             {
-                foreach (var tenant in db.Tenants)
+                try
                 {
-                    //Лучше переписать с рефлексией
-                    if (tenant.Name.ToLower().Contains(str) ||
-                           tenant.LastName.ToLower().Contains(str) ||
-                           tenant.Patronymic.ToLower().Contains(str) ||
-                           tenant.Room.ToString().Contains(str) ||
-                           tenant.Group.ToString().Contains(str) ||
-                           tenant.Sex.ToLower().Contains(str) ||
-                           tenant.Course.ToString().Contains(str))
-                        SearchedTenants.Add(tenant);
+                    foreach (var tenant in db.Tenants)
+                    {
+                        //Лучше переписать с рефлексией
+                        if (tenant.Name.ToLower().Contains(str.ToLower()) ||
+                               tenant.LastName.ToLower().Contains(str.ToLower()) ||
+                               tenant.Patronymic.ToLower().Contains(str.ToLower()) ||
+                               tenant.Room.ToString().Contains(str.ToLower()) ||
+                               tenant.Group.ToString().Contains(str.ToLower()) ||
+                               tenant.Sex.ToLower().Contains(str.ToLower()) ||
+                               tenant.Course.ToString().Contains(str.ToLower()))
+                            SearchedTenants.Add(tenant);
+                    }
+                }
+                catch(Exception ex)
+                {
+
                 }
             }
             return SearchedTenants;
 
         }
-        public static void RefreshAllTenants(List<Tenant> tenants)
+        public static void RefreshAllTenants(List<Tenant> tenants, bool isSorted)
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                foreach (var tenant in db.Tenants)
-                    db.Tenants.Remove(tenant);
-                foreach (var tenant in tenants)
-                    CreateTenant(tenant.Name, tenant.LastName, tenant.Patronymic, tenant.Sex, tenant.Room, tenant.Course, tenant.Group);
+                foreach(Tenant dbTenant in db.Tenants)
+                {
+                    foreach(var tenant in tenants)
+                    {
+                        if(dbTenant.Id == tenant.Id)
+                        {
+                            dbTenant.LastName = tenant.LastName;
+                            dbTenant.Name = tenant.Name;
+                            dbTenant.Patronymic = tenant.Patronymic;
+                            dbTenant.Course = tenant.Course;
+                            dbTenant.Group = tenant.Group;
+                            dbTenant.Room = tenant.Room;
+                            dbTenant.Sex = tenant.Sex;
+                        }
+                    }
+                }
+                if (db.Tenants.ToList().Count > tenants.Count && !isSorted)
+                {
+                    foreach (var tenant in db.Tenants)
+                        db.Tenants.Remove(tenant);
+                    foreach (var tenant in tenants)
+                        db.Tenants.Add(tenant);
+                }
+                if (db.Tenants.ToList().Count < tenants.Count)
+                {
+                    foreach (var tenant in tenants)
+                        if (tenant.Id == 0)
+                            db.Tenants.Add(tenant);
+                }
                 db.SaveChanges();
             }
         }
@@ -178,8 +210,8 @@ namespace Dormitory.Data
             {
                 foreach (var user in db.Users)
                 {
-                    if (user.Login.ToLower().Contains(str) ||
-                      user.Nickname.ToLower().Contains(str))
+                    if (user.Login.ToLower().Contains(str.ToLower()) ||
+                      user.Nickname.ToLower().Contains(str.ToLower()))
                         Users.Add(user);
                 }
             }
@@ -194,12 +226,16 @@ namespace Dormitory.Data
             catch(ValidatingException ex)
             { throw ex; }
 
-            string HashedPassword = Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(newPass)));
+            string NewHashedPassword = Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(newPass)));
+            string oldHashedPassword = Convert.ToBase64String(MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(oldPass)));
             using(ApplicationContext db = new ApplicationContext())
             {
-                if (User.Password != oldPass)
+                if (User.Password != oldHashedPassword)
                     throw new Exception("Пароль введен неверно");
                 User.Password = newPass;
+                foreach (var user in db.Users)
+                    if (user.Password == oldHashedPassword)
+                        user.Password = NewHashedPassword;
                 db.SaveChanges();
             }
         }
@@ -217,6 +253,9 @@ namespace Dormitory.Data
                 if (User.Login != oldLogin)
                     throw new Exception("Логин введен неверно");
                 User.Login = newLogin;
+                foreach (var user in db.Users)
+                    if (user.Login == oldLogin)
+                        user.Login = newLogin;
                 db.SaveChanges();
             }
         }

@@ -22,12 +22,14 @@ namespace Dormitory.Frames.AdminFrames
     public partial class TenantsDataGridFrame : UserControl
     {
         public List<Tenant> TenantsList { get; set; }
+        private bool isSorted { get; set; }
 
         public TenantsDataGridFrame()
         {
             InitializeComponent();
             TenantsList = DataWorker.GetAllTenants();
             TenantsDataGrid.ItemsSource = TenantsList;
+            isSorted = false;
 
             TenantsDataGrid.SelectedCellsChanged += TenantsDataGrid_SelectedCellsChanged;
             TenantsDataGrid.AddingNewItem += TenantsDataGrid_AddingNewItem; 
@@ -38,12 +40,12 @@ namespace Dormitory.Frames.AdminFrames
         private void TenantsDataGrid_AddingNewItem(object sender, AddingNewItemEventArgs e)
         {
             //DataWorker.CreateTenantByInstance(e.NewItem as Tenant);
-            DataWorker.RefreshAllTenants(TenantsList);
+            DataWorker.RefreshAllTenants(TenantsList, isSorted);
         }
 
         private void TenantsDataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            DataWorker.RefreshAllTenants(TenantsList);
+            DataWorker.RefreshAllTenants(TenantsList, isSorted);
         }
 
         #endregion
@@ -51,14 +53,18 @@ namespace Dormitory.Frames.AdminFrames
         private void SearchMethod(object sender, TextChangedEventArgs e)
         {
             string str = (sender as TextBox).Text;
-            if (String.IsNullOrEmpty(str))
+            if (String.IsNullOrEmpty(str) || str == "")
             {
                 TenantsList = DataWorker.GetAllTenants();
+                TenantsDataGrid.Columns[7].Visibility = Visibility.Visible;
+                isSorted = false;
                 RefreshDataGird();
             }
             else
             {
                 TenantsList = DataWorker.SearchTenantsByString(str);
+                TenantsDataGrid.Columns[7].Visibility = Visibility.Hidden;
+                isSorted = true;
                 RefreshDataGird();
             }
         }

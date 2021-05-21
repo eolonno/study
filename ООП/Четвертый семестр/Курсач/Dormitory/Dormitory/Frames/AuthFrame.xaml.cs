@@ -21,7 +21,7 @@ namespace Dormitory.Frames
     /// <summary>
     /// Логика взаимодействия для AuthFrame.xaml
     /// </summary>
-    public partial class AuthFrame : UserControl
+    public partial class AuthFrame
     {
         public AuthFrame()
         {
@@ -29,10 +29,10 @@ namespace Dormitory.Frames
         }
         private void Auth(object sender, RoutedEventArgs e)
         {
-        //    User user = DataWorker.AuthUser("user", "123");
-        //    DataWorker.User = user;
-        //    MainUserWindow mainUserWindow = new MainUserWindow();
-        //    mainUserWindow.Show();
+            //    User user = DataWorker.AuthUser("user", "123");
+            //    DataWorker.User = user;
+            //    MainUserWindow mainUserWindow = new MainUserWindow();
+            //    mainUserWindow.Show();
             try
             {
                 User user = DataWorker.AuthUser(LoginTextBox.Text, PasswordPasswordBox.Password);

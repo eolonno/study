@@ -29,14 +29,14 @@ namespace Dormitory.Frames.CommonFrames
         }
         private void ChangePassword(object sender, RoutedEventArgs e)
         {
-            if(PasswordPasswordBox.Password != NewPasswordPasswordBox.Password)
+            if(PasswordPasswordBox.Password == NewPasswordPasswordBox.Password)
             {
                 PasswordPasswordBox.Foreground = Brushes.Red;
                 NewPasswordPasswordBox.Foreground = Brushes.Red;
                 RepeatedPasswordIcon.Foreground = Brushes.Red;
                 PasswordIcon.Foreground = Brushes.Red;
-                PasswordPasswordBox.ToolTip = "Пароли не совпадают";
-                NewPasswordPasswordBox.ToolTip = "Пароли не совпадают";
+                PasswordPasswordBox.ToolTip = "Пароли совпадают";
+                NewPasswordPasswordBox.ToolTip = "Пароли совпадают";
             }
             else
             {
@@ -44,6 +44,14 @@ namespace Dormitory.Frames.CommonFrames
                 {
                     DataWorker.ChangePassword(PasswordPasswordBox.Password, NewPasswordPasswordBox.Password);
                     MessageBox.Show("Пароль успешно изменен");
+                    PasswordPasswordBox.Foreground = Brushes.Black;
+                    NewPasswordPasswordBox.Foreground = Brushes.Black;
+                    RepeatedPasswordIcon.Foreground = Brushes.Black;
+                    PasswordIcon.Foreground = Brushes.Black;
+                    PasswordPasswordBox.Password = "";
+                    NewPasswordPasswordBox.Password = "";
+                    PasswordPasswordBox.ToolTip = "";
+                    NewPasswordPasswordBox.ToolTip = "";
                 }
                 catch(ValidatingException ex)
                 {
@@ -64,14 +72,14 @@ namespace Dormitory.Frames.CommonFrames
         }
         private void ChangeLogin(object sender, RoutedEventArgs e)
         {
-            if (LoginTextBox.Text != NewLoginTextBox.Text)
+            if (LoginTextBox.Text == NewLoginTextBox.Text)
             {
                 LoginTextBox.Foreground = Brushes.Red;
                 NewLoginTextBox.Foreground = Brushes.Red;
                 NewLoginIcon.Foreground = Brushes.Red;
                 LoginIcon.Foreground = Brushes.Red;
-                LoginTextBox.ToolTip = "Пароли не совпадают";
-                NewLoginTextBox.ToolTip = "Пароли не совпадают";
+                LoginTextBox.ToolTip = "Логины совпадают";
+                NewLoginTextBox.ToolTip = "Логины совпадают";
             }
             else
             {
@@ -79,6 +87,14 @@ namespace Dormitory.Frames.CommonFrames
                 {
                     DataWorker.ChangeLogin(LoginTextBox.Text, NewLoginTextBox.Text);
                     MessageBox.Show("Логин успешно изменен");
+                    LoginTextBox.Foreground = Brushes.Black;
+                    NewLoginTextBox.Foreground = Brushes.Black;
+                    NewLoginIcon.Foreground = Brushes.Black;
+                    LoginIcon.Foreground = Brushes.Black;
+                    LoginTextBox.ToolTip = "";
+                    NewLoginTextBox.ToolTip = "";
+                    LoginTextBox.Text = "";
+                    NewLoginTextBox.Text = "";
                 }
                 catch (ValidatingException ex)
                 {

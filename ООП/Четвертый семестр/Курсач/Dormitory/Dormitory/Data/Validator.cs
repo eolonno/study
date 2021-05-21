@@ -10,6 +10,7 @@ namespace Dormitory.Data
 {
     public static class Validator
     {
+
         public static bool ValidateLogin(string str)
         {
             string symbols = "!@#$%^^&*()_+=-?.,<>:;\\\"'`~ ";
@@ -34,7 +35,7 @@ namespace Dormitory.Data
         }
         public static bool ValidatePassword(string password)
         {
-            if (password.Length < 0)
+            if (password.Length < 8)
                 throw new ValidatingException("Длина пароля должна быть больше 8 символов", ValidatingErrorTypes.PassError);
             else if (password.Length > 16)
                 throw new ValidatingException("Длина пароля не должна првевышать 16 символов", ValidatingErrorTypes.PassError);

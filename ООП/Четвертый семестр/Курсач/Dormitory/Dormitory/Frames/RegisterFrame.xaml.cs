@@ -37,6 +37,7 @@ namespace Dormitory.Frames
                 try
                 {
                     User user = DataWorker.RegisterUser(LoginTextBox.Text, PasswordPasswordBox.Password, NicknameComboBox.Text);
+                    DataWorker.User = user;
                     new MainUserWindow().Show();
                     Window.GetWindow(this).Close();
                 }

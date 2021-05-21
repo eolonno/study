@@ -76,7 +76,9 @@
                 <DataGridTemplateColumn IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Cursor="Hand" Content="Удалить" Command="Delete" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" BorderThickness="0" Margin="0" Padding="0"/>
+                            <Button Cursor="Hand" Content="Удалить"
+                                    Command="Delete" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                                    BorderThickness="0" Margin="0" Padding="0"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
