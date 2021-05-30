@@ -5,19 +5,38 @@ using UnityEngine.EventSystems;
 
 public class Shooting : MonoBehaviour
 {
-    public void OnPointerClick(PointerEventData eventData)
+    private void Start()
     {
-        Color color = new Color(Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f));
-        GetComponent<Renderer>().material.color = color;
+        
+    }
+    private void Update()
+    {
+        //Добавление луча для дебага
+        var ray = gameObject.GetComponent<Camera>().ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red);
 
-        Vector3 target = eventData.pointerPressRaycast.worldPosition;
-        Vector3 collid = Camera.main.transform.position;
-        float forse = 300f;
+        //Выстрел при нажатии на левую кнопку мыши
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Vector3 fwd = Camera.main.transform.TransformDirection(Vector3.forward);
 
-        Vector3 direction = target - collid;
-        direction = direction.normalized;
-        collid = direction * forse;
+            if (Physics.Raycast(Camera.main.transform.position, fwd, out hit, 100.0f))//Есть пересечение
+            {
+                var Object = hit.collider.GetComponent<Rigidbody>();
+                if (Object != null && Object.name != "Terrain")
+                {
+                    Vector3 target = Object.position;
+                    Vector3 collid = Camera.main.transform.position;
+                    float forse = 300f;
 
-        gameObject.GetComponent<Rigidbody>().AddForceAtPosition(collid, target);
+                    Vector3 direction = target - collid;
+                    direction = direction.normalized;
+                    collid = direction * forse;
+
+                    Object.AddForceAtPosition(collid, target);
+                }
+            }
+        }
     }
 }

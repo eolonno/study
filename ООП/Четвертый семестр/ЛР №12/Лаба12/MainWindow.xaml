@@ -1,0 +1,79 @@
+﻿<Window x:Class="Лаба12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Лаба12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid ItemsSource="{Binding alltovar}" CanUserAddRows="False" AutoGenerateColumns="False" SelectedItem="{Binding Curtools1}" Grid.RowSpan="2">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Binding="{Binding names}"  Width="*" Header="Название"></DataGridTextColumn>
+
+                <DataGridTextColumn Binding="{Binding cost}"  Width="*" Header="Цена"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding info}" Width="*"  Header="Инфо"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid ItemsSource="{Binding allzakaz}" AutoGenerateColumns="False" CanUserAddRows="False" SelectedItem="Curzakaz"  Grid.Column="2" Grid.RowSpan="2" Height="280" Margin="0.2,0,-0.4,0" VerticalAlignment="Top">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Binding="{Binding ids}" Header="Номер"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding client}" Header="Клиент"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding namesss}" Header="Запчасть"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding cost}" Header="Цена"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Изображение" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Photo}"></Image>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="1" Grid.RowSpan="3">
+            <TextBlock Text="Название"></TextBlock>
+            <TextBox Text="{Binding Nick}"></TextBox>
+            <Separator>
+            </Separator>
+            <TextBlock Text="Цена" ></TextBlock>
+            <TextBox Text="{Binding Add_Cost}"></TextBox>
+            <TextBlock Text="Инфо"></TextBlock>
+            <TextBox Text="{Binding Info}"></TextBox>
+            <TextBlock Text="Клиент"></TextBlock>
+            <TextBox Text="{Binding User}"></TextBox>
+            <Button Content="Обновить" Command="{Binding Obnov}" ></Button>
+            <Button Content="Добавить фоток " Command="{Binding Addphot}" ></Button>
+
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Button Command="{Binding Addtov}" Content="Add" Margin="15"></Button>
+            <Button Command="{Binding Del}" Content="Delete" Margin="15"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <Button Command="{Binding addzakaz}" Content="Add" Margin="15"></Button>
+            <Button Command="{Binding Edit}" Content="Edit" Margin="15"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Button Command="{Binding Sort1}" Content="Сортировка 1"></Button>
+            <Button Command="{Binding Sort2}" Content="Сортировка 2"></Button>
+            <Button Command="{Binding Sort3}" Content="Сортировка 3"></Button>
+            <TextBlock Text=" Введите текст"></TextBlock>
+            <TextBox Text="{Binding SEarch}"></TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
