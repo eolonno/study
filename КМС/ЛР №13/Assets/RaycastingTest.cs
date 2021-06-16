@@ -5,13 +5,12 @@ using UnityEngine;
 public class RaycastingTest : MonoBehaviour
 {
     private Camera camera;
-    // Start is called before the first frame update
+    
     void Start()
     {
         camera = GetComponent<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 

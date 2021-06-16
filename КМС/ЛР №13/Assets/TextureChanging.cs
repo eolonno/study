@@ -9,13 +9,6 @@ public class TextureChanging : MonoBehaviour
     public Texture Texture2;
     public Texture Texture3;
     public GameObject gameObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //Движение

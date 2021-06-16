@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -20,7 +13,7 @@ public class Moving : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Color color = new Color(Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f));
-        collision.gameObject.GetComponent<Renderer>().material.color = color;
+        Color randColor = new Color(Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f), Random.Range(.0f, 1.0f));
+        collision.gameObject.GetComponent<Renderer>().material.color = randColor;
     }
 }
