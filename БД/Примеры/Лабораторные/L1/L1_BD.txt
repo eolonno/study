@@ -1,0 +1,28 @@
+create table XXX_t ( x number(3), s varchar2(50));
+
+insert into XXX_t(x, s)
+    values (1, A);
+insert into XXX_t(x, s)
+    values(2,B);
+insert into XXX_t(x, s)
+    values(3, C);
+    
+commit;
+
+UPDATE XXX_t
+    SET s = 'AA'
+    WHERE x = 1;
+    
+UPDATE XXX_t
+    SET s = 'BB'
+    WHERE x = 2;
+    
+commit;
+
+select s, x from XXX_t where x  =  (select max(x) from XXX_t);
+
+delete from XXX_t where x = 2;
+
+commit;
+
+drop table XXX_t;

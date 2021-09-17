@@ -1,0 +1,124 @@
+create table author 
+(id number(10) not null, 
+name varchar2(25), 
+constraint pk_author primary key(id) 
+); 
+
+create table book 
+( 
+id number(10) not null, 
+name varchar2(25), 
+author_id number(10) not null, 
+publish_id number(10) not null, 
+cost number(10), 
+publish_year number(10), 
+constraint pk_book primary key(id), 
+constraint fk_book_author foreign key (author_id) references author(id), 
+constraint fk_book_publish foreign key (publish_id) references publisher(id) 
+); 
+
+
+create table orders( 
+id number(10) not null, 
+odate varchar2(25), 
+book_id number(10) not null, 
+quantity number(10), 
+customer varchar2(25), 
+constraint order_pk primary key(id), 
+constraint order_fk_book foreign key (book_id) references book(id) 
+); 
+
+create table publisher( 
+id number(10) not null, 
+name varchar2(25), 
+city varchar2(25), 
+constraint publisher_pk primary key (id) 
+); 
+
+
+insert into author values(1, 'Pushkin'); 
+insert into author values(2, 'Tolstoi'); 
+insert into author values(3, 'Turgenev'); 
+
+select * from author; 
+
+insert into publisher values(1, 'Minskoe-izd', 'Minsk'); 
+insert into publisher values(2, 'Varshav-izd', 'Varshava'); 
+insert into publisher values(3, 'Kapengagen-izd', 'Kapengagen'); 
+
+select * from publisher; 
+
+insert into book values(1, 'Captains dauther', 1, 1, 10, 1836); 
+insert into book values(4, 'Captains brother', 1, 1, 35, 1836); 
+insert into book values(5, 'Captains mother', 1, 1, 12, 1832); 
+insert into book values(6, 'Captains mother', 1, 1, 12, 1832); 
+insert into book values(2, 'Detstvo', 2, 2, 15, 1852); 
+insert into book values(3, 'Mumu', 3, 3, 13, 2017); 
+
+select * from book; 
+
+insert into orders values(1, '2018/09/09', 1, 25, 'Petya'); 
+insert into orders values(2, '2018/10/09', 2, 50, 'Vasya'); 
+insert into orders values(3, '2018/12/09', 3, 100, 'Gleb');
+
+select * from orders;
+
+create or replace procedure get_book(CODE publisher.name%TYPE) 
+is 
+cursor all_books
+  is select b.cost, b.name from book b inner join publisher p on b.publish_id = p.id; 
+one_book book%rowtype; 
+begin 
+  for one_book in all_books 
+  loop 
+    if one_book.name=code then dbms_output.put_line(one_book.name || ' ' || one_book.cost); 
+    end if;
+  end loop; 
+  exception 
+  when too_many_rows 
+  then dbms_output.put_line('îøèáêà: ìíîãî ñòğîê'); 
+  when others 
+  then dbms_output.put_line(sqlerrm); 
+end get_book; 
+
+
+create or replace procedure get_book(CODE publisher.name%TYPE) 
+is 
+cursor all_books
+  is select name, cost from book where publish_id = (select id from publisher where name = code) 
+  order by cost desc;
+one_book book%rowtype; 
+begin 
+  for one_book in all_books 
+  loop 
+    dbms_output.put_line(one_book.name || ' ' || one_book.cost); 
+  end loop; 
+  exception 
+  when too_many_rows 
+  then dbms_output.put_line('îøèáêà: ìíîãî ñòğîê'); 
+  when others 
+  then dbms_output.put_line(sqlerrm); 
+end get_book; 
+
+
+begin 
+get_book('Minskoe-izd'); 
+end;
+
+create or replace function func_2(st number, fn number, name_publ varchar2) return number 
+is 
+bcount number; 
+begin 
+select count(*) into bcount from book b 
+  where b.publish_year > st and b.publish_year < fn and publish_id = (select id from publisher where name = name_publ);
+return bcount; 
+exception 
+when no_data_found 
+then return -1; 
+when others then 
+return -1; 
+end; 
+
+select * from book; 
+
+select func_2(1800,1900,'Minskoe-izd') from dual;

@@ -1,0 +1,164 @@
+
+body
+{
+display: block;
+margin: 0;
+padding: 0;
+}
+nav
+{
+  height: 50px;
+  width: 100%;
+  background: #88CCEB;  
+  padding: 15px 10px;
+  text-align: center;
+}
+nav > ul
+{
+  padding: 0; 
+}
+
+nav li
+{
+  display: inline-block;
+  vertical-align: top;
+}
+
+nav a
+{
+  color:#fff;
+  padding: 5px 10px;
+  text-decoration: none;
+   font-family: 'Ubuntu Condensed', sans-serif;
+  letter-spacing: 2px;
+   text-transform: uppercase;
+}
+nav a:hover
+{
+  color: #ef7b4f; 
+  border-bottom: solid;
+}
+input[type="checkbox"]
+{
+  display: none;
+}
+nav label
+{
+  display: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px)
+{
+  nav {
+  text-align: left;
+  height: 20px;
+  }
+    nav label{
+         display: inline-block;
+    }
+    nav > ul {
+        display: none;
+    /*width: 100px;*/
+    left: 0;
+    }
+    nav a
+    {
+      color: #ffd16c;
+    }
+  nav li{
+    display: block;
+    vertical-align: top;
+  padding: 2px;
+}
+    input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+    }
+
+}
+.theory-text
+{
+  padding-top: 100px;
+  text-align: justify;
+  padding-right: 70px;
+  padding-left: 70px;
+  text-indent: 20px;
+  font-size: 20px;
+}
+.center-img {
+     display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 300px;
+    padding-top: 80px;
+     border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 100%;
+    width: : auto;
+   
+}
+.footer
+{
+  background: #88CCEB;   
+  text-align: center;
+  margin-top: 182px; 
+  font-size: 20px;
+}
+
+.img-theory
+{
+  display: block;
+    margin: 0 auto;
+  width: 60%;
+}
+.imgist
+{
+  display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 300px;
+    padding-top: 80px;
+     border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+     max-width: 100%;
+    width: : auto;
+}
+.blue
+{
+  font-size: 20px;
+}
+.author1
+{ 
+display: flex;
+justify-content: center;
+}
+
+.div1
+{
+display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  padding-top: 110px;
+}
+.header
+{
+  font-size: 23px;
+  padding-top: 150px;
+ margin-left: 50px;
+ line-height: 0.9em;
+}
+.play-button
+{
+  margin-left: 200px;
+
+}
+.active a
+{
+color: #fe0229;
+}

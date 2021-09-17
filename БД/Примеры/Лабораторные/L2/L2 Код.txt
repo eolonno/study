@@ -1,0 +1,73 @@
+Create tablespace ts_PRO
+    datafile 'ts_PRO.dbf'
+    size 7 m
+    autoextend on next 5 M
+    maxsize 20 m
+    extent management local;
+ 
+    
+Create TEMPORARY tablespace ts_temp_PRO
+    TEMPFILE  'ts_temp_PRO.dbf'
+    size 7 m
+    autoextend on next 3 M
+    maxsize 30 m
+    extent management local;
+    
+select table_name from dictionary;
+
+create role C##PROCORE;
+
+grant create session,
+    create table,
+    create view, 
+    create procedure to C##PROCORE;
+     
+select  from dba_roles where role like 'C##PRO%';
+
+select  from dba_sys_privs where grantee = 'C##PROCORE';
+
+
+create profile C##PRO_PFCORE limit
+    password_life_time 180
+    sessions_per_user 3
+    failed_login_attempts 7
+    password_lock_time 1
+    PASSWORD_REUSE_TIME 10
+    PASSWORD_GRACE_TIME default
+    connect_time 190
+    idle_time 30;
+    
+select  from dba_profiles;
+
+select  from dba_profiles where profile = 'C##PRO_PFCORE';
+
+select  from dba_profiles where profile = 'DEFAULT';
+
+create user C##USR_PROCORE identified by MyPassword
+    default tablespace ts_PRO quota unlimited on ts_PRO
+    temporary tablespace ts_temp_PRO
+    profile C##PRO_PFCORE
+    account unlock
+    password expire;
+    Connections
+
+Create tablespace PRO_Qdata
+    datafile 'PRO_Qdata.dbf'
+    size 10 m
+    OFFLINE 
+    extent management local;
+    
+alter tablespace PRO_Qdata online;
+
+alter user C##USR_PROCORE
+default tablespace PRO_Qdata quota 2 m on PRO_Qdata;
+
+create table XXX_t ( x number(3), s varchar2(50));
+
+insert into XXX_t(x, s)
+    values (1, A);
+insert into XXX_t(x, s)
+    values(2,B);
+insert into XXX_t(x, s)
+    values(3, C);
+    

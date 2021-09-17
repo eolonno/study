@@ -1,0 +1,59 @@
+--1--
+select file_name, tablespace_name FROM DBA_DATA_FILES;
+--2--
+CREATE TABLESPACE PKM_QDATA
+DATAFILE 'C:\app\L5\PKM_QDATA.dbf'
+SIZE 10 m
+autoextend on next 5 m
+maxsize 20 m
+OFFLINE
+extent management local;
+
+ALTER TABLESPACE PKM_QDATA ONLINE
+
+CREATE USER C##PKM IDENTIFIED BY PKM
+DEFAULT TABLESPACE PKM_QDATA QUOTA 2m ON PKM_QDATA
+ACCOUNT UNLOCK
+
+GRANT ALL PRIVILEGES TO C##PKM
+
+CREATE TABLE PKM_T1 
+(id int primary key,
+name varchar(50)) TABLESPACE PKM_QDATA
+
+insert into PKM_T1(id,name)
+values(1, 'Kirill');
+insert into PKM_T1(id,name)
+values  (2, 'Roki');
+insert into PKM_T1(id,name)
+values  (3, 'Gremor');
+--3--
+select distinct * from dba_segments WHERE TABLESPACE_NAME like 'PKM_QDATA';
+select distinct segment_type from dba_segments;
+--4--
+DROP TABLE PKM_T1
+select distinct * from dba_segments WHERE TABLESPACE_NAME like 'PKM_QDATA';
+select * from user_extents where tablespace_name = 'PKM_QDATA'
+--5--
+flashback table PKM_T1 to before drop;
+--6--
+declare i number:=4;
+  begin loop
+    i:=i+1;
+    insert into PKM_T1 values (i,'1Kstr!');
+    exit when (i>=10004);
+  end loop;
+end;
+--7--
+select * from PKM_T1;
+select * from user_segments;
+
+select * from user_segments where TABLESPACE_NAME='PKM_QDATA';
+select * from user_extents where TABLESPACE_NAME='PKM_QDATA';
+--8--
+drop tablespace PKM_QDATA including contents and datafiles;
+--9--
+SELECT GROUP#, STATUS, MEMBERS FROM V$LOG;
+--10--
+select * from V$LOGFILE;
+--11--
