@@ -1,12 +1,12 @@
 create tablespace TS_AYV
-  datafile 'Y:\LW #2\Tablespaces\TS_AYV.dbf'
+  datafile 'Z:\LW #2\Tablespaces\TS_AYV.dbf'
   size 7m
   autoextend on next 5m
   maxsize 20m
   extent management local;
   
 create temporary tablespace TS_AYV_TEMP
-  tempfile 'Y:\LW #2\Tablespaces\TS_AYV_TEMP.dbf'
+  tempfile 'Z:\LW #2\Tablespaces\TS_AYV_TEMP.dbf'
   size 5m
   autoextend on next 3m
   maxsize 30m
@@ -15,14 +15,21 @@ commit;
   
 select tablespace_name from SYS.DBA_TABLESPACES;
 
+--StackOverflow
+alter session set "_ORACLE_SCRIPT"=true;  
+
 create role RLAYV_CORE;
-grant 
-  create session,
-  create table,
-  create view,
-  create procedure to RLAYV_CORE;
-commit;
+drop role RLAVY_CORE;
+grant create session,
+      create table,
+      create view,
+      create procedure to RLAYV_CORE;
   
+grant drop table,
+      drop view,
+      drop procedure to RLAYV_CORE;
+commit;
+
 select * from dba_roles where ROLE = 'RLAYV_CORE';
 select * from dba_roles where ROLE != 'RLAYV_CORE';
 select * from dba_sys_privs;
@@ -48,11 +55,34 @@ create user AYVCORE identified by 123
   profile PF_AYVCORE
   account unlock
   password expire;
+  
+grant RLAYV_CORE to AYVCORE;
 commit;
 
-
-
-
+create tablespace AYV_QDATA
+  datafile 'Z:\LW #2\Tablespaces\AYV_QDATA.dbf'
+  size 10m
+  autoextend on next 5m
+  maxsize 20m
+  extent management local
+  offline;
   
+alter tablespace AYV_QDATA online;
+
+alter user AYVCORE quota 2m on AYV_QDATA;
+
+--AYVCORE
+
+alter user AYVCORE default tablespace AYV_QDATA;
+
+create table AYV_T1
+  (x number(3), 
+  y varchar(10));
+  
+insert into AYV_T1 values (1, 'one');
+insert into AYV_T1 values (2, 'two');
+insert into AYV_T1 values (3, 'three');
+
+select * from AYV_t1;
 
   
