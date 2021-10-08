@@ -50,7 +50,7 @@ int main()
                 throw  SetErrorMsgText("recv:", WSAGetLastError());
 
             
-        } while (count--);
+        } while (--count);
 
         cout << "Ticks: " << clock() - t << endl;
 

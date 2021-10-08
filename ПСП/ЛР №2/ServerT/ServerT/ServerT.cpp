@@ -24,7 +24,7 @@ int main()
             serv.sin_family = AF_INET;           // используется IP-адресация  
             serv.sin_port = htons(2000);         // порт 2000
             //serv.sin_addr.s_addr = INADDR_ANY;   // любой собственный IP-адрес 
-            serv.sin_addr.s_addr = inet_addr("127.0.0.1");   // любой собственный IP-адрес 
+            serv.sin_addr.s_addr = inet_addr("127.0.0.1");  
 
             if (bind(sS, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)
                 throw  SetErrorMsgText("bind:", WSAGetLastError());

@@ -7,7 +7,7 @@ namespace ЛР__1
         static void Main(string[] args)
         {
             //First task
-            Console.WriteLine("First matrix: ");
+            Console.WriteLine("Task 1: ");
             float[][] inMatrix = new float[3][];
             inMatrix[0] = new float[] { 6f, 4.9f, 7f, 6.7f, 5.8f, 6.1f, 5f, 6.9f, 6.8f, 5.9f };
             inMatrix[1] = new float[] { 2f, 0.8f, 3.7f, 3f, 1f, 2.1f, 0.9f, 2.6f, 3f, 1.1f };
@@ -16,7 +16,7 @@ namespace ЛР__1
             Console.WriteLine();
 
             //Second task
-            Console.WriteLine("Second matrix: ");
+            Console.WriteLine("Task 2: ");
             inMatrix = new float[3][];
             inMatrix[0] = new float[] { 84f, 45f, 56f, 34f, 23f };
             inMatrix[1] = new float[] { 85f, 55f, 65f, 40f, 28f };
@@ -24,14 +24,25 @@ namespace ЛР__1
             PrintMatrix(Task.CorrelationMatrix(inMatrix));
             Console.WriteLine();
 
-
+            //Third task
+            Console.WriteLine("Task 3:");
+            Task.Theme2Task2();
+            Console.WriteLine("Task 4:");
+            Task.Theme2Task3();
+            Console.WriteLine("Task 5:");
+            Task.Theme2Task4();
+            Console.WriteLine("Task 6:");
+            Task.Theme2Task5();
+            Console.WriteLine("Task 7 and 8:");
+            Task.Theme2Task6and7();
+            
         }
         private static void PrintMatrix(float[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
-                    Console.Write("{0} \t", double.IsNaN(Math.Round(matrix[i, j], 3)) ? "NaN": Math.Round(matrix[i, j], 3));
+                    Console.Write("{0} \t", double.IsNaN(Math.Round(matrix[i, j], 3)) ? "NaN" : Math.Round(matrix[i, j], 3));
                 Console.WriteLine();
             }
         }

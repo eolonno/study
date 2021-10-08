@@ -22,7 +22,7 @@ namespace L4_Код_Хэмминга
 
 
             int k = str.Length;
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int n = k + r;
 
             int[] mas = new int[str.Length + r];
@@ -76,7 +76,7 @@ namespace L4_Код_Хэмминга
         }
 
         //Считаем r (кол-во пров. симв.)
-        public static int LenghtHemminga(int k)
+        public static int HemmingLenght(int k)
         {
             int r = (int)(Math.Log(k, 2) + 1.99f);
             return r;
@@ -85,7 +85,7 @@ namespace L4_Код_Хэмминга
         //Создание пров. матрицы
         public static int [,] CheckMatrix(int k)
         {
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int n = r + k;
             double rDouble = r-1;
             int rPow = (int)(Math.Pow(2, rDouble));
@@ -142,7 +142,7 @@ namespace L4_Код_Хэмминга
         public static int [] Sindrom(int [,] CheckMatrix, int [] mas, int k)
         {
 
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int n = r + k;
             int[] sindrom = new int[r];
 
@@ -171,7 +171,7 @@ namespace L4_Код_Хэмминга
         public static int[] SearchError(int[] mas, int[,] checkMatrix, int k)
         {
 
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int n = r + k;
 
             int[] beforeSindrom = new int[r];
@@ -229,7 +229,7 @@ namespace L4_Код_Хэмминга
         //Преобразование строки в массив
         public static int [] StrInMas(string str, int k)
         {
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int[] mas = new int[str.Length + r];
 
             for (int i = 0; i < str.Length; i++)
@@ -244,7 +244,7 @@ namespace L4_Код_Хэмминга
         //вывод матрицы
         public static void OutMass(int [,] mas, int k)
         {
-            int r = LenghtHemminga(k);
+            int r = HemmingLenght(k);
             int n = r + k;
 
             for (int i = 0; i < r; i++)
@@ -261,7 +261,7 @@ namespace L4_Код_Хэмминга
         //вывод одномерного массива
         public static void OutMass(int [] mas, int k)
         {
-            int n = LenghtHemminga(k) + k;
+            int n = HemmingLenght(k) + k;
 
             for (int i = 0; i < n; i++)
             {

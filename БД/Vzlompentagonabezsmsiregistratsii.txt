@@ -1,0 +1,119 @@
+--1
+select * from v$pdbs;
+
+alter pluggable database AYV_PDB open; -- learn this command
+
+--2
+select * from v$instance;
+
+
+--3
+select * from dba_registry;
+
+
+--5
+select * from v$pdbs;
+
+
+--from AYV_PDB
+
+create tablespace TS_AYV_PDB
+datafile 'TS_AYV_PDB.dbf'
+size 7M
+autoextend on next 5M
+maxsize 20M
+extent management local;
+
+
+create temporary tablespace TS_AYV_PDB_TEMP
+tempfile 'TS_AYV_PDB_TEMP.dbf'
+size 5M
+autoextend on next 3M
+maxsize 30M
+extent management local;
+
+
+create role RL_AYVCORE_PDB;
+
+grant create session,
+      create table,
+      create view,
+      create procedure,
+      drop any table,
+      drop any view,
+      drop any procedure to RL_AYVCORE_PDB;
+
+create profile PF_AYVCORE_PDB limit
+  password_life_time 180 --number of password's days alive
+  sessions_per_user 3 -- number of user's sessions
+  failed_login_attempts 7 --number of loggin attempts
+  password_lock_time 1 --number of locked days after failed login
+  password_reuse_time 10 --after this days number you can repeat password
+  password_grace_time default --days number of warning about change password
+  connect_time 180 --in minute
+  idle_time 30 --in minute    
+  
+  
+create user U1_AYV_PDB identified by 12345
+default tablespace TS_AYV_PDB quota unlimited on TS_AYV_PDB
+temporary tablespace TS_AYV_PDB_TEMP
+profile PF_AYVCORE_PDB
+account unlock;
+
+grant RL_AYVCORE_PDB to U1_AYV_PDB;
+      
+drop user U1_AYV_PDB;
+
+
+--7
+-- for U1_AYV_PDB
+create table AYV_table
+(
+  x number
+);
+insert into AYV_table
+values (1);
+select *
+from AYV_table;
+
+--8
+-- from AYV_PDB
+select * from user_tablespaces;
+
+select * from dba_data_files;
+select * from dba_temp_files;
+
+select * from dba_roles;
+select * from dba_role_privs order by grantee;
+
+select * from dba_profiles;
+select * from dba_users where common = 'NO';
+
+select u.username, r.granted_role
+from dba_users u
+join dba_role_privs r on u.username = r.grantee
+where u.common = 'NO';
+
+--9
+-- from AYV
+create user c##AYV identified by 12345
+account unlock;
+grant create session to c##AYV;
+
+-- from AYV_pdb
+grant create session to c##AYV;
+
+--11
+-- from AYV_pdb
+select * from v$session where username is not null;
+
+--12
+select * from dba_data_files;
+--13
+-- from AYV
+alter pluggable database AYV_pdb close immediate;
+drop pluggable database AYV_pdb;
+
+
+-- drop all
+drop user c##AYV cascade;
