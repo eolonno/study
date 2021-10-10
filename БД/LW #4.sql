@@ -108,7 +108,7 @@ select * from v$session where username is not null;
 --12
 select * from dba_data_files;
 --13
--- from AYV
+-- from sysdba
 alter pluggable database AYV_pdb close immediate;
 drop pluggable database AYV_pdb;
 

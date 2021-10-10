@@ -19,7 +19,7 @@ select tablespace_name from SYS.DBA_TABLESPACES;
 alter session set "_ORACLE_SCRIPT"=true;  
 
 create role RLAYV_CORE;
-drop role RLAVY_CORE;
+
 grant create session,
       create table,
       create view,
@@ -49,12 +49,11 @@ select * from dba_profiles where PROFILE = 'PF_AYVCORE';
 select * from dba_profiles where PROFILE = 'DEFAULT';
 select * from dba_profiles;
 
-create user AYVCORE identified by 123
+create user AYVCORE identified by Pa$$w0rd
   default tablespace TS_AYV quota unlimited on TS_AYV
   temporary tablespace TS_AYV_TEMP
   profile PF_AYVCORE
-  account unlock
-  password expire;
+  account unlock;
   
 grant RLAYV_CORE to AYVCORE;
 commit;
