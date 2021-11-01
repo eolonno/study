@@ -11,7 +11,7 @@ namespace UpperRegister
             {
                 using(StreamWriter fs = new StreamWriter("output.txt"))
                 {
-                    fs.Write(sr.ReadToEnd().ToUpper());
+                    fs.Write(sr.ReadToEnd().ToLower());
                 }
             }
         }

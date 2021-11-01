@@ -52,4 +52,5 @@ select * from v$sgastat where pool = 'large pool' and name = 'free memory';
 select username, service_name, server from v$session where username is not null;
 
 --13
+--most used objects in the DB
 select * from v$db_object_cache Order by executions desc;

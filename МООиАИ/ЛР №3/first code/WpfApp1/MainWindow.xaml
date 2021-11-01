@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="860">
+    <Grid>
+        <TextBlock Text="Task 1" Margin="173,0,1041.286,381.714" Width="80px" Height="40px" FontSize="20"/>
+        <DataGrid x:Name="Zad2" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="127" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Width="400" Margin="10,12,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Line}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B1" Binding="{Binding B1}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B2" Binding="{Binding B2}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B3" Binding="{Binding B3}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="min" Binding="{Binding a}" IsReadOnly="True" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="Task 2" Margin="606,0,608.286,381.714" Width="80px" Height="40px" FontSize="20"/>
+        <TextBlock x:Name="TextBlockZad2" Padding="5px" HorizontalAlignment="Left" Margin="441,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="124" Background="#FF2B99C8" Foreground="White"/>
+        <DataGrid x:Name="Zad3B" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="155" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Width="400" Margin="10,251,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Line}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B1" Binding="{Binding B1}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B2" Binding="{Binding B2}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B3" Binding="{Binding B3}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B4" Binding="{Binding B4}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="B5" Binding="{Binding B5}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="min" Binding="{Binding a}" IsReadOnly="True" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="Zad3C" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="155" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Width="400" Margin="441,251,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Line}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="C1" Binding="{Binding B1}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="C2" Binding="{Binding B2}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="C3" Binding="{Binding B3}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="C4" Binding="{Binding B4}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="min" Binding="{Binding a}" IsReadOnly="True" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="Zad3D" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="155" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalAlignment="Top" Width="400" Margin="10,411,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="" Binding="{Binding Line}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="D1" Binding="{Binding B1}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="D2" Binding="{Binding B2}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="D3" Binding="{Binding B3}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="D4" Binding="{Binding B4}" IsReadOnly="True" Width="70"/>
+                <DataGridTextColumn Header="min" Binding="{Binding a}" IsReadOnly="True" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="TextBlockZad3" Padding="5px" HorizontalAlignment="Left" Margin="441,411,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="155" Background="#FF2B99C8" Foreground="White"/>
+
+    </Grid>
+</Window>

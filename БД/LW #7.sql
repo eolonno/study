@@ -7,6 +7,7 @@ select * from v$bgprocess;
 select * from v$bgprocess where paddr != '00';
 
 --3
+--count of DBWn processes working now
 select count(*) from v$bgprocess where paddr!= '00' and name like 'DBW%';
 
 --4, 5
@@ -20,15 +21,17 @@ select * from v$services;
 show parameter dispatcher;
 
 --8
+--show listener
 select * from v$services;
 -- orcl
 
 --9
+--connections with instance
 select * from v$session where username is not null;
 
 --10
 --LISTENER.ORA
---C:\app\yegorka\product\12.1.0\dbhome_1\NETWORK\ADMIN\lestener.ora
+--D:\app\admin\product\12.1.0\dbhome_1\NETWORK\ADMIN\listener.ora
 
 --11--
 --start LSNRCTL.exe
