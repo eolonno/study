@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Результаты тестирования %UserName% %UserGroup% %Date%</title>
+<meta name="description" content="Протокол тестирования MyTestX (http://mytest.klyaksa.net) Версия: %Version%">
+<meta name="author" content="MyTestX"> 
+<style>
+h1  { text-align: center; } 
+h2  { text-align: center; } 
+UL { list-style-type: none; }
+table { border-collapse: collapse; border: 1px solid #000000; width: 94%; margin: 0 auto;}
+table.R_TAB {}
+td { text-align: center; border: 1px solid #333333 }
+td.N { font-weight: bold; text-align: center; background-color: #EEEEEE; }
+td.TIME { color: #555555; }
+td.R {}
+td.R_OK { font-weight: bold; color: #008000; background-color: #f0fff0; /*font-size: 110%;*/ }
+td.R_PARTIALLY { font-weight: bold; color: #8080ff; background-color: #f0f0ff; }
+td.R_ERROR { font-weight: bold; color: #ff8080; background-color: #fff0f0; }
+td.R_ASK {}
+.T_TAB thead { text-align: center; font-style: italic; background-color: #EEEEEE; }
+.ThemeTitle { }
+.bottom { padding-left: 50px;}
+tr.title { font-weight: bold; text-align: center; background-color: #EEEEEE; }
+</style>
+</head>
+
+<body>
+
+<h1>Протокол тестирования</h1>
+<ul>
+<li>Имя тестируемого: <b>%UserName%</b>.</li>
+<li>Класс: <b>%UserGroup%</b>.</li>
+<li>Дата тестирования: %Date%.</li>
+<li>Время начала: %TimeBegin%. Время завершения: %TimeEnd%.</li>
+<li>Продолжительность: %TimeLength%.</li>
+<li>Название теста: %TestTitle%.</li>
+<li>Файл с тестом: %TestFile%.</li>
+<li>Файл с тестом: %TestFileFull%.</li>
+<li>UID теста: %TestUID%.</li>
+<li>Всего заданий в тесте: %CountTask%. Выполнено заданий: %CountAskTask%.</li>
+<li>Из них правильно: %CountCorrectTask% (%CountCorrectTaskPercent%% выполненных заданий.)</li>
+<li>Из них ошибок: %CountErrorTask% (%CountErrorTaskPercent%% выполненных заданий).</li>
+<li>Результативность: %Effectiveness%%.</li>
+<li>Использовано подсказок: %CountUsePrompt%.</li>
+<li>Набрано баллов: %Score% из %ScoreMax% возможных. Результат: %ResultScore%%.</li>
+<li><b>Оценка: %Mark%.</b></li>
+
+<li>%MaskOfResult%</li>
+<li>%MaskOfTime%</li>
+<li>%MaskUserAnswer%</li>
+<li>%MaskOfPromptPenalty%</li>
+
+</ul>
+
+<h2>Таблица результатов</h2>
+<center>
+%TabResult% row[Result, Time]
+</center>
+
+<h2>Таблица результатов по группам заданий</h2>
+<center>
+%TabGroupResult% col[Effectivness, Right, Error, Miss, Time, Score]
+</center>
+
+<p><br><br></p>
+
+<p class="bottom">Дата: %DateNow% %TimeNow%.<br></p>
+<p class="bottom">Преподаватель: ____________________/_____________________________________/</p>
+
+</body>
+
+</html>
+

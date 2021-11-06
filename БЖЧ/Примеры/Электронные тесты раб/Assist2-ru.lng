@@ -1,0 +1,123 @@
+;This file created by the Internat Language File Builder
+;Copyright (C) 2001 Theodor IV
+
+[Custom-Messages]
+LANGUAGE                          = Русский
+rsWrongQstText                    = Строка %d: Ошибка в тексте вопроса.
+rsAnsNotFound                     = Строка %d: Не найдены варианты ответов на вопросы.
+rsWrongAnsText                    = Строка %d: Ошибка в варианте ответа на вопрос.
+rsRightAnsNotFound                = Строка %d: Нет ни одного верного ответа на вопрос.
+rsCompileTime                     = Время компиляции:          %.2f сек
+rsQuestCount                      = Общее количество вопросов: %d
+rsNothingSelected                 = Перед сохранением параметров необходимо выбрать темы контроля в предыдущем диалоге
+rsSelectFolder                    = Выберите папку для хранения файла статистики:
+rsStatServNotFound1               = Не найдено ни одного сервера статистики!
+rsStatServNotFound2               = Запустить локально?
+rsQstFilesNotFound                = В папке %s не найдено ни одного файла с вопросами
+rsConfirmClose                    = Вы действительно хотите завершить работу с программой?
+rsCaption                         = Ассистент II - 
+rsControlMode                     = Контроль знаний
+rsTutorMode                       = Тренажёр
+rsQstNumber                       = №%d из %d
+rsFinished                        = Вы прошли 
+rsTopics                          = по теме:
+rsTimeSpent                       = Затрачено времени: 
+rsStatFmtHdr                      = Фамилия и Имя Учащегося       |Режим|Баллов|MAX|Средн|Оценка|Шк|Время начала|Время работы|Средн. время|Время окончания|Дата окончания|Имя компьютера      |Имя пользователя    |Тема
+rsStatFmt                         = %-30.30s|%-5.5s|%6.2f|%3d|%5.2f|%6f|%-2.2s|%-12.12s|%-12.12s|%-12.12s|%-15.15s|%-14.14s|%-20.20s|%-20.20s|%s
+rsTimeFmt                         = hh:mm:ss
+rsDateFmt                         = dd/mm/yyyy
+rsMarkFmt                         = Набрано баллов: %f из %d||Ваша оценка: %f
+rsStatWriteError                  = Результаты не были сохранены в файле статистики из-за какой-то ошибки!||Попробуем ещё раз?
+rsConfirmClose                    = Вы действительно хотите завершить работу с программой?
+rsMarkScale                       = 10
+rsQstMark                         = За вопрос получено %fб.
+rsAppendToLog                     = || ||Вопрос №%d||%s||Варианты ответов:||%s||Получено баллов: %5.2f
+
+[FrmAbout]
+Caption                           = О программе...
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
+LblProgName.Caption               = Ассистент II
+LblProgName.Font.Charset          = RUSSIAN_CHARSET
+Label2.Caption                    = Copyright © 2000-2003 Иваненко Фёдор Григорьевич
+LblSmallAbout.Caption             = Программа контроля знаний учащихся
+LblVersion.Caption                = Версия 1.2
+LblMailTo.Caption                 = Все вопросы направляйте по адресу:
+
+[FrmSetup]
+Caption                           = Настройка
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
+BtnOk.Caption                     = OK
+BtnCancel.Caption                 = Отмена
+BtnAbout.Caption                  = О программе
+BtnSave.Caption                   = Создать *.AQS
+TabSheet1.Caption                 = Тестирование
+GrpBoxMode.Caption                = " Режим работы "
+Label1.Caption                    = Количество задаваемых вопросов:
+GrpBoxOtherSettings.Caption       = " Ограничения по времени "
+Limit.Caption                     = Ограничить время ответа на вопрос до (сек)
+GlobalLimit.Caption               = Ограничить общее время работы до (мин)
+RadBtnTren.Caption                = Тренажер (все вопросы + комментарии)
+RadBtnContr.Caption               = Контроль знаний (часть вопросов, без комментариев)
+GrpBoxMix.Caption                 = " Перемешивать "
+MixQst.Caption                    = Вопросы
+MixAns.Caption                    = Варианты ответов
+GrpBoxDontShow.Caption            = " Во время тестирования НЕ показывать "
+LblTimeRemains.Caption            = Время, оставшееся...
+CBHIdeMark.Caption                = % баллов
+CBHideDate.Caption                = Дату
+CBHideTime.Caption                = Время
+CBHideQstNum.Caption              = № вопроса
+CBHideQstTime.Caption             = ...на 1 вопрос
+CBHideTotalTime.Caption           = ...на все вопросы
+CBDontShowRightAns.Caption        = Верные ответы
+TabSheet2.Caption                 = Дополнительно
+GrpBoxStats.Caption               = " Статистика "
+LblStatsPath.Caption              = Путь к файлу:
+SBtnStatsPath.Hint                = Выбор папки
+Label2.Caption                    = Адрес сервера статистики:
+BtnShowStats.Caption              = Показать статистику
+BtnClearStats.Caption             = Очистить
+CBUseRemoteStats.Caption          = Отправлять статистику на удаленный сервер статистики
+GroupBoxLangSelect.Caption        = " Язык "
+GroupBoxOther.Caption             = " Дополнительные параметры "
+CBMixedTest.Caption               = Смешанный тест (при выборе нескольких тем)
+CBAllowSingleAnswer.Caption       = Не разрешать выбор нескольких вариантов ответа, если в вопросе только один правильный ответ
+CBIntegralMarks.Caption           = Засчитывать только полностью правильные ответы
+
+[FrmView]
+Caption                           = Инструкции
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
+BtnOk.Caption                     = Приступить
+
+[FrmLogin]
+Caption                           = Ассистент II - Выбор темы занятий
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
+BtnCheckAll.Hint                  = Все|Выбрать все темы
+BtnCheckNone.Hint                 = Никакие|Убрать отметку у всех тем
+GrpBoxName.Caption                = " Введите, пожалуйста, Вашу фамилию и имя: "
+GrpBoxExams.Caption               = " Выберите одну или несколько тем для работы: "
+BtnStart.Caption                  = Начать работу
+BtnSetup.Caption                  = Настройка
+BtnClose.Caption                  = Выход
+
+[FrmMain]
+Caption                           = Ассистент II
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
+LblQstMark.Caption                = LblQstMark
+LblRightAnsMsg.Caption            = Верные варианты ответов отмечены знаками 
+GlobalTimeGauge.Hint              = Время, отведённое на весь тест
+TimeGauge.Hint                    = Время, отведённой для ответа на вопрос
+PnlDate.Caption                   = 00.00.0000
+PnlTime.Caption                   = 00:00:00
+NextQst.Caption                   = Следующий вопрос
+PnlQstNum.Caption                 = №1 из 100
+GaugeMark.Hint                    = Процент правильных ответов
+
+[FrmStatus]
+Font.Charset                      = RUSSIAN_CHARSET
+Font.Name                         = Tahoma
