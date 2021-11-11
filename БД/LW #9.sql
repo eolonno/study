@@ -190,9 +190,13 @@ select * from v1;
 
 --17
 create materialized view MV
-    refresh complete on demand next sysdate + numtodsinterval(2, 'minute')
+    build immediate
+    refresh complete
+    start with sysdate
+    next sysdate+1/2880
     as select A1.x, A1.y, B1.yB
     from A1 inner join B1 on A1.x = B1.xB;
+    
 
 select * from MV;
 
