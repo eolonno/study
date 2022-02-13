@@ -4,7 +4,7 @@
 #include "stdafx.h"
 using namespace std;
 
-bool SystemMessage(char *ch)
+bool SystemMessage(char* ch)
 {
 	bool result = false;
 	char Timeout[50] = "Close: timeout;", Close[50] = "Close: finish;", Abort[50] = "Close: Abort;";
@@ -84,8 +84,8 @@ bool GetServer(
 	char* call, //[in] позывной сервера 
 	SOCKADDR_IN* from, //[out] указатель на SOCKADDR_IN
 	int* flen, //[out] указатель на размер from 
-	SOCKET * cC, //сокет
-	SOCKADDR_IN * all
+	SOCKET* cC, //сокет
+	SOCKADDR_IN* all
 )
 {
 	char ibuf[50], //буфер ввода 
@@ -96,17 +96,13 @@ bool GetServer(
 	if ((lobuf = sendto(*cC, call, strlen(call) + 1, NULL,
 		(sockaddr*)all, sizeof(*all))) == SOCKET_ERROR)
 		throw SetErrorMsgText("Sendto:", WSAGetLastError());
+	Sleep(10);
 	if ((libuf = recvfrom(*cC, ibuf, sizeof(ibuf), NULL, (sockaddr*)from, flen)) == SOCKET_ERROR)
 		if (WSAGetLastError() == WSAETIMEDOUT) return false;
 		else throw SetErrorMsgText("Recv:", WSAGetLastError());
-		if (strcmp(call, ibuf) == 0) {
-			//cout«"/////////////////////////////"«endl;
-			// cout«"ip: "«inet_ntoa((*from).sin_addr);
-			return true;
-		}
-		else {
-			return false;
-		}
+	if (strcmp(call, ibuf) == 0)
+		return true;
+	return false;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -118,7 +114,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	WSADATA wsaData;
 	try
 	{
-		
 		// Инициализируем Winsocket
 		if (WSAStartup(MAKEWORD(2, 0), &wsaData) != 0)
 			throw SetErrorMsgText("Startup:", WSAGetLastError());
@@ -146,63 +141,42 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		SOCKADDR_IN Server_IN; //параметры сокета сервера
 		int Flen = sizeof(Server);
-		int chs = 0;
-		cout << "1 - Enter name of server" << endl << "2 - Pozyvnoi" << endl << "> ";
-		cin >> chs;
-		if (chs == 1)
-		{
-			cout << "Enter: ";
-			cin >> Name;
-			hostent* s = gethostbyname(Name);
-			if (s == NULL) throw "Server not found;";
-			cout << "Enter port of server: ";
-			cin >> port;
-			Server_IN.sin_addr = *(struct in_addr *)s->h_addr_list[0];
-		}
-		else if (chs == 2)
-		{
-			cout << "Enter pozyvnoi: ";
-			cin >> Calls;
-			SOCKET cC; //серверный сокет
-			if ((cC = socket(AF_INET, SOCK_DGRAM, NULL)) == INVALID_SOCKET)
-				throw SetErrorMsgText("Socket:", WSAGetLastError());
+		cout << "Enter pozyvnoi: ";
+		cin >> Calls;
+		SOCKET cC; //серверный сокет
+		if ((cC = socket(AF_INET, SOCK_DGRAM, NULL)) == INVALID_SOCKET)
+			throw SetErrorMsgText("Socket:", WSAGetLastError());
 
-			int optval = 1;
-			if (setsockopt(cC, SOL_SOCKET, SO_BROADCAST,
-				(char*)&optval, sizeof(int)) == SOCKET_ERROR)
-				throw SetErrorMsgText("Opt:", WSAGetLastError());
-			struct timeval timeout;
-			timeout.tv_sec = 3;
-			timeout.tv_usec = 0;
-			if (setsockopt(cC, SOL_SOCKET, SO_RCVTIMEO, (char*)&timeout, sizeof(timeout)) == SOCKET_ERROR)
-				throw SetErrorMsgText("Opt:", WSAGetLastError());
+		int optval = 1;
+		if (setsockopt(cC, SOL_SOCKET, SO_BROADCAST,
+			(char*)&optval, sizeof(int)) == SOCKET_ERROR)
+			throw SetErrorMsgText("Opt:", WSAGetLastError());
+		struct timeval timeout;
+		timeout.tv_sec = 3;
+		timeout.tv_usec = 0;
+		if (setsockopt(cC, SOL_SOCKET, SO_RCVTIMEO, (char*)&timeout, sizeof(timeout)) == SOCKET_ERROR)
+			throw SetErrorMsgText("Opt:", WSAGetLastError());
 
-			SOCKADDR_IN all; //параметры сокета sS
-			all.sin_family = AF_INET; //используется IP-адресация 
-			all.sin_port = htons(bport); //порт для широковещания
-			all.sin_addr.s_addr = INADDR_BROADCAST; //всем
-			SOCKADDR_IN clnt; //параметры сокета клиента
-			memset(&clnt, 0, sizeof(clnt)); //обнулить память
-			int lc = sizeof(clnt); //размер SOCKADDR_IN
+		SOCKADDR_IN all; //параметры сокета sS
+		all.sin_family = AF_INET; //используется IP-адресация 
+		all.sin_port = htons(bport); //порт для широковещания
+		all.sin_addr.s_addr = INADDR_BROADCAST; //всем
+		SOCKADDR_IN clnt; //параметры сокета клиента
+		memset(&clnt, 0, sizeof(clnt)); //обнулить память
+		int lc = sizeof(clnt); //размер SOCKADDR_IN
 
-			bool bsr = GetServer(Calls, &clnt, &lc, &cC, &all);
-			if (bsr == false) throw "Server not found;";
-			else
-			{
-				Server_IN.sin_addr.s_addr = clnt.sin_addr.s_addr;
-				if (closesocket(cC) == SOCKET_ERROR)
-					throw SetErrorMsgText("Closesocket:", WSAGetLastError());
-				cout << "Enter port of server: ";
-				cin >> port;
-			}
+		bool bsr = GetServer(Calls, &clnt, &lc, &cC, &all);
+		if (bsr == false) throw "Server not found;";
 
-		}
-		else throw "Wrong code";
+		Server_IN.sin_addr.s_addr = clnt.sin_addr.s_addr;
+		if (closesocket(cC) == SOCKET_ERROR)
+			throw SetErrorMsgText("Closesocket:", WSAGetLastError());
+		cout << "Enter port of server: ";
+		cin >> port;
 
 		// Параметры сокета сервера
 		Server_IN.sin_family = AF_INET; //используется IP-адресация 
 		Server_IN.sin_port = htons(port); //TCP-порт
-
 		// Установить соединение с сокетом
 		if ((connect(ClientSocket, (sockaddr*)&Server_IN, sizeof(Server_IN))) == SOCKET_ERROR)
 			/*throw SetErrorMsgText("Connect:",WSAGetLastError());*/
@@ -217,7 +191,6 @@ int _tmain(int argc, _TCHAR* argv[])
 				fin = true;
 				break;
 			}
-
 			else
 			{
 				if (closesocket(ClientSocket) == SOCKET_ERROR)
@@ -253,60 +226,56 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		if (strcmp(Call, rCall) != 0)
 			throw "Fail of server";
-		else
+
+		bool Check = true;
+		fin = false;
+
+		u_long nonblk = 1;
+		if (SOCKET_ERROR == ioctlsocket(ClientSocket, FIONBIO, &nonblk))
+			throw SetErrorMsgText("Ioctlsocket:", WSAGetLastError());
+		clock_t StartTime = clock();
+		bool rcv = true;
+
+		char iib[50];
+
+		while (!fin)
 		{
-			bool Check = true;
-			fin = false;
-
-			u_long nonblk = 1;
-			if (SOCKET_ERROR == ioctlsocket(ClientSocket, FIONBIO, &nonblk))
-				throw SetErrorMsgText("Ioctlsocket:", WSAGetLastError());
-			clock_t StartTime = clock();
-			bool rcv = true;
-
-			char iib[50];
-			std::cout << "->";
-			std::cin >> iib;
-
-			while (!fin)
+			if (rcv)
 			{
-				if (rcv)
-				{
-					// Отправка сообщения
-					if ((lobuf = send(ClientSocket, iib, sizeof(iib), NULL)) == SOCKET_ERROR)
-						/*throw SetErrorMsgText("Send:",WSAGetLastError());*/
-						throw "Error;";
-					rcv = false;
-				}
-				// Принимаем сообщение
+				std::cout << "->";
+				std::cin >> iib;
+				// Отправка сообщения
+				if ((lobuf = send(ClientSocket, iib, sizeof(iib), NULL)) == SOCKET_ERROR)
+					throw SetErrorMsgText("Send:", WSAGetLastError());
+				rcv = false;
+			}
+			// Принимаем сообщение
 
-				if ((recv(ClientSocket, obuf, sizeof(obuf), NULL)) == SOCKET_ERROR)
+			if ((recv(ClientSocket, obuf, sizeof(obuf), NULL)) == SOCKET_ERROR)
+			{
+				switch (WSAGetLastError())
 				{
-					switch (WSAGetLastError())
-					{
-					case WSAEWOULDBLOCK: Sleep(100); break;
-					default: throw SetErrorMsgText("Recv:", WSAGetLastError());
-					}
+				case WSAEWOULDBLOCK: Sleep(100); break;
+				default: throw SetErrorMsgText("Recv:", WSAGetLastError());
+				}
+			}
+			else
+			{
+				if (SystemMessage(obuf))
+				{
+					printf("Server stopped connection: %s\n", obuf);
+					break;
 				}
 				else
-				{
-					if (SystemMessage(obuf))
-					{
-						printf("Server stopped connection: %s\n", obuf);
-						break;
-					}
-					else
-						// Выводим полученное сообщение
-						printf("Received message:[%s]\n", obuf);
-					rcv = true;
-				}
-
+					// Выводим полученное сообщение
+					printf("Received message:[%s]\n", obuf);
+				rcv = true;
 			}
 
-			clock_t FinishTime = clock();
-			printf("Time: %lf sec.\n", (double)(FinishTime - StartTime) / CLOCKS_PER_SEC);
-
 		}
+
+		clock_t FinishTime = clock();
+		printf("Time: %lf sec.\n", (double)(FinishTime - StartTime) / CLOCKS_PER_SEC);
 
 		// Закрываем сокет
 		if (closesocket(ClientSocket) == SOCKET_ERROR)
@@ -320,7 +289,6 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		cout << errorMsgText << endl;
 	}
-
 	system("pause");
 	return 0;
 }

@@ -3,17 +3,16 @@
 declare
     IT faculty%rowtype;
 begin
-    select FACULTY, FACULTY_NAME 
-        into IT 
-        from faculty 
+    select FACULTY, FACULTY_NAME
+        into IT
+        from faculty
         where faculty = 'IT';
     dbms_output.put_line('faculty: ' || IT.faculty);
     dbms_output.put_line('facluty_name: ' || IT.faculty_name);
-    exception 
+    exception
         when others
             then dbms_output.put_line(sqlerrm);
 end;
-
 
 --2
 --sqlcode/sqlerrm

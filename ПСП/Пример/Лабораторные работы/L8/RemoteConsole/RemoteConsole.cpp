@@ -23,8 +23,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	try
 	{
 		printf("\nCommands:\n 1 - Start  \t \n 2 - Stop  \t \n 3 - Exit  \t \n 4 - Statistics  \n 5 - Wait  \t\n 6 - Shutdown  \t \n 7 - Finish RConsole\t\n 8 - LoadLib \t\n 9 - CloseLib \n\n");
-		char ReadBuf[50] = "";// Буффер для примема сообшения от сервера
-		char WriteBuf[2] = "";// Буффер для отправки сообщения серверу
+		char ReadBuf[50] = "";// Буфер для примема сообшения от сервера
+		char WriteBuf[2] = "";// Буфер для отправки сообщения серверу
 		DWORD nBytesRead;
 		DWORD nBytesWrite;
 
@@ -32,12 +32,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 		char serverName[256];
 		char PipeName[512];
-		bool result;
 
 
 		cout << "Enter server name: ";
 		cin >> serverName;
-		result = sprintf(PipeName, "\\\\%s\\pipe\\smc", serverName);
+		sprintf(PipeName, "\\\\%s\\pipe\\smc", serverName);
 
 
 		BOOL fSuccess;
@@ -73,7 +72,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			printf("Command: ");
 			scanf("%d", &Code);
-			if (Code>0 && Code<7)
+			if (Code > 0 && Code < 7)
 			{
 				sprintf(WriteBuf, "%d", Code - 1);
 				if (!WriteFile(hNamedPipe, WriteBuf, strlen(WriteBuf) + 1, &nBytesWrite, NULL))
@@ -98,7 +97,7 @@ int _tmain(int argc, _TCHAR* argv[])
 				else
 					throw "ReadFile: Ошибка ";
 			}
-			else if (Code>9) printf("Неверная команда.\n\n");
+			else if (Code > 9) printf("Неверная команда.\n\n");
 		} while (Code != 7 && Code != 3 && Code != 6);
 	}
 	catch (char* ErrorPipeText)

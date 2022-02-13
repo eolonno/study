@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#include "stdafx.h"
 #include "Global.h"
 #include "AcceptServer.h"
 #include "DispathServer.h"
@@ -87,7 +86,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	InitializeCriticalSection(&scListContact); //инициалзируем критическую секцию
 
 
-	st1 = LoadLibrary("Rand"); //загружаем dll
+	st1 = LoadLibrary(dllname); //загружаем dll
 	vList.push_back(st1);
 	ts1 = (HANDLE(*)(char*, LPVOID))GetProcAddress(st1, "SSS"); //импортируем функцию
 	vArray.push_back(ts1);
@@ -96,10 +95,10 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	//создаем потоки
 	hAcceptServer = CreateThread(NULL, NULL, AcceptServer, (LPVOID)&cmd, NULL, NULL); //соединение с сервером
+	HANDLE hResponseServer = CreateThread(NULL, NULL, ResponseServer, (LPVOID)&cmd, NULL, NULL); //поиск клиентов через широковещательный запрос
+	HANDLE hConsolePipe = CreateThread(NULL, NULL, ConsolePipe, (LPVOID)&cmd, NULL, NULL); //консоль управления сервером
 	HANDLE hDispathServer = CreateThread(NULL, NULL, DispathServer, (LPVOID)&cmd, NULL, NULL); //обрабатывает сообщения, которые приходят и отправляет обратно
 	HANDLE hGarbageCleaner = CreateThread(NULL, NULL, GarbageCleaner, (LPVOID)&cmd, NULL, NULL); //удаление ненужных клиентов, которые не работают с сервером
-	HANDLE hConsolePipe = CreateThread(NULL, NULL, ConsolePipe, (LPVOID)&cmd, NULL, NULL); //консоль управления сервером
-	HANDLE hResponseServer = CreateThread(NULL, NULL, ResponseServer, (LPVOID)&cmd, NULL, NULL); //поиск клиентов через широковещательный запрос
 
 	//устанавливаем приоритеты
 	SetThreadPriority(hGarbageCleaner, THREAD_PRIORITY_BELOW_NORMAL);
